@@ -1,0 +1,44 @@
+language: node_js #指定使用的语言
+
+node_js: stable  #采用nodejs的最新版本
+
+# 指定缓存模块，可选。缓存可加快编译速度。
+cache:
+  directories:
+    - node_modules
+
+before_install:
+    - export TZ='Asia/Shanghai' # 更改时区
+
+# Start: Build Lifecycle
+install:
+  - npm install
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  - hexo generate
+
+# 指定博客分支
+branches:
+  only:
+    - hexo #触发持续集成的分支
+
+# 指定博客的仓库地址
+env:
+ global:
+    - GITHUB_REF: git@github.com:JimyFengqi/JimyFengqi.github.io.git
+    - GITEE_REF: git@gitee.com:jimmyfengqi/JimyFengqi.gitee.io.git
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "JimyFengqi"
+  - git config user.email "jmps515@163.com"
+  - git add .
+  - git commit -m "Auto update docs by Travis CI"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
+  - git push --force --quiet "https://${GITEE_USER}:${GITEE_PASSWORD}@${GITEE_REF}" master:master
+
+
