@@ -4,16 +4,16 @@
 
 # Site
 title: Fengqi 的第一个博客
-subtitle: ''
-description: ''
-keywords:
+subtitle: 闪烁之狐
+description: 从来没有真正的绝境，只有心灵的迷途
+keywords: python,加油
 author: Fengqi
 language: zn-Hans
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://jimyfengqi.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -102,4 +102,22 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://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@github.com/JimyFengqi/JimyFengqi.github.io.git
+  repo: https://github.com/JimyFengqi/JimyFengqi.github.io.git
+
+search:
+  path: search.xml
+  field: post
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
