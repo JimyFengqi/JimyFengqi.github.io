@@ -104,14 +104,17 @@ deploy:
   type: git
   repo: https://github.com/JimyFengqi/JimyFengqi.github.io.git
 
+# 支持搜索
 search:
   path: search.xml
   field: post
 
+# 中文链接转拼音
 permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
 
+# 添加 RSS 订阅支持
 feed:
   type: atom
   path: atom.xml
@@ -121,3 +124,25 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
+
+# 添加emoji表情支持
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+
+# 代码高亮
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+
+# 文章字数统计插件
+wordCount:
+  enable: false # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
