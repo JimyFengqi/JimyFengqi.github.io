@@ -102,7 +102,7 @@ theme: matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/JimyFengqi/JimyFengqi.github.io.git
+  repo: git://github.com/JimyFengqi/JimyFengqi.github.io.git
 
 # 支持搜索
 search:
