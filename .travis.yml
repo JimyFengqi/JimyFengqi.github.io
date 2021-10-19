@@ -1,6 +1,7 @@
 language: node_js #指定使用的语言
 
-node_js: stable  #采用nodejs的最新版本
+node_js:
+  - 14.18.1 #采用nodejs的最新版本
 
 # 指定缓存模块，可选。缓存可加快编译速度。
 cache:
@@ -9,7 +10,11 @@ cache:
 
 # before_install:
 #    - export TZ='Asia/Shanghai' # 更改时区
-
+before_script:
+  - ls ~/.ssh/
+  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config  # 跳过ssh认证
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host gitee.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 # Start: Build Lifecycle
 install:
@@ -28,8 +33,8 @@ branches:
 # 指定博客的仓库地址
 env:
  global:
-    - GITHUB_REF: git@github.com:JimyFengqi/JimyFengqi.github.io.git
-    - GITEE_REF: git@gitee.com:jimmyfengqi/JimyFengqi.gitee.io.git
+    - GITHUB_REF: github.com:JimyFengqi/JimyFengqi.github.io.git
+    - GITEE_REF: gitee.com:jimyfengqi/JimyFengqi.gitee.io.git
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
@@ -39,7 +44,5 @@ after_script:
   - git config user.email "jmps515@163.com"
   - git add .
   - git commit -m "Auto update docs by Travis CI"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
-  - git push --force --quiet "https://${GITEE_USER}:${GITEE_PASSWORD}@${GITEE_REF}" master:master
-
-
+  - git push --force --quiet "https://{$GITHUB_TOKEN}@{$GITHUB_REF}" master:master
+  - git push --force --quiet "git@{$GH_USER}:{GIEE_PASSWORD}@gitee.com:jimyfengqi/JimyFengqi.gitee.io.git" master:master
