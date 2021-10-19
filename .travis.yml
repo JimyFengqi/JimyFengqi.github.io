@@ -11,7 +11,6 @@ cache:
 # before_install:
 #    - export TZ='Asia/Shanghai' # 更改时区
 before_script:
-  - ls ~/.ssh/
   - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config  # 跳过ssh认证
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo -e "Host gitee.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
@@ -30,10 +29,9 @@ branches:
   only:
     - hexo #触发持续集成的分支
 
-# 指定博客的仓库地址
 env:
  global:
-    - GITHUB_REF: github.com:JimyFengqi/JimyFengqi.github.io.git
+    - GITHUB_REF: github.com/JimyFengqi/JimyFengqi.github.io.git
     - GITEE_REF: gitee.com:jimyfengqi/JimyFengqi.gitee.io.git
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
@@ -42,7 +40,11 @@ after_script:
   - git init
   - git config user.name "JimyFengqi"
   - git config user.email "jmps515@163.com"
+  - git config --list
   - git add .
   - git commit -m "Auto update docs by Travis CI"
-  - git push --force --quiet "https://{$GITHUB_TOKEN}@{$GITHUB_REF}" master:master
-  - git push --force --quiet "git@{$GH_USER}:{GIEE_PASSWORD}@gitee.com:jimyfengqi/JimyFengqi.gitee.io.git" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@${GITHUB_REF}" master:master
+  - git push --force --quiet "git@github.com:JimyFengqi/JimyFengqi.github.io.git" master:master
+  - git push --force --quiet "git@{GITHUB_TOKEN}@github.com:JimyFengqi/JimyFengqi.github.io.git" master:master
+  - echo 'next git push command'
+  - git push --force --quiet "git@{$GH_USER}:{GIEE_PASSWORD}@gitee.com:JimyFengqi/JimyFengqi.gitee.io.git" master:master
