@@ -1,0 +1,13 @@
+<!-- copyright info -->
+<div class="footer-copyright">
+    <% (theme.site_footer.copyright||[]).forEach(function(value) { %>
+        <% if (value.on) { %>
+         Copyright © 2020 - 2021
+         <a href="<%- url_for(value.url) %>"><%= value.owner %></a>
+         | Powered by
+         <a href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a href="https://github.com/yuang01/theme">Bamboo</a>
+        <% } %>
+    <% }) %>
+</div>

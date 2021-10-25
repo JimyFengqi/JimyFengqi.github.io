@@ -3,22 +3,30 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Fengqi 的第一个博客
-subtitle: 闪烁之狐
+title: 凤起丶宛南
+subtitle: 王者归来
 description: 从来没有真正的绝境，只有心灵的迷途
-keywords: python,加油
+keywords: Python,加油
 author: Fengqi
-language: zn-Hans
-timezone: ''
+language: zh-CN  # 语言
+timezone: Asia/Shanghai  # 时区
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://jimyfengqi.github.io/
-permalink: :year/:month/:day/:title/
+permalink: post/:title/        #:year/:month/:day/:title/  # 链接转拼音
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+permalink_pinyin:   # 链接中文字符转拼音
+  enable: true
+  separator: '-' # default: '-
+
+abbrlink:  # abbrlink生效，需要将permalink设置为 posts/:abbrlink/
+  alg: crc32  #support crc16(default) and crc32
+  rep: dec    #support dec(default) and hex
 
 # Directory
 source_dir: source
@@ -42,16 +50,17 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
-highlight:
-  enable: true
+future:
+# 三种代码格式选择一种
+highlight:   # 默认的代码格式
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
-prismjs:
-  enable: false
+prismjs:  # prismjs的代码格式
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -96,7 +105,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: matery
+theme: bamboo
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,15 +114,10 @@ deploy:
   repo: git://github.com:JimyFengqi/JimyFengqi.github.io.git
   branch: master
 
-# 支持搜索
+# 支持搜索 hexo-generator-search
 search:
   path: search.xml
   field: post
-
-# 中文链接转拼音
-permalink_pinyin:
-  enable: true
-  separator: '-' # default: '-'
 
 # 添加 RSS 订阅支持
 feed:
@@ -134,12 +138,7 @@ githubEmojis:
   styles:
   customEmojis:
 
-# 代码高亮
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
+
 
 # 文章字数统计插件
 wordCount:
