@@ -32,8 +32,8 @@ widget_library_sticky:
       <script src="/custom_widget/weibo/index.js"></script>
       <link href="/custom_widget/weibo/index.css" rel="stylesheet">
     '
-  - class_name: historyTodayWidget
-    id_name: historyTodayWidget
+  - class_name: historyToday
+    id_name: historyToday
     order: -1
     name: 历史上的今天
     icon: fas fa-calendar-week
@@ -41,15 +41,15 @@ widget_library_sticky:
     url: http://baidu.com
     background: '#fff'
     html: '
-      <div id="historyTodayWidget" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()">
-        <swiper class="myhistoryswiper" ref="myhistoryswiper" style="height:80px;" :options="swiperOption">
-          <swiper-slide v-for="(item, index) in content" :key="index">
-            {{item}}
-          </swiper-slide>
-        </swiper>
-      </div>
-      <script src="/custom_widget/historyToday/index.js"></script>
-    '
+     <div id="myHistorySwiper" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()">
+       <swiper class="myhistoryswiper" ref="myhistoryswiper" style="height:80px;" :options="swiperOption">
+         <swiper-slide v-for="(item, index) in content" :key="index">
+           {{item}}
+         </swiper-slide>
+       </swiper>
+     </div>
+     <script src="/custom_widget/historyToday/index.js"></script>
+     '
   - class_name: marryTime
     id_name: marryTime
     order: -1
