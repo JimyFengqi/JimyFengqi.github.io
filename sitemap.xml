@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://jimyfengqi.github.io/friends/index.html</loc>
-    
-    <lastmod>2021-10-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jimyfengqi.github.io/gallery/index.html</loc>
     
     <lastmod>2021-10-29</lastmod>
@@ -44,7 +37,14 @@
   </url>
   
   <url>
-    <loc>https://jimyfengqi.github.io/gallery/bizhi/index.html</loc>
+    <loc>https://jimyfengqi.github.io/gallery/bing/bing.json</loc>
+    
+    <lastmod>2021-10-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jimyfengqi.github.io/gallery/bing/index.html</loc>
     
     <lastmod>2021-10-29</lastmod>
     
@@ -59,6 +59,13 @@
   
   <url>
     <loc>https://jimyfengqi.github.io/gallery/gudian/index.html</loc>
+    
+    <lastmod>2021-10-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jimyfengqi.github.io/friends/index.html</loc>
     
     <lastmod>2021-10-29</lastmod>
     
