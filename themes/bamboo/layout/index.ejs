@@ -2,12 +2,12 @@
 <%- partial('_partial/swiper') %>
 <div id="l_main">
   <div class="l_content">
+    <!-- 首页公告 -->
+    <%- partial('_partial/notice') %>
     <!-- 自定义的内容 -->
     <%- partial('_partial/home_widget') %>
     <!-- 首页座右铭 -->
     <%- partial('_partial/motto') %>
-    <!-- 首页公告 -->
-    <%- partial('_partial/notice') %>
     <!-- 首页文章置顶 -->
     <%- partial('_partial/topArticle', {page: page}) %>
 
@@ -17,7 +17,6 @@
     <!-- 翻页 -->
     <%- partial('_partial/paginator') %>
   </div>
-
   <%- partial('_partial/side') %>
 </div>
 <!-- 花瓣和雪花飘落 -->

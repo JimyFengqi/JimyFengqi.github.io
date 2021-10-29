@@ -7,7 +7,7 @@ widget_library_sticky:
     name: 微博热搜
     icon: fab fa-weibo
     icon_color: '#d63130'
-    url: http://baidu.com
+    url: https://s.weibo.com/top/summary?cate=realtimehot
     background: '#fff'
     html: '
       <div id="myWeibo">
@@ -38,7 +38,7 @@ widget_library_sticky:
     name: 历史上的今天
     icon: fas fa-calendar-week
     icon_color: '#d63130'
-    url: http://baidu.com
+    url: https://docs.tenapi.cn/lishi.html
     background: '#fff'
     html: '
      <div id="myHistorySwiper" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()">
@@ -56,7 +56,7 @@ widget_library_sticky:
     name: 恋爱墙
     icon: fas fa-heart
     icon_color: '#d63130'
-    url: http://baidu.com
+    url: '#htmer_time'
     background: '#fff'
     html: '
       <div style="text-align: center;">
@@ -79,21 +79,21 @@ widget_library_sticky:
 home_widget:
   - class_name: welcome # IP签名档
     id_name: welcome
-    order: -1
+    order: 0
     name: 欢迎
     icon: fas fa-envelope
     icon_color: blue
-    url: http://baidu.com
+    url: /
     background: '#fff'
     html: '<img src="https://api.amogu.cn/api/ipimg/" style="width:100%">'
 
   - class_name: my_github_container # github日历
     id_name: my_github_container
-    order: -1
+    order: 0
     name: github代码提交日历
     icon: fas fa-envelope
     icon_color: blue
-    url: http://baidu.com
+    url: https://github.com/jimyfengqi
     background: '#fff'
     html: '
       <div id="github_container"></div>

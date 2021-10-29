@@ -1,17 +1,16 @@
 ---
 title: 朋友链接
 date: 2021-10-20 17:46:20
-img: 'https://pic2.zhimg.com/80/v2-2407599a217ba89f9499c282f129d44d_1440w.jpg?source=1940ef5c'
 desc: '朋友啊，愿你出走半生，归来仍是少年'
 toc: false
-wordcount:
-  on: false
 ---
 
-# 友情链接
+# 个人收藏链接
 
 
 {% sitegroup %}
+    {% site 試毅-思伟, url=https://zhousiwei.gitee.io, screenshot=https://zhousiwei.gitee.io/favicon.ico, avatar=https://zhousiwei.gitee.io/img/head.jpg, description=不浮躁，不偏激，爱编程，爱后端，爱新技术，爱运动，执行力和学习能力都棒棒哒！ %}
+    {% site 艾克斯の编码者, url=https://xcoder.in/, screenshot=https://xcoder.in/images/avatar.gif, avatar=https://xcoder.in/images/avatar.gif, description=一个伪宅级别的码畜 %}
     {% site A2Data, url=https://www.a2data.cn, screenshot=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, avatar=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, description=武术跨行大数据，用技术推动梦想的落地！ %}
 {% endsitegroup %}
 

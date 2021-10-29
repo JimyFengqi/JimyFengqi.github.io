@@ -17,7 +17,7 @@
           <h2><%- item.title %></h2>
         <% } %>
         <% if (item.subtitle){ %>
-          <%- markdown(item.subtitle) %>
+            <%- markdown(item.subtitle) %>
         <% } %>
         <% if (item.jinrishici){ %>
           <p><span id="jinrishici-sentence"><%- item.jinrishici != true ? item.jinrishici : config.title %></span></p>
@@ -32,6 +32,9 @@
             <a href="<%= url_for(value.url) %>"
               class="social <%- value.icon %> flat-btn"
               target="_blank"
+              <% if (value.tips) { %>
+                  title ="<%- value.tips %>"
+              <% } %>
               rel="external nofollow noopener noreferrer">
               <% if (value.img) { %>
                 <img src="<%- value.img %>"/>

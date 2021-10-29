@@ -7,9 +7,8 @@ tags:
   - markdown
 top: true  
 swiper: true
-swiperImg: >-
-  https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm
 swiperDesc: 我是文章在轮播图中的摘要
+password: d2332d7ab769e19baf41be831a6c57b320ef6842b13498f11af402f54db13eff
 abbrlink: 3831565538
 date: 2021-10-25 07:30:00
 ---

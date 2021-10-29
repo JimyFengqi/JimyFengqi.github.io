@@ -53,7 +53,7 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 # sidebar侧边栏
 sidebar:
   on: true # 开启侧边栏
-  position: left # left right
+  position: right # left right
   widget_library:
     side_blogger:
       on: true
@@ -61,22 +61,27 @@ sidebar:
       shape: rectangle # circle, rectangle
       url: /about/
       title: 一个键盘一片天
-      subtitle:
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      subtitle: # https://tenapi.cn/yiyan/?format=text 一句话
+      jinrishici: true # 今日诗词 Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Long Cang,cursive
       background: '#fff'
       order:  # 卡片排序, 数值越小，越在上面
       social:
         - icon: fas fa-rss
           url: /atom.xml
+          tips: 站点地图
         - icon: fab fa-qq
           url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=215618733
+          tips: QQ联系我
         - icon: fab fa-weixin
           url: /medias/reward/wechat.bmp
+          tips: 关注我的公众号联系我
         - icon: fas fa-envelope
           url: mailto:jmps515@163.com
+          tips: 邮件联系我
         - icon: fab fa-github
           url: https://github.com/fengqi
+          tips: 访问我的GitHub
     # ---------------------------------------
     # category widget
     side_category:
@@ -87,7 +92,7 @@ sidebar:
         icon: fas fa-folder-open
         icon_color: # 标题字体颜色
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     side_tagcloud:
@@ -520,7 +525,7 @@ copyright:
 
 # 首页座右铭
 motto:
-  on: true
+  on: false
   title: '座右铭'
   content: '沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜'
   background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
@@ -890,12 +895,14 @@ wordcount:
 import:
   link:
     # - <link src"xxx.css"></link>
+    - <link src="/js/aos/aos@2.3.4.min.css"></link>
     -
     -
   script:
     # - <script src="xxx.js"></script>
-    -
-    -
+    - <script src="/js/tag_cloud.js" ></script>
+    - <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+    - <script src="/js/aos/aos@2.3.4.min.js"></script>
 
 # 文章图片,不指定 img:xxx 的时候随机取下面的图片
 imgs:

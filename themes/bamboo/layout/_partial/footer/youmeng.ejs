@@ -1,11 +1,9 @@
-<!-- [CNZZ友盟+]统计 -->
-
-    <% (theme.site_footer.cnzz||[]).forEach(function(value) { %>
-        <div class=footer-cnzz id="cnzzProtocol" >
-            <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_<%- value.cnzzID %>'></span>
-            <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=<%- value.cnzzID %>&online=1&show=line' ></script>
-        </div>
-    <% }) %>
+<% (theme.site_footer.cnzz||[]).forEach(function(value) { %>
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_<%- value.cnzzID %>'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=<%- value.cnzzID %>&online=1&show=line' ></script>
+    </div>
+<% }) %>
 
 
 
