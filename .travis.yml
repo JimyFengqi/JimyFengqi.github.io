@@ -30,8 +30,8 @@ branches:
 
 env:
  global:
-    - GITHUB_REF: github.com/JimyFengqi/JimyFengqi.github.io.git # github分支
-    - GITEE_REF: gitee.com/JimyFengqi/JimyFengqi.gitee.io.git   # 码云分支
+    - GITHUB_HEXOREF: github.com/JimyFengqi/JimyFengqi.github.io.git # github分支
+    - GITEE_HEXOREF: gitee.com/JimyFengqi/JimyFengqi.gitee.io.git   # 码云分支
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
@@ -42,5 +42,5 @@ after_script:
   - git config --list
   - git add .
   - git commit -m "Auto update docs by Travis CI"
-  - git push --force --quiet "https://${GH_TOKEN}@${GITHUB_REF}" master:master
-  - git push --force --quiet "https://{$GH_USER}:{GIEE_PASSWORD}@{$GITEE_REF}" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@${GITHUB_HEXOREF}" master:master
+  - git push --force --quiet "https://${GH_USER}:${GIEE_PASSWORD}@${GITEE_HEXOREF}" master:master
