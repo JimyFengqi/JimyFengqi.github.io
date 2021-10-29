@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>凤起丶宛南</title>
+  
+  <subtitle>王者归来</subtitle>
+  <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jimyfengqi.github.io/"/>
+  <updated>2021-10-29T13:01:23.269Z</updated>
+  <id>https://jimyfengqi.github.io/</id>
+  
+  <author>
+    <name>Fengqi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>主题介绍-侧边栏功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/</id>
+    <published>2021-10-26T05:25:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;首页侧边栏支持的版本为 v2.6.0+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;默认的侧边栏&quot;&gt;&lt;a href=&quot;#默认的侧边栏&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="热搜榜" scheme="https://jimyfengqi.github.io/tags/%E7%83%AD%E6%90%9C%E6%A6%9C/"/>
+    
+    <category term="widget" scheme="https://jimyfengqi.github.io/tags/widget/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-文章Front-matter</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/</id>
+    <published>2021-10-24T23:30:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;文章-Front-matter-介绍&quot;&gt;&lt;a href=&quot;#文章-Front-matter-介绍&quot; class=&quot;headerlink&quot; title=&quot;文章 Front-matter 介绍&quot;&gt;&lt;/a&gt;文章 Front-matter</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-媒体文件书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/</id>
+    <published>2021-10-24T03:11:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h &quot; id=&quot;getFile文件写法&quot;&gt;getFile文件写法&lt;/h1&gt;&lt;br/&gt;
+&lt;h2 id=&quot;getFile文件功能&quot;&gt;&lt;a href=&quot;#getFile文件功能&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+    <category term="media" scheme="https://jimyfengqi.github.io/tags/media/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-github书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/</id>
+    <published>2021-10-24T02:05:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h &quot; id=&quot;Github用户卡片&quot;&gt;Github用户卡片&lt;/h1&gt;&lt;br/&gt;
+&lt;a class=&quot;ghcard&quot; rel=&quot;external nofollow noopener noreferrer&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-文档书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/</id>
+    <published>2021-10-23T11:25:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h-b&quot; id=&quot;我是标题，1级标题&quot; style=&quot;color:!important&quot;&gt;我是标题，1级标题&lt;/h1&gt;&lt;div&gt;&lt;/div&gt;
+&lt;h2 class=&quot;bamboo-h-b&quot; id=&quot;我是标题， 2级标题&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-页面配置</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/</id>
+    <published>2021-10-13T04:05:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: icon使用的 &lt;a href=&quot;https://fontawesome.dashgame.com/&quot;&gt;Font Awesome&lt;/a&gt; 版本为</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-基本配置</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/</id>
+    <published>2021-10-12T02:25:00.000Z</published>
+    <updated>2021-10-29T13:01:23.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是一款&lt;span class=&#39;p large red&#39;&gt;H&lt;/span&gt;&lt;span class=&#39;p large green&#39;&gt;E&lt;/span&gt;&lt;span class=&#39;p large blue&#39;&gt;X&lt;/span&gt;&lt;span class=&#39;p large</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

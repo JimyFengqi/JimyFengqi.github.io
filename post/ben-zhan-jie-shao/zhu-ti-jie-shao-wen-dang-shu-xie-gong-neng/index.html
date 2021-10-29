@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>主题介绍-文档书写功能 | 凤起丶宛南</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '3';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            <link src="/js/aos/aos@2.3.4.min.css"></link>
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            <script src="/js/tag_cloud.js" ></script>
+        
+            <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+        
+            <script src="/js/aos/aos@2.3.4.min.js"></script>
+        
+    
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">凤起丶宛南</h3>
+      <h5 class="drawer-box-head_desc">从来没有真正的绝境，只有心灵的迷途</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-cowbell-more"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">凤起丶宛南</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友链">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-cowbell-more"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+         <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/3.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        主题介绍-文档书写功能
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-10-23 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/" class="post-detail-header_category">
+              本站介绍
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 6.2k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 25分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 class="bamboo-h-b" id="我是标题，1级标题" style="color:!important">我是标题，1级标题</h1><div></div>
+<h2 class="bamboo-h-b" id="我是标题， 2级标题" style="color:#895546!important">我是标题， 2级标题</h2><div></div>
+<h3 class="bamboo-h-b" id="我是标题， 3级标题" style="color:red!important">我是标题， 3级标题</h3><div></div>
+<h3 id="上述事例代码"><a href="#上述事例代码" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% titleB h1, 我是标题， 1级标题 %&#125;
+&#123;% titleB h2, 我是标题， 2级标题, #895546 %&#125;
+&#123;% titleB h3, 我是标题， 3级标题, red %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="段落文本标签演示效果">段落文本标签演示效果</h1><br/>
+
+<p class='p yellow'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p '>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p primary'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p info'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p warning'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p danger'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p success'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p red'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p green'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p blue'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p center'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p center large danger'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p center large info'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<p class='p center small'>我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多</p>
+<h3 id="上述事例代码-1"><a href="#上述事例代码-1" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% p yellow, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p primary, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p info, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p warning, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p danger, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p success, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p red, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p green, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p blue, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p center, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p center large danger, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p center large info, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;
+&#123;% p center small, 我是一个文本高亮大萨达所多撒多撒多撒大多多撒多撒多撒大所多撒大多 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="文本高亮标签演示效果">文本高亮标签演示效果</h1><br/>
+<p>这是一个简单的文字<span class='pbg yellow'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg '>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg info'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg warning'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg danger'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg success'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg red'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg green'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg blue'>我是一个文本高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='pbg cyan'>我是一个文本高亮</span>，唱着我们心肠的曲折</p>
+<h3 id="上述事例代码-2"><a href="#上述事例代码-2" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个简单的文字&#123;% pbg yellow, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg info, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg warning, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg danger, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg success, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg red, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg green, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折 
+这是一个简单的文字&#123;% pbg blue, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% pbg cyan, 我是一个文本高亮 %&#125;，唱着我们心肠的曲折<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="文字颜色标签演示效果">文字颜色标签演示效果</h1><br/>
+<p>这是一个简单的文字<span class='p yellow'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p '>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p primary'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p info'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p warning'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p danger'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p success'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p red'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p green'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p blue'>我是一个文字高亮</span>，唱着我们心肠的曲折</p>
+<span class='p center green'>我是一个居中文字高亮</span>
+<p>这是一个简单的文字<span class='p large'>我是一个文字高亮</span>，唱着我们心肠的曲折<br>这是一个简单的文字<span class='p small danger'>我是一个文字高亮</span>，唱着我们心肠的曲折</p>
+<h3 id="上述事例代码-3"><a href="#上述事例代码-3" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个简单的文字&#123;% span yellow, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span primary, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span info, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span warning, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span danger, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span success, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span red, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span green, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span blue, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+&#123;% span center green, 我是一个居中文字高亮 %&#125;
+这是一个简单的文字&#123;% span large, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折
+这是一个简单的文字&#123;% span small danger, 我是一个文字高亮 %&#125;，唱着我们心肠的曲折<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="Text文本样式标签演示">Text文本样式标签演示</h1><br/>
+
+<p>带 <u>下划线</u> 的文本</p>
+<p>带 <emp>着重号</emp> 的文本</p>
+<p>带 <wavy>波浪线</wavy> 的文本</p>
+<p>带 <del>删除线</del> 的文本</p>
+<p>键盘样式的文本 <kbd>command</kbd> + <kbd>D</kbd></p>
+<p>密码样式的文本：<psw>这里没有验证码</psw></p>
+<h3 id="上述事例代码-4"><a href="#上述事例代码-4" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% title h2, Text文本样式标签演示 %&#125;
+
+带 &#123;% u 下划线 %&#125; 的文本
+
+带 &#123;% emp 着重号 %&#125; 的文本
+
+带 &#123;% wavy 波浪线 %&#125; 的文本
+
+带 &#123;% del 删除线 %&#125; 的文本
+
+键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;
+
+密码样式的文本：&#123;% psw 这里没有验证码 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="Note标签演示效果">Note标签演示效果</h1><br/>
+<blockquote>
+<p>markdown默认写法，左边框颜色，随着主题色改变</p>
+</blockquote>
+<div class="note "><p>我有一只小毛驴，我从来都不骑。</p></div>
+
+<div class="note quote"><p>适合引用一段话</p></div>
+
+<div class="note warning"><p>这是一个警告</p></div>
+
+<div class="note danger"><p>这是一个错误</p></div>
+
+<div class="note success"><p>这是一个成功</p></div>
+
+<div class="note info"><p>这是一个信息</p></div>
+<h3 id="上述事例代码-5"><a href="#上述事例代码-5" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> markdown默认写法，左边框颜色，随着主题色改变
+
+&#123;% note, 我有一只小毛驴，我从来都不骑。 %&#125;
+
+&#123;% note quote, 适合引用一段话 %&#125;
+
+&#123;% note warning, 这是一个警告 %&#125;
+
+&#123;% note danger, 这是一个错误 %&#125;
+
+&#123;% note success, 这是一个成功 %&#125;
+
+&#123;% note info, 这是一个信息 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="NoteBlock标签演示效果">NoteBlock标签演示效果</h1><br/>
+<div class="note base"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+
+<div class="note quote"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+
+<div class="note warning"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+
+<div class="note success"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+
+<div class="note danger"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+
+<div class="note info"><p><strong>标题（可选）</strong></p><p>asdsd</p></div>
+<h3 id="上述事例代码-6"><a href="#上述事例代码-6" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% noteblock base, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;
+
+&#123;% noteblock quote, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;
+
+&#123;% noteblock warning, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;
+
+&#123;% noteblock success, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;
+
+&#123;% noteblock danger, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;
+
+&#123;% noteblock info, 标题（可选） %&#125;
+    asdsd
+&#123;% endnoteblock %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="进度条示例">进度条示例</h1><br/> 
+
+<blockquote>
+<p>该标签适用版本为1.8.1及以上</p>
+</blockquote>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-danger"  style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-info"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-success"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-warning"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-primary"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<p>自定义颜色(Custom colors)</p>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped" style="background-color: #000!important; width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped" style="background-color: #2f54eb!important; width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
+<h3 id="上述示例代码"><a href="#上述示例代码" class="headerlink" title="上述示例代码"></a>上述示例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% progress 70 danger 进度条测试 %&#125;
+&#123;% progress 60 info 进度条测试 %&#125;
+&#123;% progress 60 success 进度条测试 %&#125;
+&#123;% progress 60 warning 进度条测试 %&#125;
+&#123;% progress 60 primary 进度条测试 %&#125;
+自定义颜色(Custom colors)
+&#123;% progress 60 #000 进度条测试 %&#125;
+&#123;% progress 60 #2f54eb 进度条测试 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="Link效果">Link效果</h1><br/>
+
+<div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div>
+
+<div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div>
+<h3 id="上述事例代码-7"><a href="#上述事例代码-7" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;
+
+&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="多行链接"><a href="#多行链接" class="headerlink" title="多行链接"></a>多行链接</h2><div class="link-group"><div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div>
+
+<div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div>
+
+<div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div>
+
+<div class="tagLink"><a class="link-card" title="点击跳转到百度" target="_blank" rel="noopener" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg)"></span><div class="left"><img src="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" class="lazyload placeholder" data-srcset="https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="right"><p class="text">点击跳转到百度</p><p class="url">http://www.baidu.com</p></div></a></div></div>
+<h3 id="上述事例代码-8"><a href="#上述事例代码-8" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% linkgroup %&#125;
+&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;
+
+&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;
+
+&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;
+
+&#123;% link 点击跳转到百度, http://www.baidu.com, https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg %&#125;
+&#123;% endlinkgroup %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="圆形进度条示例">圆形进度条示例</h1><br/> 
+
+<blockquote>
+<p>该标签适用版本为2.0.7+及以上</p>
+</blockquote>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#f66" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 245.04422698000383px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-danger">
+        <p>进度条测试</p>
+      </div>
+    </div>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#409eff" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 163.36281798666926px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-info">
+        <p>进度条测试</p>
+      </div>
+    </div>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#67c23a" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 326.7256359733385px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-success">
+        <p>进度条测试</p>
+      </div>
+    </div>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#e6a23c" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 408.4070449666731px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-warning">
+        <p>进度条测试</p>
+      </div>
+    </div>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#42b983" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 81.68140899333463px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-primary">
+        <p>进度条测试</p>
+      </div>
+    </div>
+<p>自定义颜色(Custom colors)</p>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="#12e9e9" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 245.04422698000383px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-#12e9e9">
+        <p>70%</p>
+      </div>
+    </div>
+
+    <div class="bamboo-circle" style="height: 136px;">
+      <svg width="136" height="136" viewBox="0 0 272 272">
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke="#f3f3f3" stroke-width="12" fill-opacity="0"></path>
+        <path d="M 136,136 m 0,-130
+    a 130,130 0 1 1 0,260
+    a 130,130 0 1 1 0,-260" stroke-linecap="round" stroke="skyblue" stroke-width="12" fill-opacity="0" style="stroke-dasharray: 816.8140899333462px 816.8140899333462px; stroke-dashoffset: 245.04422698000383px; transition:stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;"></path>
+      </svg>
+      <div class="bamboo-circle-content bamboo-circle-skyblue">
+        <p>70%</p>
+      </div>
+    </div>
+
+<h3 id="上述示例代码-1"><a href="#上述示例代码-1" class="headerlink" title="上述示例代码"></a>上述示例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% progressCircle 70 danger 进度条测试 %&#125;
+&#123;% progressCircle 80 info 进度条测试 %&#125;
+&#123;% progressCircle 60 success 进度条测试 %&#125;
+&#123;% progressCircle 50 warning 进度条测试 %&#125;
+&#123;% progressCircle 90 primary 进度条测试 %&#125;
+自定义颜色(Custom colors)
+&#123;% progressCircle 70 #12e9e9 70% %&#125;
+&#123;% progressCircle 70 skyblue 70% %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="按钮">按钮</h1><br/> 
+
+<h2 id="融入段落中按钮"><a href="#融入段落中按钮" class="headerlink" title="融入段落中按钮"></a>融入段落中按钮</h2><p>不设置任何参数的 <span class='btn'><a class="button" href='/' title='按钮'>按钮</a></span> 适合融入段落中。</p>
+<p>不设置任何参数的 <span class='btn warning'><a class="button" href='/' title='按钮'>按钮</a></span> 适合融入段落中。</p>
+<p>不设置任何参数的 <span class='btn info'><a class="button" href='/' title='按钮'>按钮</a></span> 适合融入段落中。</p>
+<p>不设置任何参数的 <span class='btn success'><a class="button" href='/' title='按钮'>按钮</a></span> 适合融入段落中。</p>
+<p>不设置任何参数的 <span class='btn danger'><a class="button" href='/' title='按钮'>按钮</a></span> 适合融入段落中。</p>
+<h3 id="上述实例源码"><a href="#上述实例源码" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">不设置任何参数的 &#123;% btn 按钮, / %&#125; 适合融入段落中。
+
+不设置任何参数的 &#123;% btn warning, 按钮, / %&#125; 适合融入段落中。
+
+不设置任何参数的 &#123;% btn info, 按钮, / %&#125; 适合融入段落中。
+
+不设置任何参数的 &#123;% btn success, 按钮, / %&#125; 适合融入段落中。
+
+不设置任何参数的 &#123;% btn danger, 按钮, / %&#125; 适合融入段落中。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="空心和实心按钮"><a href="#空心和实心按钮" class="headerlink" title="空心和实心按钮"></a>空心和实心按钮</h2><span class='btn hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='示例博客'><i class='fab fa-qq'></i>示例博客</a></span>
+<span class='btn solid'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='示例博客'><i class='fab fa-weixin'></i>示例博客</a></span>
+<h3 id="上述实例源码-1"><a href="#上述实例源码-1" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn hollow, 示例博客, https://baidu.com, fab fa-qq %&#125;
+&#123;% btn solid, 示例博客, https://baidu.com, fab fa-weixin %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="大点的按钮和样式"><a href="#大点的按钮和样式" class="headerlink" title="大点的按钮和样式"></a>大点的按钮和样式</h2><span class='btn center large'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+
+<h3 id="上述实例源码-2"><a href="#上述实例源码-2" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn center large, 开始使用, https://baidu.com, fa fa-download %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 class="bamboo-h " id="环形按钮">环形按钮</h1><br/>
+<span class='btn center large round solid'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<h3 id="上述实例源码-3"><a href="#上述实例源码-3" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn center large round solid, 开始使用, https://baidu.com, fa fa-download %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="warning等颜色按钮"><a href="#warning等颜色按钮" class="headerlink" title="warning等颜色按钮"></a>warning等颜色按钮</h2><span class='btn large round solid warning'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large round solid info'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large round solid success'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large round solid danger'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large solid success'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<h3 id="上述实例源码-4"><a href="#上述实例源码-4" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn large round solid warning, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large round solid info, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large round solid success, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large round solid danger, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large solid success, 开始使用, https://baidu.com, fa fa-download %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="warning等颜色空心按钮"><a href="#warning等颜色空心按钮" class="headerlink" title="warning等颜色空心按钮"></a>warning等颜色空心按钮</h2><span class='btn large warning hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large info hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large success hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn large danger hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn success hollow'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<h3 id="上述实例源码-5"><a href="#上述实例源码-5" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn large warning hollow, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large info hollow, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large success hollow, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn large danger hollow, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn success hollow, 开始使用, https://baidu.com, fa fa-download %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="warning等颜色空心环形居中按钮"><a href="#warning等颜色空心环形居中按钮" class="headerlink" title="warning等颜色空心环形居中按钮"></a>warning等颜色空心环形居中按钮</h2><span class='btn large danger hollow center round'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<span class='btn danger hollow center round'><a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='开始使用'><i class='fa fa-download'></i>开始使用</a></span>
+<h3 id="上述实例源码-6"><a href="#上述实例源码-6" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btn large danger hollow center round, 开始使用, https://baidu.com, fa fa-download %&#125;
+&#123;% btn danger hollow center round, 开始使用, https://baidu.com, fa fa-download %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="带有头像和名称的按钮"><a href="#带有头像和名称的按钮" class="headerlink" title="带有头像和名称的按钮"></a>带有头像和名称的按钮</h2><div class="btns circle grid2">
+            <a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='草帽海贼团'><img src='https://img2.woyaogexing.com/2021/01/30/007e3777e7e64c4aae95ae812708a7bf!400x400.jpeg'>草帽海贼团</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='小绵羊'><img src='https://img2.woyaogexing.com/2021/01/30/4c59f9dd4aae421fae21344aec8c7b60!400x400.jpeg'>小绵羊</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='沫兮'><img src='https://img2.woyaogexing.com/2021/01/30/1b2aec116f0b49c682badc5befd43905!400x400.jpeg'>沫兮</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='凯爹'><img src='https://p.qqan.com/up/2021-1/16112058848478910.jpg'>凯爹</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='阿离'><img src='https://p.qqan.com/up/2021-1/16118869719896010.jpg'>阿离</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='韩信'><img src='https://p.qqan.com/up/2021-1/16118869704182020.jpg'>韩信</a>
+          </div>
+<h3 id="上述实例源码-7"><a href="#上述实例源码-7" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns circle grid2 %&#125;
+  &#123;% cell 草帽海贼团, https://baidu.com, https://img2.woyaogexing.com/2021/01/30/007e3777e7e64c4aae95ae812708a7bf!400x400.jpeg %&#125;
+  &#123;% cell 小绵羊, https://baidu.com, https://img2.woyaogexing.com/2021/01/30/4c59f9dd4aae421fae21344aec8c7b60!400x400.jpeg %&#125;
+  &#123;% cell 沫兮, https://baidu.com, https://img2.woyaogexing.com/2021/01/30/1b2aec116f0b49c682badc5befd43905!400x400.jpeg %&#125;
+  &#123;% cell 凯爹, https://baidu.com, https://p.qqan.com/up/2021-1/16112058848478910.jpg %&#125;
+  &#123;% cell 阿离, https://baidu.com, https://p.qqan.com/up/2021-1/16118869719896010.jpg %&#125;
+  &#123;% cell 韩信, https://baidu.com, https://p.qqan.com/up/2021-1/16118869704182020.jpg %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="一行三个带有头像和名称的按钮"><a href="#一行三个带有头像和名称的按钮" class="headerlink" title="一行三个带有头像和名称的按钮"></a>一行三个带有头像和名称的按钮</h2><div class="btns circle grid3">
+            <a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='QQ头像'><img src='http://q1.qlogo.cn/g?b=qq&nk=1730241541&s=640'>QQ头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机动漫头像'><img src='http://api.btstu.cn/sjtx/api.php?lx=c1&format=images'>随机动漫头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机男生头像'><img src='http://api.btstu.cn/sjtx/api.php?lx=a1&format=images'>随机男生头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机女生头像'><img src='http://api.btstu.cn/sjtx/api.php?lx=b1&format=images'>随机女生头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机动漫女头像'><img src='http://api.btstu.cn/sjtx/api.php?lx=c2&format=images'>随机动漫女头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机动漫男头像'><img src='http://api.btstu.cn/sjtx/api.php?lx=c3&format=images'>随机动漫男头像</a>
+          </div>
+<h3 id="上述实例源码-8"><a href="#上述实例源码-8" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns circle grid3 %&#125;
+  &#123;% cell QQ头像, https://baidu.com, http://q1.qlogo.cn/g?b=qq&amp;nk=1730241541&amp;s=640 %&#125;
+  &#123;% cell 随机动漫头像, https://baidu.com, http://api.btstu.cn/sjtx/api.php?lx=c1&amp;format=images %&#125;
+  &#123;% cell 随机男生头像, https://baidu.com, http://api.btstu.cn/sjtx/api.php?lx=a1&amp;format=images %&#125;
+  &#123;% cell 随机女生头像, https://baidu.com, http://api.btstu.cn/sjtx/api.php?lx=b1&amp;format=images %&#125;
+  &#123;% cell 随机动漫女头像, https://baidu.com, http://api.btstu.cn/sjtx/api.php?lx=c2&amp;format=images %&#125;
+  &#123;% cell 随机动漫男头像, https://baidu.com, http://api.btstu.cn/sjtx/api.php?lx=c3&amp;format=images %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="一行四个带有头像和名称的按钮"><a href="#一行四个带有头像和名称的按钮" class="headerlink" title="一行四个带有头像和名称的按钮"></a>一行四个带有头像和名称的按钮</h2><div class="btns circle grid4">
+            <a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机Github头像'><img src='https://api.prodless.com/avatar.png'>随机Github头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机Github头像'><img src='https://api.prodless.com/avatar.png'>随机Github头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机Github头像'><img src='https://api.prodless.com/avatar.png'>随机Github头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机Github头像'><img src='https://api.prodless.com/avatar.png'>随机Github头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机Github头像'><img src='https://api.prodless.com/avatar.png'>随机Github头像</a>
+          </div>
+<h3 id="上述实例源码-9"><a href="#上述实例源码-9" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns circle grid4 %&#125;
+  &#123;% cell 随机Github头像, https://baidu.com, https://api.prodless.com/avatar.png %&#125;
+  &#123;% cell 随机Github头像, https://baidu.com, https://api.prodless.com/avatar.png %&#125;
+  &#123;% cell 随机Github头像, https://baidu.com, https://api.prodless.com/avatar.png %&#125;
+  &#123;% cell 随机Github头像, https://baidu.com, https://api.prodless.com/avatar.png %&#125;
+  &#123;% cell 随机Github头像, https://baidu.com, https://api.prodless.com/avatar.png %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="一行五个带有头像和名称的按钮"><a href="#一行五个带有头像和名称的按钮" class="headerlink" title="一行五个带有头像和名称的按钮"></a>一行五个带有头像和名称的按钮</h2><div class="btns circle grid5">
+            <a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机头像'><img src='https://picsum.photos/200'>随机头像</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机头像id'><img src='https://picsum.photos/id/1/200'>随机头像id</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机头像id'><img src='https://picsum.photos/id/2/200'>随机头像id</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机头像id'><img src='https://picsum.photos/id/3/200'>随机头像id</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机头像id'><img src='https://picsum.photos/id/4/200'>随机头像id</a>
+          </div>
+
+<div class="btns circle grid5">
+            <a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机风景'><img src='https://api.ixiaowai.cn/gqapi/gqapi.php'>随机风景</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机风景'><img src='https://api.ixiaowai.cn/gqapi/gqapi.php'>随机风景</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机风景'><img src='https://api.ixiaowai.cn/gqapi/gqapi.php'>随机风景</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机风景'><img src='https://api.ixiaowai.cn/gqapi/gqapi.php'>随机风景</a>
+<a class="button" target="_blank" rel="noopener" href='https://baidu.com' title='随机风景'><img src='https://api.ixiaowai.cn/gqapi/gqapi.php'>随机风景</a>
+          </div>
+<h3 id="上述实例源码-10"><a href="#上述实例源码-10" class="headerlink" title="上述实例源码"></a>上述实例源码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns circle grid5 %&#125;
+  &#123;% cell 随机头像, https://baidu.com, https://picsum.photos/200 %&#125;
+  &#123;% cell 随机头像id, https://baidu.com, https://picsum.photos/id/1/200 %&#125;
+  &#123;% cell 随机头像id, https://baidu.com, https://picsum.photos/id/2/200 %&#125;
+  &#123;% cell 随机头像id, https://baidu.com, https://picsum.photos/id/3/200 %&#125;
+  &#123;% cell 随机头像id, https://baidu.com, https://picsum.photos/id/4/200 %&#125;
+&#123;% endbtns %&#125;
+
+&#123;% btns circle grid5 %&#125;
+  &#123;% cell 随机风景, https://baidu.com,   https://api.ixiaowai.cn/gqapi/gqapi.php %&#125;
+  &#123;% cell 随机风景, https://baidu.com,   https://api.ixiaowai.cn/gqapi/gqapi.php %&#125;
+  &#123;% cell 随机风景, https://baidu.com,   https://api.ixiaowai.cn/gqapi/gqapi.php %&#125;
+  &#123;% cell 随机风景, https://baidu.com,   https://api.ixiaowai.cn/gqapi/gqapi.php %&#125;
+  &#123;% cell 随机风景, https://baidu.com,   https://api.ixiaowai.cn/gqapi/gqapi.php %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="环形图标按钮">环形图标按钮</h1><br/>
+<h2 id="环形图标按钮"><a href="#环形图标按钮" class="headerlink" title="环形图标按钮"></a>环形图标按钮</h2><div class="btns rounded grid5">
+            <a class="button" href='/' title='下载源码'><i class='fa fa-download'></i>下载源码</a>
+<a class="button" href='/' title='查看文档'><i class='fa fa-book'></i>查看文档</a>
+          </div>
+<h3 id="上述事例代码-9"><a href="#上述事例代码-9" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns rounded grid5 %&#125;
+  &#123;% cell 下载源码, /, fa fa-download %&#125;
+  &#123;% cell 查看文档, /, fa fa-book %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="环形图标填充按钮"><a href="#环形图标填充按钮" class="headerlink" title="环形图标填充按钮"></a>环形图标填充按钮</h2><div class="btns rounded grid5 center">
+            <a class="button" href='/' title='下载源码'><i class='fa fa-download'></i>下载源码</a>
+<a class="button" href='/' title='查看文档'><i class='fa fa-book'></i>查看文档</a>
+          </div>
+<h3 id="上述事例代码-10"><a href="#上述事例代码-10" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns rounded grid5 center %&#125;
+  &#123;% cell 下载源码, /, fa fa-download %&#125;
+  &#123;% cell 查看文档, /, fa fa-book %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="环形图标填充按钮-1"><a href="#环形图标填充按钮-1" class="headerlink" title="环形图标填充按钮"></a>环形图标填充按钮</h2><div class="btns rounded grid5 fill">
+            <a class="button" href='/' title='下载源码'><i class='fa fa-download'></i>下载源码</a>
+<a class="button" href='/' title='查看文档'><i class='fa fa-book'></i>查看文档</a>
+          </div>
+
+<h3 id="上述事例代码-11"><a href="#上述事例代码-11" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns rounded grid5 fill %&#125;
+  &#123;% cell 下载源码, /, fa fa-download %&#125;
+  &#123;% cell 查看文档, /, fa fa-book %&#125;
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="圆形图标按钮">圆形图标按钮</h1><br/>
+
+<div class="btns circle center grid5">
+            <a href='/medias/reward/wechat.bmp'>
+  <i class='fa fa-apple'></i>
+  <b>这个是微信</b>
+  <p class='p red'>微信</p>
+  <img src='/medias/reward/wechat.bmp'>
+</a>
+<a target="_blank" rel="noopener" href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'>
+  <i class='fa fa-apple'></i>
+  <b>这个是支付宝</b>
+  <p class='p green'>支付宝</p>
+  <img src='/medias/reward/alipay.bmp'>
+</a>
+          </div>
+<h3 id="上述示例代码-2"><a href="#上述示例代码-2" class="headerlink" title="上述示例代码"></a>上述示例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% btns circle center grid5 %&#125;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/medias/reward/wechat.bmp<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>fa fa-apple<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>这个是微信<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
+    &#123;% p red, 微信 %&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/medias/reward/wechat.bmp<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>fa fa-apple<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>这个是支付宝<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
+    &#123;% p green, 支付宝 %&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/medias/reward/alipay.bmp<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+&#123;% endbtns %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="radio标签演示效果">radio标签演示效果</h1><br/>
+<div class='checkbox'><input type="radio" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="radio" checked="checked"/>
+            <p>支持简单的 <a target="_blank" rel="noopener" href="https://guides.github.com/features/mastering-markdown/">markdown</a> 语法</p>
+            </div>
+<div class='checkbox red'><input type="radio" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green'><input type="radio" />
+            <p>绿色</p>
+            </div>
+<div class='checkbox yellow'><input type="radio" />
+            <p>黄色</p>
+            </div>
+<div class='checkbox cyan'><input type="radio" />
+            <p>青色</p>
+            </div>
+<div class='checkbox blue'><input type="radio" />
+            <p>蓝色</p>
+            </div>
+<div class='checkbox warning'><input type="radio" />
+            <p>warning色</p>
+            </div>
+<div class='checkbox success'><input type="radio" />
+            <p>success色</p>
+            </div>
+<div class='checkbox danger'><input type="radio" />
+            <p>danger色</p>
+            </div>
+<div class='checkbox info'><input type="radio" />
+            <p>info色</p>
+            </div>
+<h3 id="上述事例代码-12"><a href="#上述事例代码-12" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% radio 纯文本测试 %&#125;
+&#123;% radio checked, 支持简单的 <span class="token url">[<span class="token content">markdown</span>](<span class="token url">https://guides.github.com/features/mastering-markdown/</span>)</span> 语法 %&#125;
+&#123;% radio red, 支持自定义颜色 %&#125;
+&#123;% radio green, 绿色 %&#125;
+&#123;% radio yellow, 黄色 %&#125;
+&#123;% radio cyan, 青色 %&#125;
+&#123;% radio blue, 蓝色 %&#125;
+&#123;% radio warning, warning色 %&#125;
+&#123;% radio success, success色 %&#125;
+&#123;% radio danger, danger色 %&#125;
+&#123;% radio info, info色 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 class="bamboo-h " id="CheckBox图形示例">CheckBox图形示例</h1><br/>
+
+<div class='checkbox'><input type="checkbox" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="checkbox" checked="checked"/>
+            <p>支持简单的 <a target="_blank" rel="noopener" href="https://guides.github.com/features/mastering-markdown/">markdown</a> 语法</p>
+            </div>
+<div class='checkbox red'><input type="checkbox" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p>绿色 + 默认选中</p>
+            </div>
+<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
+            <p>黄色 + 默认选中</p>
+            </div>
+<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
+            <p>青色 + 默认选中</p>
+            </div>
+<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
+            <p>蓝色 + 默认选中</p>
+            </div>
+<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
+            <p>增加</p>
+            </div>
+<div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>
+            <p>减少</p>
+            </div>
+<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
+            <p>叉</p>
+            </div>
+<h3 id="上述示例代码-3"><a href="#上述示例代码-3" class="headerlink" title="上述示例代码"></a>上述示例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% checkbox 纯文本测试 %&#125;
+&#123;% checkbox checked, 支持简单的 <span class="token url">[<span class="token content">markdown</span>](<span class="token url">https://guides.github.com/features/mastering-markdown/</span>)</span> 语法 %&#125;
+&#123;% checkbox red, 支持自定义颜色 %&#125;
+&#123;% checkbox green checked, 绿色 + 默认选中 %&#125;
+&#123;% checkbox yellow checked, 黄色 + 默认选中 %&#125;
+&#123;% checkbox cyan checked, 青色 + 默认选中 %&#125;
+&#123;% checkbox blue checked, 蓝色 + 默认选中 %&#125;
+&#123;% checkbox plus green checked, 增加 %&#125;
+&#123;% checkbox minus yellow checked, 减少 %&#125;
+&#123;% checkbox times red checked, 叉 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="tab示例">tab示例</h1><br/>
+
+<h2 id="tab标签示例如下"><a href="#tab标签示例如下" class="headerlink" title="tab标签示例如下"></a>tab标签示例如下</h2><div class="tabs" id="tab-id"><ul class="nav-tabs"><li class="tab active"><a class="#tab-id-1">栏目1</a></li><li class="tab"><a class="#tab-id-2">栏目2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-id-1"><p>这是栏目1的内容</p></div><div class="tab-pane" id="tab-id-2"><p>这是栏目2的内容，以后要记得怎么写</p></div></div></div>
+
+<h3 id="上述示例代码-4"><a href="#上述示例代码-4" class="headerlink" title="上述示例代码"></a>上述示例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs tab-id %&#125;
+
+<span class="token comment">&lt;!-- tab 栏目1 --></span>
+
+这是栏目1的内容
+
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab 栏目2 --></span>
+
+这是栏目2的内容，以后要记得怎么写
+
+<span class="token comment">&lt;!-- endtab --></span>
+
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h1 class="bamboo-h " id="folding效果">folding效果</h1><br/>
+<h2 id="图片折叠"><a href="#图片折叠" class="headerlink" title="图片折叠"></a>图片折叠</h2><details ><summary pointer> 查看图片测试 </summary>
+              <div class='content'>
+              <p><img src="https://pic4.zhimg.com/80/v2-5e0b1aaa1994f6d7cb9aac94a6f4e0b3_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-5e0b1aaa1994f6d7cb9aac94a6f4e0b3_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+              </div>
+            </details>
+<h3 id="上述事例代码-13"><a href="#上述事例代码-13" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% folding 查看图片测试 %&#125;
+  ![](https://pic4.zhimg.com/80/v2-5e0b1aaa1994f6d7cb9aac94a6f4e0b3_1440w.jpg)
+&#123;% endfolding %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="默认打开的折叠框"><a href="#默认打开的折叠框" class="headerlink" title="默认打开的折叠框"></a>默认打开的折叠框</h2><details cyan open><summary pointer> 查看默认打开的折叠框 </summary>
+              <div class='content'>
+              <p>这是一个默认打开的折叠框。</p>
+              </div>
+            </details>
+<h3 id="上述事例代码-14"><a href="#上述事例代码-14" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% folding cyan open, 查看默认打开的折叠框 %&#125;
+
+  这是一个默认打开的折叠框。
+
+&#123;% endfolding %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="代码折叠"><a href="#代码折叠" class="headerlink" title="代码折叠"></a>代码折叠</h2><details green><summary pointer> 查看代码测试 </summary>
+              <div class='content'>
+              <p>这里写代码高亮部分</p>
+              </div>
+            </details>
+<p>###上述事例代码</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% folding green, 查看代码测试 %&#125;
+这里写代码高亮部分
+&#123;% endfolding %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="列表折叠"><a href="#列表折叠" class="headerlink" title="列表折叠"></a>列表折叠</h2><details yellow><summary pointer> 查看列表测试 </summary>
+              <div class='content'>
+              <ul><li>haha</li><li>hehe</li></ul>
+              </div>
+            </details>
+<p>###上述事例代码</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% folding yellow, 查看列表测试 %&#125;
+
+  <span class="token list punctuation">-</span> haha
+  <span class="token list punctuation">-</span> hehe
+
+&#123;% endfolding %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="嵌套折叠"><a href="#嵌套折叠" class="headerlink" title="嵌套折叠"></a>嵌套折叠</h2><details red><summary pointer> 查看嵌套测试 </summary>
+              <div class='content'>
+              <details blue><summary pointer> 查看嵌套测试2 </summary>              <div class='content'>              <details ><summary pointer> 查看嵌套测试3 </summary>              <div class='content'>              <p>hahaha <span><img src='https://image.dbbqb.com/202101221115/7cdd741907c2ea150d054d24c4da6594/4d0G' ></span></p>              </div>            </details>              </div>            </details>
+              </div>
+            </details>
+<h3 id="上述事例代码-15"><a href="#上述事例代码-15" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% folding red, 查看嵌套测试 %&#125;
+
+&#123;% folding blue, 查看嵌套测试2 %&#125;
+
+&#123;% folding 查看嵌套测试3 %&#125;
+
+hahaha <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>https://image.dbbqb.com/202101221115/7cdd741907c2ea150d054d24c4da6594/4d0G<span class="token punctuation">'</span></span> <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+
+&#123;% endfolding %&#125;
+
+&#123;% endfolding %&#125;
+
+&#123;% endfolding %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="site-card标签演示效果">site-card标签演示效果</h1><br/>
+<div class="site-card-group"><a class="site-card" target="_blank" rel="noopener" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a></div>
+<h3 id="上述事例代码-16"><a href="#上述事例代码-16" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% sitegroup %&#125;
+    &#123;% site 木兮, url=http://www.baidu.com, screenshot=https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg, avatar=https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg, description=这是描述 %&#125;
+    &#123;% site yuang01, url=https://yuang01.gitee.io/, screenshot=https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg, avatar=https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg, description=这是描述哦 %&#125;
+    &#123;% site 木兮, url=http://www.baidu.com, screenshot=https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg, avatar=https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg, description=这是描述 %&#125;
+    &#123;% site yuang01, url=https://yuang01.gitee.io/, screenshot=https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg, avatar=https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg, description=这是描述哦 %&#125;
+    &#123;% site 木兮, url=http://www.baidu.com, screenshot=https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg, avatar=https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg, description=这是描述 %&#125;
+&#123;% endsitegroup %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 class="bamboo-h " id="timeline时间线标签演示效果">timeline时间线标签演示效果</h1><br/>
+<div class="timeline">
+    <div class="timenode"><div class="meta"><p><p>2021-01-01 <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">1.0.3 -&gt; 1.0.3</a></p>
+</p></div><div class="body"><ol><li>我是一个测试文字<code>ghghgh</code>。</li><li>我是一个测试问题二’qweqw’，请问企鹅请问请问佛挡杀<code>fgfgf</code>佛第三节课。</li><li>我是一个测试问题三’fgfgfg’，请问企鹅请问请问佛挡杀<code>trtrtr</code>佛第三节课。</li></ol></div></div>
+
+    <div class="timenode"><div class="meta"><p><p>2020-08-15 <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">1.0.2 -&gt; 1.0.2</a></p>
+</p></div><div class="body"><p>这是一段测试文字    </p></div></div>
+
+    <div class="timenode"><div class="meta"><p><p>2020-08-08 <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">1.0.0 -&gt; 1.0.0</a></p>
+</p></div><div class="body"><ol><li>我是一个测试文字<code>ghghgh</code>。</li><li>我是一个测试问题二’qweqw’，请问企鹅请问请问佛挡杀<code>fgfgf</code>佛第三节课。</li><li>我是一个测试问题三’fgfgfg’，请问企鹅请问请问佛挡杀<code>trtrtr</code>佛第三节课。</li></ol></div></div></div>
+
+<h3 id="上述事例代码-17"><a href="#上述事例代码-17" class="headerlink" title="上述事例代码"></a>上述事例代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline %&#125;
+
+<span class="token code keyword">    &#123;% timenode 2021-01-01 [1.0.3 -> 1.0.3](https://github.com/yuang01/hexo-theme-bamboo) %&#125;
+        1. 我是一个测试文字`ghghgh`。
+        2. 我是一个测试问题二'qweqw'，请问企鹅请问请问佛挡杀`fgfgf`佛第三节课。
+        2. 我是一个测试问题三'fgfgfg'，请问企鹅请问请问佛挡杀`trtrtr`佛第三节课。
+    &#123;% endtimenode %&#125;</span>
+
+<span class="token code keyword">    &#123;% timenode 2020-08-15 [1.0.2 -> 1.0.2](https://github.com/yuang01/hexo-theme-bamboo) %&#125;
+        这是一段测试文字
+    &#123;% endtimenode %&#125;</span>
+
+<span class="token code keyword">    &#123;% timenode 2020-08-08 [1.0.0 -> 1.0.0](https://github.com/yuang01/hexo-theme-bamboo) %&#125;
+        1. 我是一个测试文字`ghghgh`。
+        2. 我是一个测试问题二'qweqw'，请问企鹅请问请问佛挡杀`fgfgf`佛第三节课。
+        2. 我是一个测试问题三'fgfgfg'，请问企鹅请问请问佛挡杀`trtrtr`佛第三节课。
+    &#123;% endtimenode %&#125;</span>
+&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Hexo/" class="">
+              Hexo
+            </a>
+          
+            <a href="/tags/markdown/" class="">
+              markdown
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者: 
+    
+        </strong>Fengqi</a>
+    
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" target="_blank" title="主题介绍-文档书写功能">https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">主题介绍-github书写功能</div>
+      </div>
+      
+      <!-- <div class="content">
+        Github用户卡片
+
+上述示例代码&#123;% ghcard jimyfengqi %&#125;
+表格中加入用户卡
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">主题介绍-页面配置</div>
+      </div>
+      <!-- <div class="content">
+        
+注意: icon使用的 Font Awesome 版本为 5.15.3。
+
+页面基本功能
+
+首页轮播图首页轮播图在so
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/reward/alipay.bmp" class="lazyload placeholder" data-srcset="/medias/reward/alipay.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/reward/wechat.bmp" class="lazyload placeholder" data-srcset="/medias/reward/wechat.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || 'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg,https://api.btstu.cn/sjbz/api.php';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/atom.xml"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=215618733"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="#"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:jmps515@163.com"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a target="_blank" rel="noopener" href="https://github.com/fengqi"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+            <!-- 不蒜子统计 -->
+            <div class="footer-busuanzi" >
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+</div>
+
+        
+      
+        
+            <!-- [CNZZ友盟+]统计 -->
+            
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1280461850'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=1280461850&online=1&show=line' ></script>
+    </div>
+
+
+
+
+
+        
+      
+        
+           <!-- copyright info -->
+<div class="footer-copyright">
+    
+        
+         Copyright © 2020 - 2021
+         <a href="https://jimyfengqi.github.io">枫奇丶宛南</a>
+         | Powered by
+         <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a>
+        
+    
+</div>
+
+        
+      
+        
+             <!-- 备案信息+ -->
+             <!-- 备案信息+ -->
+<div class="footer-icp">
+    
+        
+    
+</div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+
+<meting-js
+  class=""
+  server="kugou"
+  type="album"
+  id="1787575"
+  fixed='true'
+  autoplay='true'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h1, h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+
+    <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '120px',
+      duration: '400',
+      interval: '30',
+      scale: '1',   //初始缩放大小，可以大于1,变为逐渐缩小
+      origin: 'bottom', // 动画开始的方向
+      easing: 'ease'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
