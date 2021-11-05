@@ -15,6 +15,7 @@ toc:  false
     {% site emoji网站, url=https://copy.emojiall.com/zh-hans/, avatar=https://copy.emojiall.com/apple-touch-icon-152x152.png, description=一个emoji网站，各种表情！ %}
     {% site Ten-API, url=https://tenapi.cn/, avatar=https://tenapi.cn/favicon.ico, description=免费提供Api服务,提供各种接口 %}
     {% site 博天-API, url=https://api.btstu.cn/, avatar=https://tenapi.cn/favicon.ico, description=免费提供Api服务,提供各种接口 %}
+    {% site 小歪-API, url=https://api.ixiaowai.cn/, avatar=https://api.ixiaowai.cn/favicon.ico, description=图片API网站 %}
     {% site 在线工具, url=https://tool.lu/, avatar=https://tool.lu/favicon.ico, description=一个在线工具集合 %}
 {% endsitegroup %}
 

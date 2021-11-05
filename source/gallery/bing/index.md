@@ -24,7 +24,6 @@ onlyTitle: true
 {% endgallery %}
 {% gallery %}
 ![图片描述](/gallery/bing/2021/08/20211028.jpg)
-![图片描述](/gallery/bing/2021/08/20211029.jpg)
 {% endgallery %}
 <!-- endtab -->
 <!-- tab 10-->
@@ -43,8 +42,16 @@ onlyTitle: true
 {% gallery %}
 ![图片描述](/gallery/bing/2021/10/20211028.jpg)
 ![图片描述](/gallery/bing/2021/10/20211029.jpg)
+![图片描述](/gallery/bing/2021/10/20211030.jpg)
+![图片描述](/gallery/bing/2021/10/20211031.jpg)
 {% endgallery %}
 
+<!-- endtab -->
+<!-- tab 11 -->
+{% gallery %}
+![图片描述](/gallery/bing/2021/11/20211101.jpg)
+![图片描述](/gallery/bing/2021/11/20211102.jpg)
+{% endgallery %}
 <!-- endtab -->
 {% endtabs %}
 <!-- endtab -->

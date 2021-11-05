@@ -74,7 +74,29 @@
         }
     </script>
   <% } %>
-  
+
+  <% if(theme.funnyTitle.on === true ) { %>
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '<%= theme.funnyTitle.leave %>' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '<%= theme.funnyTitle.back %>' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  <% } %>
+
   <%- css('css/animate.min.css') %>
   <%- css('css/style.css') %>
   
@@ -90,7 +112,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="<%- url_for(theme.CDN.paceJs) %>"></script>
     <link href="<%- url_for(theme.CDN.paceCss) %>" rel="stylesheet">
 

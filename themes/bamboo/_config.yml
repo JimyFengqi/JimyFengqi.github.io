@@ -57,7 +57,7 @@ sidebar:
   widget_library:
     side_blogger:
       on: true
-      avatar: http://api.btstu.cn/sjtx/api.php?lx=c1&format=images # 随机获取头像
+      avatar: https://tenapi.cn/acg # 随机获取头像
       shape: rectangle # circle, rectangle
       url: /about/
       title: 一个键盘一片天
@@ -286,6 +286,13 @@ live2d:
   modelId: 3  # 0 or 1 or 2 or 3 or 4 or 5 or 6
   open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
+
+funnyTitle:    # 浏览器搞笑标题
+  on: true     # 控制开启与否
+  leave: ╭(°A°`)╮ 快回来页面崩溃啦 ~   # 离开页面时标题
+  back: 亲，欢迎您回来看我~                    # 返回页面时标题
+
+
 # 首页雪花飘落效果--冬天
 snow:
   on: false
@@ -351,33 +358,42 @@ music:
     - server: netease     # 歌手-张卫-脱胎换骨
       id: 1365053719
       type: song
-    - server: netease     # 专辑-许嵩单曲集-许嵩
-      id: 16959
-      type: album
+#    - server: netease     # 专辑-许嵩单曲集-许嵩
+#      id: 16959
+#      type: album
     - server: netease     #个人歌单
       id: 4888271555
       type: playlist
-    - server: tencent     # 歌手-张卫-机器灵砍菜刀
-      id: 003FaEB64D0QIa
-      type: song
-    - server: tencent     # 歌手-陈奕迅
-      id: 003Nz2So3XXYek
-      type: artist
-    - server: tencent     # 专辑-认了吧-陈奕迅
-      id: 003yQidc3s7P65
-      type: album
+#    - server: tencent     # 歌手-张卫-机器灵砍菜刀
+#      id: 003FaEB64D0QIa
+#      type: song
+#    - server: tencent     # 歌手-陈奕迅
+#      id: 003Nz2So3XXYek
+#      type: artist
+#    - server: tencent     # 专辑-认了吧-陈奕迅
+#      id: 003yQidc3s7P65
+#      type: album
     - server: tencent     #个人歌单
       id: 8197627936
       type: playlist
-    - server: kugou           # 歌手-Gai-兰花草
-      id: 0127069EBDBCF0AD6BF0B60CE873835D
-      type: song
-    - server: kugou           # 歌手-Gai
-      id: 718960
-      type: artist
-    - server: kugou         # 专辑-一万个理由-郑源
-      id: 1787575
-      type: album
+#    - server: kugou           # 歌手-Gai-兰花草
+#      id: 0127069EBDBCF0AD6BF0B60CE873835D
+#      type: song
+#    - server: kugou           # 歌手-Gai
+#      id: 718960
+#      type: artist
+#    - server: kugou         # 专辑-一万个理由-郑源
+#      id: 1787575
+#      type: album
+    - server: kugou         # 华语经典 90后青春回忆
+      id: 3428290
+      type: playlist
+    - server: kugou         # 外语经典
+      id: 3302755
+      type: playlist
+    - server: kugou         # 华语经典 80后青春回忆
+      id: 3947131
+      type: playlist
     - server: kugou         #个人歌单
       id: 3947753
       type: playlist
@@ -408,8 +424,8 @@ projects:
     hexo-theme-matery:
       icon: fas fa-rocket
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: http://github.com/blinkfox/hexo-theme-matery
-      desc: 一个采用 Material Design 和响应式设计的 Hexo 博客主题。
+      url: http://github.com/jimyfengqi/hexo-theme-matery
+      desc: 一个响应式设计的 Hexo 博客主题。
     Fenix:
       icon: fas fa-database
       iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
@@ -441,29 +457,29 @@ projects:
 skills:  # color or #000 技能
   on: true
   data: # data下面的值，不是固定个数的，可以自己增加或者删除
-    C:
-      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 85%
-    Ruby:
-      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
     Python:
-      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
+      background: 'linear-gradient(to right, #FF00D4 0%, #FF002C 100%)'
       percent: 90%
+    C:
+      background: 'linear-gradient(to right, #00256B 0%, #FF0046 100%)'
+      percent: 80%
+    Ruby:
+      background: 'linear-gradient(to right, #FF00F3 0%, #FF05F5 100%)'
+      percent: 80%
     Java:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 70%
+      percent: 75%
     SQL:
-      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 90%
+      background: 'linear-gradient(to right, #4AAF50 0%, #81C784 100%)'
+      percent: 80%
     MySQL:
-      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 90%
+      background: 'linear-gradient(to right, #4BAF50 0%, #81D884 100%)'
+      percent: 80%
     MongoDb:
-      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
+      background: 'linear-gradient(to right, #FFBF50 0%, #FFEA84 100%)'
       percent: 90%
     Redis:
-      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
+      background: 'linear-gradient(to right, #EECF50 0%, #EED784 100%)'
       percent: 90%
     JavaScript:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
@@ -475,10 +491,10 @@ skills:  # color or #000 技能
       background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
       percent: 70%
     Node.js:
-      background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
+      background: 'linear-gradient(to right, #DDe97b 0%, #DDf9d7 100%)'
       percent: 40%
     React:
-      background: 'linear-gradient(to top, #FFEB3B 0%, #FFF176 100%)'
+      background: 'linear-gradient(to right, #ACEB3B 0%, #CEF176 100%)'
       percent: 50%
     Vue:
       background: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
@@ -499,7 +515,7 @@ socialAccounts:
 
 # 关于我 游戏
 games:
-  on: true
+  on: false
   data: # data下面的值，不是固定个数的，可以自己增加或者删除
      王者荣耀:
        img: 'https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c'
@@ -510,7 +526,7 @@ games:
 
 # 关于我 书籍
 books:
-  on: true
+  on: false
   data: # data下面的值，不是固定个数的，可以自己增加或者删除
    明朝那些事儿:
      img: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg'
@@ -906,21 +922,21 @@ import:
 
 # 文章图片,不指定 img:xxx 的时候随机取下面的图片
 imgs:
-- '/medias/1.jpg'
-- '/medias/2.jpg'
-- '/medias/3.jpg'
-- '/medias/4.jpg'
-- '/medias/5.jpg'
-- '/medias/6.jpg'
-- '/medias/7.jpg'
-- '/medias/8.jpg'
-- '/medias/9.jpg'
-- '/medias/10.jpg'
-- '/medias/11.jpg'
-- '/medias/12.jpg'
-- '/medias/13.jpg'
-- '/medias/14.jpg'
-- '/medias/15.jpg'
+- '/medias/defaultImage/1.jpg'
+- '/medias/defaultImage/2.jpg'
+- '/medias/defaultImage/3.jpg'
+- '/medias/defaultImage/4.jpg'
+- '/medias/defaultImage/5.jpg'
+- '/medias/defaultImage/6.jpg'
+- '/medias/defaultImage/7.jpg'
+- '/medias/defaultImage/8.jpg'
+- '/medias/defaultImage/9.jpg'
+- '/medias/defaultImage/10.jpg'
+- '/medias/defaultImage/11.jpg'
+- '/medias/defaultImage/12.jpg'
+- '/medias/defaultImage/13.jpg'
+- '/medias/defaultImage/14.jpg'
+- '/medias/defaultImage/15.jpg'
 
 CDN:
   valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
