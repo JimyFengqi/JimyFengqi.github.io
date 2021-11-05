@@ -1,5 +1,5 @@
 ---
-title: gudian
+title: bing每日图片
 date: 2021-10-20 17:48:24
 toc: false
 img: https://pic1.zhimg.com/80/v2-92cc20bdf4674b6c6337478bb06657b3_1440w.jpg?source=1940ef5c

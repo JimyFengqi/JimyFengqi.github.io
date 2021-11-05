@@ -85,7 +85,18 @@ home_widget:
     icon_color: blue
     url: /
     background: '#fff'
-    html: '<img src="https://api.amogu.cn/api/ipimg/" style="width:100%">'
+    html: '
+    <div id="ip_welcome" class="ip_welcome">
+      <img src="https://api.amogu.cn/api/ipimg/" >
+      <div id="soul">
+          <h2>干了这碗毒鸡汤</h2>
+          <p><span>{{content}}</span></p>
+          <button @click="change()">再 来 一 碗 </button>
+      </div>
+    </div>
+    <link href="/custom_widget/soul/index.css" rel="stylesheet">
+    <script data-pjax src="/custom_widget/soul/index.js"></script>
+    '
 
   - class_name: my_github_container # github日历
     id_name: my_github_container
