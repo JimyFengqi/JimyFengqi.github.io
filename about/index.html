@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -745,7 +767,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10"]
+            data: ["2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11"]
         },
         yAxis: {
             type: 'value',
@@ -755,7 +777,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -916,14 +938,14 @@
                 
                 <div class="col s12 m6 l4 reveal" >
                     <div class="info center-align reveal">
-                        <a href="http://github.com/blinkfox/hexo-theme-matery" class="icon"
+                        <a href="http://github.com/jimyfengqi/hexo-theme-matery" class="icon"
                            style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
                             <i class="fas fa-rocket"></i>
                         </a>
                         <div class="info-title">
-                            <a href="http://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+                            <a href="http://github.com/jimyfengqi/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
                         </div>
-                        <div class="info-desc">一个采用 Material Design 和响应式设计的 Hexo 博客主题。</div>
+                        <div class="info-desc">一个响应式设计的 Hexo 博客主题。</div>
                     </div>
                 </div>
                 
@@ -1005,57 +1027,57 @@
 			
 			
 			<div class="bar-box">
-				<span class="bar-name">C</span>
-				<div class="bar" style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 85%"></div>
-				<span class="bar-number">85%</span>
+				<span class="bar-name">Python</span>
+				<div class="bar" style="background: linear-gradient(to right, #FF00D4 0%, #FF002C 100%); width: 90%"></div>
+				<span class="bar-number">90%</span>
 			</div>
 			
 			
 			<div class="bar-box">
-				<span class="bar-name">Ruby</span>
-				<div class="bar" style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 80%"></div>
+				<span class="bar-name">C</span>
+				<div class="bar" style="background: linear-gradient(to right, #00256B 0%, #FF0046 100%); width: 80%"></div>
 				<span class="bar-number">80%</span>
 			</div>
 			
 			
 			<div class="bar-box">
-				<span class="bar-name">Python</span>
-				<div class="bar" style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 90%"></div>
-				<span class="bar-number">90%</span>
+				<span class="bar-name">Ruby</span>
+				<div class="bar" style="background: linear-gradient(to right, #FF00F3 0%, #FF05F5 100%); width: 80%"></div>
+				<span class="bar-number">80%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">Java</span>
-				<div class="bar" style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 70%"></div>
-				<span class="bar-number">70%</span>
+				<div class="bar" style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 75%"></div>
+				<span class="bar-number">75%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">SQL</span>
-				<div class="bar" style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%"></div>
-				<span class="bar-number">90%</span>
+				<div class="bar" style="background: linear-gradient(to right, #4AAF50 0%, #81C784 100%); width: 80%"></div>
+				<span class="bar-number">80%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">MySQL</span>
-				<div class="bar" style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%"></div>
-				<span class="bar-number">90%</span>
+				<div class="bar" style="background: linear-gradient(to right, #4BAF50 0%, #81D884 100%); width: 80%"></div>
+				<span class="bar-number">80%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">MongoDb</span>
-				<div class="bar" style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%"></div>
+				<div class="bar" style="background: linear-gradient(to right, #FFBF50 0%, #FFEA84 100%); width: 90%"></div>
 				<span class="bar-number">90%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">Redis</span>
-				<div class="bar" style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%"></div>
+				<div class="bar" style="background: linear-gradient(to right, #EECF50 0%, #EED784 100%); width: 90%"></div>
 				<span class="bar-number">90%</span>
 			</div>
 			
@@ -1083,14 +1105,14 @@
 			
 			<div class="bar-box">
 				<span class="bar-name">Node.js</span>
-				<div class="bar" style="background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); width: 40%"></div>
+				<div class="bar" style="background: linear-gradient(to right, #DDe97b 0%, #DDf9d7 100%); width: 40%"></div>
 				<span class="bar-number">40%</span>
 			</div>
 			
 			
 			<div class="bar-box">
 				<span class="bar-name">React</span>
-				<div class="bar" style="background: linear-gradient(to top, #FFEB3B 0%, #FFF176 100%); width: 50%"></div>
+				<div class="bar" style="background: linear-gradient(to right, #ACEB3B 0%, #CEF176 100%); width: 50%"></div>
 				<span class="bar-number">50%</span>
 			</div>
 			
@@ -1160,78 +1182,6 @@
 
 	
 	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-book" aria-hidden="true"></i>&nbsp;&nbsp;书籍
-		</div>
-		<div class="books">
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						明朝那些事儿
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://pic2.zhimg.com/50/v2-6f33f60312de25ddcb795fc81ee91b38_720w.jpg?source=54b3c3a5" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/50/v2-6f33f60312de25ddcb795fc81ee91b38_720w.jpg?source=54b3c3a5" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						春秋左传
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=710999414,899378807&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=710999414,899378807&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						孙子兵法
-					</div>
-				</div>
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;游戏
-		</div>
-		<div class="games">
-			
-				<div class="game-item">
-					<div class="logo">
-						<img src="https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						王者荣耀
-					</div>
-				</div>
-			
-				<div class="game-item">
-					<div class="logo">
-						<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1909008358,1888649581&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1909008358,1888649581&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						英雄杀
-					</div>
-				</div>
-			
-				<div class="game-item">
-					<div class="logo">
-						<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-					</div>
-					<div class="name">
-						英雄联盟
-					</div>
-				</div>
-			
-		</div>
-	</div>
 	
 </div>
       </main>
@@ -1457,9 +1407,9 @@
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3302755"
   fixed='true'
   autoplay='true'
   theme='#42b983'

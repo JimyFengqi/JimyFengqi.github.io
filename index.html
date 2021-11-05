@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -739,11 +761,11 @@
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/14.jpg" style=" background-size: 300000px; 
+            <div class="item swiper-lazy" data-background="/medias/defaultImage/14.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/14.jpg" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="/medias/defaultImage/14.jpg" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -768,11 +790,11 @@
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/5.jpg" style=" background-size: 300000px; 
+            <div class="item swiper-lazy" data-background="/medias/defaultImage/5.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/5.jpg" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="/medias/defaultImage/5.jpg" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -800,11 +822,11 @@
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/3.jpg" style=" background-size: 300000px; 
+            <div class="item swiper-lazy" data-background="/medias/defaultImage/3.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/3.jpg" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="/medias/defaultImage/3.jpg" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -829,11 +851,11 @@
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/1.jpg" style=" background-size: 300000px; 
+            <div class="item swiper-lazy" data-background="/medias/defaultImage/1.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/1.jpg" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="/medias/defaultImage/1.jpg" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -858,11 +880,11 @@
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/12.jpg" style=" background-size: 300000px; 
+            <div class="item swiper-lazy" data-background="/medias/defaultImage/12.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/12.jpg" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="/medias/defaultImage/12.jpg" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -1632,7 +1654,7 @@
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1657,7 +1679,7 @@
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1680,7 +1702,7 @@ title
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1704,7 +1726,7 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/3.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1728,7 +1750,7 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/1.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1754,7 +1776,7 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 					
 					<div class="article" style="background-size: cover; 
 						background-position: center center;">
-						<img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+						<img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
 					</div>
 					<div class="text">
 						<div class="text-main">
@@ -1790,14 +1812,33 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
     <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-26</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/">主题介绍-侧边栏功能</a>
           </div>
+          <div class="post-content">
+            
+首页侧边栏支持的版本为 v2.6.0+
+
+默认的侧边栏在主题的config.yml文件中配置
+# sidebar侧边栏
+sidebar:
+  on: true
+  position: left # left right
+  widget_
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-26</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -1816,34 +1857,15 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            
-首页侧边栏支持的版本为 v2.6.0+
-
-默认的侧边栏在主题的config.yml文件中配置
-# sidebar侧边栏
-sidebar:
-  on: true
-  position: left # left right
-  widget_
-          </div>
-        </div>
-        <div class="post-more">
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1852,14 +1874,29 @@ sidebar:
     <article class="post reveal" style="   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-25</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/">主题介绍-文章Front-matter</a>
           </div>
+          <div class="post-content">
+            文章 Front-matter 介绍这个指的是你在你的文章页面里面写的参数，针对的是这一篇文章，例如
+---
+title: Hexo主题--Bamboo介绍
+date: 2021-10-24 14:06
+swiper: true # 将改文
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-25</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -1878,30 +1915,15 @@ sidebar:
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            文章 Front-matter 介绍这个指的是你在你的文章页面里面写的参数，针对的是这一篇文章，例如
----
-title: Hexo主题--Bamboo介绍
-date: 2021-10-24 14:06
-swiper: true # 将改文
-          </div>
-        </div>
-        <div class="post-more">
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1910,14 +1932,28 @@ swiper: true # 将改文
     <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-24</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/">主题介绍-媒体文件书写功能</a>
           </div>
+          <div class="post-content">
+            getFile文件写法
+getFile文件功能会把某个文件夹下的文件显示在页面上。例如我在source文件夹下，创建了一个叫做img的文件夹，把img的文件夹下的文件显示在页面上。
+
+  注意： 必须要在source文件夹下，文件夹名称可以
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-24</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -1936,29 +1972,15 @@ swiper: true # 将改文
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            getFile文件写法
-getFile文件功能会把某个文件夹下的文件显示在页面上。例如我在source文件夹下，创建了一个叫做img的文件夹，把img的文件夹下的文件显示在页面上。
-
-  注意： 必须要在source文件夹下，文件夹名称可以
-          </div>
-        </div>
-        <div class="post-more">
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1967,37 +1989,8 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
     <article class="post reveal" style="   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-24</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/">主题介绍-github书写功能</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/">本站介绍</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
           </div>
           <div class="post-content">
             Github用户卡片
@@ -2025,33 +2018,19 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
 上述示例代码| &#123;% ghcard jimyfengqi %&#12
           </div>
-        </div>
-        <div class="post-more">
-          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-23</span>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
           </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/">主题介绍-文档书写功能</a>
-          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-24</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -2070,11 +2049,25 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
+          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/">主题介绍-文档书写功能</a>
           </div>
           <div class="post-content">
             我是标题，1级标题
@@ -2083,38 +2076,24 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 上述事例代码&#123;% titleB h1, 我是标题， 1级标题 %&#125;
 &#123;% titleB h2, 我是标题， 2级标题, #895546 %&#12
           </div>
-        </div>
-        <div class="post-more">
-          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-13</span>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/3.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
           </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/">主题介绍-页面配置</a>
-          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-23</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
 
             </div>
             <div class="post-categories">
@@ -2128,11 +2107,25 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
+          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/3.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/">主题介绍-页面配置</a>
           </div>
           <div class="post-content">
             
@@ -2142,33 +2135,19 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
 首页轮播图首页轮播图在source/_posts/xxx.md也就是文章页面配置，如果你想让某个文章放在首页轮播中，只用设置swiper: tru
           </div>
-        </div>
-        <div class="post-more">
-          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-12</span>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/1.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
           </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/">主题介绍-基本配置</a>
-          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-13</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -2187,11 +2166,25 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
+          <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/1.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/">主题介绍-基本配置</a>
           </div>
           <div class="post-content">
             这是一款HEXO主题
@@ -2203,17 +2196,46 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 首先你需要有一个 Hexo ，按照官网的指导做法，很容易的就能创建一个hexo博客。
 Github安装Gitee安装npm安装当你有
           </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
         </div>
-        <div class="post-more">
+        <div class="post-more" line_style="solid">
+          <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-12</span>
+            </div>
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/">本站介绍</a>
+</div>
+
+
+            </div>
+          </div>
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -2232,7 +2254,7 @@ Github安装Gitee安装npm安装当你有
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='http://api.btstu.cn/sjtx/api.php?lx=c1&format=images'/>
+          <img src='https://tenapi.cn/acg'/>
         </a>
       
     
@@ -2392,7 +2414,7 @@ Github安装Gitee安装npm安装当你有
             <div class="post-img-box">
               <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -2413,7 +2435,7 @@ Github安装Gitee安装npm安装当你有
             <div class="post-img-box">
               <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -2434,7 +2456,7 @@ Github安装Gitee安装npm安装当你有
             <div class="post-img-box">
               <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -2455,7 +2477,7 @@ Github安装Gitee安装npm安装当你有
             <div class="post-img-box">
               <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -2476,7 +2498,7 @@ Github安装Gitee安装npm安装当你有
             <div class="post-img-box">
               <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/3.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -2561,8 +2583,8 @@ Github安装Gitee安装npm安装当你有
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Oct 29 2021 23:51:36 GMT+0800 (China Standard Time)</div>
-            <div id="last-update-show">2021-10-29 日</div>
+            <div id="last-update" style="display: none;">Fri Nov 05 2021 09:50:31 GMT+0800 (China Standard Time)</div>
+            <div id="last-update-show">2021-11-05 日</div>
           
         </div>
         
@@ -2612,7 +2634,7 @@ Github安装Gitee安装npm安装当你有
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-29 日';
+            document.getElementById('last-update-show').innerHTML = '2021-11-05 日';
           }
         </script>
         
@@ -2654,7 +2676,7 @@ Github安装Gitee安装npm安装当你有
         
       </header>
       <div class="content">
-         <div style="text-align: center;"> <img src="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" class="lazyload placeholder" data-srcset="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" /> <svg viewbox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="15" height="15" class="my-face"> <path d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z" fill="#515151" /> </svg> <img src="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" class="lazyload placeholder" data-srcset="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-left: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" /><br /> <span id="htmer_time"></span> </div>
+         <div style="text-align: center;"> <img src="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" class="lazyload placeholder" data-srcset="http://api.btstu.cn/sjtx/api.php?lx=c1&format=images" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" /> <svg viewbox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="15" height="15" class="my-face"> <path d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z" fill="#515151" /> </svg> <img src="https://api.ixiaowai.cn/api/api.php" class="lazyload placeholder" data-srcset="https://api.ixiaowai.cn/api/api.php" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-left: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" /><br /> <span id="htmer_time"></span> </div>
 <script data-pjax src="/custom_widget/love/index.js"></script> 
       </div>
   </div>
@@ -2899,9 +2921,9 @@ Github安装Gitee安装npm安装当你有
 
 <meting-js
   class=""
-  server="netease"
+  server="kugou"
   type="playlist"
-  id="4888271555"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

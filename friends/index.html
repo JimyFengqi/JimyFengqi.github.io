@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -697,7 +719,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/2.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/defaultImage/2.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -720,7 +742,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 91 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 101 |
           </span>
   
           <span class="min2read">
@@ -750,7 +772,8 @@
       <div class="post-content">
         <h1 id="个人收藏链接"><a href="#个人收藏链接" class="headerlink" title="个人收藏链接"></a>个人收藏链接</h1><div class="site-card-group"><a class="site-card" target="_blank" rel="noopener" href="https://zhousiwei.gitee.io"><div class="img"><img src="https://zhousiwei.gitee.io/favicon.ico" class="lazyload placeholder" data-srcset="https://zhousiwei.gitee.io/favicon.ico" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://zhousiwei.gitee.io/img/head.jpg" class="lazyload placeholder" data-srcset="https://zhousiwei.gitee.io/img/head.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">試毅-思伟</span><span class="desc">不浮躁，不偏激，爱编程，爱后端，爱新技术，爱运动，执行力和学习能力都棒棒哒！</span></div></a>
 <a class="site-card" target="_blank" rel="noopener" href="https://xcoder.in/"><div class="img"><img src="https://xcoder.in/images/avatar.gif" class="lazyload placeholder" data-srcset="https://xcoder.in/images/avatar.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://xcoder.in/images/avatar.gif" class="lazyload placeholder" data-srcset="https://xcoder.in/images/avatar.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">艾克斯の编码者</span><span class="desc">一个伪宅级别的码畜</span></div></a>
-<a class="site-card" target="_blank" rel="noopener" href="https://www.a2data.cn"><div class="img"><img src="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">A2Data</span><span class="desc">武术跨行大数据，用技术推动梦想的落地！</span></div></a></div>
+<a class="site-card" target="_blank" rel="noopener" href="https://www.a2data.cn"><div class="img"><img src="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">A2Data</span><span class="desc">武术跨行大数据，用技术推动梦想的落地！</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="https://www.yshawlon.cn"><div class="img"><img src="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2019/06/01/24logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/></div><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%A4%B4%E5%83%8F/%E5%A4%B4%E5%83%8F.jpg" class="lazyload placeholder" data-srcset="https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%A4%B4%E5%83%8F/%E5%A4%B4%E5%83%8F.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">shawlon</span><span class="desc">基于blinkfox主题搭建的博客</span></div></a></div>
 
 
 <h2 id="来自Github的小伙伴们"><a href="#来自Github的小伙伴们" class="headerlink" title="来自Github的小伙伴们"></a>来自Github的小伙伴们</h2><div class="issues-api sites"api="https://api.github.com/repos/yuang01/friends/issues?sort=updated&state=open&page=1&per_page=100&labels=active"></div>
@@ -1306,9 +1329,9 @@
 
 <meting-js
   class=""
-  server="netease"
-  type="album"
-  id="16959"
+  server="kugou"
+  type="playlist"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

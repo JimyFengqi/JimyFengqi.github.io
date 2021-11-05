@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -780,15 +802,15 @@
     <div id="div_tag" class="card">
         <div id="tag-wordcloud" class="card-content"></div>
         
-          <a href=/tags/Hexo/ style="color:#0099CC"> Hexo 6</a>
+          <a href=/tags/Hexo/ style="color:#00CCCC"> Hexo 6</a>
         
-          <a href=/tags/markdown/ style="color:#3300CC"> markdown 4</a>
+          <a href=/tags/markdown/ style="color:#CCCC99"> markdown 4</a>
         
-          <a href=/tags/热搜榜/ style="color:#00CC33"> 热搜榜 1</a>
+          <a href=/tags/热搜榜/ style="color:#CC0000"> 热搜榜 1</a>
         
-          <a href=/tags/widget/ style="color:#CC3333"> widget 1</a>
+          <a href=/tags/widget/ style="color:#666600"> widget 1</a>
         
-          <a href=/tags/media/ style="color:#333300"> media 1</a>
+          <a href=/tags/media/ style="color:#33CC33"> media 1</a>
         
     </div>
 </div>
@@ -1019,9 +1041,9 @@
 
 <meting-js
   class=""
-  server="netease"
-  type="album"
-  id="16959"
+  server="kugou"
+  type="playlist"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

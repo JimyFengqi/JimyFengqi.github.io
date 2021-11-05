@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -722,7 +744,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="必应壁纸"><a href="#必应壁纸" class="headerlink" title="必应壁纸"></a>必应壁纸</h1><div class="tabs" id="tab-2"><ul class="nav-tabs"><li class="tab active"><a class="#tab-2-1">2021</a></li><li class="tab"><a class="#tab-2-2">2022</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-2-1"><div class="tabs" id="tab-3"><ul class="nav-tabs"><li class="tab active"><a class="#tab-3-1">08</a></li><li class="tab"><a class="#tab-3-2">10</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-3-1"><div class="gallery ">
+        <h1 id="必应壁纸"><a href="#必应壁纸" class="headerlink" title="必应壁纸"></a>必应壁纸</h1><div class="tabs" id="tab-2"><ul class="nav-tabs"><li class="tab active"><a class="#tab-2-1">2021</a></li><li class="tab"><a class="#tab-2-2">2022</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-2-1"><div class="tabs" id="tab-3"><ul class="nav-tabs"><li class="tab active"><a class="#tab-3-1">08</a></li><li class="tab"><a class="#tab-3-2">10</a></li><li class="tab"><a class="#tab-3-3">11</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-3-1"><div class="gallery ">
               <p><img src="/gallery/bing/2021/08/20211022.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211022.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/08/20211023.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211023.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div>
 
@@ -730,7 +752,7 @@
               <p><img src="/gallery/bing/2021/08/20211024.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211024.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/08/20211025.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211025.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/08/20211026.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211026.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/08/20211027.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211027.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div>
 <div class="gallery ">
-              <p><img src="/gallery/bing/2021/08/20211028.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211028.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/08/20211029.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211029.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
+              <p><img src="/gallery/bing/2021/08/20211028.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/08/20211028.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div></div><div class="tab-pane" id="tab-3-2"><div class="gallery ">
               <p><img src="/gallery/bing/2021/10/20211022.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211022.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211023.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211023.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div>
@@ -739,7 +761,9 @@
               <p><img src="/gallery/bing/2021/10/20211024.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211024.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211025.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211025.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211026.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211026.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211027.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211027.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div>
 <div class="gallery ">
-              <p><img src="/gallery/bing/2021/10/20211028.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211028.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211029.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211029.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
+              <p><img src="/gallery/bing/2021/10/20211028.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211028.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211029.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211029.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211030.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211030.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/10/20211031.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/10/20211031.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
+            </div></div><div class="tab-pane" id="tab-3-3"><div class="gallery ">
+              <p><img src="/gallery/bing/2021/11/20211101.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/11/20211101.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"><br><img src="/gallery/bing/2021/11/20211102.jpg" class="lazyload placeholder" data-srcset="/gallery/bing/2021/11/20211102.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图片描述"></p>
             </div></div></div></div></div><div class="tab-pane" id="tab-2-2"></div></div></div>
 
 
@@ -1296,7 +1320,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3947753"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

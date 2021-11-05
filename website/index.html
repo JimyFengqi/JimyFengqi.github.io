@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -697,7 +719,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/defaultImage/6.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -720,7 +742,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 85 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 92 |
           </span>
   
           <span class="min2read">
@@ -751,6 +773,7 @@
         <div class="tabs" id="tab-website"><ul class="nav-tabs"><li class="tab active"><a class="#tab-website-1">工具类网站</a></li><li class="tab"><a class="#tab-website-2">视频网站</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-website-1"><div class="site-card-group"><a class="site-card" target="_blank" rel="noopener" href="https://copy.emojiall.com/zh-hans/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://copy.emojiall.com/apple-touch-icon-152x152.png" class="lazyload placeholder" data-srcset="https://copy.emojiall.com/apple-touch-icon-152x152.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">emoji网站</span><span class="desc">一个emoji网站，各种表情！</span></div></a>
 <a class="site-card" target="_blank" rel="noopener" href="https://tenapi.cn/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://tenapi.cn/favicon.ico" class="lazyload placeholder" data-srcset="https://tenapi.cn/favicon.ico" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">Ten-API</span><span class="desc">免费提供Api服务,提供各种接口</span></div></a>
 <a class="site-card" target="_blank" rel="noopener" href="https://api.btstu.cn/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://tenapi.cn/favicon.ico" class="lazyload placeholder" data-srcset="https://tenapi.cn/favicon.ico" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">博天-API</span><span class="desc">免费提供Api服务,提供各种接口</span></div></a>
+<a class="site-card" target="_blank" rel="noopener" href="https://api.ixiaowai.cn/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://api.ixiaowai.cn/favicon.ico" class="lazyload placeholder" data-srcset="https://api.ixiaowai.cn/favicon.ico" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">小歪-API</span><span class="desc">图片API网站</span></div></a>
 <a class="site-card" target="_blank" rel="noopener" href="https://tool.lu/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://tool.lu/favicon.ico" class="lazyload placeholder" data-srcset="https://tool.lu/favicon.ico" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">在线工具</span><span class="desc">一个在线工具集合</span></div></a></div></div><div class="tab-pane" id="tab-website-2"><div class="site-card-group"><a class="site-card" target="_blank" rel="noopener" href="https://mixkit.co/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://mixkit.co/build/favicons/favicon-96x96-b47a57aea9303a5f92e644e78aa343575b21f12b38d469be00fdc5acd983684d.png" class="lazyload placeholder" data-srcset="https://mixkit.co/build/favicons/favicon-96x96-b47a57aea9303a5f92e644e78aa343575b21f12b38d469be00fdc5acd983684d.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">免费视频网站mixkit</span><span class="desc">免费提供Api服务,提供各种接口</span></div></a>
 <a class="site-card" target="_blank" rel="noopener" href="https://coverr.co/"><div class="info style="background: rgb(0, 0, 0) center center""><img src="https://coverr.co/favicon-32x32.png" class="lazyload placeholder" data-srcset="https://coverr.co/favicon-32x32.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"/><span class="title">coverr</span><span class="desc">Beautiful Free Stock Video Footage</span></div></a></div></div></div></div>
       </div>
@@ -1303,9 +1326,9 @@
 
 <meting-js
   class=""
-  server="tencent"
-  type="playlist"
-  id="8197627936"
+  server="netease"
+  type="song"
+  id="1365053719"
   fixed='true'
   autoplay='true'
   theme='#42b983'

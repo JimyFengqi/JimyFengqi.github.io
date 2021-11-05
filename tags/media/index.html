@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -774,14 +796,28 @@
     <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-24</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/">主题介绍-媒体文件书写功能</a>
           </div>
+          <div class="post-content">
+            getFile文件写法
+getFile文件功能会把某个文件夹下的文件显示在页面上。例如我在source文件夹下，创建了一个叫做img的文件夹，把img的文件夹下的文件显示在页面上。
+
+  注意： 必须要在source文件夹下，文件夹名称可以
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-24</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -800,29 +836,15 @@
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            getFile文件写法
-getFile文件功能会把某个文件夹下的文件显示在页面上。例如我在source文件夹下，创建了一个叫做img的文件夹，把img的文件夹下的文件显示在页面上。
-
-  注意： 必须要在source文件夹下，文件夹名称可以
-          </div>
-        </div>
-        <div class="post-more">
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1057,9 +1079,9 @@ getFile文件功能会把某个文件夹下的文件显示在页面上。例如�
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3947753"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -33,7 +33,29 @@
         }
     </script>
   
+
   
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
   
 <link rel="stylesheet" href="/css/animate.min.css">
 
@@ -57,7 +79,7 @@
                 display: none;
             }
         }
-    </style>
+  </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
@@ -774,14 +796,33 @@
     <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-10-26</span>
-          </div>
-          <div class="post-title">
+           <div class="post-title">
             <a class="post-title-link" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/">主题介绍-侧边栏功能</a>
           </div>
+          <div class="post-content">
+            
+首页侧边栏支持的版本为 v2.6.0+
+
+默认的侧边栏在主题的config.yml文件中配置
+# sidebar侧边栏
+sidebar:
+  on: true
+  position: left # left right
+  widget_
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
           <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2021-10-26</span>
+            </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
 
@@ -800,34 +841,15 @@
 
             </div>
           </div>
-          <div class="post-img-mobile">
-            <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            
-首页侧边栏支持的版本为 v2.6.0+
-
-默认的侧边栏在主题的config.yml文件中配置
-# sidebar侧边栏
-sidebar:
-  on: true
-  position: left # left right
-  widget_
-          </div>
-        </div>
-        <div class="post-more">
           <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1062,9 +1084,9 @@ sidebar:
 
 <meting-js
   class=""
-  server="tencent"
-  type="album"
-  id="003yQidc3s7P65"
+  server="netease"
+  type="song"
+  id="1365053719"
   fixed='true'
   autoplay='true'
   theme='#42b983'
