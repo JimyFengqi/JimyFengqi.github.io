@@ -2,9 +2,7 @@
 title: 主题介绍-文章Front-matter
 author: Fengqi
 categories: 本站介绍
-tags:
-  - Hexo
-  - markdown
+tags: [Hexo,markdown]
 top: true  
 swiper: true
 swiperDesc: 我是文章在轮播图中的摘要
@@ -37,6 +35,7 @@ top: true
 | ----------------- | --------------------- | -------------------------------------------------------- 
 | title             | `Markdown` 的文件标题   | 文章标题，强烈建议填写此选项                                    
 | date              | 文件创建时的日期时间      | 发布时间，强烈建议填写此选项，且最好保证全局唯一
+| author            | Fengqi                | 文章作者，没有设置默认是Fengqi
 | categories 	    | 无 	                | 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类 
 | tags      	    | 无 	                | 文章标签，一篇文章可以多个标签  
 | top 	            | false 	            | 将该值设为true，则将该篇文章显示在首页的置顶栏目中
