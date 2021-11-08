@@ -6,7 +6,7 @@
   <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jimyfengqi.github.io/"/>
-  <updated>2021-11-08T10:18:27.773Z</updated>
+  <updated>2021-11-08T10:32:46.553Z</updated>
   <id>https://jimyfengqi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Django博客网站搭建--34.锚点定位</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/34.mao-dian-ding-wei/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/34.mao-dian-ding-wei/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>主题介绍-侧边栏功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/</id>
+    <published>2021-10-26T05:25:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
     
     
       
@@ -29,13 +29,206 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;老读者注意：&lt;/strong&gt;上一章&lt;a</summary>
+&lt;p&gt;首页侧边栏支持的版本为 v2.6.0+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;默认的侧边栏&quot;&gt;&lt;a href=&quot;#默认的侧边栏&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="热搜榜" scheme="https://jimyfengqi.github.io/tags/%E7%83%AD%E6%90%9C%E6%A6%9C/"/>
+    
+    <category term="widget" scheme="https://jimyfengqi.github.io/tags/widget/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-文章Front-matter</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/</id>
+    <published>2021-10-24T23:30:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;文章-Front-matter-介绍&quot;&gt;&lt;a href=&quot;#文章-Front-matter-介绍&quot; class=&quot;headerlink&quot; title=&quot;文章 Front-matter 介绍&quot;&gt;&lt;/a&gt;文章 Front-matter</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-媒体文件书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/</id>
+    <published>2021-10-24T03:11:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h &quot; id=&quot;getFile文件写法&quot;&gt;getFile文件写法&lt;/h1&gt;&lt;br/&gt;
+&lt;h2 id=&quot;getFile文件功能&quot;&gt;&lt;a href=&quot;#getFile文件功能&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+    <category term="media" scheme="https://jimyfengqi.github.io/tags/media/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-github书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/</id>
+    <published>2021-10-24T02:05:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h &quot; id=&quot;Github用户卡片&quot;&gt;Github用户卡片&lt;/h1&gt;&lt;br/&gt;
+&lt;a class=&quot;ghcard&quot; rel=&quot;external nofollow noopener noreferrer&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-文档书写功能</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/</id>
+    <published>2021-10-23T11:25:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 class=&quot;bamboo-h-b&quot; id=&quot;我是标题，1级标题&quot; style=&quot;color:!important&quot;&gt;我是标题，1级标题&lt;/h1&gt;&lt;div&gt;&lt;/div&gt;
+&lt;h2 class=&quot;bamboo-h-b&quot; id=&quot;我是标题， 2级标题&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+    <category term="markdown" scheme="https://jimyfengqi.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-页面配置</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/</id>
+    <published>2021-10-13T04:05:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: icon使用的 &lt;a href=&quot;https://fontawesome.dashgame.com/&quot;&gt;Font Awesome&lt;/a&gt; 版本为</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题介绍-基本配置</title>
+    <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/"/>
+    <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/</id>
+    <published>2021-10-12T02:25:00.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是一款&lt;span class=&#39;p large red&#39;&gt;H&lt;/span&gt;&lt;span class=&#39;p large green&#39;&gt;E&lt;/span&gt;&lt;span class=&#39;p large blue&#39;&gt;X&lt;/span&gt;&lt;span class=&#39;p large</summary>
+        
+      
+    
+    
+    
+    <category term="本站介绍" scheme="https://jimyfengqi.github.io/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+    <category term="Hexo" scheme="https://jimyfengqi.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django综合篇之网站地图sitemap</title>
+    <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/"/>
+    <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/</id>
+    <published>2020-12-08T09:11:50.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;功能&quot;&gt;&lt;a href=&quot;#功能&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Django全网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%85%A8%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -43,25 +236,24 @@
   </entry>
   
   <entry>
-    <title>Django博客网站搭建--35.第三方登录</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/35.di-san-fang-deng-lu/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/35.di-san-fang-deng-lu/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django综合篇之celery4 定时任务的实现新闻热榜</title>
+    <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/"/>
+    <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/</id>
+    <published>2020-12-01T07:15:10.000Z</published>
+    <updated>2021-11-08T10:32:46.545Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;现在我们已经拥有一个可以进行用户&lt;strong&gt;本地登录&lt;/strong&gt;的博客系统了。如果有人欣赏你的文章，说不定就会注册成为本地用户，并和你好好交流一番。&lt;/p&gt;
-&lt;p&gt;但头疼的是，用户可能每天都在互联网上浏览很多非常棒的博客，如果每个博客都要去注册才能评论，对用户是个</summary>
+    <summary type="html">&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="Django全网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%85%A8%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -69,25 +261,24 @@
   </entry>
   
   <entry>
-    <title>Django博客网站搭建--36.自动化测试</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/36.zi-dong-hua-ce-shi/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/36.zi-dong-hua-ce-shi/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django综合篇之django-haystack配置详解过程</title>
+    <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/"/>
+    <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/</id>
+    <published>2020-11-28T18:11:04.000Z</published>
+    <updated>2021-11-08T10:32:46.545Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;测试是伴随着开发进行的，&lt;strong&gt;开发有多久，测试就要多久&lt;/strong&gt;。本教程已经进行了30多章了，都是如何测试的？当然是&lt;code&gt;runserver&lt;/code&gt;啦！每当开发新功能后，都需要运行服务器，假装自己就是用户，测试是否运行正常。&lt;/p&gt;
-&lt;p&gt;这样</summary>
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="Django全网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%85%A8%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -95,25 +286,25 @@
   </entry>
   
   <entry>
-    <title>Django博客网站搭建--37.日志记录</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/37.ri-zhi-ji-lu/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/37.ri-zhi-ji-lu/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django视频网站搭建--step07收藏与点赞功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/</id>
+    <published>2020-11-17T10:05:47.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;上一章学习了自动化测试，很好，现在我们可以绞尽脑汁写出一份全面的测试，来保证代码永远健康了。&lt;/p&gt;
-&lt;p&gt;话虽如此，但是作为一个独立开发者&lt;strong&gt;很难写出真正全面的测试代码&lt;/strong&gt;。这是因为用户在使用你的网站时可不会循规蹈矩，而是会以各种怪异的姿势浏览网</summary>
+    <summary type="html">&lt;p&gt;#收藏与点赞功能&lt;br&gt;本节讲一下个人菜单中另外两个比较重要的功能，“我的收藏”与“我的喜欢”。&lt;br&gt;通过学习这两个功能，我们会加深对django中通用视图类的理解与应用。&lt;/p&gt;
+&lt;p&gt;##我的收藏&lt;br&gt;###模型&lt;br&gt;上一节已经实现这个模型了&lt;br&gt;我的收藏、我的</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -121,24 +312,25 @@
   </entry>
   
   <entry>
-    <title>Django博客网站搭建--38.模板过滤器和标签</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/38.mo-ban-guo-lu-qi-he-biao-qian/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/38.mo-ban-guo-lu-qi-he-biao-qian/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django视频网站搭建--step3首页功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/</id>
+    <published>2020-11-17T10:05:47.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;现在我们已经很熟悉Django的MTV模式了。模板（template）负责如何去展示数据，而视图（view）负责筛选出正确的数据。因此通常来说逻辑都是放到视图中的，但模板也需要一些&lt;strong&gt;和表示相关的逻辑&lt;/strong&gt;：比如循环展示（如&lt;code&gt;&amp;#123;%</summary>
+    <summary type="html">&lt;p&gt;#首页功能&lt;br&gt;在本讲中，我们开始首页功能的开发，在开发过程中，&lt;br&gt;学习到Django中的通用视图类、分页对象paginator以及foreignKey外键的使用。&lt;/p&gt;
+&lt;p&gt;首页拆解为4个小的业务模块来开发，分别是：列表显示、分页功能、搜索功能、分类功能。&lt;/p</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -146,130 +338,26 @@
   </entry>
   
   <entry>
-    <title>Django博客网站搭建--39.点赞功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/39.dian-zan-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/39.dian-zan-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django视频网站搭建--step5详情页面开发</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/</id>
+    <published>2020-11-17T10:05:47.000Z</published>
+    <updated>2021-11-08T10:32:46.553Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;假设你的博客已经顺利部署到了线上。你写了很多好文章，和粉丝们互动并感受成就感。&lt;/p&gt;
-&lt;p&gt;现在你想更进一步，努力提高文章质量，使其更受读者欢迎，打造圈内一流博客。问题是该如何判断一篇文章是“受欢迎的”？靠浏览量是个方法，但是并不能区分出内容花拳绣腿的标题党。靠评论数也是</summary>
+    <summary type="html">&lt;p&gt;#详情页面开发&lt;br&gt;在本讲中，我们开始详情页功能的开发.&lt;/p&gt;
+&lt;p&gt;详情页就是对单个视频进行播放并展示视频的相关信息，比如视频标题、描述、评论信息、相关推荐等。&lt;/p&gt;
+&lt;p&gt;我们将会学习到通用视图类DetailView的使用、评论动态加载、以及如何通过ajax实现喜</summary>
         
       
     
     
     
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django博客网站搭建--40.将项目部署到云服务器</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/40.jiang-xiang-mu-bu-shu-dao-yun-fu-wu-qi/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/40.jiang-xiang-mu-bu-shu-dao-yun-fu-wu-qi/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我们的博客虽然还有很多不完善的地方，但是没关系，越早把它部署到互联网上，才能越早发现线上特有的问题。现在也提倡渐进式开发，让产品在迭代中快速成长。&lt;/p&gt;
-&lt;p&gt;部署考验的不是你的 Django 编程水平，而是你对 Linux</summary>
-        
-      
-    
-    
-    
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django博客网站搭建--41.期末总结</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过时间就不能保证了。业余精力有限，如果不能保证文章的质量，那我情愿不写。&lt;/p&gt;
-&lt;p&gt;如果你是本教程的忠实读者，看到这里就已经学会了以下内容：&lt;/p&gt;
-&lt;</summary>
-        
-      
-    
-    
-    
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django博客网站搭建--42.小功能集合贴</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/42.xiao-gong-neng-ji-he-tie/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/42.xiao-gong-neng-ji-he-tie/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;有些&lt;strong&gt;功能独立的小功能&lt;/strong&gt;，单独一篇文章不够分量，于是在这里集中解释了。&lt;/p&gt;
-&lt;p&gt;和&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django博客网站搭建--45.html学习1</title>
-    <link href="https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/45.html-xue-xi-1/"/>
-    <id>https://jimyfengqi.github.io/post/django-bo-ke-wang-zhan-da-jian/45.html-xue-xi-1/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#HTTML学习1&lt;/p&gt;
-&lt;h2 id=&quot;lang-”en”&quot;&gt;&lt;a href=&quot;#lang-”en”&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Django博客网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
     
     <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
@@ -280,8 +368,8 @@
     <title>Django视频网站搭建--step06个人中心功能</title>
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <published>2020-11-17T10:04:22.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
@@ -309,19 +397,47 @@
   </entry>
   
   <entry>
-    <title>Django视频网站搭建--step07收藏与点赞功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django综合篇之添加xadmin功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/</id>
+    <published>2020-09-17T15:49:29.000Z</published>
+    <updated>2021-11-08T10:32:46.545Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#收藏与点赞功能&lt;br&gt;本节讲一下个人菜单中另外两个比较重要的功能，“我的收藏”与“我的喜欢”。&lt;br&gt;通过学习这两个功能，我们会加深对django中通用视图类的理解与应用。&lt;/p&gt;
-&lt;p&gt;##我的收藏&lt;br&gt;###模型&lt;br&gt;上一节已经实现这个模型了&lt;br&gt;我的收藏、我的</summary>
+    <summary type="html">&lt;p&gt;#添加xadmin功能&lt;/p&gt;
+&lt;p&gt;django2.0,以及django3.0直接使用xadmin功能已经不太友好了&lt;br&gt;如果直接使用pip的方式安装</summary>
+        
+      
+    
+    
+    
+    <category term="Django全网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E5%85%A8%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django视频网站搭建--step16后台邮件管理</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/</id>
+    <published>2020-08-28T10:56:46.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;#邮件管理功能&lt;/p&gt;
+&lt;p&gt;订阅功能已经实现了：当用户订阅开启订阅功能后，网站会通过后台给用户发送网站最新的一些动向。&lt;br&gt;但是有时候需要关闭推送功能，比如网站邮件做一些调整之类的。&lt;/p&gt;
+&lt;p&gt;因此需要灵活的设置发送邮件功能。&lt;/p&gt;
+&lt;p&gt;本节来实现这个功能&lt;br</summary>
         
       
     
@@ -335,165 +451,19 @@
   </entry>
   
   <entry>
-    <title>Django视频网站搭建--step08后台登录</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django视频网站搭建--step15数据总览功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/</id>
+    <published>2020-08-28T08:57:53.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#后台登录功能&lt;br&gt;从本讲起，我们会介绍后台管理系统的开发，后台管理&lt;/p&gt;
-&lt;p&gt;主要是对数据库中的数据进行增、删、改、查的操作，满足网站管理员对网站的管理与维护的需求。&lt;/p&gt;
-&lt;p&gt;其实，django自带的也有一个后台管理系统（/admin），但是自带的后台非常简陋</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step09后台视频管理功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#后台视频管理功能&lt;br&gt;从本讲开始，我们开始视频管理功能的开发，视频管理包括&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;视频上传&lt;/li&gt;
-&lt;li&gt;视频列表&lt;/li&gt;
-&lt;li&gt;视频编辑&lt;/li&gt;
-&lt;li&gt;视频删除&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这一讲非常重要，因为将学习到一些之前没有学过的</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step10后台视频分类功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#视频分类&lt;br&gt;视频分类的功能，主要包括以下内容&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;分类列表&lt;/li&gt;
-&lt;li&gt;添加分类&lt;/li&gt;
-&lt;li&gt;修改分类&lt;/li&gt;
-&lt;li&gt;删除分类&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;分类管理功能包括分类的增删改查。&lt;br&gt;###路由设置&lt;br&gt;增删改查的路</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step11后台评论功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step11-hou-tai-ping-lun-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step11-hou-tai-ping-lun-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#后台评论功能&lt;br&gt;本讲中来讲评论管理功能，数据库中的每一条是来自用户的评价，&lt;/p&gt;
-&lt;p&gt;因此后台中的评论管理只有评论列表和评论删除功能，没有增加评论和编辑评论。&lt;br&gt;##路由设置&lt;br&gt;照例我们先添加评论管理的相关路由&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step12后台用户管理功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#后台用户管理功能&lt;br&gt;用户管理功能,跟其他功能也类似，增删改查&lt;/p&gt;
-&lt;p&gt;##路由设置&lt;br&gt;先在urls.py下添加相关的路由&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step13后台订阅推送功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#订阅邮件推送功能&lt;br&gt;本讲我们会讲到一些关于发邮件的技术。&lt;/p&gt;
-&lt;p&gt;订阅功能是一个很常见的功能，当用户订阅某个网站后，网站会通过后台给用户发送网站最新的一些动向，一般是通过邮件来发送的。&lt;/p&gt;
-&lt;p&gt;当你阅读完本节内容，会对发邮件的流程有一个大概的了解。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;#数据总览功能&lt;br&gt;数据总览功能，是对网站中产生的数据进行一个统计，统计出视频数、发布数、用户数、评论数，等等。让管理者对网站数据有一个清晰的认识，做到心中有数。&lt;/p&gt;
+&lt;p&gt;在本站中，笔者一共列举了下面几种数据：视频数、发布中&lt;br&gt;未发布、用户数、用户新增、评论数、</summary>
         
       
     
@@ -510,8 +480,8 @@
     <title>Django视频网站搭建--step14后台反馈功能</title>
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <published>2020-08-28T08:41:31.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
@@ -534,19 +504,47 @@
   </entry>
   
   <entry>
-    <title>Django视频网站搭建--step15数据总览功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/</id>
-    <published>2021-11-08T10:18:27.773Z</published>
-    <updated>2021-11-08T10:18:27.773Z</updated>
+    <title>Django视频网站搭建--step13后台订阅推送功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/</id>
+    <published>2020-08-28T08:19:08.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#数据总览功能&lt;br&gt;数据总览功能，是对网站中产生的数据进行一个统计，统计出视频数、发布数、用户数、评论数，等等。让管理者对网站数据有一个清晰的认识，做到心中有数。&lt;/p&gt;
-&lt;p&gt;在本站中，笔者一共列举了下面几种数据：视频数、发布中&lt;br&gt;未发布、用户数、用户新增、评论数、</summary>
+    <summary type="html">&lt;p&gt;#订阅邮件推送功能&lt;br&gt;本讲我们会讲到一些关于发邮件的技术。&lt;/p&gt;
+&lt;p&gt;订阅功能是一个很常见的功能，当用户订阅某个网站后，网站会通过后台给用户发送网站最新的一些动向，一般是通过邮件来发送的。&lt;/p&gt;
+&lt;p&gt;当你阅读完本节内容，会对发邮件的流程有一个大概的了解。&lt;/p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django视频网站搭建--step12后台用户管理功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/</id>
+    <published>2020-08-27T10:46:01.000Z</published>
+    <updated>2021-11-08T10:32:46.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;#后台用户管理功能&lt;br&gt;用户管理功能,跟其他功能也类似，增删改查&lt;/p&gt;
+&lt;p&gt;##路由设置&lt;br&gt;先在urls.py下添加相关的路由&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;</summary>
         
       
     

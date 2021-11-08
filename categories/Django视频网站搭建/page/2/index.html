@@ -786,19 +786,23 @@
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/">Django视频网站搭建--step16后台邮件管理</a>
+            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/">Django视频网站搭建--step09后台视频管理功能</a>
           </div>
           <div class="post-content">
-            #邮件管理功能
-订阅功能已经实现了：当用户订阅开启订阅功能后，网站会通过后台给用户发送网站最新的一些动向。但是有时候需要关闭推送功能，比如网站邮件做一些调整之类的。
-因此需要灵活的设置发送邮件功能。
-本节来实现这个功能###路由设置
-我们先
+            #后台视频管理功能从本讲开始，我们开始视频管理功能的开发，视频管理包括
+
+视频上传
+视频列表
+视频编辑
+视频删除
+
+这一讲非常重要，因为将学习到一些之前没有学过的技术，比如大文件上传技术。##视频上传
+我们先来实现视频的上传，视频的上传采用
           </div>
           <div class="post-img-mobile">
-            <a href="/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/" style="background-size: cover;
+            <a href="/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/" style="background-size: cover;
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/15.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
           </div>
         </div>
@@ -806,7 +810,7 @@
           <div class="post-meta">
             <div class="post-time">
              <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
+             <span class="post-time">2020-08-27</span>
             </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
@@ -826,15 +830,15 @@
 
             </div>
           </div>
-          <a href="/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/">
+          <a href="/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/">
             <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/" style="background-size: cover; 
+        <a href="/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/15.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -844,18 +848,23 @@
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/">Django视频网站搭建--step1创建工程</a>
+            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/">Django视频网站搭建--step10后台视频分类功能</a>
           </div>
           <div class="post-content">
-            #基于django的视频点播网站开发##项目介绍本文将会对该项目进行一个简单的介绍，包括项目名称、项目背景、项目功能、技术栈等等。
-项目名称: 基于django的视频点播网站开发
-###项目背景
-视频点播网站，搭建一个视频点播网站，练习学习
+            #视频分类视频分类的功能，主要包括以下内容
+
+分类列表
+添加分类
+修改分类
+删除分类
+
+分类管理功能包括分类的增删改查。###路由设置增删改查的路由是
+path('classification_add/', views.Classifica
           </div>
           <div class="post-img-mobile">
-            <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/" style="background-size: cover;
+            <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/" style="background-size: cover;
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
           </div>
         </div>
@@ -863,7 +872,7 @@
           <div class="post-meta">
             <div class="post-time">
              <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
+             <span class="post-time">2020-08-27</span>
             </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
@@ -883,15 +892,128 @@
 
             </div>
           </div>
-          <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/">
+          <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/">
             <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/" style="background-size: cover; 
+        <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/">Django视频网站搭建--step08后台登录</a>
+          </div>
+          <div class="post-content">
+            #后台登录功能从本讲起，我们会介绍后台管理系统的开发，后台管理
+主要是对数据库中的数据进行增、删、改、查的操作，满足网站管理员对网站的管理与维护的需求。
+其实，django自带的也有一个后台管理系统（/admin），但是自带的后台非常简陋，
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
+          <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2020-08-25</span>
+            </div>
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django视频网站搭建</a>
+</div>
+
+
+            </div>
+          </div>
+          <a href="/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/">Django视频网站搭建--step4前端页面整合</a>
+          </div>
+          <div class="post-content">
+            #前端页面整合在本讲中，我们开始前端页面整合
+在开发过程中，前端页面也很重要，本次内容简单的对前面三节内容的前端页面做一个简单的整合
+尘归尘，土归土，内容整理之后会讲内容看的更加清晰
+基础页面基础页面包括，header base foote
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
+          <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2020-08-22</span>
+            </div>
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django视频网站搭建</a>
+</div>
+
+
+            </div>
+          </div>
+          <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -920,7 +1042,7 @@
           <div class="post-meta">
             <div class="post-time">
              <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
+             <span class="post-time">2020-08-21</span>
             </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
@@ -958,17 +1080,18 @@
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/">Django视频网站搭建--step3首页功能</a>
+            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/">Django视频网站搭建--step1创建工程</a>
           </div>
           <div class="post-content">
-            #首页功能在本讲中，我们开始首页功能的开发，在开发过程中，学习到Django中的通用视图类、分页对象paginator以及foreignKey外键的使用。
-首页拆解为4个小的业务模块来开发，分别是：列表显示、分页功能、搜索功能、分类功能。
-
+            #基于django的视频点播网站开发##项目介绍本文将会对该项目进行一个简单的介绍，包括项目名称、项目背景、项目功能、技术栈等等。
+项目名称: 基于django的视频点播网站开发
+###项目背景
+视频点播网站，搭建一个视频点播网站，练习学习
           </div>
           <div class="post-img-mobile">
-            <a href="/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/" style="background-size: cover;
+            <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/" style="background-size: cover;
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
           </div>
         </div>
@@ -976,7 +1099,7 @@
           <div class="post-meta">
             <div class="post-time">
              <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
+             <span class="post-time">2020-08-05</span>
             </div>
             <div class="post-tags">
               <!-- 文章详情页的标签 -->
@@ -996,128 +1119,15 @@
 
             </div>
           </div>
-          <a href="/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/">
+          <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/">
             <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/" style="background-size: cover; 
+        <a href="/post/django-shi-pin-wang-zhan-da-jian/step1-chuang-jian-gong-cheng/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-           <div class="post-title">
-            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/">Django视频网站搭建--step4前端页面整合</a>
-          </div>
-          <div class="post-content">
-            #前端页面整合在本讲中，我们开始前端页面整合
-在开发过程中，前端页面也很重要，本次内容简单的对前面三节内容的前端页面做一个简单的整合
-尘归尘，土归土，内容整理之后会讲内容看的更加清晰
-基础页面基础页面包括，header base foote
-          </div>
-          <div class="post-img-mobile">
-            <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/" style="background-size: cover;
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="post-more" line_style="solid">
-          <div class="post-meta">
-            <div class="post-time">
-             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
-            </div>
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django视频网站搭建</a>
-</div>
-
-
-            </div>
-          </div>
-          <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/">
-            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/django-shi-pin-wang-zhan-da-jian/step4-qian-duan-ye-mian-zheng-he/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-           <div class="post-title">
-            <a class="post-title-link" href="/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/">Django视频网站搭建--step5详情页面开发</a>
-          </div>
-          <div class="post-content">
-            #详情页面开发在本讲中，我们开始详情页功能的开发.
-详情页就是对单个视频进行播放并展示视频的相关信息，比如视频标题、描述、评论信息、相关推荐等。
-我们将会学习到通用视图类DetailView的使用、评论动态加载、以及如何通过ajax实现喜欢
-          </div>
-          <div class="post-img-mobile">
-            <a href="/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/" style="background-size: cover;
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="post-more" line_style="solid">
-          <div class="post-meta">
-            <div class="post-time">
-             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2021-11-08</span>
-            </div>
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django视频网站搭建</a>
-</div>
-
-
-            </div>
-          </div>
-          <a href="/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/">
-            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1369,7 +1379,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3428290"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'
