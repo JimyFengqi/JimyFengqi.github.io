@@ -6,7 +6,7 @@
   <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jimyfengqi.github.io/"/>
-  <updated>2021-11-08T10:32:46.553Z</updated>
+  <updated>2021-11-10T11:12:41.857Z</updated>
   <id>https://jimyfengqi.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python实现十大常用排序算法</title>
+    <link href="https://jimyfengqi.github.io/post/algorithm/python-shi-xian-shi-da-chang-yong-pai-xu-suan-fa/"/>
+    <id>https://jimyfengqi.github.io/post/algorithm/python-shi-xian-shi-da-chang-yong-pai-xu-suan-fa/</id>
+    <published>2021-11-01T08:15:10.000Z</published>
+    <updated>2021-11-10T11:12:41.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;排序算法基本内容&quot;&gt;&lt;a href=&quot;#排序算法基本内容&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>主题介绍-侧边栏功能</title>
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/</id>
     <published>2021-10-26T05:25:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -53,7 +74,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/</id>
     <published>2021-10-24T23:30:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -80,7 +101,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/</id>
     <published>2021-10-24T03:11:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -108,7 +129,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/</id>
     <published>2021-10-24T02:05:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -136,7 +157,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/</id>
     <published>2021-10-23T11:25:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -164,7 +185,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/</id>
     <published>2021-10-13T04:05:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -190,7 +211,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/</id>
     <published>2021-10-12T02:25:00.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -215,7 +236,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/</id>
     <published>2020-12-08T09:11:50.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.857Z</updated>
     
     
       
@@ -240,7 +261,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/</id>
     <published>2020-12-01T07:15:10.000Z</published>
-    <updated>2021-11-08T10:32:46.545Z</updated>
+    <updated>2021-11-10T11:12:41.857Z</updated>
     
     
       
@@ -265,7 +286,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/</id>
     <published>2020-11-28T18:11:04.000Z</published>
-    <updated>2021-11-08T10:32:46.545Z</updated>
+    <updated>2021-11-10T11:12:41.857Z</updated>
     
     
       
@@ -290,7 +311,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -316,7 +337,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -342,7 +363,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-08T10:32:46.553Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -369,7 +390,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/</id>
     <published>2020-11-17T10:04:22.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -401,7 +422,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/</id>
     <published>2020-09-17T15:49:29.000Z</published>
-    <updated>2021-11-08T10:32:46.545Z</updated>
+    <updated>2021-11-10T11:12:41.857Z</updated>
     
     
       
@@ -427,7 +448,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/</id>
     <published>2020-08-28T10:56:46.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -455,7 +476,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/</id>
     <published>2020-08-28T08:57:53.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -481,7 +502,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/</id>
     <published>2020-08-28T08:41:31.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -508,7 +529,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/</id>
     <published>2020-08-28T08:19:08.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
+    <updated>2021-11-10T11:12:41.861Z</updated>
     
     
       
@@ -518,33 +539,6 @@
     <summary type="html">&lt;p&gt;#订阅邮件推送功能&lt;br&gt;本讲我们会讲到一些关于发邮件的技术。&lt;/p&gt;
 &lt;p&gt;订阅功能是一个很常见的功能，当用户订阅某个网站后，网站会通过后台给用户发送网站最新的一些动向，一般是通过邮件来发送的。&lt;/p&gt;
 &lt;p&gt;当你阅读完本节内容，会对发邮件的流程有一个大概的了解。&lt;/p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django视频网站搭建--step12后台用户管理功能</title>
-    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/"/>
-    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step12-hou-tai-yong-hu-guan-li-gong-neng/</id>
-    <published>2020-08-27T10:46:01.000Z</published>
-    <updated>2021-11-08T10:32:46.549Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;#后台用户管理功能&lt;br&gt;用户管理功能,跟其他功能也类似，增删改查&lt;/p&gt;
-&lt;p&gt;##路由设置&lt;br&gt;先在urls.py下添加相关的路由&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot;</summary>
         
       
     
