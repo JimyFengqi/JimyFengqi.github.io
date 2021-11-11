@@ -3,6 +3,8 @@ title: Django综合篇之自定义Command生成初始数据
 categories: Django全网站搭建
 tags:
   - django
+top: true
+swiper: true
 abbrlink: 1557037206
 date: 2020-08-17 14:43:43
 ---

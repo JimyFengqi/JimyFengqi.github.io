@@ -13,6 +13,7 @@ toc: false
     {% site 艾克斯の编码者, url=https://xcoder.in/, screenshot=https://xcoder.in/images/avatar.gif, avatar=https://xcoder.in/images/avatar.gif, description=一个伪宅级别的码畜 %}
     {% site A2Data, url=https://www.a2data.cn, screenshot=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, avatar=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, description=武术跨行大数据，用技术推动梦想的落地！ %}
     {% site shawlon, url=https://www.yshawlon.cn, screenshot=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, avatar=https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%A4%B4%E5%83%8F/%E5%A4%B4%E5%83%8F.jpg, description=基于blinkfox主题搭建的博客 %}
+    {% site blinkfox, url=https://blinkfox.github.io/, screenshot=https://statics.sh1a.qingstor.com/2019/06/01/24logo.png, avatar=https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/%E5%8D%9A%E5%AE%A2/%E5%A4%B4%E5%83%8F/%E5%A4%B4%E5%83%8F.jpg, description=blinkfox主题搭建的博客 %}
 {% endsitegroup %}
 
 

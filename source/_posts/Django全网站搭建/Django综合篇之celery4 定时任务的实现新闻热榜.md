@@ -3,6 +3,8 @@ title: Django综合篇之celery4 定时任务的实现新闻热榜
 categories: Django全网站搭建
 tags:
   - django
+top: true
+swiper: true
 abbrlink: 51645094
 date: 2020-12-01 15:15:10
 ---
