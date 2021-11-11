@@ -738,15 +738,24 @@
       
 
       
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Algorithm/" class="post-detail-header_category">
+              Algorithm
+            </a>
+          
+        </span>
+      
 
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 4.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 8.3k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 17分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 31分钟 |
           </span>
   
           
@@ -770,43 +779,59 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="排序算法基本内容"><a href="#排序算法基本内容" class="headerlink" title="排序算法基本内容"></a>排序算法基本内容</h1><p>常用的十大排序算法中最简单的五种（冒泡、选择、插入、希尔、归并）</p>
-<p>可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，</p>
-<p>而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。</p>
+        <h1 id="排序算法基本内容"><a href="#排序算法基本内容" class="headerlink" title="排序算法基本内容"></a>排序算法基本内容</h1><h2 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h2><h3 id="比较分类"><a href="#比较分类" class="headerlink" title="比较分类"></a>比较分类</h3><ul>
+<li><p>非线性时间比较类排序：通过比较来决定元素间的相对次序，</p>
+<p>由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。</p>
+</li>
+<li><p>线性时间非比较类排序：不通过比较来决定元素间的相对次序，</p>
+<p>它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序</p>
+</li>
+</ul>
+<p><img src="/markdownImages/sort_category.png" class="lazyload placeholder" data-srcset="/markdownImages/sort_category.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="算法分类分析"></p>
+<h3 id="以是否访问内存分类"><a href="#以是否访问内存分类" class="headerlink" title="以是否访问内存分类"></a>以是否访问内存分类</h3><ul>
+<li><p>内部排序是数据记录在内存中进行排序，</p>
+</li>
+<li><p>而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。</p>
+</li>
+</ul>
 <p>常见的内部排序算法有：插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序等。</p>
-<p>主要从：过程图解、算法思想、代码实现、算法分析这四个方面讲解<br><img src="/markdownImages/sort_method_description.jpg" class="lazyload placeholder" data-srcset="/markdownImages/sort_method_description.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="排序方法分析"></p>
-<h2 id="关于时间复杂度"><a href="#关于时间复杂度" class="headerlink" title="关于时间复杂度"></a>关于时间复杂度</h2><ul>
+<h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>主要从：过程图解、算法思想、代码实现、算法分析这四个方面讲解<br><img src="/markdownImages/sort_method_description.png" class="lazyload placeholder" data-srcset="/markdownImages/sort_method_description.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="排序方法分析"></p>
+<h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><blockquote>
+<p>   n：数据规模<br>   k：“桶”的个数<br>   In-place：占用常数内存，不占用额外内存<br>   Out-place：占用额外内存</p>
+</blockquote>
+<ul>
+<li>稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。</li>
+<li>不稳定：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。 </li>
+<li>时间复杂度：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。</li>
+<li>空间复杂度：是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。 </li>
+</ul>
+<h3 id="关于时间复杂度"><a href="#关于时间复杂度" class="headerlink" title="关于时间复杂度"></a>关于时间复杂度</h3><ul>
 <li>1.平方阶 (O(n2)) 排序 各类简单排序：直接插入、直接选择和冒泡排序。</li>
 <li>2.线性对数阶 (O(nlog2n)) 排序 快速排序、堆排序和归并排序。</li>
 <li>3.O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。希尔排序。</li>
 <li>4.线性阶 (O(n)) 排序 基数排序，此外还有桶、箱排序。</li>
 </ul>
-<h2 id="关于稳定性"><a href="#关于稳定性" class="headerlink" title="关于稳定性"></a>关于稳定性</h2><ul>
+<h3 id="关于稳定性"><a href="#关于稳定性" class="headerlink" title="关于稳定性"></a>关于稳定性</h3><ul>
 <li><p>稳定的排序算法：冒泡排序、插入排序、归并排序和基数排序。</p>
 </li>
 <li><p>不是稳定的排序算法：选择排序、快速排序、希尔排序、堆排序。</p>
 </li>
 </ul>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><pre><code>n：数据规模
-k：“桶”的个数
-In-place：占用常数内存，不占用额外内存
-Out-place：占用额外内存
-</code></pre>
-<p>稳定性：排序后 2 个相等键值的顺序和排序之前它们的顺序相同</p>
-<h1 id="排序算法分析与实现"><a href="#排序算法分析与实现" class="headerlink" title="排序算法分析与实现"></a>排序算法分析与实现</h1><h2 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h2><p>冒泡排序是最简单也是最容易理解的排序方法，其原理就是重复地走访过要排序的数列，</p>
+<h1 id="排序算法分析与实现"><a href="#排序算法分析与实现" class="headerlink" title="排序算法分析与实现"></a>排序算法分析与实现</h1><p>常用的十大排序算法中最简单的五种（冒泡、选择、插入、希尔、归并）</p>
+<h2 id="1-交换排序"><a href="#1-交换排序" class="headerlink" title="1. 交换排序"></a>1. 交换排序</h2><h3 id="1、冒泡排序（Bubble-Sort）【前后比较-交换】"><a href="#1、冒泡排序（Bubble-Sort）【前后比较-交换】" class="headerlink" title="1、冒泡排序（Bubble Sort）【前后比较-交换】"></a>1、冒泡排序（Bubble Sort）【前后比较-交换】</h3><p>冒泡排序是最简单也是最容易理解的排序方法，其原理就是重复地走访过要排序的数列，</p>
 <p>一次比较两个元素，如果他们的顺序错误就把他们交换过来。</p>
 <p>走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
 <blockquote>
 <p>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），</p>
 <p>就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名<code>冒泡排序</code>。</p>
 </blockquote>
-<h3 id="1-过程图解"><a href="#1-过程图解" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/bubblesort.gif" class="lazyload placeholder" data-srcset="/markdownImages/bubblesort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="冒泡排序图形展示"></p>
-<h3 id="2-算法思想"><a href="#2-算法思想" class="headerlink" title="2.算法思想"></a>2.算法思想</h3><ul>
+<h4 id="1-过程图解"><a href="#1-过程图解" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/bubblesort.gif" class="lazyload placeholder" data-srcset="/markdownImages/bubblesort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="冒泡排序图形展示"></p>
+<h4 id="2-算法思想"><a href="#2-算法思想" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><ul>
 <li>从第一个和第二个开始比较，如果第一个比第二个大，则交换位置，然后比较第二个和第三个，逐渐往后</li>
 <li>经过第一轮后最大的元素已经排在最后，所以重复上述操作的话第二大的则会排在倒数第二的位置。</li>
 <li>那重复上述操作n-1次即可完成排序，因为最后一次只有一个元素所以不需要比较</li>
 </ul>
-<h3 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 冒泡排序</span>
+<h4 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 冒泡排序</span>
 <span class="token keyword">def</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""冒泡排序"""</span>
     <span class="token comment"># 第一层for表示循环的遍数</span>
@@ -821,7 +846,7 @@ Out-place：占用额外内存
     li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">]</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>bubbleSort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-算法分析"><a href="#4-算法分析" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><p>冒泡排序是一种简单直接暴力的排序算法。</p>
+<h4 id="4-算法分析"><a href="#4-算法分析" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><p>冒泡排序是一种简单直接暴力的排序算法。</p>
 <p>为什么说它暴力？因为每一轮比较可能多个元素移动位置，而元素位置的互换是需要消耗资源的，</p>
 <p>所以这是一种偏慢的排序算法，仅适用于对于含有<code>较少元素</code>的数列进行排序。</p>
 <ul>
@@ -831,67 +856,59 @@ Out-place：占用额外内存
 <li>空间复杂度：只需要常数个辅助单元，所以空间复杂度为O(1)，我们把空间复杂度为O(1)的排序成为<code>原地排序（in-place）</code></li>
 <li>记忆方法：想象成气泡，一层一层的往上变大</li>
 </ul>
-<h2 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h2><p>选择排序（Selection sort）是一种简单直观的排序算法。</p>
-<p>无论什么数据进去都是 O(n²) 的时间复杂度。</p>
-<p>所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
-<p>它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，</p>
-<p>存放在序列的起始位置，所以称为：<code>选择排序</code></p>
-<h3 id="1-过程图解-1"><a href="#1-过程图解-1" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/selectsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/selectsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="选择排序图形展示"></p>
-<h3 id="2-算法思想-1"><a href="#2-算法思想-1" class="headerlink" title="2.算法思想"></a>2.算法思想</h3><ul>
-<li>设第一个元素为比较元素，依次和后面的元素比较，比较完所有元素找到最小（大）的元素，将它和第一个元素互换</li>
-<li>重复上述操作，我们找出第二小（大）的元素和第二个位置的元素互换，以此类推找出剩余最小元素将它换到前面，即完成排序</li>
+<h3 id="2、快速排序（Quick-Sort）【选取一个基准值，小数在左大数在在右】"><a href="#2、快速排序（Quick-Sort）【选取一个基准值，小数在左大数在在右】" class="headerlink" title="2、快速排序（Quick Sort）【选取一个基准值，小数在左大数在在右】"></a>2、快速排序（Quick Sort）【选取一个基准值，小数在左大数在在右】</h3><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。</p>
+<p>在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。</p>
+<p>事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
+<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
+<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。</p>
+<p>虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，</p>
+<p>可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
+<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，</p>
+<p>比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
+<h4 id="1-过程图解-1"><a href="#1-过程图解-1" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/quicksort.gif" class="lazyload placeholder" data-srcset="/markdownImages/quicksort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="快速排序图形展示"></p>
+<h4 id="2-算法思想-1"><a href="#2-算法思想-1" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><ul>
+<li>从数列中挑出一个元素，称为 “基准”（pivot）;</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。</li>
+<li>在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li>
+<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</li>
 </ul>
-<h3 id="3-代码实现-1"><a href="#3-代码实现-1" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">selection_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""选择排序"""</span>
-    <span class="token comment"># 第一层for表示循环选择的遍数</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 将起始元素设为最小元素</span>
-        min_index <span class="token operator">=</span> i
-        <span class="token comment"># 第二层for表示最小元素和后面的元素逐个比较</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment"># 如果当前元素比最小元素小，则把当前元素角标记为最小元素角标</span>
-                min_index <span class="token operator">=</span> j
-        <span class="token comment"># 查找一遍后将最小元素与起始元素互换</span>
-        arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span>
+<p>递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。</p>
+<p>虽然一直递归下去，但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
+<h4 id="3-代码实现-1"><a href="#3-代码实现-1" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 快速排序：最快的n*logN</span>
+<span class="token keyword">def</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> lst
+    pivot <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    left <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">&lt;=</span> pivot<span class="token punctuation">]</span>
+    right <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">></span> pivot<span class="token punctuation">]</span>
+    arr <span class="token operator">=</span> quickSort<span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">[</span>pivot<span class="token punctuation">]</span> <span class="token operator">+</span> quickSort<span class="token punctuation">(</span>right<span class="token punctuation">)</span>
     <span class="token keyword">return</span> arr
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">]</span>
-    selection_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>另外一种写法,它和冒泡法类似</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 选择排序</span>
-<span class="token keyword">def</span> <span class="token function">selectSort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> li<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">]</span>
-    selectSort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-算法分析-1"><a href="#4-算法分析-1" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><p><code>选择排序</code>和<code>冒泡排序</code>很类似，但是选择排序每轮比较只会有一次交换，</p>
-<p>而冒泡排序会有多次交换，交换次数比冒泡排序少，就减少cpu的消耗，</p>
-<p>所以在数据量小的时候可以用选择排序，实际适用的场合非常少。</p>
-<ul>
-<li>比较性：因为排序时元素之间需要比较，所以是<code>比较排序</code></li>
-<li>稳定性：因为存在任意位置的两个元素交换，比如[5, 8, 5, 2]，<br>第一个5会和2交换位置，所以改变了两个5原来的相对顺序，所以为<code>不稳定排序</code>。</li>
-<li>时间复杂度：我们看到选择排序同样是双层循环n*(n-1))，所以时间复杂度也为：O(n^2)</li>
-<li>空间复杂度：只需要常数个辅助单元，所以空间复杂度也为O(1)</li>
-<li>记忆方法：选择对象要先选最小的</li>
+<h4 id="4-算法分析-1"><a href="#4-算法分析-1" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><ul>
+<li><p>1.比较性：排序时元素之间需要比较，所以为<code>比较排序</code></p>
+</li>
+<li><p>2.稳定性：我们从代码中可以看到当剩余数列中元素小于等于基准元素的，就把他们放到基准元素前面重新排列，</p>
+<p>  剩余数列中元素大于基准元素的，就把他们放到基准元素后面面重新排列，故为<code>不稳定排序</code></p>
+</li>
+<li><p>3.时间复杂度： 复杂度为<code>O(n*logN)</code></p>
+</li>
+<li><p>4.空间复杂度：复杂度为<code>O(n)</code></p>
+</li>
+<li><p>5.记忆方法：比我大的往前站，比我小的往后站，你们自己再按照我的规矩重新排一下， 有点像军训排队</p>
+</li>
 </ul>
-<h3 id="3、插入排序"><a href="#3、插入排序" class="headerlink" title="3、插入排序"></a>3、插入排序</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。</p>
+<h2 id="2-插入排序"><a href="#2-插入排序" class="headerlink" title="2. 插入排序"></a>2. 插入排序</h2><h3 id="3、插入排序-Insert-Sort-【逐个插入到前面的有序数中】"><a href="#3、插入排序-Insert-Sort-【逐个插入到前面的有序数中】" class="headerlink" title="3、插入排序(Insert Sort)【逐个插入到前面的有序数中】"></a>3、插入排序(Insert Sort)【逐个插入到前面的有序数中】</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。</p>
 <p>它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
 <p>代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要联想到打扑克时的排序就好了</p>
-<h3 id="1-过程图解-2"><a href="#1-过程图解-2" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/insertsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/insertsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="插入排序图形展示"></p>
-<h3 id="2-算法思想-2"><a href="#2-算法思想-2" class="headerlink" title="2.算法思想"></a>2.算法思想</h3><ul>
+<h4 id="1-过程图解-2"><a href="#1-过程图解-2" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/insertsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/insertsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="插入排序图形展示"></p>
+<h4 id="2-算法思想-2"><a href="#2-算法思想-2" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><ul>
 <li>1.从第二个元素开始和前面的元素进行比较，如果前面的元素比当前元素大，则将前面元素 后移，当前元素依次往前，直到找到比它小或等于它的元素插入在其后面然后</li>
 <li>2.选择第三个元素，重复上述操作，进行插入</li>
 <li>3.依次选择到最后一个元素，插入后即完成所有排序</li>
 </ul>
-<h3 id="3-代码实现-2"><a href="#3-代码实现-2" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">insertion_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h4 id="3-代码实现-2"><a href="#3-代码实现-2" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">insert_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""插入排序"""</span>
     <span class="token comment"># 第一层for表示循环插入的遍数</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -902,7 +919,7 @@ Out-place：占用额外内存
                     <span class="token keyword">break</span>
     <span class="token keyword">return</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-算法分析-2"><a href="#4-算法分析-2" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><blockquote>
+<h4 id="4-算法分析-2"><a href="#4-算法分析-2" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><blockquote>
 <p>插入排序的适用场景：一个新元素需要插入到一组已经是有序的数组中，或者是一组基本有序的数组排序.</p>
 </blockquote>
 <ul>
@@ -927,7 +944,7 @@ Out-place：占用额外内存
 </ol>
 </li>
 </ul>
-<h2 id="4、希尔排序"><a href="#4、希尔排序" class="headerlink" title="4、希尔排序"></a>4、希尔排序</h2><p>希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量(间隔)排序”（Diminishing Increment Sort），</p>
+<h3 id="4、希尔排序（Shell-Sort）【从大范围到小范围进行比较-交换】类似冒泡和插入的联合"><a href="#4、希尔排序（Shell-Sort）【从大范围到小范围进行比较-交换】类似冒泡和插入的联合" class="headerlink" title="4、希尔排序（Shell Sort）【从大范围到小范围进行比较-交换】类似冒泡和插入的联合"></a>4、希尔排序（Shell Sort）【从大范围到小范围进行比较-交换】类似冒泡和插入的联合</h3><p>希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量(间隔)排序”（Diminishing Increment Sort），</p>
 <p>是<code>插入排序</code>算法的一种更高效的改进版本，基于·插入排序·的以下两点性质而提出改进方法的：</p>
 <ul>
 <li>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；</li>
@@ -937,8 +954,8 @@ Out-place：占用额外内存
 <p>希尔排序的基本思想是：</p>
 <p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，</p>
 <p>待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
-<h3 id="1-过程图解-3"><a href="#1-过程图解-3" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/shellsort.jpg" class="lazyload placeholder" data-srcset="/markdownImages/shellsort.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="希尔排序图形展示"></p>
-<h3 id="2-算法思想-3"><a href="#2-算法思想-3" class="headerlink" title="2.算法思想"></a>2.算法思想</h3><p>希尔排序的整体思想是将固定间隔的几个元素之间排序，然后再缩小这个间隔。这样到最后数列就成为了<code>基本有序数列</code>，</p>
+<h4 id="1-过程图解-3"><a href="#1-过程图解-3" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/shellsort.jpg" class="lazyload placeholder" data-srcset="/markdownImages/shellsort.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="希尔排序图形展示"></p>
+<h4 id="2-算法思想-3"><a href="#2-算法思想-3" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><p>希尔排序的整体思想是将固定间隔的几个元素之间排序，然后再缩小这个间隔。这样到最后数列就成为了<code>基本有序数列</code>，</p>
 <p>而前面我们讲过<code>插入排序</code>对基本有序数列排序效果较好。</p>
 <ul>
 <li><ol>
@@ -967,7 +984,7 @@ Out-place：占用额外内存
 <p>这项研究也表明 <code>比较</code> 在希尔排序中是最主要的操作，而不是交换。</p>
 <p>用这样增量式的<code>希尔排序</code>比<code>插入排序</code>和<code>堆排序</code>都要快，甚至在小数组中比<code>快速排序</code>还快，</p>
 <p>但是在涉及大量数据时<code>希尔排序</code>还是比<code>快速排序</code>慢。</p>
-<h3 id="3-代码实现-3"><a href="#3-代码实现-3" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">shell_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h4 id="3-代码实现-3"><a href="#3-代码实现-3" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">shell_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""希尔排序"""</span>
     <span class="token comment"># 取整计算增量（间隔）值</span>
     gap <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
@@ -984,7 +1001,7 @@ Out-place：占用额外内存
         <span class="token comment"># 缩小增量（间隔）值</span>
         gap <span class="token operator">//=</span> <span class="token number">2</span>
     <span class="token keyword">return</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-算法分析-3"><a href="#4-算法分析-3" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><ul>
+<h4 id="4-算法分析-3"><a href="#4-算法分析-3" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><ul>
 <li><p>1.比较性：排序时元素之间需要比较，所以为<code>比较排序</code></p>
 </li>
 <li><p>2.稳定性：因为希尔排序是间隔的插入，所以存在相同元素相对顺序被打乱，所以是<code>不稳定排序</code></p>
@@ -997,19 +1014,123 @@ Out-place：占用额外内存
 <p>联想起阿姆斯特朗登月之后说：这是我个人一小步，却是人类迈出的一大步。</p>
 </li>
 </ul>
-<h2 id="5、归并排序"><a href="#5、归并排序" class="headerlink" title="5、归并排序"></a>5、归并排序</h2><p>归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,</p>
+<h2 id="3-选择排序"><a href="#3-选择排序" class="headerlink" title="3. 选择排序"></a>3. 选择排序</h2><h3 id="5、选择排序（Selection-sort）【选择最小的数据放在前面】"><a href="#5、选择排序（Selection-sort）【选择最小的数据放在前面】" class="headerlink" title="5、选择排序（Selection sort）【选择最小的数据放在前面】"></a>5、选择排序（Selection sort）【选择最小的数据放在前面】</h3><p>选择排序（Selection sort）是一种简单直观的排序算法。</p>
+<p>无论什么数据进去都是 O(n²) 的时间复杂度。</p>
+<p>所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
+<p>它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，</p>
+<p>存放在序列的起始位置，所以称为：<code>选择排序</code></p>
+<h4 id="1-过程图解-4"><a href="#1-过程图解-4" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/selectsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/selectsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="选择排序图形展示"></p>
+<h4 id="2-算法思想-4"><a href="#2-算法思想-4" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><ul>
+<li>设第一个元素为比较元素，依次和后面的元素比较，比较完所有元素找到最小（大）的元素，将它和第一个元素互换</li>
+<li>重复上述操作，我们找出第二小（大）的元素和第二个位置的元素互换，以此类推找出剩余最小元素将它换到前面，即完成排序</li>
+</ul>
+<h4 id="3-代码实现-4"><a href="#3-代码实现-4" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">selection_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""选择排序"""</span>
+    <span class="token comment"># 第一层for表示循环选择的遍数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 将起始元素设为最小元素</span>
+        min_index <span class="token operator">=</span> i
+        <span class="token comment"># 第二层for表示最小元素和后面的元素逐个比较</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token comment"># 如果当前元素比最小元素小，则把当前元素角标记为最小元素角标</span>
+                min_index <span class="token operator">=</span> j
+        <span class="token comment"># 查找一遍后将最小元素与起始元素互换</span>
+        arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> arr
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">]</span>
+    selection_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>另外一种写法,它和冒泡法类似</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 选择排序</span>
+<span class="token keyword">def</span> <span class="token function">selectSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">48</span><span class="token punctuation">]</span>
+    selectSort<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="4-算法分析-4"><a href="#4-算法分析-4" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><p><code>选择排序</code>和<code>冒泡排序</code>很类似，但是选择排序每轮比较只会有一次交换，</p>
+<p>而冒泡排序会有多次交换，交换次数比冒泡排序少，就减少cpu的消耗，</p>
+<p>所以在数据量小的时候可以用选择排序，实际适用的场合非常少。</p>
+<ul>
+<li>比较性：因为排序时元素之间需要比较，所以是<code>比较排序</code></li>
+<li>稳定性：因为存在任意位置的两个元素交换，比如[5, 8, 5, 2]，<br>第一个5会和2交换位置，所以改变了两个5原来的相对顺序，所以为<code>不稳定排序</code>。</li>
+<li>时间复杂度：我们看到选择排序同样是双层循环n*(n-1))，所以时间复杂度也为：O(n^2)</li>
+<li>空间复杂度：只需要常数个辅助单元，所以空间复杂度也为O(1)</li>
+<li>记忆方法：选择对象要先选最小的</li>
+</ul>
+<h3 id="6、堆排序-Heap-Sort-【利用最大堆和最小堆的特性】"><a href="#6、堆排序-Heap-Sort-【利用最大堆和最小堆的特性】" class="headerlink" title="6、堆排序(Heap Sort)【利用最大堆和最小堆的特性】"></a>6、堆排序(Heap Sort)【利用最大堆和最小堆的特性】</h3><p><code>堆排序（Heapsort）</code>是指利用堆这种数据结构所设计的一种排序算法。</p>
+<p>堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
+<h4 id="1-过程图解-5"><a href="#1-过程图解-5" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/heapsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/heapsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="堆排序图形展示"></p>
+<h4 id="2-算法思想-5"><a href="#2-算法思想-5" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><blockquote>
+<ul>
+<li><p>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</p>
+</li>
+<li><p>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</p>
+</li>
+<li><p>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，</p>
+<p>然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。</p>
+<p>不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="3-代码实现-5"><a href="#3-代码实现-5" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span>  <span class="token function">HeapSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">heap_adjust</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> start<span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#将以start为根节点的堆调整为大顶堆</span>
+        temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span>
+        son<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>start<span class="token operator">+</span><span class="token number">1</span>
+        <span class="token keyword">while</span> son<span class="token operator">&lt;=</span>end<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> son<span class="token operator">&lt;</span>end <span class="token keyword">and</span> arr<span class="token punctuation">[</span>son<span class="token punctuation">]</span><span class="token operator">&lt;</span>arr<span class="token punctuation">[</span>son<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment">#找出左右孩子节点较大的</span>
+                son<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> temp<span class="token operator">>=</span>arr<span class="token punctuation">[</span>son<span class="token punctuation">]</span><span class="token punctuation">:</span>       <span class="token comment">#判断是否为大顶堆</span>
+                <span class="token keyword">break</span>
+            arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>son<span class="token punctuation">]</span>     <span class="token comment">#子节点上移</span>
+            start<span class="token operator">=</span>son                     <span class="token comment">#继续向下比较</span>
+            son<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>son<span class="token operator">+</span><span class="token number">1</span>
+        arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">=</span>temp             <span class="token comment">#将原堆顶插入正确位置</span>
+
+    n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> lst
+    <span class="token comment">#建立大顶堆</span>
+    root<span class="token operator">=</span>n<span class="token operator">//</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span>    <span class="token comment">#最后一个非叶节点（完全二叉树中）</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>root <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        heap_adjust<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> root<span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        root<span class="token operator">-=</span><span class="token number">1</span>
+    <span class="token comment">#掐掉堆顶后调整堆</span>
+    i<span class="token operator">=</span>n<span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">(</span>lst<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>lst<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span>lst<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>lst<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#将大顶堆堆顶数放到最后</span>
+        heap_adjust<span class="token punctuation">(</span>lst<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment">#调整剩余数组成的堆</span>
+        i<span class="token operator">-=</span><span class="token number">1</span>
+    <span class="token keyword">return</span> lst<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><p>堆排序的初始建堆过程比价复杂，对O(n)级别个非叶子节点进行堆调整操作O(logn)，时间复杂度O(nlogn)；</p>
+<p>之后每一次堆调整操作确定一个数的次序，时间复杂度O(nlogn)。合起来时间复杂度O(nlogn)</p>
+<p>额外空间开销出在调整堆过程，根节点下移交换时一个暂存空间，空间复杂度O(1)</p>
+<pre><code>比较性：因为排序时元素之间需要比较，所以是比较排序
+稳定性：因为存在任意位置的两个元素交换，所以为不稳定排序。
+时间复杂度：时间复杂度为：O(nlogn)
+空间复杂度：空间复杂度也为O(1)
+记忆方法：
+</code></pre>
+<h2 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4. 归并排序"></a>4. 归并排序</h2><h3 id="7、归并排序-Merge-Sort-【分治法-2-4-8插入排序】"><a href="#7、归并排序-Merge-Sort-【分治法-2-4-8插入排序】" class="headerlink" title="7、归并排序 (Merge Sort)【分治法-2-4-8插入排序】"></a>7、归并排序 (Merge Sort)【分治法-2-4-8插入排序】</h3><p>归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,</p>
 <p>该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
 <blockquote>
 <p>归并排序适用于子序列有序的数据排序。</p>
 </blockquote>
-<h3 id="1-过程图解-4"><a href="#1-过程图解-4" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/mergesort.gif" class="lazyload placeholder" data-srcset="/markdownImages/mergesort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="归并排序动画展示"></p>
-<h3 id="2-算法思想-4"><a href="#2-算法思想-4" class="headerlink" title="2.算法思想"></a>2.算法思想</h3><p><img src="/markdownImages/mergesort.jpg" class="lazyload placeholder" data-srcset="/markdownImages/mergesort.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="归并排序图形展示"><br>从上图看分解后的数列很像一个二叉树。</p>
+<h4 id="1-过程图解-6"><a href="#1-过程图解-6" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/mergesort.gif" class="lazyload placeholder" data-srcset="/markdownImages/mergesort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="归并排序动画展示"></p>
+<h4 id="2-算法思想-6"><a href="#2-算法思想-6" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><p><img src="/markdownImages/mergesort.jpg" class="lazyload placeholder" data-srcset="/markdownImages/mergesort.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="归并排序图形展示"><br>从上图看分解后的数列很像一个二叉树。</p>
 <ul>
 <li>使用递归将源数列使用二分法分成多个子列</li>
 <li>申请空间将两个子列排序合并然后返回</li>
 <li>将所有子列一步一步合并最后完成排序</li>
 </ul>
-<h3 id="3-代码实现-4"><a href="#3-代码实现-4" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h4 id="3-代码实现-6"><a href="#3-代码实现-6" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""归并排序"""</span>
     <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> arr
@@ -1036,7 +1157,11 @@ Out-place：占用额外内存
     result <span class="token operator">+=</span> right
     <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-算法分析-4"><a href="#4-算法分析-4" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><ul>
+<h4 id="4-算法分析-5"><a href="#4-算法分析-5" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><blockquote>
+<p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，</p>
+<p>但表现比选择排序好的多，因为始终都是O(nlogn）的时间复杂度。代价是需要额外的内存空间。</p>
+</blockquote>
+<ul>
 <li><p>1.比较性：排序时元素之间需要比较，所以为<code>比较排序</code></p>
 </li>
 <li><p>2.稳定性：我们从代码中可以看到当左边的元素小于等于右边的元素就把左边的排前面，</p>
@@ -1049,53 +1174,191 @@ Out-place：占用额外内存
 <li><p>5.记忆方法：所谓归并肯定是要先分解，再合并</p>
 </li>
 </ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这五种排序是比较简单的排序，家必须理解&amp;记住它们的算法原理，<br>因为代码是永远记不住的，只要记住原理你就能用伪代码实现。</p>
-<h2 id="6、快速排序"><a href="#6、快速排序" class="headerlink" title="6、快速排序"></a>6、快速排序</h2><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。</p>
-<p>在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。</p>
-<p>事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
-<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
-<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
-<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。</p>
-<p>虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，</p>
-<p>可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
-<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，</p>
-<p>比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
-<h3 id="1-过程图解-5"><a href="#1-过程图解-5" class="headerlink" title="1.过程图解"></a>1.过程图解</h3><p><img src="/markdownImages/quicksort.gif" class="lazyload placeholder" data-srcset="/markdownImages/quicksort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="快速排序图形展示"></p>
-<h3 id="2-算法思想-5"><a href="#2-算法思想-5" class="headerlink" title="2. 算法思想"></a>2. 算法思想</h3><ul>
-<li>从数列中挑出一个元素，称为 “基准”（pivot）;</li>
-<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。</li>
-<li>在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li>
-<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</li>
+<h2 id="5-线性时间非比较类排序"><a href="#5-线性时间非比较类排序" class="headerlink" title="5. 线性时间非比较类排序"></a>5. 线性时间非比较类排序</h2><p>这三种排序算法都利用了桶的概念，但对桶的使用方法上有明显差异：</p>
+<ul>
+<li><p>   基数排序：根据键值的每位数字来分配桶；</p>
+</li>
+<li><p>   计数排序：每个桶只存储单一键值；</p>
+</li>
+<li><p>   桶排序：每个桶存储一定范围的数值；</p>
+</li>
 </ul>
-<p>递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。</p>
-<p>虽然一直递归下去，但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
-<h3 id="3-代码实现-5"><a href="#3-代码实现-5" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 快速排序：最快的n*logN</span>
-<span class="token keyword">def</span> <span class="token function">qiuckSort</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">list</span>
-    pivot <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    left <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">&lt;=</span> pivot<span class="token punctuation">]</span>
-    right <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">></span> pivot<span class="token punctuation">]</span>
-    finallyList <span class="token operator">=</span> qiuckSort<span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">[</span>pivot<span class="token punctuation">]</span> <span class="token operator">+</span> qiuckSort<span class="token punctuation">(</span>right<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> finallyList
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="8、计数排序（Counting-Sort）【字典计数-还原】"><a href="#8、计数排序（Counting-Sort）【字典计数-还原】" class="headerlink" title="8、计数排序（Counting Sort）【字典计数-还原】"></a>8、计数排序（Counting Sort）【字典计数-还原】</h3><p>计数排序用待排序的数值作为计数数组（列表）的下标，统计每个数值的个数，然后依次输出即可。</p>
+<p>计数数组的大小取决于待排数据取值范围，所以对数据有一定要求，否则空间开销无法承受。</p>
+<h4 id="1-过程图解-7"><a href="#1-过程图解-7" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/countingsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/countingsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="计数排序图形展示"></p>
+<h4 id="2-算法思想-7"><a href="#2-算法思想-7" class="headerlink" title="2.算法思想"></a>2.算法思想</h4><ul>
+<li>找出待排序的数组中最大和最小的元素；</li>
+<li>统计数组中每个值为i的元素出现的次数，存入数组C的第i项；</li>
+<li>对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；</li>
+<li>反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。</li>
+</ul>
+<h4 id="3-代码实现-7"><a href="#3-代码实现-7" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">CountSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    num<span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    count<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">[</span>lst<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+    arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-算法分析-6"><a href="#4-算法分析-6" class="headerlink" title="4. 算法分析"></a>4. 算法分析</h4><blockquote>
+<p>计数排序是一个稳定的排序算法。<br>当输入的元素是 n 个 0到 k 之间的整数时，时间复杂度是O(n+k)，空间复杂度也是O(n+k)，其排序速度快于任何比较排序算法。<br>当k不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。</p>
+</blockquote>
+<ul>
+<li>时间复杂度:计数排序只需遍历一次数据，在计数数组中记录，输出计数数组中有记录的下标，时间复杂度为O(n+k)。</li>
+<li>空间复杂度:空间复杂度O(n+k)。</li>
+</ul>
+<h3 id="9、桶排序（Bucket-Sort）【链表】"><a href="#9、桶排序（Bucket-Sort）【链表】" class="headerlink" title="9、桶排序（Bucket Sort）【链表】"></a>9、桶排序（Bucket Sort）【链表】</h3><p>桶排序实际上是计数排序的推广，但实现上要复杂许多。</p>
+<p>桶排序先用一定的函数关系将数据划分到不同有序的区域（桶）内，然后子数据分别在桶内排序，之后顺次输出。</p>
+<p>当每一个不同数据分配一个桶时，也就相当于计数排序。</p>
+<p>假设n个数据，划分为k个桶，桶内采用快速排序，时间复杂度为O(n)+O(k * n/k<em>log(n/k))=O(n)+O(n</em>(log(n)-log(k))),</p>
+<p>显然，k越大，时间复杂度越接近O(n)，当然空间复杂度O(n+k)会越大，这是空间与时间的平衡。</p>
+<h4 id="2-算法分析"><a href="#2-算法分析" class="headerlink" title="2.算法分析"></a>2.算法分析</h4><ul>
+<li>设置一个定量的数组当作空桶；</li>
+<li>遍历输入数据，并且把数据一个一个放到对应的桶里去；</li>
+<li>对每个不是空的桶进行排序；</li>
+<li>从不是空的桶里把排好序的数据拼接起来。 </li>
+</ul>
+<h4 id="3-代码实现-8"><a href="#3-代码实现-8" class="headerlink" title="3.代码实现"></a>3.代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">BucketSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 桶内使用快速排序</span>
+    <span class="token keyword">def</span> <span class="token function">QuickSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            key<span class="token operator">=</span>left         <span class="token comment">#划分参考数索引,默认为第一个数，可优化</span>
+            <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span>
+                <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right <span class="token keyword">and</span> arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">>=</span>arr<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    right<span class="token operator">-=</span><span class="token number">1</span>
+                <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right <span class="token keyword">and</span> arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">&lt;=</span>arr<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    left<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> left
+ 
+        <span class="token keyword">def</span> <span class="token function">quicksort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#递归调用</span>
+            <span class="token keyword">if</span> left<span class="token operator">>=</span>right<span class="token punctuation">:</span>
+                <span class="token keyword">return</span>
+            mid<span class="token operator">=</span>partition<span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+            quicksort<span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+            quicksort<span class="token punctuation">(</span>arr<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+        <span class="token comment">#主函数</span>
+        n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> lst
+        quicksort<span class="token punctuation">(</span>lst<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> lst
 
-<h3 id="4-算法分析-5"><a href="#4-算法分析-5" class="headerlink" title="4.算法分析"></a>4.算法分析</h3><ul>
-<li><p>1.比较性：排序时元素之间需要比较，所以为<code>比较排序</code></p>
-</li>
-<li><p>2.稳定性：我们从代码中可以看到当剩余数列中元素小于等于基准元素的，就把他们放到基准元素前面重新排列，</p>
-<p>  剩余数列中元素大于基准元素的，就把他们放到基准元素后面面重新排列，故为<code>不稳定排序</code></p>
-</li>
-<li><p>3.时间复杂度： 复杂度为<code>O(n*logN)</code></p>
-</li>
-<li><p>4.空间复杂度：复杂度为<code>O(n)</code></p>
-</li>
-<li><p>5.记忆方法：比我大的往前站，比我小的往后站，你们自己再按照我的规矩重新排一下， 有点像军训排队</p>
-</li>
+    n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    big<span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    num<span class="token operator">=</span>big<span class="token operator">//</span><span class="token number">10</span><span class="token operator">+</span><span class="token number">1</span>
+    bucket<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    buckets<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+        buckets<span class="token punctuation">[</span>i<span class="token operator">//</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>     <span class="token comment">#划分桶</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> buckets<span class="token punctuation">:</span>                       <span class="token comment">#桶内排序</span>
+        bucket<span class="token operator">=</span>QuickSort<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> buckets<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> i<span class="token punctuation">:</span>
+                arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        lst<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> lst<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-算法分析-7"><a href="#4-算法分析-7" class="headerlink" title="4.算法分析"></a>4.算法分析</h4><p>桶排序最好情况下使用线性时间O(n)，桶排序的时间复杂度，</p>
+<p>取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为O(n)。</p>
+<p>很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。</p>
+<h3 id="10、基数排序（Radix-Sort）"><a href="#10、基数排序（Radix-Sort）" class="headerlink" title="10、基数排序（Radix Sort）"></a>10、基数排序（Radix Sort）</h3><p><code>基数排序</code>是一种<code>非比较型整数排序</code>算法，其原理是将整数按位数切割成不同的数字，</p>
+<p>然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，</p>
+<p>所以基数排序也不是只能使用于整数。</p>
+<h4 id="1-过程图解-8"><a href="#1-过程图解-8" class="headerlink" title="1.过程图解"></a>1.过程图解</h4><p><img src="/markdownImages/radixsort.gif" class="lazyload placeholder" data-srcset="/markdownImages/radixsort.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="基数排序图形展示"></p>
+<h4 id="2-算法分析-1"><a href="#2-算法分析-1" class="headerlink" title="2.算法分析"></a>2.算法分析</h4><ul>
+<li>取得数组中的最大数，并取得位数；</li>
+<li>arr为原始数组，从最低位开始取每个位组成radix数组；</li>
+<li>对radix进行计数排序（利用计数排序适用于小范围数的特点）；</li>
 </ul>
+<h4 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> math
+<span class="token keyword">def</span> <span class="token function">RadixSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">getbit</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>       <span class="token comment">#返回x的第i位（从右向左，个位为0）数值</span>
+        y<span class="token operator">=</span>x<span class="token operator">//</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+        z<span class="token operator">=</span>y<span class="token operator">%</span><span class="token number">10</span>
+        <span class="token keyword">return</span> z
+    <span class="token keyword">def</span> <span class="token function">CountSort</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+        num<span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+        count<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            count<span class="token punctuation">[</span>lst<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> arr
+    Max<span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">int</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>log10<span class="token punctuation">(</span>Max<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>             <span class="token comment">#对k位数排k次,每次按某一位来排</span>
+        arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">:</span>                 <span class="token comment">#将ls（待排数列）中每个数按某一位分类（0-9共10类）存到arr[][]二维数组（列表）中</span>
+            arr<span class="token punctuation">[</span>getbit<span class="token punctuation">(</span>i<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment">#对arr[]中每一类（一个列表）  按计数排序排好</span>
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+                arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>CountSort<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        j<span class="token operator">=</span><span class="token number">9</span>
+        n<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token comment">#顺序输出arr[][]中数到ls中，即按第k位排好</span>
+            <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                j<span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                lst<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>   
+    <span class="token keyword">return</span> lst    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="4-算法分析-8"><a href="#4-算法分析-8" class="headerlink" title="4 算法分析"></a>4 算法分析</h4><p>基数排序基于分别排序，分别收集，所以是稳定的。但基数排序的性能比桶排序要略差，每一次关键字的桶分配都需要O(n)的时间复杂度，<br>而且分配之后得到新的关键字序列又需要O(n)的时间复杂度。假如待排数据可以分为d个关键字，则基数排序的时间复杂度将是O(d*2n) ，<br>当然d要远远小于n，因此基本上还是线性级别的。</p>
+<p>基数排序的空间复杂度为O(n+k)，其中k为桶的数量。一般来说n&gt;&gt;k，因此额外空间需要大概n个左右。</p>
+<h2 id="补充：外部排序"><a href="#补充：外部排序" class="headerlink" title="补充：外部排序"></a>补充：外部排序</h2><p>外部排序是指大文件排序，即待排序的数据记录以文件的形式存储在外存储器上。</p>
+<p>由于文件中的记录很多、信息容量庞大，所以整个文件所占据的存储单元往往会超过了计算机的内存量，</p>
+<p>因此，无法将整个文件调入内存中进行排序。于是，在排序过程中需进行多次的内外存之间的交换。</p>
+<p>在实际应用中，由于使用的外设不一致，通常可以分为磁盘文件排序和磁带文件排序两大类。</p>
+<p>外部排序基本上由两个相对独立的阶段组成。</p>
+<p>首先，按可用内存大小，将外存上含 N 个记录的文件分成若干长度为 L(&lt;N) 的子文件，</p>
+<p>依次读入内存，利用内部排序算法进行排序。然后，将排序后的文件写入外存，</p>
+<p>通常将这些文件称为归并段（Run）或“顺串”；对这些归并段进行逐步归并，</p>
+<p>最终得到整个有序文件。可见外部排序的基本方法是归并排序法，下面的例子给出了一个简单的外部排序解决过程。</p>
+<p>【例子】给定磁盘上有6大块记录需要排序，而计算机内存最多只能对3个记录块进行内排序，则外部排序的过程如下图所示。<br><img src="/markdownImages/outsort_example.png" class="lazyload placeholder" data-srcset="/markdownImages/outsort_example.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="基数排序图形展示"><br>【解析】首先将连续的3大块记录读入内存，用任何一种内部排序算法完成排序，再写回磁盘。</p>
+<p>经过2次3大块记录的内部排序，得到上图（a）的结果。然后另用一个可容纳6大块记录的周转盘，辅助最后的归并。</p>
+<p>方法是将内存分成3块，其中2块用于输入，1块用于输出，指定一个输入块只负责读取一个归并段中的记录，如上图（b）所示。<br>归并步骤为：</p>
+<ul>
+<li>当任一输入块为空时，归并暂停，将相应归并段中的一块信息写入内存</li>
+<li>将内存中2个输入块中的记录逐一归并入输出块</li>
+<li>当输出块写满时，归并暂停，将输出块中的记录写入周转盘<br>如此可将2个归并段在周转盘上归并成一个有序的归并段。</li>
+</ul>
+<p>上例的解决方法是最简单的归并法，事实上外部排序的效率还可以进一步提高。要提高外排的效率，关键要解决以下4个问题：</p>
+<ul>
+<li>   如何减少归并轮数</li>
+<li>   如何有效安排内存中的输入、输出块，使得机器的并行处理能力被最大限度利用</li>
+<li>   如何有效生成归并段</li>
+<li>   如何将归并段进行有效归并</li>
+</ul>
+<p>针对这四大问题，人们设计了多种解决方案，例如釆用多路归并取代简单的二路归并，就可以减少归并轮数；</p>
+<p>例如在内存中划分出2个输出块，而不是只用一个，就可以设计算法使得归并排序不会因为磁盘的写操作而暂停，</p>
+<p>达到归并和写周转盘同时并行的效果；例如通过一种“败者树”的数据结构，可以一次生成2倍于内存容量的归并段；</p>
+<p>例如利用哈夫曼树的贪心策略选择归并次序，可以耗费最少的磁盘读写时间等</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>各种算法重要的时理解&amp;记住它们的算法原理，因为代码是永远记不住的，只要记住原理你就能用伪代码实现。</p>
 
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E6%8E%92%E5%BA%8F/" class="">
+              排序
+            </a>
+          
+            <a href="/tags/%E7%AE%97%E6%B3%95/" class="">
+              算法
+            </a>
+          
+        </div>
         
       </div>
       
@@ -1706,7 +1969,7 @@ Out-place：占用额外内存
   class=""
   server="kugou"
   type="playlist"
-  id="3302755"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'
