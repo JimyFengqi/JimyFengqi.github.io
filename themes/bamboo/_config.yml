@@ -582,14 +582,14 @@ bubble:
 
 # valine 评论
 valine:
-  on: false
-  appid:
-  appkey:
-  avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
-  placeholder: '客官，说点什么吧' # 评论内容输入框的 placeholder
-  master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
+  on: true
+  appid: G7kLr5GPm3HmPoDDhv19wI0M-gzGzoHsz
+  appkey: xynwI4nfT8WSgBnPvlz7yglu
+  avatar: 'wavatar' # 匿名者头像选项 https://valine.js.org/avatar.html
+  placeholder: '你是我一生遇到最美的惊喜...' # 评论内容输入框的 placeholder
+  master: 'pYggd4zwTA6uVG50fi2CWp4j' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
   friends: [] # 小伙伴的 邮箱md5， 是个数组
-  requiredFields: [] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
+  requiredFields: ['nick'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
   backgroundImg: 'https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif' # 右下角背景图片
   backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
 
@@ -644,7 +644,7 @@ utterance:
 
 # 弹幕 只对valine评论有效
 danmu:
-  on: false
+  on: on
   loop: false # 设为true，则弹幕完了之后，继续查询评论接口，将该篇文章的评论再显示在弹幕里
   delay: 5000 # 每条弹幕之间出现的间隔时间
   speed: 40 # 弹幕运行的速度, 越小越快
@@ -652,11 +652,11 @@ danmu:
 # 归档页面图片、描述、视频，全屏 or 'http://xxx'
 archive:
   title: '归档'
-  img: 'https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c'
+  img: '/medias/defaultImage/14.jpg'  #'https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c'
   desc: '整理是一个习惯，收纳是一项技能'
   full: true # 设置为true，则图片全屏显示
   video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频，为空则显示图片(img)
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
   yearColor: '' # 年份字体颜色
   monthColor: '' # 月份字体颜色
   titleColor: '' # 标题字体颜色
@@ -664,11 +664,11 @@ archive:
 # 标签页面，配置同上
 tag:
   title: '标签'
-  img: 'https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg' # 标签页上面的图片
+  img:  '/medias/defaultImage/10.jpg' #'https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg' # 标签页上面的图片
   desc: '独特的你，犹如鹤立鸡群'
   full: false # 标签页上面的图片是否全屏显示
   video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
   titleColor: '' # 标题字体颜色
 
 # 标签详情页面，配置同上
@@ -678,7 +678,7 @@ tagDetail:
   desc: '愿你如风，被人温柔以待' # 标签页详情上上面的图片上的文字
   full: false
   video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
 # 分类页面，配置同上
 categories:
@@ -687,7 +687,7 @@ categories:
   desc: '垃圾不过是放错位置的资源罢了'
   full: false
   video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
   titleColor: '' # 标题字体颜色
 
 #分类详情页面，配置同上
@@ -697,7 +697,7 @@ categoryDetail:
   desc: '愿你如风，被人温柔以待'
   full: false
   video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
 # 关于我页面，配置同上
 about:
@@ -706,7 +706,7 @@ about:
   desc: '自惭多情污梵行，入山又恐误倾城。世间安得双全法，不负如来不负卿'
   full: false
   video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
   titleColor: '' # 标题字体颜色
 
 # 友情链接页面，配置同上
@@ -716,7 +716,7 @@ friends:
   desc: '朋友啊，愿你出走半生，归来仍是少年'
   full: false
   video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  background: 'url("https://tenapi.cn/acg")' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
   titleColor: '' # 标题字体颜色
 
 # 黑夜模式, 关灯
@@ -916,7 +916,6 @@ import:
     -
   script:
     # - <script src="xxx.js"></script>
-    - <script src="/js/tag_cloud.js" ></script>
     - <script src="/js/echarts/echarts@5.2.1.min.js"></script>
     - <script src="/js/aos/aos@2.3.4.min.js"></script>
 
