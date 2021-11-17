@@ -84,6 +84,9 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
+        <script src="/js/valine/av-min@3.0.4.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+    
 
     <!-- import link -->
     
@@ -97,8 +100,6 @@
     
     <!-- import script -->
     
-        
-            <script src="/js/tag_cloud.js" ></script>
         
             <script src="/js/echarts/echarts@5.2.1.min.js"></script>
         
@@ -888,14 +889,14 @@
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/">Django综合篇之celery4 定时任务的实现新闻热榜</a>
+            <a class="post-title-link" href="/update-task">Django综合篇之celery4 定时任务的实现新闻热榜</a>
           </div>
           <div class="post-content">
             环境配置系统：Ubuntu系统编辑器：PycharmPython版本：python3.6（自带celery4.3.0）第三方包依赖： django3.0.8
 本文简介这篇文章主要介绍了celery4+django3定时任务的实现, 用于定时
           </div>
           <div class="post-img-mobile">
-            <a href="/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/" style="background-size: cover;
+            <a href="/update-task" style="background-size: cover;
               background-position: center center;">
               <img class="lazyload lazyload placeholder" src="/medias/defaultImage/8.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
@@ -925,13 +926,13 @@
 
             </div>
           </div>
-          <a href="/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/">
+          <a href="/update-task">
             <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/" style="background-size: cover; 
+        <a href="/update-task" style="background-size: cover; 
           background-position: center center;">
           <img class="lazyload lazyload placeholder" src="/medias/defaultImage/8.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
@@ -1335,9 +1336,9 @@ django2.0,以及django3.0直接使用xadmin功能已经不太友好了如果直�
 
 <meting-js
   class=""
-  server="kugou"
-  type="playlist"
-  id="3947753"
+  server="netease"
+  type="song"
+  id="1365053719"
   fixed='true'
   autoplay='true'
   theme='#42b983'
@@ -1675,68 +1676,133 @@ django2.0,以及django3.0直接使用xadmin功能已经不太友好了如果直�
 <!-- 评论所需js -->
 
   
-    <script type="text/javascript">
-  var utteranceCommon = {};
+    <!-- 弹幕所需的css和js -->
+    
+<!-- 具体js，请前往valine/script.ejs查看 -->
 
-  function check_utterance() {
-    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
-    if (isDark) {
-      utteranceCommon.Theme = 'github-dark';
-    } else {
-      utteranceCommon.Theme = 'github-light';
-    }
-
-    return document.getElementById("gitment-container");
-  }
-  comment_el = '#gitment-container';
-  load_utterance = function () {
+    <script>
+  var requiredFields = 'nick';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
     if ($(comment_el).length) {
-      // 匿名函数，防止污染全局变量
-      const HEAD = check_utterance();
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "G7kLr5GPm3HmPoDDhv19wI0M-gzGzoHsz",
+        app_key: "xynwI4nfT8WSgBnPvlz7yglu",
+        placeholder: "你是我一生遇到最美的惊喜...",
+        avatar: "wavatar",
+        master: "pYggd4zwTA6uVG50fi2CWp4j",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('on');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
 
-      var utterances = document.createElement('script');
-      utterances.type = 'text/javascript';
-      utterances.async = true;
-      utterances.setAttribute('issue-term', 'pathname')
-      utterances.setAttribute('theme', utteranceCommon.Theme)
-      utterances.setAttribute('repo', '')
-      utterances.crossorigin = 'anonymous';
-      utterances.src = 'https://utteranc.es/client.js';
-      // content 是要插入评论的地方
-      document.getElementById('gitment-container').appendChild(utterances);
-
+          }
+        })
+      }
     }
-  }
-
-  function dark_utterance() {
-    const HEAD = check_utterance();
-    if (!HEAD) return;
-    const message = {
-      type: 'set-theme',
-      theme: utteranceCommon.Theme
-    };
-    const utteranceIframe = document.querySelector('iframe');
-    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
-  }
-
-  $(document).ready(load_utterance);
-  document.addEventListener('pjax:complete', function () {
-    load_utterance();
-  });
-
-  $('.dark').click(function () {
-    setTimeout(() => {
-      dark_utterance();
-    });
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
   })
-
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
 </script>
 
-<style>
-  .utterances {
-    max-width: inherit !important;
-  }
-</style>
   
 
 

@@ -6,7 +6,7 @@
   <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jimyfengqi.github.io/"/>
-  <updated>2021-11-11T09:14:53.736Z</updated>
+  <updated>2021-11-17T07:59:57.764Z</updated>
   <id>https://jimyfengqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jimyfengqi.github.io/post/algorithm/python-shi-xian-shi-da-chang-yong-pai-xu-suan-fa/"/>
     <id>https://jimyfengqi.github.io/post/algorithm/python-shi-xian-shi-da-chang-yong-pai-xu-suan-fa/</id>
     <published>2021-11-01T08:15:10.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.764Z</updated>
     
     
       
@@ -48,7 +48,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ce-bian-lan-gong-neng/</id>
     <published>2021-10-26T05:25:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -80,7 +80,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-zhang-front-matter/</id>
     <published>2021-10-24T23:30:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -107,7 +107,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/</id>
     <published>2021-10-24T03:11:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -135,7 +135,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-github-shu-xie-gong-neng/</id>
     <published>2021-10-24T02:05:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -163,7 +163,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-wen-dang-shu-xie-gong-neng/</id>
     <published>2021-10-23T11:25:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -191,7 +191,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ye-mian-pei-zhi/</id>
     <published>2021-10-13T04:05:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -217,7 +217,7 @@
     <link href="https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/"/>
     <id>https://jimyfengqi.github.io/post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi/</id>
     <published>2021-10-12T02:25:00.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.772Z</updated>
     
     
       
@@ -242,7 +242,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-wang-zhan-di-tu-sitemap/</id>
     <published>2020-12-08T09:11:50.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.764Z</updated>
     
     
       
@@ -264,10 +264,10 @@
   
   <entry>
     <title>Django综合篇之celery4 定时任务的实现新闻热榜</title>
-    <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/"/>
-    <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-celery4-ding-shi-ren-wu-de-shi-xian-xin-wen-re-bang/</id>
+    <link href="https://jimyfengqi.github.io/update-task"/>
+    <id>https://jimyfengqi.github.io/update-task</id>
     <published>2020-12-01T07:15:10.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.764Z</updated>
     
     
       
@@ -292,7 +292,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-django-haystack-pei-zhi-xiang-jie-guo-cheng/</id>
     <published>2020-11-28T18:11:04.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.764Z</updated>
     
     
       
@@ -317,7 +317,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step07-shou-cang-yu-dian-zan-gong-neng/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -343,7 +343,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step3-shou-ye-gong-neng/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -369,7 +369,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step5-xiang-qing-ye-mian-kai-fa/</id>
     <published>2020-11-17T10:05:47.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -396,7 +396,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step06-ge-ren-zhong-xin-gong-neng/</id>
     <published>2020-11-17T10:04:22.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -428,7 +428,7 @@
     <link href="https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-quan-wang-zhan-da-jian/django-zong-he-pian-zhi-tian-jia-xadmin-gong-neng/</id>
     <published>2020-09-17T15:49:29.000Z</published>
-    <updated>2021-11-11T09:14:53.736Z</updated>
+    <updated>2021-11-17T07:59:57.764Z</updated>
     
     
       
@@ -454,7 +454,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step16-hou-tai-you-jian-guan-li/</id>
     <published>2020-08-28T10:56:46.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -482,7 +482,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step15-shu-ju-zong-lan-gong-neng/</id>
     <published>2020-08-28T08:57:53.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -508,7 +508,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/</id>
     <published>2020-08-28T08:41:31.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
@@ -535,7 +535,7 @@
     <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/"/>
     <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step13-hou-tai-ding-yue-tui-song-gong-neng/</id>
     <published>2020-08-28T08:19:08.000Z</published>
-    <updated>2021-11-11T09:14:53.740Z</updated>
+    <updated>2021-11-17T07:59:57.768Z</updated>
     
     
       
