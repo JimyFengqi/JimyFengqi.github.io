@@ -5,7 +5,6 @@ tags:
   - django
 top: true
 swiper: true
-permalink: update-task
 abbrlink: 51645094
 date: 2020-12-01 15:15:10
 ---
