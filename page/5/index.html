@@ -760,9 +760,6 @@
       
         
         
-      
-        
-        
           
           <swiper-slide>
             <div class="item swiper-lazy" data-background="/medias/defaultImage/7.jpg" style=" background-size: 300000px; 
@@ -1903,19 +1900,16 @@
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/">Django博客网站搭建--07.使用Bootstrap改写模板</a>
+            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/">Django博客网站搭建--09.使用Markdown书写文章</a>
           </div>
           <div class="post-content">
-            注意：学本章之前请检查 Django 版本，确保安装的是 Django 2 而不是 Django 3，否则后面所有的章节都会遇到 staticfiles 无法载入的错误。
-
-在虚拟环境中输入 pip list 即可查看。
-
-上一章我们的网站
+            上一章我们实现了文章详情页面。为了让文章正文能够进行标题、加粗、引用、代码块等不同的排版（像在Office中那样！），我们将使用Markdown语法。
+安装MarkdownMarkdown是一种轻量级的标记语言，它允许人们“使用易读易写的纯
           </div>
           <div class="post-img-mobile">
-            <a href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/" style="background-size: cover;
+            <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/" style="background-size: cover;
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
           </div>
         </div>
@@ -1943,15 +1937,15 @@
 
             </div>
           </div>
-          <a href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/">
+          <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/">
             <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/" style="background-size: cover; 
+        <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -2021,61 +2015,6 @@ article/views.py
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
-            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/">Django博客网站搭建--09.使用Markdown书写文章</a>
-          </div>
-          <div class="post-content">
-            上一章我们实现了文章详情页面。为了让文章正文能够进行标题、加粗、引用、代码块等不同的排版（像在Office中那样！），我们将使用Markdown语法。
-安装MarkdownMarkdown是一种轻量级的标记语言，它允许人们“使用易读易写的纯
-          </div>
-          <div class="post-img-mobile">
-            <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/" style="background-size: cover;
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="post-more" line_style="solid">
-          <div class="post-meta">
-            <div class="post-time">
-             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2020-06-18</span>
-            </div>
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
-</div>
-
-
-            </div>
-          </div>
-          <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/">
-            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-           <div class="post-title">
             <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/10.fa-bu-xin-de-wen-zhang/">Django博客网站搭建--10.发布新的文章</a>
           </div>
           <div class="post-content">
@@ -2128,7 +2067,7 @@ article/views.py
     </article>
   
     
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
+    <article class="post reveal" style="   ">
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
@@ -2186,7 +2125,7 @@ article/views.py
     </article>
   
     
-    <article class="post reveal" style="   ">
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
@@ -2241,62 +2180,6 @@ article/views.py
         <a href="/post/django-bo-ke-wang-zhan-da-jian/14.yong-hu-de-zhu-ce/" style="background-size: cover; 
           background-position: center center;">
           <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-           <div class="post-title">
-            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/">Django博客网站搭建--15.用户的删除</a>
-          </div>
-          <div class="post-content">
-            这一章将实现删除用户数据的功能。实际上删除用户和前面的删除文章是完全类似的，有了之前的铺垫，这一章会非常的轻松。
-权限与视图用户数据是很多网站最重要的财产，确保用户数据的安全是非常重要的。
-前面学习的用户登录、退出、创建都是相对安全的操作；
-          </div>
-          <div class="post-img-mobile">
-            <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/" style="background-size: cover;
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="post-more" line_style="solid">
-          <div class="post-meta">
-            <div class="post-time">
-             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time">2020-06-18</span>
-            </div>
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
-</div>
-
-
-            </div>
-          </div>
-          <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/">
-            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -2362,6 +2245,62 @@ article/views.py
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
+            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/">Django博客网站搭建--15.用户的删除</a>
+          </div>
+          <div class="post-content">
+            这一章将实现删除用户数据的功能。实际上删除用户和前面的删除文章是完全类似的，有了之前的铺垫，这一章会非常的轻松。
+权限与视图用户数据是很多网站最重要的财产，确保用户数据的安全是非常重要的。
+前面学习的用户登录、退出、创建都是相对安全的操作；
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
+          <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2020-06-18</span>
+            </div>
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+            </div>
+          </div>
+          <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
             <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/18.shang-chuan-tou-xiang/">Django博客网站搭建--18.上传头像</a>
           </div>
           <div class="post-content">
@@ -2414,7 +2353,7 @@ article/views.py
     </article>
   
     
-    <article class="post reveal" style="   ">
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
            <div class="post-title">
@@ -2465,6 +2404,64 @@ article/views.py
         <a href="/post/django-bo-ke-wang-zhan-da-jian/19.wen-zhang-fen-ye/" style="background-size: cover; 
           background-position: center center;">
           <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+           <div class="post-title">
+            <a class="post-title-link" href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/">Django博客网站搭建--20.浏览量</a>
+          </div>
+          <div class="post-content">
+            文章浏览量是所有社交类网站所必备的数据，足以显示其重要性了。
+博主可以通过浏览量来评估某篇文章的受欢迎程度，读者也能够通过浏览量来筛选质量更高的文章。
+然而，准确统计浏览量并不简单：
+
+某些类型的请求不应该统计为浏览量，比如作者自己的浏览或
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/" style="background-size: cover;
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="post-more" line_style="solid">
+          <div class="post-meta">
+            <div class="post-time">
+             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+             <span class="post-time">2020-06-18</span>
+            </div>
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+            </div>
+          </div>
+          <a href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/">
+            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -2652,11 +2649,6 @@ article/views.py
               ><div class='name'>爬虫</div><div class='badge'>(1)</div></a></li>
           
             <li><a class="flat-box"
-              title="/categories/%E7%AE%80%E5%8D%95/" href="/categories/%E7%AE%80%E5%8D%95/"
-              id="categoriesE7AE80E58D95"
-              ><div class='name'>简单</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
               title="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/" href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"
               id="categoriesE7BC96E7A88BE4B98BE98193"
               ><div class='name'>编程之道</div><div class='badge'>(3)</div></a></li>
@@ -2689,7 +2681,7 @@ article/views.py
 
 
     <div class='content'>
-    <a href="/tags/CPU%E7%BC%93%E5%AD%98/" style="font-size: 14px; color: #999">CPU缓存</a> <a href="/tags/DevOps/" style="font-size: 14px; color: #999">DevOps</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/GitLab-CI/" style="font-size: 14px; color: #999">GitLab CI</a> <a href="/tags/Google/" style="font-size: 14px; color: #999">Google</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/Java/" style="font-size: 22.33px; color: #606060">Java</a> <a href="/tags/JavaScript/" style="font-size: 17.33px; color: #828282">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 14px; color: #999">Jenkins</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/PostgreSQL/" style="font-size: 14px; color: #999">PostgreSQL</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/django/" style="font-size: 24px; color: #555">django</a> <a href="/tags/markdown/" style="font-size: 17.33px; color: #828282">markdown</a> <a href="/tags/media/" style="font-size: 14px; color: #999">media</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/scrapy/" style="font-size: 14px; color: #999">scrapy</a> <a href="/tags/widget/" style="font-size: 14px; color: #999">widget</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">数组</a> <a href="/tags/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81/" style="font-size: 14px; color: #999">整洁代码</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/%E7%83%AD%E6%90%9C%E6%A6%9C/" style="font-size: 14px; color: #999">热搜榜</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14px; color: #999">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 20.67px; color: #6c6c6c">设计模式</a> <a href="/tags/%E9%87%8D%E6%9E%84/" style="font-size: 14px; color: #999">重构</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">面向对象编程</a>
+    <a href="/tags/CPU%E7%BC%93%E5%AD%98/" style="font-size: 14px; color: #999">CPU缓存</a> <a href="/tags/DevOps/" style="font-size: 14px; color: #999">DevOps</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/GitLab-CI/" style="font-size: 14px; color: #999">GitLab CI</a> <a href="/tags/Google/" style="font-size: 14px; color: #999">Google</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/Java/" style="font-size: 22.33px; color: #606060">Java</a> <a href="/tags/JavaScript/" style="font-size: 17.33px; color: #828282">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 14px; color: #999">Jenkins</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/PostgreSQL/" style="font-size: 14px; color: #999">PostgreSQL</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/django/" style="font-size: 24px; color: #555">django</a> <a href="/tags/markdown/" style="font-size: 17.33px; color: #828282">markdown</a> <a href="/tags/media/" style="font-size: 14px; color: #999">media</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/scrapy/" style="font-size: 14px; color: #999">scrapy</a> <a href="/tags/widget/" style="font-size: 14px; color: #999">widget</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="/tags/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81/" style="font-size: 14px; color: #999">整洁代码</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/%E7%83%AD%E6%90%9C%E6%A6%9C/" style="font-size: 14px; color: #999">热搜榜</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14px; color: #999">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 20.67px; color: #6c6c6c">设计模式</a> <a href="/tags/%E9%87%8D%E6%9E%84/" style="font-size: 14px; color: #999">重构</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">面向对象编程</a>
     </div>
 </section>
 
@@ -2710,27 +2702,6 @@ article/views.py
       <!-- hash算法 -->
       
       <div class="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/post/algorithm/1-liang-shu-zhi-he/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/4.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">12-03</span>
-                
-              </div>
-              <a class="post-title" href="/post/algorithm/1-liang-shu-zhi-he/">1-两数之和(Two Sum)</a>
-            </div>
-          </div>
         
           <div class="aside-list-item">
             
@@ -2816,6 +2787,27 @@ article/views.py
             </div>
           </div>
         
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-24</span>
+                
+              </div>
+              <a class="post-title" href="/post/ben-zhan-jie-shao/zhu-ti-jie-shao-mei-ti-wen-jian-shu-xie-gong-neng/">主题介绍-媒体文件书写功能</a>
+            </div>
+          </div>
+        
       </div>
     </div>
   </section>
@@ -2823,7 +2815,7 @@ article/views.py
     
   <section class="widget side_archives">
     
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">37</span></a></li></ul></div>
+    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">37</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/12/"><span class="card-archive-list-date">十二月 2018</span><span class="card-archive-list-count">2</span></a></li></ul></div>
   </section>
 
     <section class="widget side_webinfo">
@@ -2840,7 +2832,7 @@ article/views.py
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>105 篇</div>
+          <div>104 篇</div>
         </div>
       
 
@@ -2862,7 +2854,7 @@ article/views.py
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>246.8k 字</div>
+          <div>246.4k 字</div>
         </div>
       
 
@@ -2888,7 +2880,7 @@ article/views.py
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Feb 23 2022 14:39:46 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Wed Feb 23 2022 15:04:30 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2022-02-23 日</div>
           
         </div>
@@ -3226,9 +3218,9 @@ article/views.py
 
 <meting-js
   class=""
-  server="tencent"
-  type="playlist"
-  id="8197627936"
+  server="netease"
+  type="song"
+  id="1365053719"
   fixed='true'
   autoplay='true'
   theme='#42b983'

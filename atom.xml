@@ -6,7 +6,7 @@
   <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jimyfengqi.github.io/"/>
-  <updated>2021-12-03T15:17:48.030Z</updated>
+  <updated>2021-12-22T03:15:49.637Z</updated>
   <id>https://jimyfengqi.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>1-两数之和(Two Sum)</title>
-    <link href="https://jimyfengqi.github.io/post/algorithm/1-liang-shu-zhi-he/"/>
-    <id>https://jimyfengqi.github.io/post/algorithm/1-liang-shu-zhi-he/</id>
-    <published>2021-12-03T15:02:41.000Z</published>
-    <updated>2021-12-03T15:17:48.030Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;原文链接: &lt;a href=&quot;https://leetcode-cn.com/problems/two-sum&quot;&gt;https://leetcode-cn.com/problems/two-sum&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="简单" scheme="https://jimyfengqi.github.io/categories/%E7%AE%80%E5%8D%95/"/>
-    
-    
-    <category term="数组" scheme="https://jimyfengqi.github.io/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="哈希表" scheme="https://jimyfengqi.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
-    
-  </entry>
   
   <entry>
     <title>优雅的获取动态数据</title>
@@ -548,6 +518,33 @@
         
     <summary type="html">&lt;p&gt;#数据总览功能&lt;br&gt;数据总览功能，是对网站中产生的数据进行一个统计，统计出视频数、发布数、用户数、评论数，等等。让管理者对网站数据有一个清晰的认识，做到心中有数。&lt;/p&gt;
 &lt;p&gt;在本站中，笔者一共列举了下面几种数据：视频数、发布中&lt;br&gt;未发布、用户数、用户新增、评论数、</summary>
+        
+      
+    
+    
+    
+    <category term="Django视频网站搭建" scheme="https://jimyfengqi.github.io/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="django" scheme="https://jimyfengqi.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django视频网站搭建--step14后台反馈功能</title>
+    <link href="https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/"/>
+    <id>https://jimyfengqi.github.io/post/django-shi-pin-wang-zhan-da-jian/step14-hou-tai-fan-kui-gong-neng/</id>
+    <published>2020-08-28T08:41:31.000Z</published>
+    <updated>2021-11-08T10:26:49.671Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;#后天反馈功能&lt;br&gt;用户反馈管理功能，是对前端用户反馈的问题进行展示，并可实现删除功能。&lt;/p&gt;
+&lt;p&gt;它可以实时的跟踪到用户对网站的各种意见和吐槽，开发者能及时修缮网站功能或者修改网站bug。&lt;/p&gt;
+&lt;p&gt;##路由设置&lt;br&gt;反馈管理包括反馈列表和反馈删除，它们的路由</summary>
         
       
     
