@@ -111,7 +111,7 @@ theme: bamboo
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git://github.com:JimyFengqi/JimyFengqi.github.io.git
+  repo: git@github.com:JimyFengqi/JimyFengqi.github.io.git
   branch: master
 
 # 支持搜索 hexo-generator-search
