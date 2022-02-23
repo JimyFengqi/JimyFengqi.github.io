@@ -1,3 +1,4 @@
+hexo clean
 hexo generate
 git clone -b master git@github.com:JimyFengqi/JimyFengqi.github.io.git .deploy_git
 mv .deploy_git/.git/ ./public/
