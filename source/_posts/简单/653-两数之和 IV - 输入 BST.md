@@ -1,6 +1,5 @@
 ---
 title: 653-两数之和 IV - 输入 BST(Two Sum IV - Input is a BST)
-date: 2021-12-03 22:40:32
 categories:
   - 简单
 tags:
@@ -11,6 +10,8 @@ tags:
   - 哈希表
   - 双指针
   - 二叉树
+abbrlink: 1586958626
+date: 2021-12-03 22:40:32
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst

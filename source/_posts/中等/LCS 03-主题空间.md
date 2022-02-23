@@ -1,6 +1,5 @@
 ---
 title: LCS 03-主题空间
-date: 2021-12-03 21:33:07
 categories:
   - 中等
 tags:
@@ -9,6 +8,8 @@ tags:
   - 并查集
   - 数组
   - 矩阵
+abbrlink: 3970133926
+date: 2021-12-03 21:33:07
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/YesdPw

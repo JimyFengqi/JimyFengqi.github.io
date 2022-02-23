@@ -1,11 +1,12 @@
 ---
 title: 168-Excel表列名称(Excel Sheet Column Title)
-date: 2021-12-03 22:54:01
 categories:
   - 简单
 tags:
   - 数学
   - 字符串
+abbrlink: 2450626175
+date: 2021-12-03 22:54:01
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/excel-sheet-column-title

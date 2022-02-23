@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer 59 - II-队列的最大值(队列的最大值 LCOF)
-date: 2021-12-03 21:36:41
 categories:
   - 中等
 tags:
   - 设计
   - 队列
   - 单调队列
+abbrlink: 718037873
+date: 2021-12-03 21:36:41
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof

@@ -1,11 +1,12 @@
 ---
 title: 69-Sqrt(x)
-date: 2021-12-03 22:59:57
 categories:
   - 简单
 tags:
   - 数学
   - 二分查找
+abbrlink: 1082150631
+date: 2021-12-03 22:59:57
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/sqrtx

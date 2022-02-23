@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer 19-正则表达式匹配(正则表达式匹配 LCOF)
-date: 2021-12-03 21:39:20
 categories:
   - 困难
 tags:
   - 递归
   - 字符串
   - 动态规划
+abbrlink: 1673282631
+date: 2021-12-03 21:39:20
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof

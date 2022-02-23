@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 075-数组相对排序
-date: 2021-12-03 21:28:14
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 哈希表
   - 计数排序
   - 排序
+abbrlink: 1771953779
+date: 2021-12-03 21:28:14
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/0H97ZC
@@ -56,38 +57,38 @@ tags:
 
 
 ## 高赞题解
-# **计数排序**
-题目中明确数组内数字的范围为 0 ~ 1000，据此可以考虑使用计数排序。首先使用一个长度为 1001 的数组 counts 统计数组 arr1 内每个数字的出现次数，之后根据题目要求先排序数组 arr2 内出现的数字，最后排序 counts 内剩下的数字。
-
-由于题目中已经明确辅助数组的长度，所以空间复杂度可以认为是 O(1)，若数组 arr1 和 arr2 的长度分别为 m 和 n，那么算法的总时间复杂度为 O(n+m)。
-```
-class Solution {
-public:
-    vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
-        vector<int> counts(1001, 0);
-        for (auto& n : arr1) {
-            counts[n]++;
-        }
-
-        int i = 0;
-        // 排序 arr2 内的数字
-        for (auto& n : arr2) {
-            while (counts[n] > 0) {
-                arr1[i++] = n;
-                counts[n]--;
-            }
-        }
-        // 排序剩下的数字
-        for (int j = 0; j < counts.size(); ++j) {
-            while (counts[j] > 0) {
-                arr1[i++] = j;
-                counts[j]--;
-            }
-        }
-        return arr1;
-    }
-};
-```
+# **计数排序**
+题目中明确数组内数字的范围为 0 ~ 1000，据此可以考虑使用计数排序。首先使用一个长度为 1001 的数组 counts 统计数组 arr1 内每个数字的出现次数，之后根据题目要求先排序数组 arr2 内出现的数字，最后排序 counts 内剩下的数字。
+
+由于题目中已经明确辅助数组的长度，所以空间复杂度可以认为是 O(1)，若数组 arr1 和 arr2 的长度分别为 m 和 n，那么算法的总时间复杂度为 O(n+m)。
+```
+class Solution {
+public:
+    vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
+        vector<int> counts(1001, 0);
+        for (auto& n : arr1) {
+            counts[n]++;
+        }
+
+        int i = 0;
+        // 排序 arr2 内的数字
+        for (auto& n : arr2) {
+            while (counts[n] > 0) {
+                arr1[i++] = n;
+                counts[n]--;
+            }
+        }
+        // 排序剩下的数字
+        for (int j = 0; j < counts.size(); ++j) {
+            while (counts[j] > 0) {
+                arr1[i++] = j;
+                counts[j]--;
+            }
+        }
+        return arr1;
+    }
+};
+```
 
 
 ## 统计信息

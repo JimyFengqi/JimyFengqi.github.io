@@ -1,6 +1,5 @@
 ---
 title: 736-Lisp 语法解析(Parse Lisp Expression)
-date: 2021-12-03 22:38:18
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 递归
   - 哈希表
   - 字符串
+abbrlink: 3828732479
+date: 2021-12-03 22:38:18
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/parse-lisp-expression

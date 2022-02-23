@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 117-相似的字符串
-date: 2021-12-03 21:28:38
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 广度优先搜索
   - 并查集
   - 字符串
+abbrlink: 3163003491
+date: 2021-12-03 21:28:38
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/H6lPxb

@@ -1,6 +1,5 @@
 ---
 title: LCP 48-无限棋局
-date: 2021-12-03 21:27:56
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 数学
   - 枚举
   - 博弈
+abbrlink: 2502897220
+date: 2021-12-03 21:27:56
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/fsa7oZ

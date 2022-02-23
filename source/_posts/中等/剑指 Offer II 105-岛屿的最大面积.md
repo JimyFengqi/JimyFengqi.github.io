@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 105-岛屿的最大面积
-date: 2021-12-03 21:31:00
 categories:
   - 中等
 tags:
@@ -9,6 +8,8 @@ tags:
   - 并查集
   - 数组
   - 矩阵
+abbrlink: 2553008457
+date: 2021-12-03 21:31:00
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/ZL6zAn
@@ -62,143 +63,143 @@ tags:
 
 
 ## 高赞题解
-# **图**
-如果把矩阵中每一个值为 1 的格子看作图中的一个节点，矩阵中一个格子可能与位于其上下左右四个方向的格子相邻，两个相邻的值都为 1 的格子中间有一条边相连。例如下图
-![image.png](../images/ZL6zAn-0.png)
-原问题就可以转化为计算子图中的最大节点数，只要遍历每一个子图并计算其节点数即可。图的遍历可以分为广度优先搜索和深度优先搜索两种。
-# **广度优先搜索**
-为了避免搜索的死循环需要一个与地图等大的数组标记各节点的访问情况，基于队列实现的广度优先搜索算法如下：
-```
-class Solution {
-private:
-    // BFS
-    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
-        queue<pair<int, int>> que;
-        que.push({i, j});
-        visited[i][j] = true;
-        
-        int area = 0;
-        while (!que.empty()) {
-            auto pos = que.front();
-            que.pop();
-            area++;
-            for (auto& d : dirs) {
-                int r = pos.first + d[0];
-                int c = pos.second + d[1];
-                if (r >= 0 && r < grid.size() &&
-                    c >= 0 && c < grid[0].size() &&
-                    grid[r][c] == 1 && !visited[r][c]) {
-                    que.push({r, c});
-                    visited[r][c] = true;
-                }
-            }
-        }
-        return area;
-    }
-
-public:
-    int maxAreaOfIsland(vector<vector<int>>& grid) {
-        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
-        int maxArea = 0;
-        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-        for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == 1 && !visited[i][j]) {
-                    int area = countArea(grid, dirs, visited, i, j);
-                    maxArea = max(area, maxArea);
-                }
-            }
-        }
-        return maxArea;
-    }
-};
-```
-
-
-# **深度优先搜索**
-如果把前面代码中的队列替换成栈，由于栈的 “后进先出” 特性，所以可以实现深度优先搜索，代码如下：
-```
-class Solution {
-private:
-    // DFS
-    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
-        stack<pair<int, int>> sta;
-        sta.push({i, j});
-        visited[i][j] = true;
-        
-        int area = 0;
-        while (!sta.empty()) {
-            auto pos = sta.top();
-            sta.pop();
-            area++;
-            for (auto& d : dirs) {
-                int r = pos.first + d[0];
-                int c = pos.second + d[1];
-                if (r >= 0 && r < grid.size() &&
-                    c >= 0 && c < grid[0].size() &&
-                    grid[r][c] == 1 && !visited[r][c]) {
-                    sta.push({r, c});
-                    visited[r][c] = true;
-                }
-            }
-        }
-        return area;
-    }
-
-public:
-    int maxAreaOfIsland(vector<vector<int>>& grid) {
-        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
-        int maxArea = 0;
-        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-        for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == 1 && !visited[i][j]) {
-                    int area = countArea(grid, dirs, visited, i, j);
-                    maxArea = max(area, maxArea);
-                }
-            }
-        }
-        return maxArea;
-    }
-};
-```
-深度优先搜索同样也可以使用递归实现，代码如下：
-```
-class Solution {
-private:
-    // DFS
-    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
-        if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == 0 || visited[i][j]) {
-            return 0;
-        }
-
-        visited[i][j] = true;
-        int area = 1;
-        for (auto& d : dirs) {
-            int r = i + d[0];
-            int c = j + d[1];
-            area += countArea(grid, dirs, visited, r, c);
-        }
-        return area;
-    }
-
-public:
-    int maxAreaOfIsland(vector<vector<int>>& grid) {
-        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
-        int maxArea = 0;
-        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-        for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == 1 && !visited[i][j]) {
-                    int area = countArea(grid, dirs, visited, i, j);
-                    maxArea = max(area, maxArea);
-                }
-            }
-        }
-        return maxArea;
-    }
-};
-```
+# **图**
+如果把矩阵中每一个值为 1 的格子看作图中的一个节点，矩阵中一个格子可能与位于其上下左右四个方向的格子相邻，两个相邻的值都为 1 的格子中间有一条边相连。例如下图
+![image.png](../images/ZL6zAn-0.png)
+原问题就可以转化为计算子图中的最大节点数，只要遍历每一个子图并计算其节点数即可。图的遍历可以分为广度优先搜索和深度优先搜索两种。
+# **广度优先搜索**
+为了避免搜索的死循环需要一个与地图等大的数组标记各节点的访问情况，基于队列实现的广度优先搜索算法如下：
+```
+class Solution {
+private:
+    // BFS
+    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
+        queue<pair<int, int>> que;
+        que.push({i, j});
+        visited[i][j] = true;
+        
+        int area = 0;
+        while (!que.empty()) {
+            auto pos = que.front();
+            que.pop();
+            area++;
+            for (auto& d : dirs) {
+                int r = pos.first + d[0];
+                int c = pos.second + d[1];
+                if (r >= 0 && r < grid.size() &&
+                    c >= 0 && c < grid[0].size() &&
+                    grid[r][c] == 1 && !visited[r][c]) {
+                    que.push({r, c});
+                    visited[r][c] = true;
+                }
+            }
+        }
+        return area;
+    }
+
+public:
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+        int maxArea = 0;
+        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    int area = countArea(grid, dirs, visited, i, j);
+                    maxArea = max(area, maxArea);
+                }
+            }
+        }
+        return maxArea;
+    }
+};
+```
+
+
+# **深度优先搜索**
+如果把前面代码中的队列替换成栈，由于栈的 “后进先出” 特性，所以可以实现深度优先搜索，代码如下：
+```
+class Solution {
+private:
+    // DFS
+    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
+        stack<pair<int, int>> sta;
+        sta.push({i, j});
+        visited[i][j] = true;
+        
+        int area = 0;
+        while (!sta.empty()) {
+            auto pos = sta.top();
+            sta.pop();
+            area++;
+            for (auto& d : dirs) {
+                int r = pos.first + d[0];
+                int c = pos.second + d[1];
+                if (r >= 0 && r < grid.size() &&
+                    c >= 0 && c < grid[0].size() &&
+                    grid[r][c] == 1 && !visited[r][c]) {
+                    sta.push({r, c});
+                    visited[r][c] = true;
+                }
+            }
+        }
+        return area;
+    }
+
+public:
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+        int maxArea = 0;
+        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    int area = countArea(grid, dirs, visited, i, j);
+                    maxArea = max(area, maxArea);
+                }
+            }
+        }
+        return maxArea;
+    }
+};
+```
+深度优先搜索同样也可以使用递归实现，代码如下：
+```
+class Solution {
+private:
+    // DFS
+    int countArea(vector<vector<int>>& grid, vector<vector<int>>& dirs,vector<vector<bool>>& visited, int i, int j) {
+        if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == 0 || visited[i][j]) {
+            return 0;
+        }
+
+        visited[i][j] = true;
+        int area = 1;
+        for (auto& d : dirs) {
+            int r = i + d[0];
+            int c = j + d[1];
+            area += countArea(grid, dirs, visited, r, c);
+        }
+        return area;
+    }
+
+public:
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+        int maxArea = 0;
+        vector<vector<int>> dirs{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    int area = countArea(grid, dirs, visited, i, j);
+                    maxArea = max(area, maxArea);
+                }
+            }
+        }
+        return maxArea;
+    }
+};
+```
 如果一个图的节点数为 v，边的数目为 e，那么进行 BFS 和 DFS 的时间复杂度都为 O(v + e)。若矩阵的维度为 m 和 n，那么矩阵的节点数为 mn，一个节点最多有四个边，所以时间复杂度为 O(mn)，同时因为需要一个记录访问情况的矩阵，所以空间复杂度为 O(mn)。
 
 ## 统计信息

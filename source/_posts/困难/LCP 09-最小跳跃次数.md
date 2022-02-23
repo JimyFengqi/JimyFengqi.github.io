@@ -1,6 +1,5 @@
 ---
 title: LCP 09-最小跳跃次数
-date: 2021-12-03 21:33:42
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 线段树
   - 数组
   - 动态规划
+abbrlink: 1480554425
+date: 2021-12-03 21:33:42
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/zui-xiao-tiao-yue-ci-shu

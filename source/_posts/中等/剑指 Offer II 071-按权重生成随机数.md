@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 071-按权重生成随机数
-date: 2021-12-03 21:28:20
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 二分查找
   - 前缀和
   - 随机化
+abbrlink: 104949558
+date: 2021-12-03 21:28:20
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/cuyjEf
@@ -86,51 +87,51 @@ solution.pickIndex(); // 返回 0，返回下标 0，返回该下标概率为 1/
 
 
 ## 高赞题解
-# **二分查找**
-以权重数组 [1, 2, 3, 4] 为例，那么选择下标 0 的概率为 10% (1/10)，选择下标 1 、2 和 3 的概率一次为 20% 、30% 和40%。考虑如何根据权重比例随机选择一个下标，先按等概率生成 1 ~ 10，则每个数字的概率的都为 10%。如果生成 1 则选择下标 0，概率为 10%；如果生成 2 或 3 则选择下标 1，概率为 20%；如果生成 4、5 或 6 则选择下标 2，概率为 30%；如果生成 7、8、9 或 10 则选择下标 3，概率为 40%。
-
-通过上面的例子可以发现，可以创建一个和权重数组一样长度的数组 acc，新数组的第 i 个数值 acc[i] 就是权重数组的前 i 个数组之和。有了这个数组就可以很方便的根据随机等概生成的数字选则对应的下标。方式如下：
-1. 等概率在区间 [1, acc.back()] 上随机生成数字 n;
-2. 找到区间 n <= acc[m] && (m == 0 || n > acc[m - 1])，则下标 m 就是输出的下标值。
-
-因为数组 acc 是一个递增数组，所以可以使用二分查找找到目标区间。
-
-完整的代码如下，函数 pickIndex 的时间复杂度为 O(logn)。
-
-```
-class Solution {
-private:
-    vector<int> acc;
-public:
-    Solution(vector<int>& w) {
-        acc.resize(w.size(), 0);
-        int sum = 0;
-        for (int i = 0; i < w.size(); ++i) {
-            sum += w[i];
-            acc[i] = sum;
-        }
-    }
-    
-    int pickIndex() {
-        int rad = rand() % acc.back() + 1;
-        int left = 0;
-        int right = acc.size() - 1;
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            if (rad <= acc[mid]) {
-                if (mid == 0 || rad > acc[mid - 1]) {
-                    return mid;
-                }
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
-        }
-        return -1;
-    }
-};
-```
+# **二分查找**
+以权重数组 [1, 2, 3, 4] 为例，那么选择下标 0 的概率为 10% (1/10)，选择下标 1 、2 和 3 的概率一次为 20% 、30% 和40%。考虑如何根据权重比例随机选择一个下标，先按等概率生成 1 ~ 10，则每个数字的概率的都为 10%。如果生成 1 则选择下标 0，概率为 10%；如果生成 2 或 3 则选择下标 1，概率为 20%；如果生成 4、5 或 6 则选择下标 2，概率为 30%；如果生成 7、8、9 或 10 则选择下标 3，概率为 40%。
+
+通过上面的例子可以发现，可以创建一个和权重数组一样长度的数组 acc，新数组的第 i 个数值 acc[i] 就是权重数组的前 i 个数组之和。有了这个数组就可以很方便的根据随机等概生成的数字选则对应的下标。方式如下：
+1. 等概率在区间 [1, acc.back()] 上随机生成数字 n;
+2. 找到区间 n <= acc[m] && (m == 0 || n > acc[m - 1])，则下标 m 就是输出的下标值。
+
+因为数组 acc 是一个递增数组，所以可以使用二分查找找到目标区间。
+
+完整的代码如下，函数 pickIndex 的时间复杂度为 O(logn)。
+
+```
+class Solution {
+private:
+    vector<int> acc;
+public:
+    Solution(vector<int>& w) {
+        acc.resize(w.size(), 0);
+        int sum = 0;
+        for (int i = 0; i < w.size(); ++i) {
+            sum += w[i];
+            acc[i] = sum;
+        }
+    }
+    
+    int pickIndex() {
+        int rad = rand() % acc.back() + 1;
+        int left = 0;
+        int right = acc.size() - 1;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if (rad <= acc[mid]) {
+                if (mid == 0 || rad > acc[mid - 1]) {
+                    return mid;
+                }
+                right = mid - 1;
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+};
+```
 
 
 ## 统计信息

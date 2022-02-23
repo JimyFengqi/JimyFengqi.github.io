@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 110-所有路径
-date: 2021-12-03 21:30:46
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 广度优先搜索
   - 图
   - 回溯
+abbrlink: 1967820422
+date: 2021-12-03 21:30:46
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/bP4bmD

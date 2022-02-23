@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 031-最近最少使用缓存
-date: 2021-12-03 21:32:12
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 哈希表
   - 链表
   - 双向链表
+abbrlink: 1553836004
+date: 2021-12-03 21:32:12
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/OrIXps

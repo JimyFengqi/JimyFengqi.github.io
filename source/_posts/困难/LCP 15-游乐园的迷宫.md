@@ -1,6 +1,5 @@
 ---
 title: LCP 15-游乐园的迷宫
-date: 2021-12-03 21:33:46
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 几何
   - 数组
   - 数学
+abbrlink: 3223545475
+date: 2021-12-03 21:33:46
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/you-le-yuan-de-mi-gong
@@ -59,67 +60,67 @@ tags:
 
 
 ## 高赞题解
-构造方法:
-1. 选取一个凸包顶点作为起点.
-2. 如果下一步要左(右)拐,移动到逆(顺)时针凸包上下一个顶点.
-![批注 2020-04-25 224857.png](../images/you-le-yuan-de-mi-gong-0.png)
-如图,如果沿着红色箭头移动到逆时针下一个点,那么下一步(绿色箭头)无论走向哪个点,都是左拐.
-3. 去掉当前点并移动到下一个点时,下一个点仍在新的凸包上,因此可以回到第2步.
-
-1'. 因为没有三点共线,横(纵)坐标最小(大)的点一定在凸包上,随便选一个即可.
-2'. 如何找到逆(顺)时针方向凸包上下一个顶点?
-使用叉积,以逆时针为例,如果$B$是$A$逆时针方向下一个点,那么对于所有其他点$C$都有:
-$$\vec{AB}\times\vec{AC}>0.$$
-
-复杂度为$O(n^2)$.代码中$m$为当前点,$q$为下一个点.
-
-```C++
-using LL = long long;
-struct Point{
-    LL x, y;
-    Point operator - (const Point& p){
-        return{x - p.x, y - p.y};
-    }
-    LL operator * (const Point &p){
-        return x * p.y - y * p.x;
-    }
-};
-class Solution {
-public:
-    
-    vector<int> visitOrder(vector<vector<int>>& points, string direction) {
-        int n = points.size();
-        vector<int> ans;
-        vector<int> vis(n);
-        vector<Point> vp(n);
-        for(int i = 0; i < n; i += 1) vp[i] = {points[i][0], points[i][1]};
-        int m = 0;
-        for(int i = 1; i < n; i += 1)
-            if(vp[i].x < vp[m].x) m = i;
-        ans.push_back(m);
-        vis[m] = 1;
-        for(int i = 0; i < n - 2; i += 1){
-            int q = -1;
-            for(int j = 0; j < n; j += 1) if(not vis[j])
-                if(q == -1) q = j;
-                else{
-                    if(direction[i] == 'L'){
-                        if((vp[q] - vp[m]) * (vp[j] - vp[m]) < 0) q = j;
-                    }
-                    else{
-                        if((vp[q] - vp[m]) * (vp[j] - vp[m]) > 0) q = j;
-                    }
-                }
-            m = q;
-            vis[q] = 1;
-            ans.push_back(m);
-        }
-        for(int i = 0; i < n; i += 1) if(not vis[i]) ans.push_back(i);
-        return ans;
-    }
-};
-```
-
+构造方法:
+1. 选取一个凸包顶点作为起点.
+2. 如果下一步要左(右)拐,移动到逆(顺)时针凸包上下一个顶点.
+![批注 2020-04-25 224857.png](../images/you-le-yuan-de-mi-gong-0.png)
+如图,如果沿着红色箭头移动到逆时针下一个点,那么下一步(绿色箭头)无论走向哪个点,都是左拐.
+3. 去掉当前点并移动到下一个点时,下一个点仍在新的凸包上,因此可以回到第2步.
+
+1'. 因为没有三点共线,横(纵)坐标最小(大)的点一定在凸包上,随便选一个即可.
+2'. 如何找到逆(顺)时针方向凸包上下一个顶点?
+使用叉积,以逆时针为例,如果$B$是$A$逆时针方向下一个点,那么对于所有其他点$C$都有:
+$$\vec{AB}\times\vec{AC}>0.$$
+
+复杂度为$O(n^2)$.代码中$m$为当前点,$q$为下一个点.
+
+```C++
+using LL = long long;
+struct Point{
+    LL x, y;
+    Point operator - (const Point& p){
+        return{x - p.x, y - p.y};
+    }
+    LL operator * (const Point &p){
+        return x * p.y - y * p.x;
+    }
+};
+class Solution {
+public:
+    
+    vector<int> visitOrder(vector<vector<int>>& points, string direction) {
+        int n = points.size();
+        vector<int> ans;
+        vector<int> vis(n);
+        vector<Point> vp(n);
+        for(int i = 0; i < n; i += 1) vp[i] = {points[i][0], points[i][1]};
+        int m = 0;
+        for(int i = 1; i < n; i += 1)
+            if(vp[i].x < vp[m].x) m = i;
+        ans.push_back(m);
+        vis[m] = 1;
+        for(int i = 0; i < n - 2; i += 1){
+            int q = -1;
+            for(int j = 0; j < n; j += 1) if(not vis[j])
+                if(q == -1) q = j;
+                else{
+                    if(direction[i] == 'L'){
+                        if((vp[q] - vp[m]) * (vp[j] - vp[m]) < 0) q = j;
+                    }
+                    else{
+                        if((vp[q] - vp[m]) * (vp[j] - vp[m]) > 0) q = j;
+                    }
+                }
+            m = q;
+            vis[q] = 1;
+            ans.push_back(m);
+        }
+        for(int i = 0; i < n; i += 1) if(not vis[i]) ans.push_back(i);
+        return ans;
+    }
+};
+```
+
 
 
 ## 统计信息

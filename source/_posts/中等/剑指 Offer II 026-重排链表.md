@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 026-重排链表
-date: 2021-12-03 21:32:21
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 递归
   - 链表
   - 双指针
+abbrlink: 1545888968
+date: 2021-12-03 21:32:21
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/LGjMqU
@@ -63,66 +64,66 @@ tags:
 
 
 ## 高赞题解
-# **思路**
-整个过程分成：
-1. 把链表分成前后两段，当链表节点数为奇数时，前半段要比后半段多一个节点；
-2. 把链表的后半段进行反转；
-3. 从前半段的头节点出发 Z 字形重新连接前后段。
-
-如下图
-![30c555eb20d5f9314c1af6223368ea9.jpg](../images/LGjMqU-0.jpg)
-
-把链表分为前后两段可以使用快慢指针的方式，慢指针一次走一步，快指针一次走两步，最后快指针遍历完链表后，慢指针所指的节点就是中间节点。得到中间节点便可以得到后半段的头节点，之后应用[《剑指offer 2 面试题24》 书中算法C++实现](https://leetcode-cn.com/problems/UHnkqh/solution/jian-zhi-offer-2-mian-shi-ti-24-shu-zhon-7nq5/) 反转后半段。
-
-Z 字形重连需要使用三个指针，具体操作如下图，不断改变指针 p1->next 指向指针 p2，之后更新三个指针的位置，循环解结束条件为指针 p2 是空指针。
-![c099134b3ccb7ea5e33b2a82816f95d.jpg](../images/LGjMqU-1.jpg)
-
-代码如下，时间复杂度为 O(n)，空间复杂度为 O(1)。
-
-```
-class Solution {
-public:
-    void reorderList(ListNode* head) {
-        ListNode* dummmy = new ListNode(0);
-        dummmy->next = head;
-        ListNode* slow = dummmy;
-        ListNode* fast = dummmy;
-        while (fast != nullptr && fast->next != nullptr) {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        delete dummmy;
-        dummmy = nullptr;
-        ListNode* headB = slow->next;
-        slow->next = nullptr;
-        ListNode* p2 = reverseList(headB);
-        ListNode* p1 = head;
-        ListNode* p3 = nullptr;
-        while (p2 != nullptr) {
-            p3 = p1->next;
-            p1->next = p2;
-            p1 = p2;
-            p2 = p3;
-        }
-    }
-
-    ListNode* reverseList(ListNode* head) {
-        if (head == nullptr) {
-            return head;
-        }
-        ListNode* left = nullptr;
-        ListNode* cur = head;
-        ListNode* right = nullptr;
-        while (cur != nullptr) {
-            right = cur->next;
-            cur->next = left;
-            left = cur;
-            cur = right;
-        }
-        return left;
-    }
-};
-```
+# **思路**
+整个过程分成：
+1. 把链表分成前后两段，当链表节点数为奇数时，前半段要比后半段多一个节点；
+2. 把链表的后半段进行反转；
+3. 从前半段的头节点出发 Z 字形重新连接前后段。
+
+如下图
+![30c555eb20d5f9314c1af6223368ea9.jpg](../images/LGjMqU-0.jpg)
+
+把链表分为前后两段可以使用快慢指针的方式，慢指针一次走一步，快指针一次走两步，最后快指针遍历完链表后，慢指针所指的节点就是中间节点。得到中间节点便可以得到后半段的头节点，之后应用[《剑指offer 2 面试题24》 书中算法C++实现](https://leetcode-cn.com/problems/UHnkqh/solution/jian-zhi-offer-2-mian-shi-ti-24-shu-zhon-7nq5/) 反转后半段。
+
+Z 字形重连需要使用三个指针，具体操作如下图，不断改变指针 p1->next 指向指针 p2，之后更新三个指针的位置，循环解结束条件为指针 p2 是空指针。
+![c099134b3ccb7ea5e33b2a82816f95d.jpg](../images/LGjMqU-1.jpg)
+
+代码如下，时间复杂度为 O(n)，空间复杂度为 O(1)。
+
+```
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+        ListNode* dummmy = new ListNode(0);
+        dummmy->next = head;
+        ListNode* slow = dummmy;
+        ListNode* fast = dummmy;
+        while (fast != nullptr && fast->next != nullptr) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        delete dummmy;
+        dummmy = nullptr;
+        ListNode* headB = slow->next;
+        slow->next = nullptr;
+        ListNode* p2 = reverseList(headB);
+        ListNode* p1 = head;
+        ListNode* p3 = nullptr;
+        while (p2 != nullptr) {
+            p3 = p1->next;
+            p1->next = p2;
+            p1 = p2;
+            p2 = p3;
+        }
+    }
+
+    ListNode* reverseList(ListNode* head) {
+        if (head == nullptr) {
+            return head;
+        }
+        ListNode* left = nullptr;
+        ListNode* cur = head;
+        ListNode* right = nullptr;
+        while (cur != nullptr) {
+            right = cur->next;
+            cur->next = left;
+            left = cur;
+            cur = right;
+        }
+        return left;
+    }
+};
+```
 
 
 ## 统计信息

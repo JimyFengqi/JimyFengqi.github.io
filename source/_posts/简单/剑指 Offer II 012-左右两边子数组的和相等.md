@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 012-左右两边子数组的和相等
-date: 2021-12-03 21:32:41
 categories:
   - 简单
 tags:
   - 数组
   - 前缀和
+abbrlink: 505321928
+date: 2021-12-03 21:32:41
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/tvdfij
@@ -73,28 +74,28 @@ tags:
 
 
 ## 高赞题解
-思路：用总的数组和total,减去当前数组和sum,如果差等于当前数组和减去当前值（sum-nums[i]）,则找到该坐标i
-```
-class Solution {
-    public int pivotIndex(int[] nums) {
-        int total=0;
-        for(int num:nums){
-            total+=num;
-        }
-        int sum=0;
-        for(int i=0;i<nums.length;i++){
-            sum+=nums[i];
-            //总和减去当前子数组和等于当前子数组和减去当前值，则满足条件
-            if(sum-nums[i]==total-sum){
-                return i;
-            }
-        }
-        //若没有满足条件值，返回-1
-        return -1;
-    }
-}
-```
-![QQ截图20210821212812.png](../images/tvdfij-0.png)
+思路：用总的数组和total,减去当前数组和sum,如果差等于当前数组和减去当前值（sum-nums[i]）,则找到该坐标i
+```
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int total=0;
+        for(int num:nums){
+            total+=num;
+        }
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            sum+=nums[i];
+            //总和减去当前子数组和等于当前子数组和减去当前值，则满足条件
+            if(sum-nums[i]==total-sum){
+                return i;
+            }
+        }
+        //若没有满足条件值，返回-1
+        return -1;
+    }
+}
+```
+![QQ截图20210821212812.png](../images/tvdfij-0.png)
 
 
 ## 统计信息

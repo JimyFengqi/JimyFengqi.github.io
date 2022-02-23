@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 086-分割回文子字符串
-date: 2021-12-03 21:32:52
 categories:
   - 中等
 tags:
   - 字符串
   - 动态规划
   - 回溯
+abbrlink: 2593660307
+date: 2021-12-03 21:32:52
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/M99OJA

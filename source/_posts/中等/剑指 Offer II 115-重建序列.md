@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 115-重建序列
-date: 2021-12-03 21:30:29
 categories:
   - 中等
 tags:
   - 图
   - 拓扑排序
   - 数组
+abbrlink: 2665389971
+date: 2021-12-03 21:30:29
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/ur2n8P
@@ -74,77 +75,77 @@ tags:
 
 
 ## 高赞题解
-# **拓扑排序**
-按照题目的要求，若在 seqs 的某个序列中数字 i 出现在数字 j 之前，那么由 seqs 重建的序列中数字 i 一定出现在 j 之前，也就是说重建的序列 org 就是由 seqs 确定的拓扑排序。题目中要求 org 是由 seqs 重建的唯一的序列，即序列 org 为由 seqs 确定的唯一的拓扑排序。
-
-需要使用一个哈希表记录由 seqs 构建图的各节点的邻接表，用一个数组记录各节点的入度。之后在使用队列进行广度优先搜索确定图的拓扑排序时，因为需要满足唯一性，所以每次入度为 0 的节点必须唯一，且需要与 org 中一一对应。完整代码如下，因为节点数 v 为 org.size()，边的个数 e 为 O(sum(seqs[i].size))，所以时间复杂度为 O(v + e)。
-```
-class Solution {
-public:
-    bool sequenceReconstruction(vector<int>& org, vector<vector<int>>& seqs) {
-        // 建图
-        unordered_map<int, unordered_set<int>> graph;
-        vector<int> inDegree(org.size() + 1, -1);
-        for (auto& seq : seqs) {
-            for (int& n : seq) {
-                // 节点需要合法
-                if (n < 1 || n > org.size()) {
-                    return false;
-                }
-                if (!graph.count(n)) {
-                    graph[n] = {};
-                }
-                if (inDegree[n] == -1) {
-                    inDegree[n] = 0;
-                }
-            }
-            for (int i = 0; i < seq.size() - 1; ++i) {
-                int num1 = seq[i];
-                int num2 = seq[i + 1];
-                if (!graph[num1].count(num2)) {
-                    graph[num1].insert(num2);
-                    inDegree[num2]++;
-                }
-            }
-        }
-        
-        // 初始化队列
-        queue<int> que;
-        int index = 0;
-        for (int i = 1; i < inDegree.size(); ++i) {
-            if (inDegree[i] == 0) {
-                // 存在唯一入度为 0 的节点，且与 org[0] 相等
-                if (que.size() == 0 && org[index++] == i) {
-                    que.push(i);
-                }
-                else {
-                    return false;
-                }
-            }
-        }
-
-        // BFS
-        while (!que.empty()) {
-            int node = que.front();
-            que.pop();
-            for (auto& n : graph[node]) {
-                inDegree[n]--;
-                if (inDegree[n] == 0) {
-                    // 每次只存在唯一入度为 0 的节点，且与 org[index] 相等
-                    if (que.size() == 0 && org[index++] == n) {
-                        que.push(n);
-                    }
-                    else {
-                        return false;
-                    }                    
-                }
-            }
-        }
-
-        return index == org.size();
-    }
-};
-```
+# **拓扑排序**
+按照题目的要求，若在 seqs 的某个序列中数字 i 出现在数字 j 之前，那么由 seqs 重建的序列中数字 i 一定出现在 j 之前，也就是说重建的序列 org 就是由 seqs 确定的拓扑排序。题目中要求 org 是由 seqs 重建的唯一的序列，即序列 org 为由 seqs 确定的唯一的拓扑排序。
+
+需要使用一个哈希表记录由 seqs 构建图的各节点的邻接表，用一个数组记录各节点的入度。之后在使用队列进行广度优先搜索确定图的拓扑排序时，因为需要满足唯一性，所以每次入度为 0 的节点必须唯一，且需要与 org 中一一对应。完整代码如下，因为节点数 v 为 org.size()，边的个数 e 为 O(sum(seqs[i].size))，所以时间复杂度为 O(v + e)。
+```
+class Solution {
+public:
+    bool sequenceReconstruction(vector<int>& org, vector<vector<int>>& seqs) {
+        // 建图
+        unordered_map<int, unordered_set<int>> graph;
+        vector<int> inDegree(org.size() + 1, -1);
+        for (auto& seq : seqs) {
+            for (int& n : seq) {
+                // 节点需要合法
+                if (n < 1 || n > org.size()) {
+                    return false;
+                }
+                if (!graph.count(n)) {
+                    graph[n] = {};
+                }
+                if (inDegree[n] == -1) {
+                    inDegree[n] = 0;
+                }
+            }
+            for (int i = 0; i < seq.size() - 1; ++i) {
+                int num1 = seq[i];
+                int num2 = seq[i + 1];
+                if (!graph[num1].count(num2)) {
+                    graph[num1].insert(num2);
+                    inDegree[num2]++;
+                }
+            }
+        }
+        
+        // 初始化队列
+        queue<int> que;
+        int index = 0;
+        for (int i = 1; i < inDegree.size(); ++i) {
+            if (inDegree[i] == 0) {
+                // 存在唯一入度为 0 的节点，且与 org[0] 相等
+                if (que.size() == 0 && org[index++] == i) {
+                    que.push(i);
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        // BFS
+        while (!que.empty()) {
+            int node = que.front();
+            que.pop();
+            for (auto& n : graph[node]) {
+                inDegree[n]--;
+                if (inDegree[n] == 0) {
+                    // 每次只存在唯一入度为 0 的节点，且与 org[index] 相等
+                    if (que.size() == 0 && org[index++] == n) {
+                        que.push(n);
+                    }
+                    else {
+                        return false;
+                    }                    
+                }
+            }
+        }
+
+        return index == org.size();
+    }
+};
+```
 
 
 ## 统计信息

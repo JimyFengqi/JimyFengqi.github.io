@@ -1,6 +1,5 @@
 ---
 title: LCP 28-采购方案
-date: 2021-12-03 21:33:24
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 双指针
   - 二分查找
   - 排序
+abbrlink: 255212821
+date: 2021-12-03 21:33:24
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/4xy4Wx

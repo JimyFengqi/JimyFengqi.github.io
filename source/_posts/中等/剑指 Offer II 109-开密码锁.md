@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 109-开密码锁
-date: 2021-12-03 21:30:47
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 数组
   - 哈希表
   - 字符串
+abbrlink: 4255344571
+date: 2021-12-03 21:30:47
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/zlDJc7

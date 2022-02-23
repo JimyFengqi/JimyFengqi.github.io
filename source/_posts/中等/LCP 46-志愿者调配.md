@@ -1,12 +1,13 @@
 ---
 title: LCP 46-志愿者调配
-date: 2021-12-03 21:27:57
 categories:
   - 中等
 tags:
   - 图
   - 数组
   - 数学
+abbrlink: 1514910014
+date: 2021-12-03 21:27:57
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/05ZEDJ

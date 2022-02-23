@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 068-查找插入位置
-date: 2021-12-03 21:28:22
 categories:
   - 简单
 tags:
   - 数组
   - 二分查找
+abbrlink: 2525176081
+date: 2021-12-03 21:28:22
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/N6YdxV
@@ -77,46 +78,46 @@ tags:
 
 
 ## 高赞题解
-# **二分查找**
-这道题就是标准二分查找的一个变型，代码比较简单，主要说明两点：
-1. mid = left + ((right - left) >> 1) 的写法比 mid = (left + right) / 2 好，因为 left + right 可能会溢出，同时位运算的效率更高；
-2. 当出现 nums[mid] >= target 的情况，还需要加一个判断 mid == 0 || nums[mid - 1] < target，若成立则说明，前一个数比 target 小，那么就找到了位置。若在 while 循环内都未找到符合要求的位置，那么说明 target 比所有的数都要大，需要插入到数组的最后一个数字之后，即返回 nums.size()。
-
-
-```
-class Solution {
-public:
-    int searchInsert(vector<int>& nums, int target) {
-        int left = 0;
-        int right = nums.size() - 1;
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            if (nums[mid] >= target) {
-                if (mid == 0 || nums[mid - 1] < target) {
-                    return mid;
-                }
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
-        }
-        return nums.size();
-    }
-};
-```
-提供一下二分查找的标准模板，不建议用递归的形式实现，用迭代比较好。
-```
-int left = 0;
-int right = nums.size() - 1;
-while (left <= right) {
-    int mid = left + ((right - left) >> 1);
-    if (nums[mid] == target) {
-        return mid;
-    }
-    nums[mid] > target ? right = mid - 1 : left = mid + 1;
-}
-return -1;
+# **二分查找**
+这道题就是标准二分查找的一个变型，代码比较简单，主要说明两点：
+1. mid = left + ((right - left) >> 1) 的写法比 mid = (left + right) / 2 好，因为 left + right 可能会溢出，同时位运算的效率更高；
+2. 当出现 nums[mid] >= target 的情况，还需要加一个判断 mid == 0 || nums[mid - 1] < target，若成立则说明，前一个数比 target 小，那么就找到了位置。若在 while 循环内都未找到符合要求的位置，那么说明 target 比所有的数都要大，需要插入到数组的最后一个数字之后，即返回 nums.size()。
+
+
+```
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] >= target) {
+                if (mid == 0 || nums[mid - 1] < target) {
+                    return mid;
+                }
+                right = mid - 1;
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+        return nums.size();
+    }
+};
+```
+提供一下二分查找的标准模板，不建议用递归的形式实现，用迭代比较好。
+```
+int left = 0;
+int right = nums.size() - 1;
+while (left <= right) {
+    int mid = left + ((right - left) >> 1);
+    if (nums[mid] == target) {
+        return mid;
+    }
+    nums[mid] > target ? right = mid - 1 : left = mid + 1;
+}
+return -1;
 ```
 
 ## 统计信息

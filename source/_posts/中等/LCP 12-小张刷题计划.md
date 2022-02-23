@@ -1,11 +1,12 @@
 ---
 title: LCP 12-小张刷题计划
-date: 2021-12-03 21:33:47
 categories:
   - 中等
 tags:
   - 数组
   - 二分查找
+abbrlink: 2517949574
+date: 2021-12-03 21:33:47
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua
@@ -58,30 +59,30 @@ tags:
 
 
 ## 高赞题解
-```cpp
-    bool check(vector<int>& a, int t, int m){//每组累加和在<=t的情况下 能否在m组内分完
-        int cnt = 1, rest = t,maxx = -1;//cnt为分的总组数 rest为当前组组剩余容量
-        bool flag = true;//可以求助
-        for(int i = 0; i < a.size(); i++){
-            maxx = max(maxx,a[i]);//维护当前组的最大值
-            if(rest >= a[i]) rest -= a[i];//能装下时就直接装
-            else if(flag) flag = false,rest += maxx,i--;//装不下且可以求助时，把当前的最费时的那个拿去求助
-            else cnt++, maxx = -1,flag = true, rest = t, i--;//装不下 且无法求助时 只能从第二天开始了(开始下一组)
-        }
-        return cnt <= m;//m组内能分完即可(=m天内能看完)
-    }
-    int minTime(vector<int>& time, int m) {
-        int n = time.size();
-        int l = 0, r = 0;
-        for(int i = 0; i < n; i++) r += time[i];//获取一天最多耗时是多少
-        while(l < r){//二分 T        l<= T <=r
-            int T = l + r >> 1;
-            if(check(time,T,m)) r = T;//判断在当前T的限制下能否在m天内看完 如果可以就减小T 即 r = T
-            else l = T+1;
-        }
-        return r;
-    }
-```
+```cpp
+    bool check(vector<int>& a, int t, int m){//每组累加和在<=t的情况下 能否在m组内分完
+        int cnt = 1, rest = t,maxx = -1;//cnt为分的总组数 rest为当前组组剩余容量
+        bool flag = true;//可以求助
+        for(int i = 0; i < a.size(); i++){
+            maxx = max(maxx,a[i]);//维护当前组的最大值
+            if(rest >= a[i]) rest -= a[i];//能装下时就直接装
+            else if(flag) flag = false,rest += maxx,i--;//装不下且可以求助时，把当前的最费时的那个拿去求助
+            else cnt++, maxx = -1,flag = true, rest = t, i--;//装不下 且无法求助时 只能从第二天开始了(开始下一组)
+        }
+        return cnt <= m;//m组内能分完即可(=m天内能看完)
+    }
+    int minTime(vector<int>& time, int m) {
+        int n = time.size();
+        int l = 0, r = 0;
+        for(int i = 0; i < n; i++) r += time[i];//获取一天最多耗时是多少
+        while(l < r){//二分 T        l<= T <=r
+            int T = l + r >> 1;
+            if(check(time,T,m)) r = T;//判断在当前T的限制下能否在m天内看完 如果可以就减小T 即 r = T
+            else l = T+1;
+        }
+        return r;
+    }
+```
 
 
 ## 统计信息

@@ -1,12 +1,13 @@
 ---
 title: LCP 35-电动车游城市
-date: 2021-12-03 21:33:19
 categories:
   - 困难
 tags:
   - 图
   - 最短路
   - 堆（优先队列）
+abbrlink: 799664801
+date: 2021-12-03 21:33:19
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/DFPeFJ

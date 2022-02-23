@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 049-从根节点到叶节点的路径数字之和
-date: 2021-12-03 21:30:41
 categories:
   - 中等
 tags:
   - 树
   - 深度优先搜索
   - 二叉树
+abbrlink: 3211292592
+date: 2021-12-03 21:30:41
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/3Etpl5
@@ -76,39 +77,39 @@ tags:
 
 
 ## 高赞题解
-# **先序遍历递归**
-首先考虑如何计算每个路径表示的数字。顺着节点的子节点指针路径遍历二叉树，每到达一个节点，相当于在该路径表示的数字的末尾加一位。比如路径 1 → 2 → 3，遍历到节点 1 时路径表示为 1 （0 * 10 + 1），遍历到节点 2 时路径表示为 12 （1 * 10 + 2），遍历到节点 3 时路径表示为 123 （12 * 10 + 3），最后到达叶子节点，之后从叶子节点开始把数字一步一步回传。
-
-如下图，对于一个二叉树节点 a。在下传路径的数字表示时，path 表示节点 a 之前的节点所表示的数字，然后该节点将更新后的表示的数 10 * path + a 传给左右子节点 b 和 c。在上传和的结果时，sum1 和 sum2 表示子节点 b 和 c 的上传的和，节点 a 将 sum = sum1 + sum2 上传，sum 就是节点 a 的和结果。这种形式可以用递归函数完成。
-
-![e80e7b4a99c5d2baf33979487375248.jpg](../images/3Etpl5-0.jpg)
-
-具体例子可以看下图表示，递归函数的终止条件是遍历到叶子节点，另外关注 3 节点的左节点为空指针，但是它并不是叶子节点，所以节点 3 的左子节点只会返回 0。
-![da8e6274f8d1bcb96f25ca05b324222.jpg](../images/3Etpl5-1.jpg)
-
-因为先处理当前节点再处理左右子节点，其本质也是一种先序遍历，完整代码如下。
-
-```
-class Solution {
-public:
-    int sumNumbers(TreeNode* root) {
-        return dfs(root, 0);
-    }
-    
-private:
-    int dfs(TreeNode* root, int path) {
-        if (root == nullptr) {
-            return 0;
-        }
-        path = path * 10 + root->val;
-        // 叶子节点
-        if (root->left == nullptr && root->right == nullptr) {
-            return path;
-        }
-        return dfs(root->left, path) + dfs(root->right, path);
-    }
-};
-```
+# **先序遍历递归**
+首先考虑如何计算每个路径表示的数字。顺着节点的子节点指针路径遍历二叉树，每到达一个节点，相当于在该路径表示的数字的末尾加一位。比如路径 1 → 2 → 3，遍历到节点 1 时路径表示为 1 （0 * 10 + 1），遍历到节点 2 时路径表示为 12 （1 * 10 + 2），遍历到节点 3 时路径表示为 123 （12 * 10 + 3），最后到达叶子节点，之后从叶子节点开始把数字一步一步回传。
+
+如下图，对于一个二叉树节点 a。在下传路径的数字表示时，path 表示节点 a 之前的节点所表示的数字，然后该节点将更新后的表示的数 10 * path + a 传给左右子节点 b 和 c。在上传和的结果时，sum1 和 sum2 表示子节点 b 和 c 的上传的和，节点 a 将 sum = sum1 + sum2 上传，sum 就是节点 a 的和结果。这种形式可以用递归函数完成。
+
+![e80e7b4a99c5d2baf33979487375248.jpg](../images/3Etpl5-0.jpg)
+
+具体例子可以看下图表示，递归函数的终止条件是遍历到叶子节点，另外关注 3 节点的左节点为空指针，但是它并不是叶子节点，所以节点 3 的左子节点只会返回 0。
+![da8e6274f8d1bcb96f25ca05b324222.jpg](../images/3Etpl5-1.jpg)
+
+因为先处理当前节点再处理左右子节点，其本质也是一种先序遍历，完整代码如下。
+
+```
+class Solution {
+public:
+    int sumNumbers(TreeNode* root) {
+        return dfs(root, 0);
+    }
+    
+private:
+    int dfs(TreeNode* root, int path) {
+        if (root == nullptr) {
+            return 0;
+        }
+        path = path * 10 + root->val;
+        // 叶子节点
+        if (root->left == nullptr && root->right == nullptr) {
+            return path;
+        }
+        return dfs(root->left, path) + dfs(root->right, path);
+    }
+};
+```
 
 
 ## 统计信息

@@ -1,10 +1,11 @@
 ---
 title: 剑指 Offer II 029-排序的循环链表
-date: 2021-12-03 21:32:19
 categories:
   - 中等
 tags:
   - 链表
+abbrlink: 3466504993
+date: 2021-12-03 21:32:19
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/4ueAj6

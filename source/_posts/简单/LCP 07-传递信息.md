@@ -1,6 +1,5 @@
 ---
 title: LCP 07-传递信息
-date: 2021-12-03 21:33:49
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 广度优先搜索
   - 图
   - 动态规划
+abbrlink: 2779542485
+date: 2021-12-03 21:33:49
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/chuan-di-xin-xi

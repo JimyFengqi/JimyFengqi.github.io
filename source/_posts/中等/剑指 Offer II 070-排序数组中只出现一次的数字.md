@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 070-排序数组中只出现一次的数字
-date: 2021-12-03 21:28:21
 categories:
   - 中等
 tags:
   - 数组
   - 二分查找
+abbrlink: 1001699740
+date: 2021-12-03 21:28:21
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/skFtm2

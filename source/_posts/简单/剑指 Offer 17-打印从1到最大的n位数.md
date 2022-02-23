@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer 17-打印从1到最大的n位数(打印从1到最大的n位数 LCOF)
-date: 2021-12-03 21:39:21
 categories:
   - 简单
 tags:
   - 数组
   - 数学
+abbrlink: 2712074224
+date: 2021-12-03 21:39:21
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof

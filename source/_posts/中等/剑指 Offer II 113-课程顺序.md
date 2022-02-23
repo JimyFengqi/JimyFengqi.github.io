@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 113-课程顺序
-date: 2021-12-03 21:30:35
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 广度优先搜索
   - 图
   - 拓扑排序
+abbrlink: 3387940119
+date: 2021-12-03 21:30:35
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/QA2IGt

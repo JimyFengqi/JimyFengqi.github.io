@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer 52-两个链表的第一个公共节点(两个链表的第一个公共节点  LCOF)
-date: 2021-12-03 21:37:39
 categories:
   - 简单
 tags:
   - 哈希表
   - 链表
   - 双指针
+abbrlink: 3965781506
+date: 2021-12-03 21:37:39
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof

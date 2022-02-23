@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 042-最近请求次数
-date: 2021-12-03 21:30:59
 categories:
   - 简单
 tags:
   - 设计
   - 队列
   - 数据流
+abbrlink: 2570252358
+date: 2021-12-03 21:30:59
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/H8086Q
@@ -66,30 +67,30 @@ recentCounter.ping(3002);  // requests = [1, <strong>100</strong>, <strong>3001<
 
 
 ## 高赞题解
-# **队列**
-因为需要使用到时间 t 之前的时间，所以将每次的时间都存入一个容器中。当输入到时间 t 时，有效的时间为 [t-3000, t]，所以只要去掉容器中所有小于 t-3000 的时间即可。因为时间越来越大，所以越早输入的越小，根据存入容器的先后顺序判断时间是否符合，不符合则将其从容器中删除，直到遍历到符合要求的时间为止，停止删除。可以发现容器需要符合 "先入先出" 的规则，故使用队列保存时间。
-
-代码如下，每次 ping 操作的时间复杂度是 O(1)，空间复杂度为 O(1)。
-```
-class RecentCounter {
-private:
-    int slot;
-    queue<int> time;
-public:
-    RecentCounter() {
-        slot = 3000;
-    }
-    
-    int ping(int t) {
-        time.push(t);
-        int early = t - slot;
-        while (time.front() < early) {
-            time.pop();
-        }
-        return time.size();
-    }
-};
-```
+# **队列**
+因为需要使用到时间 t 之前的时间，所以将每次的时间都存入一个容器中。当输入到时间 t 时，有效的时间为 [t-3000, t]，所以只要去掉容器中所有小于 t-3000 的时间即可。因为时间越来越大，所以越早输入的越小，根据存入容器的先后顺序判断时间是否符合，不符合则将其从容器中删除，直到遍历到符合要求的时间为止，停止删除。可以发现容器需要符合 "先入先出" 的规则，故使用队列保存时间。
+
+代码如下，每次 ping 操作的时间复杂度是 O(1)，空间复杂度为 O(1)。
+```
+class RecentCounter {
+private:
+    int slot;
+    queue<int> time;
+public:
+    RecentCounter() {
+        slot = 3000;
+    }
+    
+    int ping(int t) {
+        time.push(t);
+        int early = t - slot;
+        while (time.front() < early) {
+            time.pop();
+        }
+        return time.size();
+    }
+};
+```
 
 
 ## 统计信息

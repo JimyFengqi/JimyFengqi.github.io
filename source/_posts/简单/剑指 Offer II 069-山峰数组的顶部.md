@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 069-山峰数组的顶部
-date: 2021-12-03 21:28:22
 categories:
   - 简单
 tags:
   - 数组
   - 二分查找
+abbrlink: 2827763355
+date: 2021-12-03 21:28:22
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/B1IidL

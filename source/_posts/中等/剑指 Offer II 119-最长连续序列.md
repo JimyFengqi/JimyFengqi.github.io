@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 119-最长连续序列
-date: 2021-12-03 21:28:35
 categories:
   - 中等
 tags:
   - 并查集
   - 数组
   - 哈希表
+abbrlink: 225621173
+date: 2021-12-03 21:28:35
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/WhsWhI

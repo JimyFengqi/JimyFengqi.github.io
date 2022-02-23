@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 027-回文链表
-date: 2021-12-03 21:32:20
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 递归
   - 链表
   - 双指针
+abbrlink: 921451823
+date: 2021-12-03 21:32:20
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/aMhZSa

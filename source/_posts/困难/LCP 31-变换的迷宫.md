@@ -1,6 +1,5 @@
 ---
 title: LCP 31-变换的迷宫
-date: 2021-12-03 21:33:22
 categories:
   - 困难
 tags:
@@ -9,6 +8,8 @@ tags:
   - 数组
   - 动态规划
   - 矩阵
+abbrlink: 2055729692
+date: 2021-12-03 21:33:22
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/Db3wC1
@@ -64,107 +65,107 @@ tags:
 
 
 ## 高赞题解
-### 解题思路
-
-首先，若不考虑两个魔法卷轴，则该问题为最基础的搜索问题。
-考虑上第三维时间因素（令$dep=len(maze)$），迷宫实际大小为$dep*N*M$，通过记忆化搜索，时间复杂度为$O(dep*N*M)$，即最大为$100*50*50=250000$。
-
-接下来考虑引入卷轴。
-- 临时卷轴：较为简单，在上述的三个维度上再增加一个维度，即临时卷轴是否使用过了，由于其值仅为`False`或`True`，时间复杂度只需再乘以2。
-- 永久卷轴：与临时卷轴无后续影响不同，永久卷轴使用之后会有后续影响，若直接引入使用的坐标点，则时间复杂度直接爆炸。这里需要脑筋急转弯。我们考虑一下，记录永久卷轴使用的坐标点的目的是为了下次再回来当前点的时候，能判断是否可以落脚，也即`A->B->C->...->A`，这时我们可以发现，这种情况可以直接等价于`A->A->A->...->A`。因此，其实没有必要记录永久卷轴使用的坐标点，只需要在使用的时候，停留原地，考虑所有未来的时间步即可。因此，同临时卷轴，只需再增加一个值仅为`False`或`True`的维度，时间复杂度再乘以2。
-
-### 复杂度分析
-
-时间/空间复杂度：$O(dep*N*M)$
-即最大为$100*50*50*2*2=10^6$
-
-### 代码
-
-有不懂的可以评论。
-
-```python3 [solution1-Python3]
-class Solution:
-    def escapeMaze(self, maze: List[List[str]]) -> bool:
-        max_dep, n, m = len(maze), len(maze[0]), len(maze[0][0])
-        # 下一点移动方式
-        dirs = [(1, 0), (0, 1), (-1, 0), (0, -1), (0, 0)]
-        # 记忆化搜索（为python缓存机制）
-        @lru_cache(None)
-        def dfs(x, y, dep, magic_a, magic_b):
-            # print(x, y, dep, magic_a, magic_b)
-            if x == n - 1 and y == m - 1:
-                return True
-            if dep + 1 == max_dep:
-                return False
-            # 剪枝
-            if n - 1 - x + m - 1 - y > max_dep - dep - 1:
-                return False
-            for i, j in dirs:
-                xx, yy = x + i, y + j
-                if xx < 0 or xx == n or yy < 0 or yy == m:
-                    continue
-                # 下一点为平地
-                if maze[dep + 1][xx][yy] == '.':
-                    if dfs(xx, yy, dep + 1, magic_a, magic_b):
-                        return True
-                # 下一点需要使用卷轴
-                else:
-                    if not magic_a:
-                        # 临时卷轴
-                        if dfs(xx, yy, dep + 1, True, magic_b):
-                            return True
-                    if not magic_b:
-                        # 用永久卷轴保持不动
-                        for next_dep in range(dep + 1, max_dep):
-                            if dfs(xx, yy, next_dep, magic_a, True):
-                                return True
-            return False
-        return dfs(0, 0, 0, False, False)
-```
-
-```C++ [solution1-C++]
-class Solution {
-public:
-    int dx[5] = {0, 1, 0,-1,0};
-    int dy[5] = {1, 0,-1,0,0};
-    int n; //n行m列
-    int m;
-    int max_step; //最大步数
-    bool visited[55][55][105][2][2] = {false};  // 记忆化搜索，是否已访问过
-    bool dfs(int x, int y, int step, bool magic1, bool magic2, const vector<vector<string>>& maze){
-        if(visited[x][y][step][magic1][magic2] == true) return false;  // 历史已访问过，相同case已不可能
-        visited[x][y][step][magic1][magic2] = true;
-        if(x == n-1 && y == m-1) return true;//到达终点
-        if(step == max_step) return false;//最大步数都用完了还没走到终点 GG
-        if(max_step - step < n-1-x + m-1-y) return false; // 不可能再走到终点了 剪枝
-        for(int i=0; i<5; i++){ //尝试每一种next_state
-            int fx = x + dx[i];
-            int fy = y + dy[i];
-            if(fx>=0 && fx<n && fy>=0 && fy<m){ //如果在地图内
-                if(maze[step+1][fx][fy] == '.'){ //如果是空地可以直接踩过去
-                    if(dfs(fx, fy, step+1, magic1, magic2, maze)) return true;
-                }
-                else{ //如果是陷阱则需要魔法才能踩过去
-                    if(magic1 == false){ //使用临时魔法，在下一时刻踩过去
-                        if( dfs(fx, fy, step+1, true, magic2, maze)) return true;
-                    }
-                    if(magic2 == false){//使用永久魔法，在下一时刻至最后一个时刻，选择一个时刻踩过去
-                        for(int i=step+1; i<=max_step; i++){
-                            if(dfs(fx, fy, i, magic1, true, maze)) return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
-    bool escapeMaze(vector<vector<string>>& maze) {
-        n = maze[0].size();
-        m = maze[0][0].size();
-        max_step = maze.size() - 1;
-        return dfs(0, 0, 0, false, false, maze);
-    }
-};
+### 解题思路
+
+首先，若不考虑两个魔法卷轴，则该问题为最基础的搜索问题。
+考虑上第三维时间因素（令$dep=len(maze)$），迷宫实际大小为$dep*N*M$，通过记忆化搜索，时间复杂度为$O(dep*N*M)$，即最大为$100*50*50=250000$。
+
+接下来考虑引入卷轴。
+- 临时卷轴：较为简单，在上述的三个维度上再增加一个维度，即临时卷轴是否使用过了，由于其值仅为`False`或`True`，时间复杂度只需再乘以2。
+- 永久卷轴：与临时卷轴无后续影响不同，永久卷轴使用之后会有后续影响，若直接引入使用的坐标点，则时间复杂度直接爆炸。这里需要脑筋急转弯。我们考虑一下，记录永久卷轴使用的坐标点的目的是为了下次再回来当前点的时候，能判断是否可以落脚，也即`A->B->C->...->A`，这时我们可以发现，这种情况可以直接等价于`A->A->A->...->A`。因此，其实没有必要记录永久卷轴使用的坐标点，只需要在使用的时候，停留原地，考虑所有未来的时间步即可。因此，同临时卷轴，只需再增加一个值仅为`False`或`True`的维度，时间复杂度再乘以2。
+
+### 复杂度分析
+
+时间/空间复杂度：$O(dep*N*M)$
+即最大为$100*50*50*2*2=10^6$
+
+### 代码
+
+有不懂的可以评论。
+
+```python3 [solution1-Python3]
+class Solution:
+    def escapeMaze(self, maze: List[List[str]]) -> bool:
+        max_dep, n, m = len(maze), len(maze[0]), len(maze[0][0])
+        # 下一点移动方式
+        dirs = [(1, 0), (0, 1), (-1, 0), (0, -1), (0, 0)]
+        # 记忆化搜索（为python缓存机制）
+        @lru_cache(None)
+        def dfs(x, y, dep, magic_a, magic_b):
+            # print(x, y, dep, magic_a, magic_b)
+            if x == n - 1 and y == m - 1:
+                return True
+            if dep + 1 == max_dep:
+                return False
+            # 剪枝
+            if n - 1 - x + m - 1 - y > max_dep - dep - 1:
+                return False
+            for i, j in dirs:
+                xx, yy = x + i, y + j
+                if xx < 0 or xx == n or yy < 0 or yy == m:
+                    continue
+                # 下一点为平地
+                if maze[dep + 1][xx][yy] == '.':
+                    if dfs(xx, yy, dep + 1, magic_a, magic_b):
+                        return True
+                # 下一点需要使用卷轴
+                else:
+                    if not magic_a:
+                        # 临时卷轴
+                        if dfs(xx, yy, dep + 1, True, magic_b):
+                            return True
+                    if not magic_b:
+                        # 用永久卷轴保持不动
+                        for next_dep in range(dep + 1, max_dep):
+                            if dfs(xx, yy, next_dep, magic_a, True):
+                                return True
+            return False
+        return dfs(0, 0, 0, False, False)
+```
+
+```C++ [solution1-C++]
+class Solution {
+public:
+    int dx[5] = {0, 1, 0,-1,0};
+    int dy[5] = {1, 0,-1,0,0};
+    int n; //n行m列
+    int m;
+    int max_step; //最大步数
+    bool visited[55][55][105][2][2] = {false};  // 记忆化搜索，是否已访问过
+    bool dfs(int x, int y, int step, bool magic1, bool magic2, const vector<vector<string>>& maze){
+        if(visited[x][y][step][magic1][magic2] == true) return false;  // 历史已访问过，相同case已不可能
+        visited[x][y][step][magic1][magic2] = true;
+        if(x == n-1 && y == m-1) return true;//到达终点
+        if(step == max_step) return false;//最大步数都用完了还没走到终点 GG
+        if(max_step - step < n-1-x + m-1-y) return false; // 不可能再走到终点了 剪枝
+        for(int i=0; i<5; i++){ //尝试每一种next_state
+            int fx = x + dx[i];
+            int fy = y + dy[i];
+            if(fx>=0 && fx<n && fy>=0 && fy<m){ //如果在地图内
+                if(maze[step+1][fx][fy] == '.'){ //如果是空地可以直接踩过去
+                    if(dfs(fx, fy, step+1, magic1, magic2, maze)) return true;
+                }
+                else{ //如果是陷阱则需要魔法才能踩过去
+                    if(magic1 == false){ //使用临时魔法，在下一时刻踩过去
+                        if( dfs(fx, fy, step+1, true, magic2, maze)) return true;
+                    }
+                    if(magic2 == false){//使用永久魔法，在下一时刻至最后一个时刻，选择一个时刻踩过去
+                        for(int i=step+1; i<=max_step; i++){
+                            if(dfs(fx, fy, i, magic1, true, maze)) return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    bool escapeMaze(vector<vector<string>>& maze) {
+        n = maze[0].size();
+        m = maze[0][0].size();
+        max_step = maze.size() - 1;
+        return dfs(0, 0, 0, false, false, maze);
+    }
+};
 ```
 
 ## 统计信息

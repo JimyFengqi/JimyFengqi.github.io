@@ -1,11 +1,12 @@
 ---
 title: 984-不含 AAA 或 BBB 的字符串(String Without AAA or BBB)
-date: 2021-12-03 22:27:32
 categories:
   - 中等
 tags:
   - 贪心
   - 字符串
+abbrlink: 2319563207
+date: 2021-12-03 22:27:32
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/string-without-aaa-or-bbb

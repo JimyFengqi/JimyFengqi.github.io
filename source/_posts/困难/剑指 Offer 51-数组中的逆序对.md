@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer 51-数组中的逆序对(数组中的逆序对  LCOF)
-date: 2021-12-03 21:37:57
 categories:
   - 困难
 tags:
@@ -11,6 +10,8 @@ tags:
   - 分治
   - 有序集合
   - 归并排序
+abbrlink: 1748632725
+date: 2021-12-03 21:37:57
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof

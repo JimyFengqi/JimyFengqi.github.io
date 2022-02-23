@@ -1,6 +1,5 @@
 ---
 title: 535-TinyURL 的加密与解密(Encode and Decode TinyURL)
-date: 2021-12-03 22:43:15
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 哈希表
   - 字符串
   - 哈希函数
+abbrlink: 1483637073
+date: 2021-12-03 22:43:15
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/encode-and-decode-tinyurl

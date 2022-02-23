@@ -1,6 +1,5 @@
 ---
 title: LCP 04-覆盖(Broken Board Dominoes)
-date: 2021-12-03 21:47:01
 categories:
   - 困难
 tags:
@@ -9,6 +8,8 @@ tags:
   - 数组
   - 动态规划
   - 状态压缩
+abbrlink: 1395135882
+date: 2021-12-03 21:47:01
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/broken-board-dominoes

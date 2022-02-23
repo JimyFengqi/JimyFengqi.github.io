@@ -1,11 +1,12 @@
 ---
-title: 剑指 Offer II 087-复原 IP 
-date: 2021-12-03 21:32:51
+title: 剑指 Offer II 087-复原 IP
 categories:
   - 中等
 tags:
   - 字符串
   - 回溯
+abbrlink: 4090951918
+date: 2021-12-03 21:32:51
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/0on3uN
@@ -77,62 +78,62 @@ tags:
 
 
 ## 高赞题解
-# **回溯法**
-首先明确一下合法的 IP 地址的条件：
-1. 一个 IP 地址有四个分段
-2. 每个分段表示的数值小于等于 255
-3. 分段除了表示为 0 的情况以外，其他情况的第一个数字不能为 0
-
-所以判断分段的合法性很重要，代码如下
-```
-// 判断分段合法性
-bool isValidSeg(string& seg) {
-    return stoi(seg) <= 255 && (seg == "0" || seg[0] != '0');
-}
-```
-下面逐个扫描输入的字符串的每一个字符，通常面临两个选择。
-- 第一个选择是将当前字符拼接到当前分段之后，且拼接后的分段合法。
-- 第二个选择是将当前作为新的分段数字的开始，但是必须满足一个 IP 地址的分段最多只有 4 个，并且当开始一个新的分段数字时前一个分段不能为空。
-
-可以发现解决该问题需要若干步，每一步又面临若干个选择，最后需要返回所有符合要求的结果，所以本题可以用回溯法解决。完整代码如下，helper 函数中第一个参数 i 是当前处理的字符在 s 中的下标，segI 是分段的编号，seg 是当前已经恢复的一个分段，IP 是当前已经恢复的 IP 地址。
-
-```
-class Solution {
-private:
-    // 回溯
-    void helper(string& s, int i, int segI, string seg, string ip, vector<string>& ret) {
-        // 当前 ip + seg 符合要求
-        if (i == s.size() && segI == 3 && isValidSeg(seg)) {
-            ret.push_back(ip + seg);
-        }
-        else if (i < s.size() && segI <= 3) {
-            string temp = seg + s[i];
-            // 将当前字符拼接到当前分段之后，且拼接后的分段合法
-            if (isValidSeg(temp)) {
-                helper(s, i + 1, segI, temp, ip, ret);
-            }
-
-            // 将当前作为新的分段数字的开始，但是必须满足一个 IP 地址的分段最多只有 4 个，
-            // 并且当开始一个新的分段数字时前一个分段不能为空
-            if (seg.size() > 0 && segI < 3) {
-                string str{s[i]};
-                helper(s, i + 1, segI + 1, str, ip + seg + ".", ret);
-            }
-        }
-    }
-
-    // 判断分段合法性
-    bool isValidSeg(string& seg) {
-        return stoi(seg) <= 255 && (seg == "0" || seg[0] != '0');
-    }
-public:
-    vector<string> restoreIpAddresses(string s) {
-        vector<string> ret;
-        helper(s, 0, 0, "", "", ret);
-        return ret;
-    }
-};
-```
+# **回溯法**
+首先明确一下合法的 IP 地址的条件：
+1. 一个 IP 地址有四个分段
+2. 每个分段表示的数值小于等于 255
+3. 分段除了表示为 0 的情况以外，其他情况的第一个数字不能为 0
+
+所以判断分段的合法性很重要，代码如下
+```
+// 判断分段合法性
+bool isValidSeg(string& seg) {
+    return stoi(seg) <= 255 && (seg == "0" || seg[0] != '0');
+}
+```
+下面逐个扫描输入的字符串的每一个字符，通常面临两个选择。
+- 第一个选择是将当前字符拼接到当前分段之后，且拼接后的分段合法。
+- 第二个选择是将当前作为新的分段数字的开始，但是必须满足一个 IP 地址的分段最多只有 4 个，并且当开始一个新的分段数字时前一个分段不能为空。
+
+可以发现解决该问题需要若干步，每一步又面临若干个选择，最后需要返回所有符合要求的结果，所以本题可以用回溯法解决。完整代码如下，helper 函数中第一个参数 i 是当前处理的字符在 s 中的下标，segI 是分段的编号，seg 是当前已经恢复的一个分段，IP 是当前已经恢复的 IP 地址。
+
+```
+class Solution {
+private:
+    // 回溯
+    void helper(string& s, int i, int segI, string seg, string ip, vector<string>& ret) {
+        // 当前 ip + seg 符合要求
+        if (i == s.size() && segI == 3 && isValidSeg(seg)) {
+            ret.push_back(ip + seg);
+        }
+        else if (i < s.size() && segI <= 3) {
+            string temp = seg + s[i];
+            // 将当前字符拼接到当前分段之后，且拼接后的分段合法
+            if (isValidSeg(temp)) {
+                helper(s, i + 1, segI, temp, ip, ret);
+            }
+
+            // 将当前作为新的分段数字的开始，但是必须满足一个 IP 地址的分段最多只有 4 个，
+            // 并且当开始一个新的分段数字时前一个分段不能为空
+            if (seg.size() > 0 && segI < 3) {
+                string str{s[i]};
+                helper(s, i + 1, segI + 1, str, ip + seg + ".", ret);
+            }
+        }
+    }
+
+    // 判断分段合法性
+    bool isValidSeg(string& seg) {
+        return stoi(seg) <= 255 && (seg == "0" || seg[0] != '0');
+    }
+public:
+    vector<string> restoreIpAddresses(string s) {
+        vector<string> ret;
+        helper(s, 0, 0, "", "", ret);
+        return ret;
+    }
+};
+```
 
 
 ## 统计信息

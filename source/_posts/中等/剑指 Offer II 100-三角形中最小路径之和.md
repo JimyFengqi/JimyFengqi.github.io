@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 100-三角形中最小路径之和
-date: 2021-12-03 21:31:05
 categories:
   - 中等
 tags:
   - 数组
   - 动态规划
+abbrlink: 1728313329
+date: 2021-12-03 21:31:05
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/IlPe0q
@@ -70,58 +71,58 @@ tags:
 
 
 ## 高赞题解
-# **动态规划**
-三角形保存在方阵的下三角区域。从三角形的顶部到底部需要多步，而且每一步面临两个选择，最后需要计算所有路径的最小值，所以该问题可以用动态规划解决。
-
-用 f(i, j) 表示从三角形的顶部出发到达行号和列号分别为 i 和 j (i >= j) 的位置时路径数字之和的最小值。如果 j 等于 0，也就是当前到达某行的第一个数字。由于路径的每一步都是前往正下方或右下方的数字，而此时当前位置的左上角无数字，所以
-![image.png](../images/IlPe0q-0.png)
-如果 i 等于 j，也就是当前到达某一行的最后一个数字，因为此时其上方无数字，所以前一步只能是来自于其左上角，所以
-![image.png](../images/IlPe0q-1.png)
-其他情况，当前位置的前一步可能来自于其正上方数字，也可能来自于左上角数字，因为要取最小值，所以
-![image.png](../images/IlPe0q-2.png)
-使用二维数组的完整代码如下，若方阵的维度为 n，那么时间复杂度为 O(n^2)，空间复杂度为 O(n^2)。
-```
-class Solution {
-public:
-    int minimumTotal(vector<vector<int>>& triangle) {
-        vector<vector<int>> dp(triangle.size(), vector<int>(triangle.size()));
-        dp[0][0] = triangle[0][0];
-        for (int i = 1; i < triangle.size(); ++i) {
-            dp[i][0] = dp[i - 1][0] + triangle[i][0];
-        }
-
-        for (int i = 1; i < triangle.size(); ++i) {
-            for (int j = 1; j < i; ++j) {
-                dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1]) + triangle[i][j];
-            }
-            dp[i][i] = dp[i - 1][i - 1] + triangle[i][i];
-        }
-
-        return *min_element(dp.back().begin(), dp.back().end());
-    }
-};
-```
-同样可以优化为一维数组，完整代码如下，时间复杂度为 O(n^2)，空间复杂度为 O(n)。
-```
-class Solution {
-public:
-    int minimumTotal(vector<vector<int>>& triangle) {
-        vector<int> dp(triangle.size());
-        dp[0] = triangle[0][0];
-
-        for (int i = 1; i < triangle.size(); ++i) {
-            dp[i] = dp[i - 1] + triangle[i][i];
-            for (int j = i - 1; j > 0; --j) {
-                dp[j] = min(dp[j], dp[j - 1]) + triangle[i][j];
-            }
-            dp[0] += triangle[i][0];
-        }
-
-        return *min_element(dp.begin(), dp.end());
-    }
-};
-```
-
+# **动态规划**
+三角形保存在方阵的下三角区域。从三角形的顶部到底部需要多步，而且每一步面临两个选择，最后需要计算所有路径的最小值，所以该问题可以用动态规划解决。
+
+用 f(i, j) 表示从三角形的顶部出发到达行号和列号分别为 i 和 j (i >= j) 的位置时路径数字之和的最小值。如果 j 等于 0，也就是当前到达某行的第一个数字。由于路径的每一步都是前往正下方或右下方的数字，而此时当前位置的左上角无数字，所以
+![image.png](../images/IlPe0q-0.png)
+如果 i 等于 j，也就是当前到达某一行的最后一个数字，因为此时其上方无数字，所以前一步只能是来自于其左上角，所以
+![image.png](../images/IlPe0q-1.png)
+其他情况，当前位置的前一步可能来自于其正上方数字，也可能来自于左上角数字，因为要取最小值，所以
+![image.png](../images/IlPe0q-2.png)
+使用二维数组的完整代码如下，若方阵的维度为 n，那么时间复杂度为 O(n^2)，空间复杂度为 O(n^2)。
+```
+class Solution {
+public:
+    int minimumTotal(vector<vector<int>>& triangle) {
+        vector<vector<int>> dp(triangle.size(), vector<int>(triangle.size()));
+        dp[0][0] = triangle[0][0];
+        for (int i = 1; i < triangle.size(); ++i) {
+            dp[i][0] = dp[i - 1][0] + triangle[i][0];
+        }
+
+        for (int i = 1; i < triangle.size(); ++i) {
+            for (int j = 1; j < i; ++j) {
+                dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1]) + triangle[i][j];
+            }
+            dp[i][i] = dp[i - 1][i - 1] + triangle[i][i];
+        }
+
+        return *min_element(dp.back().begin(), dp.back().end());
+    }
+};
+```
+同样可以优化为一维数组，完整代码如下，时间复杂度为 O(n^2)，空间复杂度为 O(n)。
+```
+class Solution {
+public:
+    int minimumTotal(vector<vector<int>>& triangle) {
+        vector<int> dp(triangle.size());
+        dp[0] = triangle[0][0];
+
+        for (int i = 1; i < triangle.size(); ++i) {
+            dp[i] = dp[i - 1] + triangle[i][i];
+            for (int j = i - 1; j > 0; --j) {
+                dp[j] = min(dp[j], dp[j - 1]) + triangle[i][j];
+            }
+            dp[0] += triangle[i][0];
+        }
+
+        return *min_element(dp.begin(), dp.end());
+    }
+};
+```
+
 
 
 ## 统计信息

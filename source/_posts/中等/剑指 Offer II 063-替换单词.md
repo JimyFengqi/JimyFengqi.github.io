@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 063-替换单词
-date: 2021-12-03 21:28:27
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 数组
   - 哈希表
   - 字符串
+abbrlink: 3301928545
+date: 2021-12-03 21:28:27
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/UhWRSj

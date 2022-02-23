@@ -1,6 +1,5 @@
 ---
 title: LCP 27-黑盒光线反射
-date: 2021-12-03 21:33:27
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 线段树
   - 数学
   - 有序集合
+abbrlink: 1474565478
+date: 2021-12-03 21:33:27
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/IQvJ9i

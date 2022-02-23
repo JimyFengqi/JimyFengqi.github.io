@@ -1,12 +1,13 @@
 ---
 title: LCP 25-古董键盘
-date: 2021-12-03 21:33:33
 categories:
   - 困难
 tags:
   - 数学
   - 动态规划
   - 组合数学
+abbrlink: 1027761295
+date: 2021-12-03 21:33:33
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/Uh984O
@@ -48,45 +49,45 @@ tags:
 
 
 ## 高赞题解
-# 思路
-### 动态规划
-
-$dp[i][j]$表示总长度为$i$，用了前$j$种字母可能出现的字符串的数量，可以得到如下转移方程。
-$$
-dp[i][j]=\sum_{x=0}^kdp[i-x][j-1]·C_i^x
-$$
-其中，$x$表示第$j$种字母出现的次数，其值可以为$0,1,..k$，对于每一个$x$，都有$C_i^x$种位置可以选择。
-例如，$x=2$，表示第$j$种字符出现了$2$次，他可能出现在前$i$个位置中的任意两个，是一个组合问题，其结果是$C_i^2$。
-### C++代码
-
-```cpp
-class Solution {
-public:
-    int keyboard(int k, int n) {
-        vector<vector<long long>> dp(n + 1, vector<long long>(27, 0L));
-        for(int i = 0;i <= 26;i++)
-            dp[0][i] = 1;
-        for(int i = 1;i<=n;i++) {
-            for(int j = 1;j <= 26;j++) {
-                for(int x = 0;x <= k;x++) {
-                    if(i-x >= 0)
-                    dp[i][j] += dp[i-x][j-1]*C(i,x);
-                }
-                dp[i][j] %=  1000000007;
-            }
-        }
-        return dp[n][26];
-    }
-    long long C(int m, int n) {
-        int k = 1;
-        long long ans=1;
-        while(k <= n) {
-            ans=((m-k+1)*ans)/k;
-            k++;
-        }
-        return ans;
-    }
-};
+# 思路
+### 动态规划
+
+$dp[i][j]$表示总长度为$i$，用了前$j$种字母可能出现的字符串的数量，可以得到如下转移方程。
+$$
+dp[i][j]=\sum_{x=0}^kdp[i-x][j-1]·C_i^x
+$$
+其中，$x$表示第$j$种字母出现的次数，其值可以为$0,1,..k$，对于每一个$x$，都有$C_i^x$种位置可以选择。
+例如，$x=2$，表示第$j$种字符出现了$2$次，他可能出现在前$i$个位置中的任意两个，是一个组合问题，其结果是$C_i^2$。
+### C++代码
+
+```cpp
+class Solution {
+public:
+    int keyboard(int k, int n) {
+        vector<vector<long long>> dp(n + 1, vector<long long>(27, 0L));
+        for(int i = 0;i <= 26;i++)
+            dp[0][i] = 1;
+        for(int i = 1;i<=n;i++) {
+            for(int j = 1;j <= 26;j++) {
+                for(int x = 0;x <= k;x++) {
+                    if(i-x >= 0)
+                    dp[i][j] += dp[i-x][j-1]*C(i,x);
+                }
+                dp[i][j] %=  1000000007;
+            }
+        }
+        return dp[n][26];
+    }
+    long long C(int m, int n) {
+        int k = 1;
+        long long ans=1;
+        while(k <= n) {
+            ans=((m-k+1)*ans)/k;
+            k++;
+        }
+        return ans;
+    }
+};
 ```
 
 ## 统计信息

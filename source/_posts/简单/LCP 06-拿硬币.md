@@ -1,11 +1,12 @@
 ---
 title: LCP 06-拿硬币
-date: 2021-12-03 21:33:55
 categories:
   - 简单
 tags:
   - 数组
   - 数学
+abbrlink: 2368741496
+date: 2021-12-03 21:33:55
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/na-ying-bi

@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 066-单词之和
-date: 2021-12-03 21:28:24
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 字典树
   - 哈希表
   - 字符串
+abbrlink: 1504099989
+date: 2021-12-03 21:28:24
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/z1R5dt
@@ -65,74 +66,74 @@ mapSum.sum(&quot;ap&quot;);           // return 5 (<u>ap</u>ple + <u>ap</u>p = 3
 
 
 ## 高赞题解
-# **前缀树**
-此题还是使用前缀树的解法，只是将常规的前缀树节点中，记录是否为插入字符串结尾的 isword 改成记录字符串值的 val。前缀树还要实现类函数 insert 实现插入字符串，以及类函数 coutSum 实现返回所有以该前缀开头的字符串的值的总和。在实现 coutSum 函数时，可以采用先遍历到该前缀的尾节点，若不存在该前缀的路径则返回0，若存在则从尾节点开始使用广度优先搜索算法，实现返回所有以该前缀开头的字符串的值的总和。完整代码如下：
-
-```
-// 构造前缀树节点
-class Trie {
-public:
-    int val;
-    vector<Trie*> children;
-    Trie () : val(0), children(26, nullptr) {}
-
-    // 实现插入字符串
-    void insert(string& str, int m) {
-        Trie* node = this;
-        for (auto& ch : str) {
-            if (node->children[ch - 'a'] == nullptr) {
-                node->children[ch - 'a'] = new Trie();
-            }
-            node = node->children[ch - 'a'];
-        }
-        node->val = m;
-    }
-
-    // 实现返回所有以该前缀 prefix 开头的键 key 的值的总和
-    int coutSum(string &prefix) {
-        Trie* node = this;
-        for (auto& ch : prefix) {
-            if (node->children[ch - 'a'] == nullptr) {
-                return 0;
-            }
-            node = node->children[ch - 'a'];
-        }
-
-        // BFS
-        int count = 0;
-        queue<Trie*> que;
-        que.push(node);
-        while (!que.empty()) {
-            Trie* node = que.front();
-            que.pop();
-            count += node->val;
-            for (int i = 0; i < node->children.size(); ++i) {
-                if (node->children[i] != nullptr) {
-                    que.push(node->children[i]);
-                }
-            }
-        }
-        return count;
-    }
-};
-
-class MapSum {
-private:
-    Trie* root;
-public:
-    MapSum() {
-        root = new Trie();
-    }
-    
-    void insert(string key, int val) {
-        root->insert(key, val);
-    }
-    
-    int sum(string prefix) {
-        return root->coutSum(prefix);
-    }
-};
-```
+# **前缀树**
+此题还是使用前缀树的解法，只是将常规的前缀树节点中，记录是否为插入字符串结尾的 isword 改成记录字符串值的 val。前缀树还要实现类函数 insert 实现插入字符串，以及类函数 coutSum 实现返回所有以该前缀开头的字符串的值的总和。在实现 coutSum 函数时，可以采用先遍历到该前缀的尾节点，若不存在该前缀的路径则返回0，若存在则从尾节点开始使用广度优先搜索算法，实现返回所有以该前缀开头的字符串的值的总和。完整代码如下：
+
+```
+// 构造前缀树节点
+class Trie {
+public:
+    int val;
+    vector<Trie*> children;
+    Trie () : val(0), children(26, nullptr) {}
+
+    // 实现插入字符串
+    void insert(string& str, int m) {
+        Trie* node = this;
+        for (auto& ch : str) {
+            if (node->children[ch - 'a'] == nullptr) {
+                node->children[ch - 'a'] = new Trie();
+            }
+            node = node->children[ch - 'a'];
+        }
+        node->val = m;
+    }
+
+    // 实现返回所有以该前缀 prefix 开头的键 key 的值的总和
+    int coutSum(string &prefix) {
+        Trie* node = this;
+        for (auto& ch : prefix) {
+            if (node->children[ch - 'a'] == nullptr) {
+                return 0;
+            }
+            node = node->children[ch - 'a'];
+        }
+
+        // BFS
+        int count = 0;
+        queue<Trie*> que;
+        que.push(node);
+        while (!que.empty()) {
+            Trie* node = que.front();
+            que.pop();
+            count += node->val;
+            for (int i = 0; i < node->children.size(); ++i) {
+                if (node->children[i] != nullptr) {
+                    que.push(node->children[i]);
+                }
+            }
+        }
+        return count;
+    }
+};
+
+class MapSum {
+private:
+    Trie* root;
+public:
+    MapSum() {
+        root = new Trie();
+    }
+    
+    void insert(string key, int val) {
+        root->insert(key, val);
+    }
+    
+    int sum(string prefix) {
+        return root->coutSum(prefix);
+    }
+};
+```
 
 
 ## 统计信息

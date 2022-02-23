@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 067-最大的异或
-date: 2021-12-03 21:28:23
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 字典树
   - 数组
   - 哈希表
+abbrlink: 27139342
+date: 2021-12-03 21:28:23
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/ms70jA

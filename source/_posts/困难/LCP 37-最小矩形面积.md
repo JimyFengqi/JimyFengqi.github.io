@@ -1,6 +1,5 @@
 ---
 title: LCP 37-最小矩形面积
-date: 2021-12-03 21:33:41
 categories:
   - 困难
 tags:
@@ -10,6 +9,8 @@ tags:
   - 数学
   - 组合数学
   - 排序
+abbrlink: 1405298934
+date: 2021-12-03 21:33:41
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/zui-xiao-ju-xing-mian-ji

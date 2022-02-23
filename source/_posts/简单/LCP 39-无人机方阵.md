@@ -1,6 +1,5 @@
 ---
 title: LCP 39-无人机方阵
-date: 2021-12-03 21:28:00
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 哈希表
   - 计数
   - 矩阵
+abbrlink: 422381424
+date: 2021-12-03 21:28:00
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/0jQkd0

@@ -1,10 +1,11 @@
 ---
 title: 52-N皇后 II(N-Queens II)
-date: 2021-12-03 23:00:28
 categories:
   - 困难
 tags:
   - 回溯
+abbrlink: 1499452577
+date: 2021-12-03 23:00:28
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/n-queens-ii

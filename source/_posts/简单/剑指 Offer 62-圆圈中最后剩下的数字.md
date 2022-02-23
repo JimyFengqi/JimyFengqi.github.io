@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer 62-圆圈中最后剩下的数字(圆圈中最后剩下的数字 LCOF)
-date: 2021-12-03 21:36:25
 categories:
   - 简单
 tags:
   - 递归
   - 数学
+abbrlink: 3078007009
+date: 2021-12-03 21:36:25
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof

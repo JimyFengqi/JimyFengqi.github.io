@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 080-含有 k 个元素的组合
-date: 2021-12-03 21:28:10
 categories:
   - 中等
 tags:
   - 数组
   - 回溯
+abbrlink: 417035900
+date: 2021-12-03 21:28:10
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/uUsW3B

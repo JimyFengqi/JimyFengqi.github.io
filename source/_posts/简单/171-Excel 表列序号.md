@@ -1,11 +1,12 @@
 ---
 title: 171-Excel 表列序号(Excel Sheet Column Number)
-date: 2021-12-03 22:53:55
 categories:
   - 简单
 tags:
   - 数学
   - 字符串
+abbrlink: 1385641790
+date: 2021-12-03 22:53:55
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/excel-sheet-column-number

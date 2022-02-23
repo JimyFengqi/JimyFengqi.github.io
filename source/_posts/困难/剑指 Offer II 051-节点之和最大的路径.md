@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 051-节点之和最大的路径
-date: 2021-12-03 21:30:38
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 深度优先搜索
   - 动态规划
   - 二叉树
+abbrlink: 1476927767
+date: 2021-12-03 21:30:38
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/jC7MId
@@ -63,36 +64,36 @@ tags:
 
 
 ## 高赞题解
-# **后序遍历**
-这道题与 [剑指 Offer 42. 连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) 有很大的相似之处。以下图为模型分析，规定只由子节点往父节点延生的路径为 “直径”，由一条 “直径” 和另一条 “直径” 以及它们的交点组成的路径为 “曲径”，如下图中 b → a 和 c → a 就是 “直径”， b → a ← c 就是  “曲径”。
-
-用递归的思想考虑该问题，对于一个节点 a，若左孩子节点  b 返回以节点 b 为终点的 “直径” 的最大路径和 left，右孩子节点 c 返回以节点 c 为终点的 “直径” 的最大路径和 right。因为若 left 和 right 为负数那么就应该舍弃，为了方便取 right = max(0, right) ，left = max(0, left)。则节点 a 返回的最大 “直径”  和的值就是 a + max(left, right)。因为题目中要求所有符合条件（所有的 “直径” 和 “曲径”）的路径的最大路径和，所有记录所有 “曲径” 的最大值就是结果值，ret = max(ret, left + right + root->val)。
-
-![788032dadc057891f7739c30a0ab895.jpg](../images/jC7MId-0.jpg)
-
-可以发现采用递归的方式解决该问题的时候，先处理左右孩子节点再处理当前节点，这是一种后序遍历思想，完整的代码如下。
-```
-class Solution {
-public:
-    int maxPathSum(TreeNode* root) {
-        ret = INT_MIN;
-        dfs(root);
-        return ret;
-    }
-
-private:
-    int ret;
-    int dfs(TreeNode* root) {
-        if (root == nullptr) {
-            return 0;
-        }
-        int left = max(0, dfs(root->left));
-        int right = max(0, dfs(root->right));
-        ret = max(ret, left + right + root->val);
-        return root->val + max(left, right);
-    }
-};
-```
+# **后序遍历**
+这道题与 [剑指 Offer 42. 连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) 有很大的相似之处。以下图为模型分析，规定只由子节点往父节点延生的路径为 “直径”，由一条 “直径” 和另一条 “直径” 以及它们的交点组成的路径为 “曲径”，如下图中 b → a 和 c → a 就是 “直径”， b → a ← c 就是  “曲径”。
+
+用递归的思想考虑该问题，对于一个节点 a，若左孩子节点  b 返回以节点 b 为终点的 “直径” 的最大路径和 left，右孩子节点 c 返回以节点 c 为终点的 “直径” 的最大路径和 right。因为若 left 和 right 为负数那么就应该舍弃，为了方便取 right = max(0, right) ，left = max(0, left)。则节点 a 返回的最大 “直径”  和的值就是 a + max(left, right)。因为题目中要求所有符合条件（所有的 “直径” 和 “曲径”）的路径的最大路径和，所有记录所有 “曲径” 的最大值就是结果值，ret = max(ret, left + right + root->val)。
+
+![788032dadc057891f7739c30a0ab895.jpg](../images/jC7MId-0.jpg)
+
+可以发现采用递归的方式解决该问题的时候，先处理左右孩子节点再处理当前节点，这是一种后序遍历思想，完整的代码如下。
+```
+class Solution {
+public:
+    int maxPathSum(TreeNode* root) {
+        ret = INT_MIN;
+        dfs(root);
+        return ret;
+    }
+
+private:
+    int ret;
+    int dfs(TreeNode* root) {
+        if (root == nullptr) {
+            return 0;
+        }
+        int left = max(0, dfs(root->left));
+        int right = max(0, dfs(root->right));
+        ret = max(ret, left + right + root->val);
+        return root->val + max(left, right);
+    }
+};
+```
 
 
 ## 统计信息

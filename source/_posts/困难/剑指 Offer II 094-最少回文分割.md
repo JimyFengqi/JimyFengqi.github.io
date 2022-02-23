@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 094-最少回文分割
-date: 2021-12-03 21:32:10
 categories:
   - 困难
 tags:
   - 字符串
   - 动态规划
+abbrlink: 2391449213
+date: 2021-12-03 21:32:10
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/omKAoA

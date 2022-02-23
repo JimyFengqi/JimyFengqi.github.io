@@ -1,10 +1,11 @@
 ---
 title: 1115-交替打印FooBar(Print FooBar Alternately)
-date: 2021-12-03 22:23:03
 categories:
   - 中等
 tags:
   - 多线程
+abbrlink: 2097386655
+date: 2021-12-03 22:23:03
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/print-foobar-alternately

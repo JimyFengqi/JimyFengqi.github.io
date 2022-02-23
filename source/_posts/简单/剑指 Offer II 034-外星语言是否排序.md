@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 034-外星语言是否排序
-date: 2021-12-03 21:32:06
 categories:
   - 简单
 tags:
   - 数组
   - 哈希表
   - 字符串
+abbrlink: 3907043355
+date: 2021-12-03 21:32:06
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/lwyVBB
@@ -65,120 +66,120 @@ tags:
 
 
 ## 高赞题解
-
-用**数组**或**哈希表**存放字母顺序。**依次遍历单词列表，检测相邻两单词是否满足字典序。**
-
-```python [sol1-Python3]
-class Solution:
-    def isAlienSorted(self, words: List[str], order: str) -> bool:
-        index = {c: i for i, c in enumerate(order)}
-        for i in range(len(words) - 1):
-            w1, w2 = words[i], words[i + 1]
-            l1, l2 = len(w1), len(w2)
-            flag = False
-            for j in range(max(l1, l2)):
-                i1, i2 = -1 if j >= l1 else index[w1[j]], -1 if j >= l2 else index[w2[j]]
-                if i1 > i2:
-                    # 说明不是按字典序排序，直接返回False
-                    return False
-                if i1 < i2:
-                    # 说明当前两单词是按字典序排序，无需再往下进行循环比较
-                    break
-        return True
-```
-
-```java  [sol1-Java]
-class Solution {
-    public boolean isAlienSorted(String[] words, String order) {
-        int[] index = new int[26];
-        for (int i = 0; i < index.length; ++i) {
-            index[order.charAt(i) - 'a'] = i;
-        }
-        for (int i = 0; i < words.length - 1; ++i) {
-            String w1 = words[i];
-            String w2 = words[i + 1];
-            int l1 = w1.length(), l2 = w2.length();
-            for (int j = 0; j < Math.max(l1, l2); ++j) {
-                int i1 = j >= l1 ? -1 : index[w1.charAt(j) - 'a'];
-                int i2 = j >= l2 ? -1 : index[w2.charAt(j) - 'a'];
-                if (i1 > i2) {
-                    // 说明不是按字典序排序，直接返回False
-                    return false;
-                }
-                if (i1 < i2) {
-                    // 说明当前两单词是按字典序排序，无需再往下进行循环比较
-                    break;
-                }
-            }
-        }
-        return true;
-    }
-}
-```
-
-```cpp  [sol1-C++]
-class Solution {
-public:
-    bool isAlienSorted(vector<string> &words, string order) {
-        vector<int> index(26);
-        for (int i = 0; i < index.size(); ++i)
-            index[order[i] - 'a'] = i;
-        for (int i = 0; i < words.size() - 1; ++i)
-        {
-            string w1 = words[i];
-            string w2 = words[i + 1];
-            int l1 = w1.size(), l2 = w2.size();
-            for (int j = 0; j < max(l1, l2); ++j)
-            {
-                int i1 = j >= l1 ? -1 : index[w1[j] - 'a'];
-                int i2 = j >= l2 ? -1 : index[w2[j] - 'a'];
-                if (i1 > i2)
-                    return false;
-                if (i1 < i2)
-                    break;
-            }
-        }
-        return true;
-    }
-};
-```
-
-```go  [sol1-Golang]
-func isAlienSorted(words []string, order string) bool {
-	index := make(map[byte]int)
-	for i := range order {
-		index[order[i]] = i
-	}
-	for i := 0; i < len(words)-1; i++ {
-		w1, w2 := words[i], words[i+1]
-		l1, l2 := len(w1), len(w2)
-		flag := true
-		for j := 0; j < min(l1, l2) && flag; j++ {
-			i1, i2 := index[w1[j]], index[w2[j]]
-			if i1 > i2 {
-				return false
-			}
-			if i1 < i2 {
-				flag = false
-			}
-		}
-		if flag && l1 > l2 {
-			return false
-		}
-	}
-	return true
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-```
-
----
-
+
+用**数组**或**哈希表**存放字母顺序。**依次遍历单词列表，检测相邻两单词是否满足字典序。**
+
+```python [sol1-Python3]
+class Solution:
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        index = {c: i for i, c in enumerate(order)}
+        for i in range(len(words) - 1):
+            w1, w2 = words[i], words[i + 1]
+            l1, l2 = len(w1), len(w2)
+            flag = False
+            for j in range(max(l1, l2)):
+                i1, i2 = -1 if j >= l1 else index[w1[j]], -1 if j >= l2 else index[w2[j]]
+                if i1 > i2:
+                    # 说明不是按字典序排序，直接返回False
+                    return False
+                if i1 < i2:
+                    # 说明当前两单词是按字典序排序，无需再往下进行循环比较
+                    break
+        return True
+```
+
+```java  [sol1-Java]
+class Solution {
+    public boolean isAlienSorted(String[] words, String order) {
+        int[] index = new int[26];
+        for (int i = 0; i < index.length; ++i) {
+            index[order.charAt(i) - 'a'] = i;
+        }
+        for (int i = 0; i < words.length - 1; ++i) {
+            String w1 = words[i];
+            String w2 = words[i + 1];
+            int l1 = w1.length(), l2 = w2.length();
+            for (int j = 0; j < Math.max(l1, l2); ++j) {
+                int i1 = j >= l1 ? -1 : index[w1.charAt(j) - 'a'];
+                int i2 = j >= l2 ? -1 : index[w2.charAt(j) - 'a'];
+                if (i1 > i2) {
+                    // 说明不是按字典序排序，直接返回False
+                    return false;
+                }
+                if (i1 < i2) {
+                    // 说明当前两单词是按字典序排序，无需再往下进行循环比较
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+
+```cpp  [sol1-C++]
+class Solution {
+public:
+    bool isAlienSorted(vector<string> &words, string order) {
+        vector<int> index(26);
+        for (int i = 0; i < index.size(); ++i)
+            index[order[i] - 'a'] = i;
+        for (int i = 0; i < words.size() - 1; ++i)
+        {
+            string w1 = words[i];
+            string w2 = words[i + 1];
+            int l1 = w1.size(), l2 = w2.size();
+            for (int j = 0; j < max(l1, l2); ++j)
+            {
+                int i1 = j >= l1 ? -1 : index[w1[j] - 'a'];
+                int i2 = j >= l2 ? -1 : index[w2[j] - 'a'];
+                if (i1 > i2)
+                    return false;
+                if (i1 < i2)
+                    break;
+            }
+        }
+        return true;
+    }
+};
+```
+
+```go  [sol1-Golang]
+func isAlienSorted(words []string, order string) bool {
+	index := make(map[byte]int)
+	for i := range order {
+		index[order[i]] = i
+	}
+	for i := 0; i < len(words)-1; i++ {
+		w1, w2 := words[i], words[i+1]
+		l1, l2 := len(w1), len(w2)
+		flag := true
+		for j := 0; j < min(l1, l2) && flag; j++ {
+			i1, i2 := index[w1[j]], index[w2[j]]
+			if i1 > i2 {
+				return false
+			}
+			if i1 < i2 {
+				flag = false
+			}
+		}
+		if flag && l1 > l2 {
+			return false
+		}
+	}
+	return true
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+```
+
+---
+
 😄 欢迎 Star 关注 Doocs 开源社区项目：https://github.com/doocs/leetcode
 
 ## 统计信息

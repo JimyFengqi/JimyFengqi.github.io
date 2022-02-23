@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer 40-最小的k个数(最小的k个数  LCOF)
-date: 2021-12-03 21:39:12
 categories:
   - 简单
 tags:
@@ -9,6 +8,8 @@ tags:
   - 快速选择
   - 排序
   - 堆（优先队列）
+abbrlink: 3892470703
+date: 2021-12-03 21:39:12
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof

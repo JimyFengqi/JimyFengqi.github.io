@@ -1,6 +1,5 @@
 ---
 title: 208-实现 Trie (前缀树)(Implement Trie (Prefix Tree))
-date: 2021-12-03 22:52:52
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 字典树
   - 哈希表
   - 字符串
+abbrlink: 199368646
+date: 2021-12-03 22:52:52
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/implement-trie-prefix-tree

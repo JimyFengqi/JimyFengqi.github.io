@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 090-环形房屋偷盗
-date: 2021-12-03 21:32:18
 categories:
   - 中等
 tags:
   - 数组
   - 动态规划
+abbrlink: 3770453991
+date: 2021-12-03 21:32:18
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/PzWKhm
@@ -63,66 +64,66 @@ tags:
 
 
 ## 高赞题解
-# **动态规划**
-本题与面试题 89 [《剑指offer 2 面试题89》 书中算法C++实现](https://leetcode-cn.com/problems/Gu0c2T/solution/jian-zhi-offer-2-mian-shi-ti-89-shu-zhon-86xo/) 的唯一不同是，本题的房屋连成一圈，那么下标为 0 和下标为 n - 1 的房屋就是相邻的。如果他考虑去下标为 0 的房屋，那么就不再考虑下标为 n - 1 的房屋；如果他考虑去下标为 n - 1的房屋，那么就不再考虑下标为 0 的房屋。所以可以将该问题拆分为两个小问题：一个是求小偷从下标为 0 的房屋开始到下标为 n - 2 的房屋结束能偷得的最大财物，另一个是求小偷从下标为 1 的房屋开始到下标为 n - 1 的房屋结束能偷得的最大财物。最终的大问题的解就是这两个小问题的最大值。
-
-代码可以根据修改面试题 89 的代码得到，单状态动态规划和双状态动态规划的代码如下，时间复杂度为 O(n)，空间复杂度为 O(1)。
-
-1. 单状态动态规划
-```
-class Solution {
-private:
-    int helper(vector<int>& nums, int start, int end) {
-        if (start == end) {
-            return nums[start];
-        }
-        vector<int> dp(2, 0);
-        dp[start % 2] = nums[start];
-        dp[(start + 1) % 2] = max(nums[start], nums[start + 1]);
-        for (int i = start + 2; i <= end; ++i) {
-            dp[i % 2] = max(dp[(i - 2) % 2] + nums[i], dp[(i - 1) % 2]);
-        }
-        return max(dp[0], dp[1]);
-    }
-
-public:
-    int rob(vector<int>& nums) {
-        if (nums.size() == 1) {
-            return nums[0];
-        }
-        int len = nums.size();
-        return max(helper(nums, 0, len - 2), helper(nums, 1, len - 1));
-    }
-};
-```
-
-2. 双状态动态规划
-
-```
-class Solution {
-private:
-    int helper(vector<int>& nums, int start, int end) {
-        vector<vector<int>> dp(2,vector<int>(2));
-        dp[start % 2][0] = 0;
-        dp[start % 2][1] = nums[start];
-        for (int i = start + 1; i <= end; ++i) {
-            dp[i % 2][0] = max(dp[(i - 1) % 2][0], dp[(i - 1) % 2][1]);
-            dp[i % 2][1] = dp[(i - 1) % 2][0] + nums[i];
-        }
-        return max(dp[end % 2][0], dp[end % 2][1]);
-    }
-
-public:
-    int rob(vector<int>& nums) {
-        if (nums.size() == 1) {
-            return nums[0];
-        }
-        int len = nums.size();
-        return max(helper(nums, 0, len - 2), helper(nums, 1, len - 1));
-    }
-};
-```
-
+# **动态规划**
+本题与面试题 89 [《剑指offer 2 面试题89》 书中算法C++实现](https://leetcode-cn.com/problems/Gu0c2T/solution/jian-zhi-offer-2-mian-shi-ti-89-shu-zhon-86xo/) 的唯一不同是，本题的房屋连成一圈，那么下标为 0 和下标为 n - 1 的房屋就是相邻的。如果他考虑去下标为 0 的房屋，那么就不再考虑下标为 n - 1 的房屋；如果他考虑去下标为 n - 1的房屋，那么就不再考虑下标为 0 的房屋。所以可以将该问题拆分为两个小问题：一个是求小偷从下标为 0 的房屋开始到下标为 n - 2 的房屋结束能偷得的最大财物，另一个是求小偷从下标为 1 的房屋开始到下标为 n - 1 的房屋结束能偷得的最大财物。最终的大问题的解就是这两个小问题的最大值。
+
+代码可以根据修改面试题 89 的代码得到，单状态动态规划和双状态动态规划的代码如下，时间复杂度为 O(n)，空间复杂度为 O(1)。
+
+1. 单状态动态规划
+```
+class Solution {
+private:
+    int helper(vector<int>& nums, int start, int end) {
+        if (start == end) {
+            return nums[start];
+        }
+        vector<int> dp(2, 0);
+        dp[start % 2] = nums[start];
+        dp[(start + 1) % 2] = max(nums[start], nums[start + 1]);
+        for (int i = start + 2; i <= end; ++i) {
+            dp[i % 2] = max(dp[(i - 2) % 2] + nums[i], dp[(i - 1) % 2]);
+        }
+        return max(dp[0], dp[1]);
+    }
+
+public:
+    int rob(vector<int>& nums) {
+        if (nums.size() == 1) {
+            return nums[0];
+        }
+        int len = nums.size();
+        return max(helper(nums, 0, len - 2), helper(nums, 1, len - 1));
+    }
+};
+```
+
+2. 双状态动态规划
+
+```
+class Solution {
+private:
+    int helper(vector<int>& nums, int start, int end) {
+        vector<vector<int>> dp(2,vector<int>(2));
+        dp[start % 2][0] = 0;
+        dp[start % 2][1] = nums[start];
+        for (int i = start + 1; i <= end; ++i) {
+            dp[i % 2][0] = max(dp[(i - 1) % 2][0], dp[(i - 1) % 2][1]);
+            dp[i % 2][1] = dp[(i - 1) % 2][0] + nums[i];
+        }
+        return max(dp[end % 2][0], dp[end % 2][1]);
+    }
+
+public:
+    int rob(vector<int>& nums) {
+        if (nums.size() == 1) {
+            return nums[0];
+        }
+        int len = nums.size();
+        return max(helper(nums, 0, len - 2), helper(nums, 1, len - 1));
+    }
+};
+```
+
 
 
 ## 统计信息

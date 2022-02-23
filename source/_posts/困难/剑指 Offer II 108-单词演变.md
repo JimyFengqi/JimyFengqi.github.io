@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 108-单词演变
-date: 2021-12-03 21:30:49
 categories:
   - 困难
 tags:
   - 广度优先搜索
   - 哈希表
   - 字符串
+abbrlink: 1984659365
+date: 2021-12-03 21:30:49
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/om3reC
@@ -68,120 +69,120 @@ tags:
 
 
 ## 高赞题解
-# **单向 BFS**
-把每个单词都看作节点，若两个单词之间可以相互演变，则这两个单词之间存在一个边。那么就可以把题目中这些关系建图，如示例所建的图如下
-![f0c959d151408f08122b4b3c8c5bdc3.jpg](../images/om3reC-0.jpg)
-图中所示路径就是一条最短路径，所以该题可以转变为计算两个节点之间的最短路径长度，可以使用广度优先搜索算法。
-```
-class Solution {
-void getNeighbor(unordered_set<string>& visted, string& word, queue<string>& que) {
-    for (int i = 0; i < word.size(); ++i) {
-        char temp = word[i];
-        for (char ch = 'a'; ch <= 'z'; ++ch) {
-            word[i] = ch;
-            if (ch != temp && visted.count(word)) {
-                que.push(word);
-            }
-        }
-        word[i] = temp;
-    }
-}
-
-public:
-    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string> visted;
-        for (auto& word : wordList) {
-            visted.insert(word);
-        }
-        if (!visted.count(endWord)) {
-            return 0;
-        }
-
-        // 单向 BFS
-        queue<string> que;
-        que.push(beginWord);
-        int len = 0;
-        while (!que.empty()) {
-            int size = que.size();
-            len++;
-            while (size--) {
-                string word = que.front();
-                que.pop();
-                visted.erase(word);
-                if (word == endWord) {
-                    return len;
-                }
-                getNeighbor(visted, word, que);
-            }
-        }
-        return 0;
-    }
-};
-```
-# **双向 BFS**
-该题是单一起点、单一目标节点的最短距离问题，针对该类问题的优化手段是，即在从起始节点出发不断搜索目标节点的同时，也从目标节点出发朝着起始点方向不断搜索。
-
-完整代码如下，除了记录节点访问情况的 visted 外一共使用了 3 个 set，其中 st1 和 st2 分别存放两个方向上需要访问的节点，每次都选择 st1 和 st2 中数量较小的集合进行搜索，这样可以缩小搜索空间。 st3 保存与当前访问节点相邻的下一步需要访问的节点，在搜索相邻节点的过程中，不断查询访问的节点是否已经在另一个方向搜索的集合里，若已经存在，则代表当前两个搜索方向已经有重合的节点，即已经找到最短路径。
-
-```
-class Solution {
-private:
-    bool getNeighbor(unordered_set<string>& visted, unordered_set<string>& st1, unordered_set<string>& st2, unordered_set<string>& st3, string& word) {
-        for (int i = 0; i < word.size(); ++i) {
-            char temp = word[i];
-            for (char ch = 'a'; ch <= 'z'; ++ch) {
-                word[i] = ch;
-                if (ch != temp && visted.count(word)) {
-                    if (st2.count(word)) {
-                        return true;
-                    }
-                    st3.insert(word);
-                }
-            }
-            word[i] = temp;
-        }
-        return false;
-    }
-
-public:
-    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string> visted;
-        for (auto& word : wordList) {
-            visted.insert(word);
-        }
-        if (!visted.count(endWord)) {
-            return 0;
-        }
-
-        unordered_set<string> st1;
-        unordered_set<string> st2;
-        st1.insert(beginWord);
-        st2.insert(endWord);
-        int len = 2;
-
-        while (!st1.empty() && !st2.empty()) {
-            if (st1.size() > st2.size()) {
-                swap(st1, st2);
-            }
-            
-            unordered_set<string> st3;
-            for (auto it = st1.begin(); it != st1.end(); ++it) {
-                string word = *it;
-                visted.erase(word);
-
-                if (getNeighbor(visted, st1, st2, st3, word)) {
-                    return len;
-                }
-            }
-            st1 = st3;
-            len++;
-        }
-
-        return 0;
-    }
-};
-```
-
+# **单向 BFS**
+把每个单词都看作节点，若两个单词之间可以相互演变，则这两个单词之间存在一个边。那么就可以把题目中这些关系建图，如示例所建的图如下
+![f0c959d151408f08122b4b3c8c5bdc3.jpg](../images/om3reC-0.jpg)
+图中所示路径就是一条最短路径，所以该题可以转变为计算两个节点之间的最短路径长度，可以使用广度优先搜索算法。
+```
+class Solution {
+void getNeighbor(unordered_set<string>& visted, string& word, queue<string>& que) {
+    for (int i = 0; i < word.size(); ++i) {
+        char temp = word[i];
+        for (char ch = 'a'; ch <= 'z'; ++ch) {
+            word[i] = ch;
+            if (ch != temp && visted.count(word)) {
+                que.push(word);
+            }
+        }
+        word[i] = temp;
+    }
+}
+
+public:
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        unordered_set<string> visted;
+        for (auto& word : wordList) {
+            visted.insert(word);
+        }
+        if (!visted.count(endWord)) {
+            return 0;
+        }
+
+        // 单向 BFS
+        queue<string> que;
+        que.push(beginWord);
+        int len = 0;
+        while (!que.empty()) {
+            int size = que.size();
+            len++;
+            while (size--) {
+                string word = que.front();
+                que.pop();
+                visted.erase(word);
+                if (word == endWord) {
+                    return len;
+                }
+                getNeighbor(visted, word, que);
+            }
+        }
+        return 0;
+    }
+};
+```
+# **双向 BFS**
+该题是单一起点、单一目标节点的最短距离问题，针对该类问题的优化手段是，即在从起始节点出发不断搜索目标节点的同时，也从目标节点出发朝着起始点方向不断搜索。
+
+完整代码如下，除了记录节点访问情况的 visted 外一共使用了 3 个 set，其中 st1 和 st2 分别存放两个方向上需要访问的节点，每次都选择 st1 和 st2 中数量较小的集合进行搜索，这样可以缩小搜索空间。 st3 保存与当前访问节点相邻的下一步需要访问的节点，在搜索相邻节点的过程中，不断查询访问的节点是否已经在另一个方向搜索的集合里，若已经存在，则代表当前两个搜索方向已经有重合的节点，即已经找到最短路径。
+
+```
+class Solution {
+private:
+    bool getNeighbor(unordered_set<string>& visted, unordered_set<string>& st1, unordered_set<string>& st2, unordered_set<string>& st3, string& word) {
+        for (int i = 0; i < word.size(); ++i) {
+            char temp = word[i];
+            for (char ch = 'a'; ch <= 'z'; ++ch) {
+                word[i] = ch;
+                if (ch != temp && visted.count(word)) {
+                    if (st2.count(word)) {
+                        return true;
+                    }
+                    st3.insert(word);
+                }
+            }
+            word[i] = temp;
+        }
+        return false;
+    }
+
+public:
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        unordered_set<string> visted;
+        for (auto& word : wordList) {
+            visted.insert(word);
+        }
+        if (!visted.count(endWord)) {
+            return 0;
+        }
+
+        unordered_set<string> st1;
+        unordered_set<string> st2;
+        st1.insert(beginWord);
+        st2.insert(endWord);
+        int len = 2;
+
+        while (!st1.empty() && !st2.empty()) {
+            if (st1.size() > st2.size()) {
+                swap(st1, st2);
+            }
+            
+            unordered_set<string> st3;
+            for (auto it = st1.begin(); it != st1.end(); ++it) {
+                string word = *it;
+                visted.erase(word);
+
+                if (getNeighbor(visted, st1, st2, st3, word)) {
+                    return len;
+                }
+            }
+            st1 = st3;
+            len++;
+        }
+
+        return 0;
+    }
+};
+```
+
 
 
 ## 统计信息

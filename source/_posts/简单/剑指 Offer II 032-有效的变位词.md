@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 032-有效的变位词
-date: 2021-12-03 21:32:09
 categories:
   - 简单
 tags:
   - 哈希表
   - 字符串
   - 排序
+abbrlink: 2749767943
+date: 2021-12-03 21:32:09
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/dKk3P7

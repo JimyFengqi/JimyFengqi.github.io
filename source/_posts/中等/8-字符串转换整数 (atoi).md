@@ -1,10 +1,11 @@
 ---
 title: 8-字符串转换整数 (atoi)(String to Integer (atoi))
-date: 2021-12-03 23:02:26
 categories:
   - 中等
 tags:
   - 字符串
+abbrlink: 113326921
+date: 2021-12-03 23:02:26
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/string-to-integer-atoi

@@ -1,11 +1,12 @@
 ---
 title: 712-两个字符串的最小ASCII删除和(Minimum ASCII Delete Sum for Two Strings)
-date: 2021-12-03 22:39:05
 categories:
   - 中等
 tags:
   - 字符串
   - 动态规划
+abbrlink: 3525224956
+date: 2021-12-03 22:39:05
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings

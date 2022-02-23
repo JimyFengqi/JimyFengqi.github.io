@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 116-省份数量
-date: 2021-12-03 21:28:08
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 广度优先搜索
   - 并查集
   - 图
+abbrlink: 3189424107
+date: 2021-12-03 21:28:08
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/bLyHh0
@@ -66,412 +67,412 @@ tags:
 
 
 ## 高赞题解
-思路和心得：
-
-# （一）dfs
-
-```python3 []
-class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        def dfs(x: int) -> None:
-            # nonlocal visited
-            for y in range(n):
-                if visited[y] == False and isConnected[x][y] == 1:
-                    visited[y] = True
-                    dfs(y)
-        
-        n = len(isConnected)
-        visited = [False for _ in range(n)]
-        cnt = 0
-        for x in range(n):
-            if visited[x] == False:
-                visited[x] = True
-                dfs(x)
-                cnt += 1
-        return cnt 
-
-```
-
-```c++ []
-class Solution 
-{
-public:
-    vector<vector<int>> isConnected;
-    int n;
-    vector<bool> visited;
-    int cnt;
-
-    int findCircleNum(vector<vector<int>>& isConnected) 
-    {
-        this->isConnected = isConnected;
-        this->n = (int)isConnected.size();
-        this->visited.resize(n, false);
-
-        for (int x = 0; x < n; x ++)
-        {
-            if (visited[x] == false)
-            {
-                visited[x] = true;
-                dfs(x);
-                cnt ++;
-            }
-        }
-        return cnt;
-    }
-
-    void dfs(int x)
-    {
-        for (int y = 0; y < n; y ++)
-        {
-            if (isConnected[x][y] == 1 && visited[y] == false)
-            {
-                visited[y] = true;
-                dfs(y);
-            }
-        }
-    }
-};
-```
-
-```java []
-class Solution 
-{
-    int [][] isConnected;
-    int n;
-    boolean [] visited;
-    int cnt = 0;
-
-    public int findCircleNum(int[][] isConnected) 
-    {
-        this.isConnected = isConnected;
-        this.n = isConnected.length;
-        visited = new boolean[n];
-        for (int x = 0; x < n; x ++)
-        {
-            if (visited[x] == false)
-            {
-                visited[x] = true;
-                bfs(x);
-                cnt ++;
-            }
-        }
-        return cnt;
-    }
-
-    public void dfs(int x)
-    {
-        for (int y = 0; y < n; y ++)
-        {
-            if (isConnected[x][y] == 1 && visited[y] == false)
-            {
-                visited[y] = true;
-                dfs(y);
-            }
-        }
-    }
-}
-```
-
-# （二）bfs
-
-
-```python3 []
-class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        def bfs(sx: int) -> None:
-            q = collections.deque()
-            q.append(sx)
-            while q:
-                x = q.popleft()
-                for y in range(n):
-                    if visited[y] == False and isConnected[x][y] == 1:
-                        visited[y] = True
-                        q.append(y)
-        
-        n = len(isConnected)
-        visited = [False for _ in range(n)]
-        cnt = 0
-        for x in range(n):
-            if visited[x] == False:
-                visited[x] = True
-                bfs(x)
-                cnt += 1
-        return cnt
-```
-
-```c++ []
-class Solution 
-{
-public:
-    vector<vector<int>> isConnected;
-    int n;
-    vector<bool> visited;
-    int cnt;
-
-    int findCircleNum(vector<vector<int>>& isConnected) 
-    {
-        this->isConnected = isConnected;
-        this->n = (int)isConnected.size();
-        this->visited.resize(n, false);
-
-        for (int x = 0; x < n; x ++)
-        {
-            if (visited[x] == false)
-            {
-                visited[x] = true;
-                bfs(x);
-                cnt ++;
-            }
-        }
-        return cnt;
-    }
-
-    void bfs(int sx)
-    {
-        queue<int> q;
-        q.push(sx);
-        while(!q.empty())
-        {
-            int x = q.front();    q.pop();
-            for (int y = 0; y < n; y ++)
-            {
-                if (isConnected[x][y] == 1 && visited[y] == false)
-                {
-                    visited[y] = true;
-                    q.push(y);
-                }
-            }
-        }
-
-    }
-};
-```
-
-```java []
-class Solution 
-{
-    int [][] isConnected;
-    int n;
-    boolean [] visited;
-    int cnt = 0;
-
-    public int findCircleNum(int[][] isConnected) 
-    {
-        this.isConnected = isConnected;
-        this.n = isConnected.length;
-        visited = new boolean[n];
-        for (int x = 0; x < n; x ++)
-        {
-            if (visited[x] == false)
-            {
-                visited[x] = true;
-                bfs(x);
-                cnt ++;
-            }
-        }
-        return cnt;
-    }
-
-    public void bfs(int sx)
-    {
-        Queue<Integer> q = new LinkedList<>();
-        q.offer(sx);
-        while (!q.isEmpty())
-        {
-            int x = q.poll();
-            for (int y = 0; y < n; y ++)
-            {
-                if (isConnected[x][y] == 1 && visited[y] == false)
-                {
-                    visited[y] = true;
-                    q.offer(y);
-                }
-            }
-        }
-    }
-}
-```
-
-# （三）并查集
-
-```python3 []
-class UnionFind:
-    def __init__(self, n: int):
-        self.parent = [x for x in range(n)]
-        self.size = [1 for x in range(n)]
-        self.part = n
-
-    def Find(self, x: int) -> int:
-        if self.parent[x] != x:
-            self.parent[x] = self.Find(self.parent[x])
-        return self.parent[x]
-    
-    def Union(self, x: int, y: int) -> bool:
-        root_x = self.Find(x)
-        root_y = self.Find(y)
-        if root_x == root_y:
-            return False
-        if self.size[root_x] > self.size[root_y]:
-            root_x, root_y = root_y, root_x
-        self.parent[root_x] = root_y
-        self.size[root_y] += self.size[root_x]
-        self.part -= 1
-        return True
-
-    def connected(self, x: int, y: int) -> bool:
-        return self.Find(x) == self.Find(y)
-        
-
-class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        n = len(isConnected)
-        UF = UnionFind(n)
-        for x in range(n):
-            for y in range(n):
-                if isConnected[x][y] == 1:
-                    UF.Union(x, y)
-        return UF.part
-```
-
-```c++ []
-class UnionFind
-{
-public:
-    vector<int> parent;
-    vector<int> size;
-    int part;
-
-    UnionFind(int n)
-    {
-        parent.resize(n);
-        for (int x = 0; x < n; x ++)
-            parent[x] = x;
-        size.resize(n, 1);
-        part = n;
-    }
-
-    int Find(int x)
-    {
-        if (parent[x] != x)
-            parent[x] = Find(parent[x]);
-        return parent[x];
-    }
-
-    bool Union(int x, int y)
-    {
-        int root_x = Find(x);
-        int root_y = Find(y);
-        if (root_x == root_y)
-            return false;
-        if (size[root_x] > root_y)
-            swap(root_x, root_y);
-        parent[root_x] = root_y;
-        size[root_y] += size[root_x];
-        part --;
-        return true;
-    }
-
-    bool connected(int x, int y)
-    {
-        return Find(x) == Find(y);
-    }
-
-};
-
-class Solution 
-{
-public:
-    int findCircleNum(vector<vector<int>>& isConnected) 
-    {
-        int n = isConnected.size();
-        UnionFind UF = UnionFind(n);
-        for (int x = 0; x < n; x ++)
-        {
-            for (int y = 0; y < n; y ++)
-            {
-                if (isConnected[x][y] == 1)
-                {
-                    UF.Union(x, y);
-                }
-            }
-        }
-
-        return UF.part;
-    }
-};
-```
-
-```java []
-class UnionFind
-{
-    public int [] parent;
-    public int [] size;
-    public int part;
-
-    UnionFind(int n)
-    {
-        parent = new int [n];
-        for (int x = 0; x < n; x ++)
-            parent[x] = x;
-        size = new int [n];
-        for (int x = 0; x < n; x ++)
-            size[x] = 1;
-        part = n;
-    }
-
-    public int Find(int x)
-    {
-        if (parent[x] != x)
-            parent[x] = Find(parent[x]);
-        return parent[x];
-    }
-
-    public boolean Union(int x, int y)
-    {
-        int root_x = Find(x);
-        int root_y = Find(y);
-        if (root_x == root_y)
-            return false;
-        if (size[root_x] > size[root_y])
-        {
-            int tmp = root_x;
-            root_x = root_y;
-            root_y = tmp;
-        }
-        parent[root_x] = root_y;
-        size[root_y] += size[root_x];
-        part --;
-        return true;
-    }
-
-    public boolean connected(int x, int y)
-    {
-        return Find(x) == Find(y);
-    }
-
-}
-
-
-class Solution 
-{
-    public int findCircleNum(int[][] isConnected) 
-    {
-        int n = isConnected.length;
-        UnionFind UF = new UnionFind(n);
-        for (int x = 0; x < n; x ++)
-        {
-            for (int y = 0; y < n; y ++)
-            {
-                if (isConnected[x][y] == 1)
-                {
-                    UF.Union(x, y);
-                }
-            }
-        }
-
-        return UF.part;
-    }
-}
+思路和心得：
+
+# （一）dfs
+
+```python3 []
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        def dfs(x: int) -> None:
+            # nonlocal visited
+            for y in range(n):
+                if visited[y] == False and isConnected[x][y] == 1:
+                    visited[y] = True
+                    dfs(y)
+        
+        n = len(isConnected)
+        visited = [False for _ in range(n)]
+        cnt = 0
+        for x in range(n):
+            if visited[x] == False:
+                visited[x] = True
+                dfs(x)
+                cnt += 1
+        return cnt 
+
+```
+
+```c++ []
+class Solution 
+{
+public:
+    vector<vector<int>> isConnected;
+    int n;
+    vector<bool> visited;
+    int cnt;
+
+    int findCircleNum(vector<vector<int>>& isConnected) 
+    {
+        this->isConnected = isConnected;
+        this->n = (int)isConnected.size();
+        this->visited.resize(n, false);
+
+        for (int x = 0; x < n; x ++)
+        {
+            if (visited[x] == false)
+            {
+                visited[x] = true;
+                dfs(x);
+                cnt ++;
+            }
+        }
+        return cnt;
+    }
+
+    void dfs(int x)
+    {
+        for (int y = 0; y < n; y ++)
+        {
+            if (isConnected[x][y] == 1 && visited[y] == false)
+            {
+                visited[y] = true;
+                dfs(y);
+            }
+        }
+    }
+};
+```
+
+```java []
+class Solution 
+{
+    int [][] isConnected;
+    int n;
+    boolean [] visited;
+    int cnt = 0;
+
+    public int findCircleNum(int[][] isConnected) 
+    {
+        this.isConnected = isConnected;
+        this.n = isConnected.length;
+        visited = new boolean[n];
+        for (int x = 0; x < n; x ++)
+        {
+            if (visited[x] == false)
+            {
+                visited[x] = true;
+                bfs(x);
+                cnt ++;
+            }
+        }
+        return cnt;
+    }
+
+    public void dfs(int x)
+    {
+        for (int y = 0; y < n; y ++)
+        {
+            if (isConnected[x][y] == 1 && visited[y] == false)
+            {
+                visited[y] = true;
+                dfs(y);
+            }
+        }
+    }
+}
+```
+
+# （二）bfs
+
+
+```python3 []
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        def bfs(sx: int) -> None:
+            q = collections.deque()
+            q.append(sx)
+            while q:
+                x = q.popleft()
+                for y in range(n):
+                    if visited[y] == False and isConnected[x][y] == 1:
+                        visited[y] = True
+                        q.append(y)
+        
+        n = len(isConnected)
+        visited = [False for _ in range(n)]
+        cnt = 0
+        for x in range(n):
+            if visited[x] == False:
+                visited[x] = True
+                bfs(x)
+                cnt += 1
+        return cnt
+```
+
+```c++ []
+class Solution 
+{
+public:
+    vector<vector<int>> isConnected;
+    int n;
+    vector<bool> visited;
+    int cnt;
+
+    int findCircleNum(vector<vector<int>>& isConnected) 
+    {
+        this->isConnected = isConnected;
+        this->n = (int)isConnected.size();
+        this->visited.resize(n, false);
+
+        for (int x = 0; x < n; x ++)
+        {
+            if (visited[x] == false)
+            {
+                visited[x] = true;
+                bfs(x);
+                cnt ++;
+            }
+        }
+        return cnt;
+    }
+
+    void bfs(int sx)
+    {
+        queue<int> q;
+        q.push(sx);
+        while(!q.empty())
+        {
+            int x = q.front();    q.pop();
+            for (int y = 0; y < n; y ++)
+            {
+                if (isConnected[x][y] == 1 && visited[y] == false)
+                {
+                    visited[y] = true;
+                    q.push(y);
+                }
+            }
+        }
+
+    }
+};
+```
+
+```java []
+class Solution 
+{
+    int [][] isConnected;
+    int n;
+    boolean [] visited;
+    int cnt = 0;
+
+    public int findCircleNum(int[][] isConnected) 
+    {
+        this.isConnected = isConnected;
+        this.n = isConnected.length;
+        visited = new boolean[n];
+        for (int x = 0; x < n; x ++)
+        {
+            if (visited[x] == false)
+            {
+                visited[x] = true;
+                bfs(x);
+                cnt ++;
+            }
+        }
+        return cnt;
+    }
+
+    public void bfs(int sx)
+    {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(sx);
+        while (!q.isEmpty())
+        {
+            int x = q.poll();
+            for (int y = 0; y < n; y ++)
+            {
+                if (isConnected[x][y] == 1 && visited[y] == false)
+                {
+                    visited[y] = true;
+                    q.offer(y);
+                }
+            }
+        }
+    }
+}
+```
+
+# （三）并查集
+
+```python3 []
+class UnionFind:
+    def __init__(self, n: int):
+        self.parent = [x for x in range(n)]
+        self.size = [1 for x in range(n)]
+        self.part = n
+
+    def Find(self, x: int) -> int:
+        if self.parent[x] != x:
+            self.parent[x] = self.Find(self.parent[x])
+        return self.parent[x]
+    
+    def Union(self, x: int, y: int) -> bool:
+        root_x = self.Find(x)
+        root_y = self.Find(y)
+        if root_x == root_y:
+            return False
+        if self.size[root_x] > self.size[root_y]:
+            root_x, root_y = root_y, root_x
+        self.parent[root_x] = root_y
+        self.size[root_y] += self.size[root_x]
+        self.part -= 1
+        return True
+
+    def connected(self, x: int, y: int) -> bool:
+        return self.Find(x) == self.Find(y)
+        
+
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        n = len(isConnected)
+        UF = UnionFind(n)
+        for x in range(n):
+            for y in range(n):
+                if isConnected[x][y] == 1:
+                    UF.Union(x, y)
+        return UF.part
+```
+
+```c++ []
+class UnionFind
+{
+public:
+    vector<int> parent;
+    vector<int> size;
+    int part;
+
+    UnionFind(int n)
+    {
+        parent.resize(n);
+        for (int x = 0; x < n; x ++)
+            parent[x] = x;
+        size.resize(n, 1);
+        part = n;
+    }
+
+    int Find(int x)
+    {
+        if (parent[x] != x)
+            parent[x] = Find(parent[x]);
+        return parent[x];
+    }
+
+    bool Union(int x, int y)
+    {
+        int root_x = Find(x);
+        int root_y = Find(y);
+        if (root_x == root_y)
+            return false;
+        if (size[root_x] > root_y)
+            swap(root_x, root_y);
+        parent[root_x] = root_y;
+        size[root_y] += size[root_x];
+        part --;
+        return true;
+    }
+
+    bool connected(int x, int y)
+    {
+        return Find(x) == Find(y);
+    }
+
+};
+
+class Solution 
+{
+public:
+    int findCircleNum(vector<vector<int>>& isConnected) 
+    {
+        int n = isConnected.size();
+        UnionFind UF = UnionFind(n);
+        for (int x = 0; x < n; x ++)
+        {
+            for (int y = 0; y < n; y ++)
+            {
+                if (isConnected[x][y] == 1)
+                {
+                    UF.Union(x, y);
+                }
+            }
+        }
+
+        return UF.part;
+    }
+};
+```
+
+```java []
+class UnionFind
+{
+    public int [] parent;
+    public int [] size;
+    public int part;
+
+    UnionFind(int n)
+    {
+        parent = new int [n];
+        for (int x = 0; x < n; x ++)
+            parent[x] = x;
+        size = new int [n];
+        for (int x = 0; x < n; x ++)
+            size[x] = 1;
+        part = n;
+    }
+
+    public int Find(int x)
+    {
+        if (parent[x] != x)
+            parent[x] = Find(parent[x]);
+        return parent[x];
+    }
+
+    public boolean Union(int x, int y)
+    {
+        int root_x = Find(x);
+        int root_y = Find(y);
+        if (root_x == root_y)
+            return false;
+        if (size[root_x] > size[root_y])
+        {
+            int tmp = root_x;
+            root_x = root_y;
+            root_y = tmp;
+        }
+        parent[root_x] = root_y;
+        size[root_y] += size[root_x];
+        part --;
+        return true;
+    }
+
+    public boolean connected(int x, int y)
+    {
+        return Find(x) == Find(y);
+    }
+
+}
+
+
+class Solution 
+{
+    public int findCircleNum(int[][] isConnected) 
+    {
+        int n = isConnected.length;
+        UnionFind UF = new UnionFind(n);
+        for (int x = 0; x < n; x ++)
+        {
+            for (int y = 0; y < n; y ++)
+            {
+                if (isConnected[x][y] == 1)
+                {
+                    UF.Union(x, y);
+                }
+            }
+        }
+
+        return UF.part;
+    }
+}
 ```
 
 ## 统计信息

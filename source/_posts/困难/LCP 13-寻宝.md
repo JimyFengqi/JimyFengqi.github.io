@@ -1,6 +1,5 @@
 ---
 title: LCP 13-寻宝
-date: 2021-12-03 21:33:40
 categories:
   - 困难
 tags:
@@ -10,6 +9,8 @@ tags:
   - 动态规划
   - 状态压缩
   - 矩阵
+abbrlink: 2879466061
+date: 2021-12-03 21:33:40
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/xun-bao

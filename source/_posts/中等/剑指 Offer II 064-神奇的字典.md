@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 064-神奇的字典
-date: 2021-12-03 21:28:26
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 字典树
   - 哈希表
   - 字符串
+abbrlink: 2134148264
+date: 2021-12-03 21:28:26
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/US1pGT
@@ -78,92 +79,92 @@ magicDictionary.search(&quot;leetcoded&quot;); // 返回 False
 
 
 ## 高赞题解
-# **前缀树**
-此类问题若是使用哈希表并不能很好得解决，合适的方法应该是使用前缀树，然后在前缀树中查找只修改一个字符的字符串。前缀的实现和前几题类似，如下
-```
-// 构造前缀树节点
-class Trie {
-public:
-    bool isWord;
-    vector<Trie*> children;
-    Trie () : isWord(false), children(26, nullptr) {}
-
-    void insert(const string& str) {
-        Trie* node = this;
-        for (auto& ch : str) {
-            if (node->children[ch - 'a'] == nullptr) {
-                node->children[ch - 'a'] = new Trie();
-            }
-            node = node->children[ch - 'a'];
-        }
-        node->isWord = true;
-    }
-};
-```
-接下来分析如何在前缀树中查找只修改一个字符的字符串，可以根据 dfs 搜索前缀树的每条路径。如果到达的节点与字符串中的字符不匹配，则表示此时需要修改该字符以匹配路径。如果到达对应字符串的最后一个字符所对应的节点，且该节点的 isWord 为 ture，并且当前路径刚好修改了字符串中的一个字符，那么就找到了符合要求的路径，返回 true。完整代码如下：
-```
-// 构造前缀树节点
-class Trie {
-public:
-    bool isWord;
-    vector<Trie*> children;
-    Trie () : isWord(false), children(26, nullptr) {}
-
-    void insert(const string& str) {
-        Trie* node = this;
-        for (auto& ch : str) {
-            if (node->children[ch - 'a'] == nullptr) {
-                node->children[ch - 'a'] = new Trie();
-            }
-            node = node->children[ch - 'a'];
-        }
-        node->isWord = true;
-    }
-};
-
-
-class MagicDictionary {
-private:
-    Trie* root;
-    bool dfs(Trie* root, string& word, int i, int edit) {
-        if (root == nullptr) {
-            return false;
-        }
-
-        if (root->isWord && i == word.size() && edit == 1) {
-            return true;
-        }
-
-        if (i < word.size() && edit <= 1) {
-            bool found = false;
-            for (int j = 0; j < 26 && !found; ++j) {
-                int next = (j == word[i] - 'a') ? edit : edit + 1;
-                found = dfs(root->children[j], word, i + 1, next);
-            }
-
-            return found;
-        }
-
-        return false;
-    }
-
-public:
-    /** Initialize your data structure here. */
-    MagicDictionary() {
-        root = new Trie();
-    }
-    
-    void buildDict(vector<string> dictionary) {
-        for (auto& word : dictionary) {
-            root->insert(word);
-        }
-    }
-    
-    bool search(string searchWord) {
-        return dfs(root, searchWord, 0, 0);
-    }
-};
-```
+# **前缀树**
+此类问题若是使用哈希表并不能很好得解决，合适的方法应该是使用前缀树，然后在前缀树中查找只修改一个字符的字符串。前缀的实现和前几题类似，如下
+```
+// 构造前缀树节点
+class Trie {
+public:
+    bool isWord;
+    vector<Trie*> children;
+    Trie () : isWord(false), children(26, nullptr) {}
+
+    void insert(const string& str) {
+        Trie* node = this;
+        for (auto& ch : str) {
+            if (node->children[ch - 'a'] == nullptr) {
+                node->children[ch - 'a'] = new Trie();
+            }
+            node = node->children[ch - 'a'];
+        }
+        node->isWord = true;
+    }
+};
+```
+接下来分析如何在前缀树中查找只修改一个字符的字符串，可以根据 dfs 搜索前缀树的每条路径。如果到达的节点与字符串中的字符不匹配，则表示此时需要修改该字符以匹配路径。如果到达对应字符串的最后一个字符所对应的节点，且该节点的 isWord 为 ture，并且当前路径刚好修改了字符串中的一个字符，那么就找到了符合要求的路径，返回 true。完整代码如下：
+```
+// 构造前缀树节点
+class Trie {
+public:
+    bool isWord;
+    vector<Trie*> children;
+    Trie () : isWord(false), children(26, nullptr) {}
+
+    void insert(const string& str) {
+        Trie* node = this;
+        for (auto& ch : str) {
+            if (node->children[ch - 'a'] == nullptr) {
+                node->children[ch - 'a'] = new Trie();
+            }
+            node = node->children[ch - 'a'];
+        }
+        node->isWord = true;
+    }
+};
+
+
+class MagicDictionary {
+private:
+    Trie* root;
+    bool dfs(Trie* root, string& word, int i, int edit) {
+        if (root == nullptr) {
+            return false;
+        }
+
+        if (root->isWord && i == word.size() && edit == 1) {
+            return true;
+        }
+
+        if (i < word.size() && edit <= 1) {
+            bool found = false;
+            for (int j = 0; j < 26 && !found; ++j) {
+                int next = (j == word[i] - 'a') ? edit : edit + 1;
+                found = dfs(root->children[j], word, i + 1, next);
+            }
+
+            return found;
+        }
+
+        return false;
+    }
+
+public:
+    /** Initialize your data structure here. */
+    MagicDictionary() {
+        root = new Trie();
+    }
+    
+    void buildDict(vector<string> dictionary) {
+        for (auto& word : dictionary) {
+            root->insert(word);
+        }
+    }
+    
+    bool search(string searchWord) {
+        return dfs(root, searchWord, 0, 0);
+    }
+};
+```
 
 
 ## 统计信息

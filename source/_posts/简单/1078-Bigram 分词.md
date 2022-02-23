@@ -1,10 +1,11 @@
 ---
 title: 1078-Bigram 分词(Occurrences After Bigram)
-date: 2021-12-03 22:23:31
 categories:
   - 简单
 tags:
   - 字符串
+abbrlink: 945362688
+date: 2021-12-03 22:23:31
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/occurrences-after-bigram

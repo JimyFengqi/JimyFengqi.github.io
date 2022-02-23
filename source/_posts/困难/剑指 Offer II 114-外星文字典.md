@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 114-外星文字典
-date: 2021-12-03 21:30:32
 categories:
   - 困难
 tags:
@@ -10,6 +9,8 @@ tags:
   - 拓扑排序
   - 数组
   - 字符串
+abbrlink: 4149707640
+date: 2021-12-03 21:30:32
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/Jf1JuT

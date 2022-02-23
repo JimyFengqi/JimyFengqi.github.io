@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 098-路径的数目
-date: 2021-12-03 21:28:09
 categories:
   - 中等
 tags:
   - 数学
   - 动态规划
   - 组合数学
+abbrlink: 2050619237
+date: 2021-12-03 21:28:09
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/2AoeFn
@@ -76,69 +77,69 @@ tags:
 
 
 ## 高赞题解
-# **排列组合**
-机器人从 (0, 0) 到达 (m, n) 一共需要走 m + n - 2 步，这其中有 m - 1 步是向下走，如果在这  m + n - 2 步中向下走的顺序不同就会出现不同的路径，所有路径数等于从 m + n - 2 步中选择 m - 1 步为向下走的组合数，即
-![image.png](../images/2AoeFn-0.png)
-
-完整代码如下，注意计算组合数的计算公式，时间复杂度为 O(min(m, n))，空间复杂度为 O(1)。
-
-```
-class Solution {
-public:
-    int uniquePaths(int m, int n) {
-        if (m > n) {
-            return uniquePaths(n, m);
-        }
-        
-        long long ret = 1;
-        for (int x = n, y = 1; y < m; ++x, ++y) {
-            // 不要写成 ret *= x / y ，因为 x / y 不一定是整数但是会被取整，但 ret * x / y 一定为整数
-            ret = ret * x / y;
-        }
-        return ret;
-    }
-};
-```
-# **动态规划**
-如果没有想到组合数的解法，也可以尝试其他解法。机器人需要若干步才能从 (0, 0) 到达 (m, n)，每走一步又面临向下还是向右走的两种选择，最终需要返回符合要求的路径数，所以本问题也可以采用动态规划求解。
-
-用 f(i, j) 表示从 (0, 0) 到达 (m, n) 的路径数。当 i == 0 时，机器人位于格子的第一行，所以不可能从某一个位置向下走一步到达，只能从 (0, 0) 不断往右走到达，所以 f(0, j) = 1，同理可得 f(i, 0) = 1。在 i != 0 且 j != 0 时，机器人有两种办法到达 (i, j) 分别时从 (i - 1, j) 向右走一步以及从 (i, j - 1) 向下走一步，所以 f(i, j) = f(i - 1, j) + f(i, j - 1)。
-
-使用二维数组的完整代码如下，时间复杂度为 O(mn)，空间复杂度为 O(mn)。
-```
-class Solution {
-public:
-    int uniquePaths(int m, int n) {
-        vector<vector<int>> dp(m, vector<int>(n, 1));
-        for (int i = 1; i < m; ++i) {
-            for (int j = 1; j < n; ++j) {
-                dp[i][j] = dp[i][j - 1] + dp[i - 1][j];
-            }
-        }
-        return dp[m - 1][n - 1];
-    }
-};
-```
-
-同样可以优化为一维数组，完整代码如下，时间复杂度为 O(mn)，空间复杂度为 O(min(m, n))。
-```
-class Solution {
-public:
-    int uniquePaths(int m, int n) {
-        if (m < n) {
-            return uniquePaths(n, m);
-        }
-        
-        vector<int> dp(n, 1);
-        for (int i = 1; i < m; ++i) {
-            for (int j = 1; j < n; ++j) {
-                dp[j] += dp[j - 1];
-            }
-        }
-        return dp[n - 1];
-    }
-};
-```
+# **排列组合**
+机器人从 (0, 0) 到达 (m, n) 一共需要走 m + n - 2 步，这其中有 m - 1 步是向下走，如果在这  m + n - 2 步中向下走的顺序不同就会出现不同的路径，所有路径数等于从 m + n - 2 步中选择 m - 1 步为向下走的组合数，即
+![image.png](../images/2AoeFn-0.png)
+
+完整代码如下，注意计算组合数的计算公式，时间复杂度为 O(min(m, n))，空间复杂度为 O(1)。
+
+```
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        if (m > n) {
+            return uniquePaths(n, m);
+        }
+        
+        long long ret = 1;
+        for (int x = n, y = 1; y < m; ++x, ++y) {
+            // 不要写成 ret *= x / y ，因为 x / y 不一定是整数但是会被取整，但 ret * x / y 一定为整数
+            ret = ret * x / y;
+        }
+        return ret;
+    }
+};
+```
+# **动态规划**
+如果没有想到组合数的解法，也可以尝试其他解法。机器人需要若干步才能从 (0, 0) 到达 (m, n)，每走一步又面临向下还是向右走的两种选择，最终需要返回符合要求的路径数，所以本问题也可以采用动态规划求解。
+
+用 f(i, j) 表示从 (0, 0) 到达 (m, n) 的路径数。当 i == 0 时，机器人位于格子的第一行，所以不可能从某一个位置向下走一步到达，只能从 (0, 0) 不断往右走到达，所以 f(0, j) = 1，同理可得 f(i, 0) = 1。在 i != 0 且 j != 0 时，机器人有两种办法到达 (i, j) 分别时从 (i - 1, j) 向右走一步以及从 (i, j - 1) 向下走一步，所以 f(i, j) = f(i - 1, j) + f(i, j - 1)。
+
+使用二维数组的完整代码如下，时间复杂度为 O(mn)，空间复杂度为 O(mn)。
+```
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m, vector<int>(n, 1));
+        for (int i = 1; i < m; ++i) {
+            for (int j = 1; j < n; ++j) {
+                dp[i][j] = dp[i][j - 1] + dp[i - 1][j];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+};
+```
+
+同样可以优化为一维数组，完整代码如下，时间复杂度为 O(mn)，空间复杂度为 O(min(m, n))。
+```
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        if (m < n) {
+            return uniquePaths(n, m);
+        }
+        
+        vector<int> dp(n, 1);
+        for (int i = 1; i < m; ++i) {
+            for (int j = 1; j < n; ++j) {
+                dp[j] += dp[j - 1];
+            }
+        }
+        return dp[n - 1];
+    }
+};
+```
 
 
 ## 统计信息

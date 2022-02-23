@@ -1,12 +1,13 @@
 ---
 title: LCP 08-剧情触发时间
-date: 2021-12-03 21:33:54
 categories:
   - 中等
 tags:
   - 数组
   - 二分查找
   - 排序
+abbrlink: 1058906460
+date: 2021-12-03 21:33:54
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/ju-qing-hong-fa-shi-jian

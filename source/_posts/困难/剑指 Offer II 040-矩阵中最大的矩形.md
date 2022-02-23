@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 040-矩阵中最大的矩形
-date: 2021-12-03 21:31:08
 categories:
   - 困难
 tags:
@@ -9,6 +8,8 @@ tags:
   - 动态规划
   - 矩阵
   - 单调栈
+abbrlink: 944885320
+date: 2021-12-03 21:31:08
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/PLYXKQ
@@ -83,60 +84,60 @@ tags:
 
 
 ## 高赞题解
-**单调栈**
-这道题实则是面试题 39 的应用[
-《剑指offer 2 面试题39》 书中算法C++实现](https://leetcode-cn.com/problems/0ynMMM/solution/jian-zhi-offer-2-mian-shi-ti-39-shu-zhon-qzaw/)。以题中的例子为例，分析一下使其变为上一题。
-![image.png](../images/PLYXKQ-0.png)
-因为最大矩阵一定是以矩阵的某一行为底边的，所以可以遍历各行寻找答案。以矩阵第一行为底的最大矩阵面积，等效于前一题中的直方图数组为 [1, 0, 1, 0, 0]；以第二行等效为 [2, 0, 2, 1, 1]；以第三行等效为 [3, 1, 3, 2, 2]；以第四行等效为 [4, 0, 0, 3, 0]；遍历完所有行，就能得到最大矩形的面积。**注意一点，原矩阵内存的是字符。**
-
-代码如下，若矩阵的维度为 m * n，那么时间复杂为 O(mn)，空间复杂度为 O(n)。
-```
-class Solution {
-public:
-    int maximalRectangle(vector<string>& matrix) {
-        if (matrix.size() == 0) {
-            return 0;
-        }
-        vector<int> heights(matrix[0].size(), 0);
-        int maxArea = 0;
-        for (int i = 0; i < matrix.size(); ++i) {
-            for (int j = 0; j < matrix[0].size(); ++j) {
-                if (matrix[i][j] == '0') {
-                    heights[j] = 0;
-                }
-                else {
-                    heights[j] += matrix[i][j] - '0';
-                }
-            }
-            maxArea = max(maxArea, largestRectangleArea(heights));
-        }
-        return maxArea;
-    }
-
-    int largestRectangleArea(vector<int>& heights) {
-        stack<int> sta;
-        sta.push(-1);
-        int maxArea = 0;
-        for (int i = 0; i < heights.size(); ++i) {
-            while (sta.top() != -1 && heights[sta.top()] >= heights[i]) {
-                int height = heights[sta.top()];
-                sta.pop();
-                int width = i - sta.top() - 1;
-                maxArea = max(maxArea, height * width);
-            }
-            sta.push(i);
-        }
-
-        while (sta.top() != -1) {
-            int height = heights[sta.top()];
-            sta.pop();
-            int width = heights.size() - sta.top() - 1;
-            maxArea = max(maxArea, height * width);
-        }
-        return maxArea;
-    }
-};
-```
+**单调栈**
+这道题实则是面试题 39 的应用[
+《剑指offer 2 面试题39》 书中算法C++实现](https://leetcode-cn.com/problems/0ynMMM/solution/jian-zhi-offer-2-mian-shi-ti-39-shu-zhon-qzaw/)。以题中的例子为例，分析一下使其变为上一题。
+![image.png](../images/PLYXKQ-0.png)
+因为最大矩阵一定是以矩阵的某一行为底边的，所以可以遍历各行寻找答案。以矩阵第一行为底的最大矩阵面积，等效于前一题中的直方图数组为 [1, 0, 1, 0, 0]；以第二行等效为 [2, 0, 2, 1, 1]；以第三行等效为 [3, 1, 3, 2, 2]；以第四行等效为 [4, 0, 0, 3, 0]；遍历完所有行，就能得到最大矩形的面积。**注意一点，原矩阵内存的是字符。**
+
+代码如下，若矩阵的维度为 m * n，那么时间复杂为 O(mn)，空间复杂度为 O(n)。
+```
+class Solution {
+public:
+    int maximalRectangle(vector<string>& matrix) {
+        if (matrix.size() == 0) {
+            return 0;
+        }
+        vector<int> heights(matrix[0].size(), 0);
+        int maxArea = 0;
+        for (int i = 0; i < matrix.size(); ++i) {
+            for (int j = 0; j < matrix[0].size(); ++j) {
+                if (matrix[i][j] == '0') {
+                    heights[j] = 0;
+                }
+                else {
+                    heights[j] += matrix[i][j] - '0';
+                }
+            }
+            maxArea = max(maxArea, largestRectangleArea(heights));
+        }
+        return maxArea;
+    }
+
+    int largestRectangleArea(vector<int>& heights) {
+        stack<int> sta;
+        sta.push(-1);
+        int maxArea = 0;
+        for (int i = 0; i < heights.size(); ++i) {
+            while (sta.top() != -1 && heights[sta.top()] >= heights[i]) {
+                int height = heights[sta.top()];
+                sta.pop();
+                int width = i - sta.top() - 1;
+                maxArea = max(maxArea, height * width);
+            }
+            sta.push(i);
+        }
+
+        while (sta.top() != -1) {
+            int height = heights[sta.top()];
+            sta.pop();
+            int width = heights.size() - sta.top() - 1;
+            maxArea = max(maxArea, height * width);
+        }
+        return maxArea;
+    }
+};
+```
 
 
 ## 统计信息

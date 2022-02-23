@@ -1,12 +1,13 @@
 ---
 title: 412-Fizz Buzz
-date: 2021-12-03 22:46:03
 categories:
   - 简单
 tags:
   - 数学
   - 字符串
   - 模拟
+abbrlink: 3405167973
+date: 2021-12-03 22:46:03
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/fizz-buzz

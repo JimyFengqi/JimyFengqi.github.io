@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer 57 - II-和为s的连续正数序列(和为s的连续正数序列 LCOF)
-date: 2021-12-03 21:37:44
 categories:
   - 简单
 tags:
   - 数学
   - 双指针
   - 枚举
+abbrlink: 1245622347
+date: 2021-12-03 21:37:44
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof

@@ -1,6 +1,5 @@
 ---
 title: LCP 44-开幕式焰火
-date: 2021-12-03 21:28:03
 categories:
   - 简单
 tags:
@@ -9,6 +8,8 @@ tags:
   - 广度优先搜索
   - 哈希表
   - 二叉树
+abbrlink: 2343996246
+date: 2021-12-03 21:28:03
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/sZ59z6
@@ -49,94 +50,94 @@ tags:
 
 
 ## 高赞题解
-思路和心得：
-
-# （一）dfs+无序集合
-
-```python3 []
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-class Solution:
-    def numColor(self, root: TreeNode) -> int:
-        def dfs(rt):
-            if rt:
-                us.add(rt.val)
-                dfs(rt.left)
-                dfs(rt.right)
-        
-        us = set()
-        dfs(root)
-        return len(us)
-        
-```
-
-```c++ []
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution 
-{
-public:
-    unordered_set<int> us;
-
-    void dfs(TreeNode * rt)
-    {
-        if (rt)
-        {
-            us.insert(rt->val);
-            dfs(rt->left);
-            dfs(rt->right);
-        }
-    }
-
-    int numColor(TreeNode* root) 
-    {
-        dfs(root);
-        return (int)us.size();
-    }
-};
-```
-
-```java []
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution 
-{
-    Set<Integer> us = new HashSet<>();
-
-    public void dfs(TreeNode rt)
-    {
-        if (rt != null)
-        {
-            us.add(rt.val);
-            dfs(rt.left);
-            dfs(rt.right);
-        }
-    }
-
-    public int numColor(TreeNode root) 
-    {
-        dfs(root);
-        return us.size();
-    }
-}
+思路和心得：
+
+# （一）dfs+无序集合
+
+```python3 []
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def numColor(self, root: TreeNode) -> int:
+        def dfs(rt):
+            if rt:
+                us.add(rt.val)
+                dfs(rt.left)
+                dfs(rt.right)
+        
+        us = set()
+        dfs(root)
+        return len(us)
+        
+```
+
+```c++ []
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution 
+{
+public:
+    unordered_set<int> us;
+
+    void dfs(TreeNode * rt)
+    {
+        if (rt)
+        {
+            us.insert(rt->val);
+            dfs(rt->left);
+            dfs(rt->right);
+        }
+    }
+
+    int numColor(TreeNode* root) 
+    {
+        dfs(root);
+        return (int)us.size();
+    }
+};
+```
+
+```java []
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution 
+{
+    Set<Integer> us = new HashSet<>();
+
+    public void dfs(TreeNode rt)
+    {
+        if (rt != null)
+        {
+            us.add(rt.val);
+            dfs(rt.left);
+            dfs(rt.right);
+        }
+    }
+
+    public int numColor(TreeNode root) 
+    {
+        dfs(root);
+        return us.size();
+    }
+}
 ```
 
 ## 统计信息

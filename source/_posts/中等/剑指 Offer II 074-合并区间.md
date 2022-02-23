@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 074-合并区间
-date: 2021-12-03 21:28:15
 categories:
   - 中等
 tags:
   - 数组
   - 排序
+abbrlink: 3785081407
+date: 2021-12-03 21:28:15
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/SsGoHC
@@ -54,87 +55,87 @@ tags:
 
 
 ## 高赞题解
-思路和心得：
-
-# （一）排序
-
-```python3 []
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        intervals.sort()
-        res = []
-        for s, e in intervals:
-            if len(res) == 0 or res[-1][1] < s:
-                res.append([s, e])
-            else:
-                res[-1][1] = max(res[-1][1], e)
-        return res
-```
-
-```c++ []
-
-class Solution 
-{
-public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) 
-    {
-        sort(intervals.begin(),  intervals.end());
-
-        vector<vector<int>> res;
-        int rn = 0;
-        for (int i = 0; i < (int)intervals.size(); i ++)
-        {
-            int s = intervals[i][0],  e = intervals[i][1];
-            if (rn == 0 || res.back()[1] < s)
-            {
-                res.push_back(intervals[i]);
-                rn ++;
-            }
-            else
-            {
-                res.back()[1] = max(res.back()[1], e);
-            }
-        }
-
-        return res;
-    }
-};
-```
-
-```java []
-class Solution 
-{
-    public int[][] merge(int[][] intervals) 
-    {
-        Arrays.sort(intervals, new Comparator<int []>()
-        {
-            public int compare(int [] a, int [] b)
-            {
-                return a[0] - b[0];
-            }
-        });
-
-        List<int []> res = new ArrayList<>();
-        int rn = 0;
-
-        for (int i = 0; i < intervals.length; i ++)
-        {
-            int s = intervals[i][0],  e = intervals[i][1];
-            if (rn == 0 || res.get(rn - 1)[1] < s)
-            {
-                res.add(intervals[i]);
-                rn ++;
-            }
-            else
-            {
-                res.get(rn - 1)[1] = Math.max(res.get(rn - 1)[1], e);
-            }
-        }
-
-        return res.toArray(new int [rn][]);
-
-    }
-}
+思路和心得：
+
+# （一）排序
+
+```python3 []
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        res = []
+        for s, e in intervals:
+            if len(res) == 0 or res[-1][1] < s:
+                res.append([s, e])
+            else:
+                res[-1][1] = max(res[-1][1], e)
+        return res
+```
+
+```c++ []
+
+class Solution 
+{
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) 
+    {
+        sort(intervals.begin(),  intervals.end());
+
+        vector<vector<int>> res;
+        int rn = 0;
+        for (int i = 0; i < (int)intervals.size(); i ++)
+        {
+            int s = intervals[i][0],  e = intervals[i][1];
+            if (rn == 0 || res.back()[1] < s)
+            {
+                res.push_back(intervals[i]);
+                rn ++;
+            }
+            else
+            {
+                res.back()[1] = max(res.back()[1], e);
+            }
+        }
+
+        return res;
+    }
+};
+```
+
+```java []
+class Solution 
+{
+    public int[][] merge(int[][] intervals) 
+    {
+        Arrays.sort(intervals, new Comparator<int []>()
+        {
+            public int compare(int [] a, int [] b)
+            {
+                return a[0] - b[0];
+            }
+        });
+
+        List<int []> res = new ArrayList<>();
+        int rn = 0;
+
+        for (int i = 0; i < intervals.length; i ++)
+        {
+            int s = intervals[i][0],  e = intervals[i][1];
+            if (rn == 0 || res.get(rn - 1)[1] < s)
+            {
+                res.add(intervals[i]);
+                rn ++;
+            }
+            else
+            {
+                res.get(rn - 1)[1] = Math.max(res.get(rn - 1)[1], e);
+            }
+        }
+
+        return res.toArray(new int [rn][]);
+
+    }
+}
 ```
 
 ## 统计信息

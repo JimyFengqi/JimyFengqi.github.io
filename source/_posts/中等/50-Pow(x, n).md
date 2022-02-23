@@ -1,11 +1,12 @@
 ---
-title: 50-Pow(x, n)
-date: 2021-12-03 23:00:38
+title: '50-Pow(x, n)'
 categories:
   - 中等
 tags:
   - 递归
   - 数学
+abbrlink: 2130247093
+date: 2021-12-03 23:00:38
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/powx-n

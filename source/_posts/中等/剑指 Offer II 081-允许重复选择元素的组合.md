@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 081-允许重复选择元素的组合
-date: 2021-12-03 21:33:05
 categories:
   - 中等
 tags:
   - 数组
   - 回溯
+abbrlink: 1341970810
+date: 2021-12-03 21:33:05
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/Ygoe9J
@@ -78,42 +79,42 @@ tags:
 
 
 ## 高赞题解
-# **回溯法 + 剪枝**
-这道题与之前的唯一区别就是同一个数字可以多次选择。这道题中每一步都从集合中取出一个元素时，存在多个选择，一种是不添加该数字，其他选择就是选择 1 次该数字，2 次该数字...。
-
-其实归根到底，也是两种选择，一种是选择不添加，另一种是选择添加。如果选择不添加，那么只需要调用递归函数判断下一个数字。如果选择添加，那么只需要调用递归函数继续判断该数字。这样的处理就可以与之前的题目完全统一，完整的代码如下。
-
-```
-class Solution {
-private:
-    void helper(vector<int>& candidates, int target, int index, vector<vector<int>>& ret, vector<int>& cur) {
-        // 得到答案
-        if (target == 0) {
-            ret.emplace_back(cur);
-            return;
-        }
-        // 超界
-        if (target < 0 || index == candidates.size()) {
-            return;
-        }
-        // 不加入 candidates[index]
-        helper(candidates, target, index + 1, ret, cur);
-
-        // 加入 candidates[index]
-        cur.push_back(candidates[index]);
-        helper(candidates, target - candidates[index], index, ret, cur);
-        cur.pop_back();
-    }
-
-public:
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        vector<vector<int>> ret;
-        vector<int> cur;
-        helper(candidates, target, 0, ret, cur);
-        return ret;
-    }
-};
-```
+# **回溯法 + 剪枝**
+这道题与之前的唯一区别就是同一个数字可以多次选择。这道题中每一步都从集合中取出一个元素时，存在多个选择，一种是不添加该数字，其他选择就是选择 1 次该数字，2 次该数字...。
+
+其实归根到底，也是两种选择，一种是选择不添加，另一种是选择添加。如果选择不添加，那么只需要调用递归函数判断下一个数字。如果选择添加，那么只需要调用递归函数继续判断该数字。这样的处理就可以与之前的题目完全统一，完整的代码如下。
+
+```
+class Solution {
+private:
+    void helper(vector<int>& candidates, int target, int index, vector<vector<int>>& ret, vector<int>& cur) {
+        // 得到答案
+        if (target == 0) {
+            ret.emplace_back(cur);
+            return;
+        }
+        // 超界
+        if (target < 0 || index == candidates.size()) {
+            return;
+        }
+        // 不加入 candidates[index]
+        helper(candidates, target, index + 1, ret, cur);
+
+        // 加入 candidates[index]
+        cur.push_back(candidates[index]);
+        helper(candidates, target - candidates[index], index, ret, cur);
+        cur.pop_back();
+    }
+
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> ret;
+        vector<int> cur;
+        helper(candidates, target, 0, ret, cur);
+        return ret;
+    }
+};
+```
 
 
 ## 统计信息

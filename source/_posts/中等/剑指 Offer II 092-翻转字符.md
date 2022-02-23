@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 092-翻转字符
-date: 2021-12-03 21:32:13
 categories:
   - 中等
 tags:
   - 字符串
   - 动态规划
+abbrlink: 1400284489
+date: 2021-12-03 21:32:13
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/cyJERH

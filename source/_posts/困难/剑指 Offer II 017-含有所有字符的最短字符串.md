@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 017-含有所有字符的最短字符串
-date: 2021-12-03 21:32:35
 categories:
   - 困难
 tags:
   - 哈希表
   - 字符串
   - 滑动窗口
+abbrlink: 2903669871
+date: 2021-12-03 21:32:35
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/M1oyTv
@@ -70,182 +71,182 @@ tags:
 
 
 ## 高赞题解
-思路和心得：
-
-1.滑动窗口+临界统计
-
-2.记录好每次符合条件的起始点和长度即可
-
-
-```python3 []
-class Solution:
-    def minWindow(self, s: str, t: str) -> str:
-        sn = len(s)
-        tn = len(t)
-        
-        res_start = -1
-        res_len = float('inf')
-
-        need_cnt = tn
-        need_char_cnt = defaultdict(int)
-        for c in t:
-            need_char_cnt[c] += 1
-
-        l = 0
-        for r in range(sn):
-            if s[r] in need_char_cnt:
-                if need_char_cnt[s[r]] > 0:
-                    need_cnt -= 1
-                need_char_cnt[s[r]] -= 1
-            if need_cnt == 0:
-                while True: 
-                    if s[l] not in need_char_cnt:
-                        l += 1
-                    else:
-                        if need_char_cnt[s[l]] < 0:
-                            need_char_cnt[s[l]] += 1
-                            l += 1
-                        else:
-                            break
-                cur_len = r - l + 1
-                if cur_len < res_len:
-                    res_len = cur_len
-                    res_start = l
-        if res_start != -1:
-            return s[res_start: res_start + res_len]
-        return ""
-```
-
-```c++ []
-class Solution 
-{
-public:
-    string minWindow(string s, string t) 
-    {
-        int sn = s.size();
-        int tn = t.size();
-
-        if (sn < tn)
-            return string("");
-
-        int need_cnt = tn;
-        unordered_map<char, int> need_char_cnt;
-        for (char c : t)
-            need_char_cnt[c] ++;
-        
-        int res_start = -1;
-        int res_len = INT_MAX;
-
-        int l = 0;
-        for (int r = 0; r < sn; r ++)
-        {
-            if (need_char_cnt.find(s[r]) != need_char_cnt.end())
-            {
-                if (need_char_cnt[s[r]] > 0)
-                    need_cnt --;
-                need_char_cnt[s[r]] --;
-            }
-
-            if (need_cnt == 0)
-            {
-                while (true)
-                {
-                    if (need_char_cnt.find(s[l]) == need_char_cnt.end())
-                        l ++;
-                    else
-                    {
-                        if (need_char_cnt[s[l]] < 0)
-                        {
-                            need_char_cnt[s[l]] ++;
-                            l ++;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-
-                if (r - l + 1 < res_len)
-                {
-                    res_len = r - l + 1;
-                    res_start = l;
-                }
-            }
-        }
-
-        if (res_start == -1)
-            return string("");
-        return s.substr(res_start, res_len);
-    }
-};
-```
-
-```java []
-class Solution 
-{
-    public String minWindow(String s, String t) 
-    {
-        int sn = s.length();
-        int tn = t.length();
-
-        if (sn < tn)
-            return new String();
-        
-        int need_cnt = tn;
-        Map<Character, Integer> need_char_cnt = new HashMap<>();
-        for (int i = 0; i < tn; i ++)
-        {
-            char c = t.charAt(i);
-            need_char_cnt.put(c, need_char_cnt.getOrDefault(c, 0) + 1);
-        }
-
-        int res_start = -1;
-        int res_len = Integer.MAX_VALUE;
-        
-        int l = 0;
-        for (int r = 0; r < sn; r ++)
-        {
-            if (need_char_cnt.containsKey(s.charAt(r)) == true)
-            {
-                if (need_char_cnt.get(s.charAt(r)) > 0)
-                    need_cnt --;
-                need_char_cnt.put(s.charAt(r), need_char_cnt.get(s.charAt(r)) - 1);
-            }
-
-            if (need_cnt == 0)
-            {
-                while (true)
-                {
-                    if (need_char_cnt.containsKey(s.charAt(l)) == false)
-                        l ++;
-                    else
-                    {
-                        if (need_char_cnt.get(s.charAt(l)) < 0)
-                        {
-                            need_char_cnt.put(s.charAt(l), need_char_cnt.get(s.charAt(l)) + 1);
-                            l ++;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-
-                if (r - l + 1 < res_len)
-                {
-                    res_len = r - l + 1;
-                    res_start = l;
-                }
-            }
-        }
-
-        if (res_start == -1)
-            return new String();
-        return s.substring(res_start, res_start + res_len);
-    }
-}
+思路和心得：
+
+1.滑动窗口+临界统计
+
+2.记录好每次符合条件的起始点和长度即可
+
+
+```python3 []
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        sn = len(s)
+        tn = len(t)
+        
+        res_start = -1
+        res_len = float('inf')
+
+        need_cnt = tn
+        need_char_cnt = defaultdict(int)
+        for c in t:
+            need_char_cnt[c] += 1
+
+        l = 0
+        for r in range(sn):
+            if s[r] in need_char_cnt:
+                if need_char_cnt[s[r]] > 0:
+                    need_cnt -= 1
+                need_char_cnt[s[r]] -= 1
+            if need_cnt == 0:
+                while True: 
+                    if s[l] not in need_char_cnt:
+                        l += 1
+                    else:
+                        if need_char_cnt[s[l]] < 0:
+                            need_char_cnt[s[l]] += 1
+                            l += 1
+                        else:
+                            break
+                cur_len = r - l + 1
+                if cur_len < res_len:
+                    res_len = cur_len
+                    res_start = l
+        if res_start != -1:
+            return s[res_start: res_start + res_len]
+        return ""
+```
+
+```c++ []
+class Solution 
+{
+public:
+    string minWindow(string s, string t) 
+    {
+        int sn = s.size();
+        int tn = t.size();
+
+        if (sn < tn)
+            return string("");
+
+        int need_cnt = tn;
+        unordered_map<char, int> need_char_cnt;
+        for (char c : t)
+            need_char_cnt[c] ++;
+        
+        int res_start = -1;
+        int res_len = INT_MAX;
+
+        int l = 0;
+        for (int r = 0; r < sn; r ++)
+        {
+            if (need_char_cnt.find(s[r]) != need_char_cnt.end())
+            {
+                if (need_char_cnt[s[r]] > 0)
+                    need_cnt --;
+                need_char_cnt[s[r]] --;
+            }
+
+            if (need_cnt == 0)
+            {
+                while (true)
+                {
+                    if (need_char_cnt.find(s[l]) == need_char_cnt.end())
+                        l ++;
+                    else
+                    {
+                        if (need_char_cnt[s[l]] < 0)
+                        {
+                            need_char_cnt[s[l]] ++;
+                            l ++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (r - l + 1 < res_len)
+                {
+                    res_len = r - l + 1;
+                    res_start = l;
+                }
+            }
+        }
+
+        if (res_start == -1)
+            return string("");
+        return s.substr(res_start, res_len);
+    }
+};
+```
+
+```java []
+class Solution 
+{
+    public String minWindow(String s, String t) 
+    {
+        int sn = s.length();
+        int tn = t.length();
+
+        if (sn < tn)
+            return new String();
+        
+        int need_cnt = tn;
+        Map<Character, Integer> need_char_cnt = new HashMap<>();
+        for (int i = 0; i < tn; i ++)
+        {
+            char c = t.charAt(i);
+            need_char_cnt.put(c, need_char_cnt.getOrDefault(c, 0) + 1);
+        }
+
+        int res_start = -1;
+        int res_len = Integer.MAX_VALUE;
+        
+        int l = 0;
+        for (int r = 0; r < sn; r ++)
+        {
+            if (need_char_cnt.containsKey(s.charAt(r)) == true)
+            {
+                if (need_char_cnt.get(s.charAt(r)) > 0)
+                    need_cnt --;
+                need_char_cnt.put(s.charAt(r), need_char_cnt.get(s.charAt(r)) - 1);
+            }
+
+            if (need_cnt == 0)
+            {
+                while (true)
+                {
+                    if (need_char_cnt.containsKey(s.charAt(l)) == false)
+                        l ++;
+                    else
+                    {
+                        if (need_char_cnt.get(s.charAt(l)) < 0)
+                        {
+                            need_char_cnt.put(s.charAt(l), need_char_cnt.get(s.charAt(l)) + 1);
+                            l ++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (r - l + 1 < res_len)
+                {
+                    res_len = r - l + 1;
+                    res_start = l;
+                }
+            }
+        }
+
+        if (res_start == -1)
+            return new String();
+        return s.substring(res_start, res_start + res_len);
+    }
+}
 ```
 
 ## 统计信息

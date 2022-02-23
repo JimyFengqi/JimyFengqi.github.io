@@ -1,6 +1,5 @@
 ---
 title: LCP 10-二叉树任务调度
-date: 2021-12-03 21:33:50
 categories:
   - 困难
 tags:
@@ -8,6 +7,8 @@ tags:
   - 深度优先搜索
   - 动态规划
   - 二叉树
+abbrlink: 3750216040
+date: 2021-12-03 21:33:50
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/er-cha-shu-ren-wu-diao-du
@@ -71,50 +72,50 @@ tags:
 
 
 ## 高赞题解
-我们设 $f(i)$ 为节点 $i$ 的最短时间，然后分类讨论。
-
-如果 $i$ 是一个叶子，那么显然 $f(i) = val(i)$。如果 $i$ 只有一个儿子，那么先要执行完儿子才轮得到自己，$f(i) = f(son(i)) + val(i)$。
-
-如果 $i$ 有两个儿子 $l, r$，那么我们就可以考虑用双核来优化。一种最简单的优化策略是：两个子树分别使用双核跑完，然后再根节点跑。这样的时间消耗是 $f(l)+f(r) + val(i)$。
-
-还有一种策略是：在左边花费 $x$ 时间使用双核（这里是**有效使用，即两个核都必须用上**，后同），在右边花费 $y$ 时间使用双核，然后在左右两棵子树一边一个核。可以看出，第三个样例使用的正是这样的策略，在根节点的右子树先花费了 3.5 的时间，然后左右两边一边一个核花费 3 时间。
-
-那么，这种情况下，设左右子树的任务总时间和分别为 $sum(l), sum(r)$。则通过利用双核，左子树剩下的任务时间变成了 $sum(l) - 2x$，右子树剩下的任务时间变成了 $sum(r) - 2y$，然后一边一个核处理完剩下的任务所需时间为这两者的较大者。因而总时间为
-$$
-val(i) + x+y+\max\left\lbrace sum(l) - 2x , sum(r) - 2y \right\rbrace
-$$
-即
-$$
-val(i) + \max\left\lbrace sum(l) +y-x , sum(r) -(y-x)\right\rbrace
-$$
-
-$val(i)$ 的时间消耗是逃不掉的，我们考虑后面这个 $\max$ 怎样取得尽量小。设 $t=y-x$，那么后面这个 $\max$ 要取到最小当且仅当 $t^* = mid = \frac{sum(r) - sum(l)}{2}$。并且如果 $t$ 偏离 $mid$ 越远，那么这个 $\max$ 就越大。注意到 $x \in [0, sum(l) - f(l)], y \in [0, sum(r) - f(r)]$，就有 $t\in [f(l) -  sum(l), sum(r) - f(r)]$。通过对 $mid$ 和这个区间位置的讨论，我们就能算出这个 $\max$ 的最小值。
-
-最后把以上这些情况统合起来，就有下面的转移方程：
-$$
-f(i) = val(i) + \min\left\lbrace f(l)+ f(r), \min_{t\in [f(l) -  sum(l), sum(r) - f(r)]}\max\left\lbrace sum(l) +t , sum(r) -t\right\rbrace \right\rbrace
-$$
-其中规定如果 $l$ 或者 $r$ 为空，对应的 $sum, f$ 均为 $0$。
-
-时间复杂度 $O(n)$。
-
-```python
-class Solution:
-    def minimalExecTime(self, root: TreeNode) -> float:
-        def dfs(cur):
-            if cur == None:
-                return 0, 0
-            fl, sml = dfs(cur.left)
-            fr, smr = dfs(cur.right)
-            f, sm = cur.val + fl + fr, cur.val + sml + smr
-            gl, gr = sml - fl, smr - fr
-            mid = (cur.right.sm - cur.left.sm) / 2
-            t = -gl if mid < -gl else (gr if mid > gr else mid)
-            f = min(f, cur.val + max(sml + t, smr - t))
-            return f, sm
-
-        ans, _ = dfs(root)
-        return ans
+我们设 $f(i)$ 为节点 $i$ 的最短时间，然后分类讨论。
+
+如果 $i$ 是一个叶子，那么显然 $f(i) = val(i)$。如果 $i$ 只有一个儿子，那么先要执行完儿子才轮得到自己，$f(i) = f(son(i)) + val(i)$。
+
+如果 $i$ 有两个儿子 $l, r$，那么我们就可以考虑用双核来优化。一种最简单的优化策略是：两个子树分别使用双核跑完，然后再根节点跑。这样的时间消耗是 $f(l)+f(r) + val(i)$。
+
+还有一种策略是：在左边花费 $x$ 时间使用双核（这里是**有效使用，即两个核都必须用上**，后同），在右边花费 $y$ 时间使用双核，然后在左右两棵子树一边一个核。可以看出，第三个样例使用的正是这样的策略，在根节点的右子树先花费了 3.5 的时间，然后左右两边一边一个核花费 3 时间。
+
+那么，这种情况下，设左右子树的任务总时间和分别为 $sum(l), sum(r)$。则通过利用双核，左子树剩下的任务时间变成了 $sum(l) - 2x$，右子树剩下的任务时间变成了 $sum(r) - 2y$，然后一边一个核处理完剩下的任务所需时间为这两者的较大者。因而总时间为
+$$
+val(i) + x+y+\max\left\lbrace sum(l) - 2x , sum(r) - 2y \right\rbrace
+$$
+即
+$$
+val(i) + \max\left\lbrace sum(l) +y-x , sum(r) -(y-x)\right\rbrace
+$$
+
+$val(i)$ 的时间消耗是逃不掉的，我们考虑后面这个 $\max$ 怎样取得尽量小。设 $t=y-x$，那么后面这个 $\max$ 要取到最小当且仅当 $t^* = mid = \frac{sum(r) - sum(l)}{2}$。并且如果 $t$ 偏离 $mid$ 越远，那么这个 $\max$ 就越大。注意到 $x \in [0, sum(l) - f(l)], y \in [0, sum(r) - f(r)]$，就有 $t\in [f(l) -  sum(l), sum(r) - f(r)]$。通过对 $mid$ 和这个区间位置的讨论，我们就能算出这个 $\max$ 的最小值。
+
+最后把以上这些情况统合起来，就有下面的转移方程：
+$$
+f(i) = val(i) + \min\left\lbrace f(l)+ f(r), \min_{t\in [f(l) -  sum(l), sum(r) - f(r)]}\max\left\lbrace sum(l) +t , sum(r) -t\right\rbrace \right\rbrace
+$$
+其中规定如果 $l$ 或者 $r$ 为空，对应的 $sum, f$ 均为 $0$。
+
+时间复杂度 $O(n)$。
+
+```python
+class Solution:
+    def minimalExecTime(self, root: TreeNode) -> float:
+        def dfs(cur):
+            if cur == None:
+                return 0, 0
+            fl, sml = dfs(cur.left)
+            fr, smr = dfs(cur.right)
+            f, sm = cur.val + fl + fr, cur.val + sml + smr
+            gl, gr = sml - fl, smr - fr
+            mid = (cur.right.sm - cur.left.sm) / 2
+            t = -gl if mid < -gl else (gr if mid > gr else mid)
+            f = min(f, cur.val + max(sml + t, smr - t))
+            return f, sm
+
+        ans, _ = dfs(root)
+        return ans
 ```
 
 ## 统计信息

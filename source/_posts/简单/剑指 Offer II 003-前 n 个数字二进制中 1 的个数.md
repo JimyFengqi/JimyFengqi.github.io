@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 003-前 n 个数字二进制中 1 的个数
-date: 2021-12-03 21:33:05
 categories:
   - 简单
 tags:
   - 位运算
   - 动态规划
+abbrlink: 2802404500
+date: 2021-12-03 21:33:05
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/w3tCBm

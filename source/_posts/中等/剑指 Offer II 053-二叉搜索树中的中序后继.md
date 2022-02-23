@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 053-二叉搜索树中的中序后继
-date: 2021-12-03 21:30:30
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 深度优先搜索
   - 二叉搜索树
   - 二叉树
+abbrlink: 2755114557
+date: 2021-12-03 21:30:30
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/P5rCT8

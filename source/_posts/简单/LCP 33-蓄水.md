@@ -1,12 +1,13 @@
 ---
 title: LCP 33-蓄水
-date: 2021-12-03 21:33:18
 categories:
   - 简单
 tags:
   - 贪心
   - 数组
   - 堆（优先队列）
+abbrlink: 1642444175
+date: 2021-12-03 21:33:18
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/o8SXZn

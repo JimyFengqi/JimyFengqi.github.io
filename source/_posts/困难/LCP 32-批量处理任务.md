@@ -1,12 +1,13 @@
 ---
 title: LCP 32-批量处理任务
-date: 2021-12-03 21:33:21
 categories:
   - 困难
 tags:
   - 贪心
   - 数组
   - 堆（优先队列）
+abbrlink: 226978677
+date: 2021-12-03 21:33:21
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/t3fKg1

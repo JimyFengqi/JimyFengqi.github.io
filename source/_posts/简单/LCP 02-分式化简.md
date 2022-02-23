@@ -1,6 +1,5 @@
 ---
 title: LCP 02-分式化简(Deep Dark Fraction)
-date: 2021-12-03 21:55:48
 categories:
   - 简单
 tags:
@@ -8,6 +7,8 @@ tags:
   - 数学
   - 数论
   - 模拟
+abbrlink: 1048391933
+date: 2021-12-03 21:55:48
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/deep-dark-fraction

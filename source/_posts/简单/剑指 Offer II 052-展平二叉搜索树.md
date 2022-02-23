@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 052-展平二叉搜索树
-date: 2021-12-03 21:30:35
 categories:
   - 简单
 tags:
@@ -9,6 +8,8 @@ tags:
   - 深度优先搜索
   - 二叉搜索树
   - 二叉树
+abbrlink: 135143955
+date: 2021-12-03 21:30:35
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/NYBBNL

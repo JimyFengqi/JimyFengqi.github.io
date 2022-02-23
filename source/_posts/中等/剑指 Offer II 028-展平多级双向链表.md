@@ -1,12 +1,13 @@
 ---
 title: 剑指 Offer II 028-展平多级双向链表
-date: 2021-12-03 21:32:19
 categories:
   - 中等
 tags:
   - 深度优先搜索
   - 链表
   - 双向链表
+abbrlink: 1904124749
+date: 2021-12-03 21:32:19
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/Qv1Da2
@@ -112,281 +113,281 @@ tags:
 
 
 ## 高赞题解
-思路和心得：
-
-1.递归和迭代两种都要掌握。经常问，经常用，经常考
-
-
-# （一）dfs
-
-
-```python3 []
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val, prev, next, child):
-        self.val = val
-        self.prev = prev
-        self.next = next
-        self.child = child
-"""
-
-class Solution:
-    def flatten(self, head: 'Node') -> 'Node':
-        if head == None:
-            return head
-        
-        dummy = Node(-1, None, None, None)
-
-        def dfs(pre: 'Node', cur: 'Node') -> 'Node':
-            if cur == None:
-                return pre   
-
-            pre.next = cur
-            cur.prev = pre
-
-            nxt_head = cur.next         #相当于4
-
-            tail = dfs(cur, cur.child)  #相当于dfs(3, 7)
-            cur.child = None
-            
-            return dfs(tail, nxt_head)  #相当于dfs(12, 4)
-        
-        dfs(dummy, head)
-        dummy.next.prev = None
-        return dummy.next
-```
-
-```c++ []
-/*
-// Definition for a Node.
-class Node {
-public:
-    int val;
-    Node* prev;
-    Node* next;
-    Node* child;
-};
-*/
-
-class Solution 
-{
-public:
-    Node * dummy;
-
-    Node* flatten(Node* head) 
-    {
-        if (head == NULL)
-            return head;
-
-        this->dummy = new Node(-1, NULL, NULL, NULL);
-        dfs(dummy, head);
-        dummy->next->prev = NULL;
-        return dummy->next;
-    }
-
-    Node * dfs(Node * pre, Node * cur)
-    {
-        if (cur == NULL)
-            return pre;
-        
-        pre->next = cur;
-        cur->prev = pre;
-
-        Node * next_head = cur->next;
-
-        Node * tail = dfs(cur, cur->child);
-        cur->child = NULL;
-
-        return dfs(tail, next_head);
-    }
-};
-```
-
-```java []
-/*
-// Definition for a Node.
-class Node {
-    public int val;
-    public Node prev;
-    public Node next;
-    public Node child;
-};
-*/
-
-class Solution 
-{
-    Node dummy;
-
-    public Node flatten(Node head) 
-    {
-        if (head == null)
-            return head;
-
-        this.dummy = new Node(-1, null, null, null); 
-        dfs(dummy, head);
-        dummy.next.prev = null;
-        return dummy.next;
-    }
-
-    public Node dfs (Node pre, Node cur)
-    {
-        if (cur == null)
-            return pre;
-        
-        pre.next = cur;
-        cur.prev = pre;
-
-        Node next_head = cur.next;
-
-        Node tail = dfs(cur, cur.child);
-        cur.child = null;
-
-        return dfs(tail, next_head);
-    }
-}
-```
-
-
-# （二）栈迭代
-
-
-```python3 []
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val, prev, next, child):
-        self.val = val
-        self.prev = prev
-        self.next = next
-        self.child = child
-"""
-
-class Solution:
-    def flatten(self, head: 'Node') -> 'Node':
-        if head == None:
-            return head
-
-        dummy = Node(-1, None, None, None)
-
-        pre = dummy
-        stk = [head]
-
-        while stk:
-            x = stk.pop()
-            
-            pre.next = x
-            x.prev = pre
-
-            if x.next:
-                stk.append(x.next)
-            if x.child:
-                stk.append(x.child)
-                x.child = None
-            
-            pre = x
-        
-        dummy.next.prev = None
-        return dummy.next
-```
-
-```c++ []
-/*
-// Definition for a Node.
-class Node {
-public:
-    int val;
-    Node* prev;
-    Node* next;
-    Node* child;
-};
-*/
-
-class Solution 
-{
-public:
-    Node* flatten(Node* head) 
-    {
-        if (head == NULL)
-            return head;
-
-        Node * dummy = new Node(-1, NULL, NULL, NULL);
-
-        Node * pre = dummy;
-        stack<Node *> stk;
-        stk.push(head);
-
-        while (!stk.empty())
-        {
-            Node * x = stk.top();    stk.pop();
-
-            pre->next = x;
-            x->prev = pre;
-
-            if (x->next)
-                stk.push(x->next);
-            if (x->child)
-            {
-                stk.push(x->child);
-                x->child = NULL;
-            }
-
-            pre = x;
-        }
-
-        dummy->next->prev = NULL;
-        return dummy->next;
-    }
-};
-```
-
-```java []
-/*
-// Definition for a Node.
-class Node {
-    public int val;
-    public Node prev;
-    public Node next;
-    public Node child;
-};
-*/
-
-class Solution 
-{
-    public Node flatten(Node head) 
-    {
-        if (head == null)
-            return head;
-        
-        Node dummy = new Node(-1, null, null, null);
-
-        Node pre = dummy;
-        Deque<Node> stk = new LinkedList<>();
-        stk.push(head);
-
-        while (!stk.isEmpty())
-        {
-            Node x = stk.poll();
-
-            pre.next = x;
-            x.prev = pre;
-
-            if (x.next != null)
-                stk.push(x.next);
-            if (x.child != null)
-            {
-                stk.push(x.child);
-                x.child = null;
-            }
-
-            pre = x;
-        }
-
-        dummy.next.prev = null;
-        return dummy.next;
-
-    }
-}
+思路和心得：
+
+1.递归和迭代两种都要掌握。经常问，经常用，经常考
+
+
+# （一）dfs
+
+
+```python3 []
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val, prev, next, child):
+        self.val = val
+        self.prev = prev
+        self.next = next
+        self.child = child
+"""
+
+class Solution:
+    def flatten(self, head: 'Node') -> 'Node':
+        if head == None:
+            return head
+        
+        dummy = Node(-1, None, None, None)
+
+        def dfs(pre: 'Node', cur: 'Node') -> 'Node':
+            if cur == None:
+                return pre   
+
+            pre.next = cur
+            cur.prev = pre
+
+            nxt_head = cur.next         #相当于4
+
+            tail = dfs(cur, cur.child)  #相当于dfs(3, 7)
+            cur.child = None
+            
+            return dfs(tail, nxt_head)  #相当于dfs(12, 4)
+        
+        dfs(dummy, head)
+        dummy.next.prev = None
+        return dummy.next
+```
+
+```c++ []
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* prev;
+    Node* next;
+    Node* child;
+};
+*/
+
+class Solution 
+{
+public:
+    Node * dummy;
+
+    Node* flatten(Node* head) 
+    {
+        if (head == NULL)
+            return head;
+
+        this->dummy = new Node(-1, NULL, NULL, NULL);
+        dfs(dummy, head);
+        dummy->next->prev = NULL;
+        return dummy->next;
+    }
+
+    Node * dfs(Node * pre, Node * cur)
+    {
+        if (cur == NULL)
+            return pre;
+        
+        pre->next = cur;
+        cur->prev = pre;
+
+        Node * next_head = cur->next;
+
+        Node * tail = dfs(cur, cur->child);
+        cur->child = NULL;
+
+        return dfs(tail, next_head);
+    }
+};
+```
+
+```java []
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node prev;
+    public Node next;
+    public Node child;
+};
+*/
+
+class Solution 
+{
+    Node dummy;
+
+    public Node flatten(Node head) 
+    {
+        if (head == null)
+            return head;
+
+        this.dummy = new Node(-1, null, null, null); 
+        dfs(dummy, head);
+        dummy.next.prev = null;
+        return dummy.next;
+    }
+
+    public Node dfs (Node pre, Node cur)
+    {
+        if (cur == null)
+            return pre;
+        
+        pre.next = cur;
+        cur.prev = pre;
+
+        Node next_head = cur.next;
+
+        Node tail = dfs(cur, cur.child);
+        cur.child = null;
+
+        return dfs(tail, next_head);
+    }
+}
+```
+
+
+# （二）栈迭代
+
+
+```python3 []
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val, prev, next, child):
+        self.val = val
+        self.prev = prev
+        self.next = next
+        self.child = child
+"""
+
+class Solution:
+    def flatten(self, head: 'Node') -> 'Node':
+        if head == None:
+            return head
+
+        dummy = Node(-1, None, None, None)
+
+        pre = dummy
+        stk = [head]
+
+        while stk:
+            x = stk.pop()
+            
+            pre.next = x
+            x.prev = pre
+
+            if x.next:
+                stk.append(x.next)
+            if x.child:
+                stk.append(x.child)
+                x.child = None
+            
+            pre = x
+        
+        dummy.next.prev = None
+        return dummy.next
+```
+
+```c++ []
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* prev;
+    Node* next;
+    Node* child;
+};
+*/
+
+class Solution 
+{
+public:
+    Node* flatten(Node* head) 
+    {
+        if (head == NULL)
+            return head;
+
+        Node * dummy = new Node(-1, NULL, NULL, NULL);
+
+        Node * pre = dummy;
+        stack<Node *> stk;
+        stk.push(head);
+
+        while (!stk.empty())
+        {
+            Node * x = stk.top();    stk.pop();
+
+            pre->next = x;
+            x->prev = pre;
+
+            if (x->next)
+                stk.push(x->next);
+            if (x->child)
+            {
+                stk.push(x->child);
+                x->child = NULL;
+            }
+
+            pre = x;
+        }
+
+        dummy->next->prev = NULL;
+        return dummy->next;
+    }
+};
+```
+
+```java []
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node prev;
+    public Node next;
+    public Node child;
+};
+*/
+
+class Solution 
+{
+    public Node flatten(Node head) 
+    {
+        if (head == null)
+            return head;
+        
+        Node dummy = new Node(-1, null, null, null);
+
+        Node pre = dummy;
+        Deque<Node> stk = new LinkedList<>();
+        stk.push(head);
+
+        while (!stk.isEmpty())
+        {
+            Node x = stk.poll();
+
+            pre.next = x;
+            x.prev = pre;
+
+            if (x.next != null)
+                stk.push(x.next);
+            if (x.child != null)
+            {
+                stk.push(x.child);
+                x.child = null;
+            }
+
+            pre = x;
+        }
+
+        dummy.next.prev = null;
+        return dummy.next;
+
+    }
+}
 ```
 
 ## 统计信息

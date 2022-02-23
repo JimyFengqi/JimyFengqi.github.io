@@ -1,12 +1,13 @@
 ---
 title: 28-实现 strStr()(Implement strStr())
-date: 2021-12-03 23:01:45
 categories:
   - 简单
 tags:
   - 双指针
   - 字符串
   - 字符串匹配
+abbrlink: 4245469585
+date: 2021-12-03 23:01:45
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/implement-strstr

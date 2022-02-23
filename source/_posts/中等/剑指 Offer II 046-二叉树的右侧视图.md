@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 046-二叉树的右侧视图
-date: 2021-12-03 21:30:51
 categories:
   - 中等
 tags:
@@ -8,6 +7,8 @@ tags:
   - 深度优先搜索
   - 广度优先搜索
   - 二叉树
+abbrlink: 3144773492
+date: 2021-12-03 21:30:51
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/WNC0Lk

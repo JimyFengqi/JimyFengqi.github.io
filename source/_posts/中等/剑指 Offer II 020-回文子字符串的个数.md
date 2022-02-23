@@ -1,11 +1,12 @@
 ---
 title: 剑指 Offer II 020-回文子字符串的个数
-date: 2021-12-03 21:32:32
 categories:
   - 中等
 tags:
   - 字符串
   - 动态规划
+abbrlink: 1210300321
+date: 2021-12-03 21:32:32
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/a7VOhD

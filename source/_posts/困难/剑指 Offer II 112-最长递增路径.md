@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 112-最长递增路径
-date: 2021-12-03 21:30:39
 categories:
   - 困难
 tags:
@@ -10,6 +9,8 @@ tags:
   - 拓扑排序
   - 记忆化搜索
   - 动态规划
+abbrlink: 941369669
+date: 2021-12-03 21:30:39
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/fpTFWP
@@ -72,52 +73,52 @@ tags:
 
 
 ## 高赞题解
-# **带记忆的深度优先搜索**
-如果把矩阵的各个数字看作节点，若矩阵中的某数字小于其四周的数字那么存在从该数字指向其四周数字的边，所以该问题就可以转化为求有向图内最长的路径。求解图的最长路径时可以采用广度优先搜素和深度优先搜索两种算法，这里适合采用深度优先算法。
-
-为了提高时间效率可以使用一个二维数组 path 记录当前已经计算得到的各节点的最长路径，那么对于某个节点 i,j 选择其四周与其相连的路径最长为 len 的节点相连，那么节点 i,j 的路径最长为 len + 1，若其四周与其相连的节点存在最长路径未明确的，则先调用递归函数计算该节点的最长路径。完整的代码如下：
-```
-class Solution {
-private:
-    int dfs(vector<vector<int>>& matrix, vector<vector<int>>& path, vector<vector<int>>& dires, int i, int j) {
-        int len = 0;
-        for (auto& d : dires) {
-            int row = i + d[0];
-            int col = j + d[1];
-            if (row >= 0 && row < matrix.size() && col >= 0 &&
-             col < matrix[0].size() && matrix[row][col] > matrix[i][j]) {
-                if (path[row][col] == 0) {
-                    len = max(len, dfs(matrix, path, dires, row, col));
-                }
-                else {
-                    len = max(len, path[row][col]);
-                }
-            }
-        }
-        path[i][j] = len + 1;
-        return path[i][j];
-    }
-
-public:
-    int longestIncreasingPath(vector<vector<int>>& matrix) {
-        vector<vector<int>> path(matrix.size(), vector<int>(matrix[0].size(), 0));
-        vector<vector<int>> dires{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-        int ret = 0;
-        for (int i = 0; i < matrix.size(); ++i) {
-            for (int j = 0; j < matrix[0].size(); ++j) {
-                if (path[i][j] == 0) {
-                    ret = max(ret, dfs(matrix, path, dires, i, j));
-                }
-                else {
-                    ret = max(ret, path[i][j]);
-                }
-            }
-        }
-
-        return ret;
-    }
-};
-```
+# **带记忆的深度优先搜索**
+如果把矩阵的各个数字看作节点，若矩阵中的某数字小于其四周的数字那么存在从该数字指向其四周数字的边，所以该问题就可以转化为求有向图内最长的路径。求解图的最长路径时可以采用广度优先搜素和深度优先搜索两种算法，这里适合采用深度优先算法。
+
+为了提高时间效率可以使用一个二维数组 path 记录当前已经计算得到的各节点的最长路径，那么对于某个节点 i,j 选择其四周与其相连的路径最长为 len 的节点相连，那么节点 i,j 的路径最长为 len + 1，若其四周与其相连的节点存在最长路径未明确的，则先调用递归函数计算该节点的最长路径。完整的代码如下：
+```
+class Solution {
+private:
+    int dfs(vector<vector<int>>& matrix, vector<vector<int>>& path, vector<vector<int>>& dires, int i, int j) {
+        int len = 0;
+        for (auto& d : dires) {
+            int row = i + d[0];
+            int col = j + d[1];
+            if (row >= 0 && row < matrix.size() && col >= 0 &&
+             col < matrix[0].size() && matrix[row][col] > matrix[i][j]) {
+                if (path[row][col] == 0) {
+                    len = max(len, dfs(matrix, path, dires, row, col));
+                }
+                else {
+                    len = max(len, path[row][col]);
+                }
+            }
+        }
+        path[i][j] = len + 1;
+        return path[i][j];
+    }
+
+public:
+    int longestIncreasingPath(vector<vector<int>>& matrix) {
+        vector<vector<int>> path(matrix.size(), vector<int>(matrix[0].size(), 0));
+        vector<vector<int>> dires{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        int ret = 0;
+        for (int i = 0; i < matrix.size(); ++i) {
+            for (int j = 0; j < matrix[0].size(); ++j) {
+                if (path[i][j] == 0) {
+                    ret = max(ret, dfs(matrix, path, dires, i, j));
+                }
+                else {
+                    ret = max(ret, path[i][j]);
+                }
+            }
+        }
+
+        return ret;
+    }
+};
+```
 
 
 ## 统计信息

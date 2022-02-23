@@ -1,6 +1,5 @@
 ---
 title: 剑指 Offer II 059-数据流的第 K 大数值
-date: 2021-12-03 21:28:33
 categories:
   - 简单
 tags:
@@ -10,6 +9,8 @@ tags:
   - 二叉树
   - 数据流
   - 堆（优先队列）
+abbrlink: 3581628246
+date: 2021-12-03 21:28:33
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/jBjn9C
@@ -71,70 +72,70 @@ kthLargest.add(4);   // return 8
 
 
 ## 高赞题解
-# **最小堆**
-此问题属于 topK 问题，是一类典型的题目。处理此类问题最直观的想法就是排序，但是使用排序并不是高效的方法，因为题目只关心第 k 大的数字并且数据是动态的，排序处理时间复杂度太高。堆就是解决一个动态数据集合中的 topK 问题的利器。最小堆经常用来求取数据集合中 k 个值最大的元素，而最大堆经常用来求取数据集合中 k 个值最小的元素。这道题使用最小堆来实现，C ++ 中存在堆的实现
-- **默认最大堆 ：** priority_queue<int> big_heap
-- **最小堆 ：**    priority_queue<int, vector<int>, greater<int>> small_heap
-
-堆的插入和删除操作的时间复杂度均为 O(logk)，完整代码如下。
-```
-class KthLargest {
-private:
-    priority_queue<int, vector<int>, greater<int>> heap;
-    int size;
-public:
-    KthLargest(int k, vector<int>& nums) {
-        size = k;
-        for (auto& num : nums) {
-            if (heap.size() < size) {
-                heap.push(num);
-            }
-            else if (num > heap.top()) {
-                heap.pop();
-                heap.push(num);
-            }
-        }
-    }
-    
-    int add(int val) {
-        if (heap.size() < size) {
-            heap.push(val);
-        }
-        else if (val > heap.top()) {
-            heap.pop();
-            heap.push(val);
-        }
-        return heap.top();
-    }
-};
-```
-
-另外感谢[@aikez](/u/aikez/)同学指出可以在 KthLargest 函数中调用 add 函数减少代码量。
-```
-class KthLargest {
-private:
-    priority_queue<int, vector<int>, greater<int>> heap;
-    int size;
-public:
-    KthLargest(int k, vector<int>& nums) {
-        size = k;
-        for (auto& num : nums) {
-            add(num);
-        }
-    }
-    
-    int add(int val) {
-        if (heap.size() < size) {
-            heap.push(val);
-        }
-        else if (val > heap.top()) {
-            heap.pop();
-            heap.push(val);
-        }
-        return heap.top();
-    }
-};
-```
+# **最小堆**
+此问题属于 topK 问题，是一类典型的题目。处理此类问题最直观的想法就是排序，但是使用排序并不是高效的方法，因为题目只关心第 k 大的数字并且数据是动态的，排序处理时间复杂度太高。堆就是解决一个动态数据集合中的 topK 问题的利器。最小堆经常用来求取数据集合中 k 个值最大的元素，而最大堆经常用来求取数据集合中 k 个值最小的元素。这道题使用最小堆来实现，C ++ 中存在堆的实现
+- **默认最大堆 ：** priority_queue<int> big_heap
+- **最小堆 ：**    priority_queue<int, vector<int>, greater<int>> small_heap
+
+堆的插入和删除操作的时间复杂度均为 O(logk)，完整代码如下。
+```
+class KthLargest {
+private:
+    priority_queue<int, vector<int>, greater<int>> heap;
+    int size;
+public:
+    KthLargest(int k, vector<int>& nums) {
+        size = k;
+        for (auto& num : nums) {
+            if (heap.size() < size) {
+                heap.push(num);
+            }
+            else if (num > heap.top()) {
+                heap.pop();
+                heap.push(num);
+            }
+        }
+    }
+    
+    int add(int val) {
+        if (heap.size() < size) {
+            heap.push(val);
+        }
+        else if (val > heap.top()) {
+            heap.pop();
+            heap.push(val);
+        }
+        return heap.top();
+    }
+};
+```
+
+另外感谢[@aikez](/u/aikez/)同学指出可以在 KthLargest 函数中调用 add 函数减少代码量。
+```
+class KthLargest {
+private:
+    priority_queue<int, vector<int>, greater<int>> heap;
+    int size;
+public:
+    KthLargest(int k, vector<int>& nums) {
+        size = k;
+        for (auto& num : nums) {
+            add(num);
+        }
+    }
+    
+    int add(int val) {
+        if (heap.size() < size) {
+            heap.push(val);
+        }
+        else if (val > heap.top()) {
+            heap.pop();
+            heap.push(val);
+        }
+        return heap.top();
+    }
+};
+```
 
 
 ## 统计信息

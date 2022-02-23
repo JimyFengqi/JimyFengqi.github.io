@@ -1,10 +1,11 @@
 ---
 title: LCP 01-猜数字(Guess Numbers)
-date: 2021-12-03 21:45:54
 categories:
   - 简单
 tags:
   - 数组
+abbrlink: 2125144279
+date: 2021-12-03 21:45:54
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/guess-numbers

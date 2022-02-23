@@ -1,12 +1,13 @@
 ---
 title: LCP 38-守卫城堡
-date: 2021-12-03 21:33:13
 categories:
   - 困难
 tags:
   - 数组
   - 动态规划
   - 矩阵
+abbrlink: 144120875
+date: 2021-12-03 21:33:13
 ---
 
 > 原文链接: https://leetcode-cn.com/problems/7rLGCR
