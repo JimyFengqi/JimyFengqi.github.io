@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>61AA252138B0ED3830F034E9</RequestId>
+  <HostId>leetcode-pic.oss-cn-hangzhou.aliyuncs.com</HostId>
+  <Key>9f59eee37c5cbc06ee579c72de419ad83211cc6c4c5fa8d211b8db757e8a3b1f-qrcode_for_gh_6e5f8557b1f8_258.jpg</Key>
+</Error>
