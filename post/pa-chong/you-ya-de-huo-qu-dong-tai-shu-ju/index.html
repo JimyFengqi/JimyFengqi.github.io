@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>优雅的获取动态数据 | 凤起丶宛南</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '3';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+
+  
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+  </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+        <script src="/js/valine/av-min@3.0.4.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            <link src="/js/aos/aos@2.3.4.min.css"></link>
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+        
+            <script src="/js/aos/aos@2.3.4.min.js"></script>
+        
+    
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">凤起丶宛南</h3>
+      <h5 class="drawer-box-head_desc">从来没有真正的绝境，只有心灵的迷途</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-cowbell-more"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">凤起丶宛南</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友链">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-cowbell-more"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+         <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/defaultImage/15.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        优雅的获取动态数据
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-11-25 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-detail-header_category">
+              爬虫
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.9k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 13分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="获取动态加载数据的方法"><a href="#获取动态加载数据的方法" class="headerlink" title="获取动态加载数据的方法"></a>获取动态加载数据的方法</h1><p>现在越来越多的网页都已经演变为 SPA 页面，而且越来越多的网站采用了各种 JavaScript 混淆和加密技术，</p>
+<p>这使得 JavaScript 逆向难度变得很大，Ajax 接口模拟爬取也变得越发困难，因此模拟浏览器爬取不失为一个不错的爬取方案。</p>
+<p>Selenium、Pyppeteer、Puppeteer 等可以模拟浏览器来进行爬取，也可以使用 Scrapy + Selenium 和 Pyppeteer 来实现动态爬取。</p>
+<p>Scrapy 2.0+ 中支持了异步 <code>async</code> 的特性，在 Scrapy 中我们已经可以定义异步方法来实现数据爬取和处理了，而 Pyppeteer 同样也是一个支持异步的浏览器渲染库。</p>
+<p>我们本节课就来介绍一下 Scrapy 和 Pyppeteer 的正确对接方式。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>本节我们就用实例来讲解一下 Scrapy 和 Pyppeteer 实现 JavaScript 渲染页面抓取的流程。</p>
+<p>本节使用的实例网站为 <a target="_blank" rel="noopener" href="https://dynamic5.scrape.center/%EF%BC%8C%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA">https://dynamic5.scrape.center/，这是一个</a> JavaScript 渲染页面，其内容是一本本的图书信息。</p>
+<p>同时这个网站的页面带有分页功能，只需要在 URL 加上 /page/ 和页码就可以跳转到下一页，</p>
+<p>如 <a target="_blank" rel="noopener" href="https://dynamic5.scrape.center/page/2">https://dynamic5.scrape.center/page/2</a> 就是第二页内容，<a target="_blank" rel="noopener" href="https://dynamic5.scrape.center/page/3">https://dynamic5.scrape.center/page/3</a> 就是第三页内容。</p>
+<p>那我们这个案例就来试着爬取一下前十页的图书信息吧。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>首先我们来新建一个项目，叫做 scrapypyppeteer，命令如下：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">scrapy startproject scrapypyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接着进入项目，然后新建一个 Spider，名称为 book，命令如下：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd scrapypyppeteer
+scrapy genspider book dynamic5.scrape.center<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这时候可以发现在项目的 spiders 文件夹下就出现了一个名为 spider.py 的文件，内容如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># spider.py</span>
+<span class="token keyword">import</span> scrapy
+ 
+ 
+<span class="token keyword">class</span> <span class="token class-name">BookSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'book'</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dynamic5.scrape.center'</span><span class="token punctuation">]</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'http://dynamic5.scrape.center/'</span><span class="token punctuation">]</span>
+ 
+ 
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>首先我们构造一下列表页的初始请求，实现一个 start_requests 方法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># spider.py</span>
+<span class="token keyword">from</span> scrapy <span class="token keyword">import</span> Request<span class="token punctuation">,</span> Spider
+ 
+ 
+<span class="token keyword">class</span> <span class="token class-name">BookSpider</span><span class="token punctuation">(</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'book'</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dynamic5.scrape.center'</span><span class="token punctuation">]</span>
+ 
+ 
+    base_url <span class="token operator">=</span> <span class="token string">'https://dynamic5.scrape.center/page/&#123;page&#125;'</span>
+    max_page <span class="token operator">=</span> <span class="token number">10</span>
+ 
+ 
+    <span class="token keyword">def</span> <span class="token function">start_requests</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>max_page <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            url <span class="token operator">=</span> self<span class="token punctuation">.</span>base_url<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>page<span class="token operator">=</span>page<span class="token punctuation">)</span>
+            <span class="token keyword">yield</span> Request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse_index<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token keyword">def</span> <span class="token function">parse_index</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这时候如果我们直接运行这个 Spider，在 parse_index 方法里面打印输出 Response 的内容，结果如下：</p>
+<p>这时候我们可以发现我们所得到的内容并不是页面渲染后的真正 HTML 代码。</p>
+<p>此时如果我们想要获取 HTML 渲染结果的话就得使用 Downloader Middleware 来实现了。</p>
+<p>这里我们直接拿一个我已经写好的组件来演示了，组件的名称叫做 GerapyPyppeteer，这里面已经写好了 Scrapy 和 Pyppeteer 结合的中间件，下面我们来介绍下。</p>
+<p>我们可以借助于 pip3 来安装，命令如下：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">pip3 install gerapy-pyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>GerapyPyppeteer 提供了两部分内容，一部分是 Downloader Middleware，一部分是 Request。</p>
+<p>首先我们需要开启中间件，在 settings 里面开启 PyppeteerMiddleware，配置如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">DOWNLOADER_MIDDLEWARES <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'gerapy_pyppeteer.downloadermiddlewares.PyppeteerMiddleware'</span><span class="token punctuation">:</span> <span class="token number">543</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后我们把上文定义的 Request 修改为 PyppeteerRequest 即可：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gerapy_pyppeteer <span class="token keyword">import</span> PyppeteerRequest
+<span class="token keyword">from</span> scrapy <span class="token keyword">import</span> Request<span class="token punctuation">,</span> Spider
+ 
+ 
+<span class="token keyword">class</span> <span class="token class-name">BookSpider</span><span class="token punctuation">(</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'book'</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dynamic5.scrape.center'</span><span class="token punctuation">]</span>
+ 
+ 
+    base_url <span class="token operator">=</span> <span class="token string">'https://dynamic5.scrape.center/page/&#123;page&#125;'</span>
+    max_page <span class="token operator">=</span> <span class="token number">10</span>
+ 
+ 
+    <span class="token keyword">def</span> <span class="token function">start_requests</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>max_page <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            url <span class="token operator">=</span> self<span class="token punctuation">.</span>base_url<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>page<span class="token operator">=</span>page<span class="token punctuation">)</span>
+            <span class="token keyword">yield</span> PyppeteerRequest<span class="token punctuation">(</span>url<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse_index<span class="token punctuation">,</span> wait_for<span class="token operator">=</span><span class="token string">'.item .name'</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token keyword">def</span> <span class="token function">parse_index</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样其实就完成了 Pyppeteer 的对接了，非常简单。</p>
+<p>这里 PyppeteerRequest 和原本的 Request 多提供了一个参数，就是 wait_for，通过这个参数我们可以指定 Pyppeteer 需要等待特定的内容加载出来才算结束，然后才返回对应的结果。</p>
+<p>为了方便观察效果，我们把并发限制修改得小一点，然后把 Pyppeteer 的 Headless 模式设置为 False：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">CONCURRENT_REQUESTS <span class="token operator">=</span> <span class="token number">3</span>
+GERAPY_PYPPETEER_HEADLESS <span class="token operator">=</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这时候我们重新运行下 Spider，这时候我们就可以看到在爬取的过程中，Pyppeteer 对应的 Chromium 浏览器就弹出来了，并逐个加载对应的页面内容，加载完成之后浏览器关闭。</p>
+<p>另外观察下控制台，我们发现对应的结果也就被提取出来了，如图所示：</p>
+<p>这时候我们再重新修改下 parse_index 方法，提取对应的每本书的名称和作者即可：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">parse_index</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> item <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'.item'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        name <span class="token operator">=</span> item<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'.name::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract_first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        authors <span class="token operator">=</span> item<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'.authors::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract_first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        name <span class="token operator">=</span> name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> name <span class="token keyword">else</span> <span class="token boolean">None</span>
+        authors <span class="token operator">=</span> authors<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> authors <span class="token keyword">else</span> <span class="token boolean">None</span>
+        <span class="token keyword">yield</span> <span class="token punctuation">&#123;</span>
+            <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">,</span>
+            <span class="token string">'authors'</span><span class="token punctuation">:</span> authors
+        <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>重新运行，即可发现对应的名称和作者就被提取出来了，运行结果如下：</p>
+<p>这样我们就借助于 GerapyPyppeteer 完成了 JavaScript 渲染页面的爬取。</p>
+<h2 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h2><p>但上面仅仅是我们借助于 GerapyPyppeteer 实现了 Scrapy 和 Pyppeteer 的对接，但其背后的原理是怎样的呢？</p>
+<p>我们可以分析下它的源码来看一下。</p>
+<p>其 GitHub 地址为 <a target="_blank" rel="noopener" href="https://github.com/Gerapy/GerapyPyppeteer%EF%BC%8C%E6%88%91%E4%BB%AC%E4%B8%8B%E8%BD%BD%E4%B8%8B%E6%9D%A5%E7%9C%8B%E4%B8%8B%E3%80%82">https://github.com/Gerapy/GerapyPyppeteer，我们下载下来看下。</a></p>
+<p>首先分析发现其最核心的内容就是实现了一个 PyppeteerMiddleware，这是一个 Downloader Middleware，这里最主要的就是 process_request 的实现，核心代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">process_request</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'processing request %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">)</span>  
+    <span class="token keyword">return</span> as_deferred<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_process_request<span class="token punctuation">(</span>request<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这里其实就是调用了一个 _process_request 方法，这个方法的返回结果被 as_deferred 方法调用了。</p>
+<p>这个 as_deferred 是怎么定义的呢？代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> asyncio
+<span class="token keyword">from</span> twisted<span class="token punctuation">.</span>internet<span class="token punctuation">.</span>defer <span class="token keyword">import</span> Deferred
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">as_deferred</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> Deferred<span class="token punctuation">.</span>fromFuture<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个方法接受的就是一个 asyncio 库的 Future 对象，然后通过 fromFuture 方法转化成了 twisted 里面的 Deferred 对象。这个的原因是 Scrapy 本身的异步是借助于 twisted 的实现的，一个个的异步任务对应的对象就是 Deferred 对象，而 Pyppeteer 又是基于 asyncio 的，它的异步任务是 Future 对象，所以这里我们需要借助 Deferred 的 fromFuture 方法将 Future 转为 Deferred 对象。</p>
+<p>另外为了支持这个功能，我们还需要在 Scrapy 中修改 reactor 对象，修改为 AsyncioSelectorReactor，实现如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token keyword">from</span> twisted<span class="token punctuation">.</span>internet<span class="token punctuation">.</span>asyncioreactor <span class="token keyword">import</span> AsyncioSelectorReactor
+<span class="token keyword">import</span> twisted<span class="token punctuation">.</span>internet
+ 
+ 
+reactor <span class="token operator">=</span> AsyncioSelectorReactor<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token comment"># install AsyncioSelectorReactor</span>
+twisted<span class="token punctuation">.</span>internet<span class="token punctuation">.</span>reactor <span class="token operator">=</span> reactor
+sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span><span class="token string">'twisted.internet.reactor'</span><span class="token punctuation">]</span> <span class="token operator">=</span> reactor<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这段代码已经在 PyppeteerMiddleware 里面定义好了，在 Scrapy 正式开始爬取之前这段代码就会被执行，将 Scrapy 中的的 reactor 修改为 AsyncioSelectorReactor，从而实现 Future 的调度。</p>
+<p>接下来我们再来看下 _process_request 方法，实现如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">_process_request</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">:</span> PyppeteerRequest<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    use pyppeteer to process spider
+    :param request:
+    :param spider:
+    :return:
+    """</span>
+    options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'headless'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>headless<span class="token punctuation">,</span>
+        <span class="token string">'dumpio'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>dumpio<span class="token punctuation">,</span>
+        <span class="token string">'devtools'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>devtools<span class="token punctuation">,</span>
+        <span class="token string">'args'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token string-interpolation"><span class="token string">f'--window-size=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>window_width<span class="token punctuation">&#125;</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>window_height<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>executable_path<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'executable_path'</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>executable_path
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_extensions<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-extensions'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>hide_scrollbars<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--hide-scrollbars'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>mute_audio<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--mute-audio'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>no_sandbox<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--no-sandbox'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_setuid_sandbox<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-setuid-sandbox'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_gpu<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-gpu'</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># set proxy</span>
+    proxy <span class="token operator">=</span> request<span class="token punctuation">.</span>proxy
+    <span class="token keyword">if</span> <span class="token keyword">not</span> proxy<span class="token punctuation">:</span>
+        proxy <span class="token operator">=</span> request<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'proxy'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> proxy<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'--proxy-server=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>proxy<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+ 
+ 
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'set options %s'</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+ 
+ 
+    browser <span class="token operator">=</span> <span class="token keyword">await</span> launch<span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+    page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span>newPage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>setViewport<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'width'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>window_width<span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>window_height<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># set cookies</span>
+    <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>cookies<span class="token punctuation">,</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>setCookie<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span><span class="token string">'name'</span><span class="token punctuation">:</span> k<span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">:</span> v<span class="token punctuation">&#125;</span>
+            <span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> request<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>setCookie<span class="token punctuation">(</span>request<span class="token punctuation">.</span>cookies<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># the headers must be set using request interception</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>setRequestInterception<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token decorator annotation punctuation">@page<span class="token punctuation">.</span>on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span>
+    <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">_handle_interception</span><span class="token punctuation">(</span>pu_request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># handle headers</span>
+        overrides <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token string">'headers'</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+                k<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> v<span class="token punctuation">:</span> v<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> request<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment"># handle resource types</span>
+        _ignore_resource_types <span class="token operator">=</span> self<span class="token punctuation">.</span>ignore_resource_types
+        <span class="token keyword">if</span> request<span class="token punctuation">.</span>ignore_resource_types <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            _ignore_resource_types <span class="token operator">=</span> request<span class="token punctuation">.</span>ignore_resource_types
+        <span class="token keyword">if</span> pu_request<span class="token punctuation">.</span>resourceType <span class="token keyword">in</span> _ignore_resource_types<span class="token punctuation">:</span>
+            <span class="token keyword">await</span> pu_request<span class="token punctuation">.</span>abort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">await</span> pu_request<span class="token punctuation">.</span>continue_<span class="token punctuation">(</span>overrides<span class="token punctuation">)</span>
+ 
+ 
+    timeout <span class="token operator">=</span> self<span class="token punctuation">.</span>download_timeout
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>timeout <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        timeout <span class="token operator">=</span> request<span class="token punctuation">.</span>timeout
+ 
+ 
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'crawling %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+ 
+ 
+    response <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token string">'timeout'</span><span class="token punctuation">:</span> <span class="token number">1000</span> <span class="token operator">*</span> timeout<span class="token punctuation">,</span>
+            <span class="token string">'waitUntil'</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>wait_until
+        <span class="token punctuation">&#125;</span>
+        logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'request %s with options %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+        response <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>
+            request<span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+            options<span class="token operator">=</span>options
+        <span class="token punctuation">)</span>
+    <span class="token keyword">except</span> <span class="token punctuation">(</span>PageError<span class="token punctuation">,</span> TimeoutError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'error rendering url %s using pyppeteer'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_retry<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token number">504</span><span class="token punctuation">,</span> spider<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'waiting for %s finished'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">)</span>
+            <span class="token keyword">await</span> page<span class="token punctuation">.</span>waitFor<span class="token punctuation">(</span>request<span class="token punctuation">.</span>wait_for<span class="token punctuation">)</span>
+        <span class="token keyword">except</span> TimeoutError<span class="token punctuation">:</span>
+            logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'error waiting for %s of %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+            <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>_retry<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token number">504</span><span class="token punctuation">,</span> spider<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># evaluate script</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>script<span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'evaluating %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>script<span class="token punctuation">)</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>request<span class="token punctuation">.</span>script<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># sleep</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>sleep <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'sleep for %ss'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>sleep<span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>request<span class="token punctuation">.</span>sleep<span class="token punctuation">)</span>
+ 
+ 
+    content <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span>content<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    body <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># close page and browser</span>
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'close pyppeteer'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token keyword">if</span> <span class="token keyword">not</span> response<span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'get null response by pyppeteer of url %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+ 
+ 
+    <span class="token comment"># Necessary to bypass the compression middleware (?)</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'content-encoding'</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'Content-Encoding'</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+ 
+ 
+    <span class="token keyword">return</span> HtmlResponse<span class="token punctuation">(</span>
+        page<span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+        status<span class="token operator">=</span>response<span class="token punctuation">.</span>status<span class="token punctuation">,</span>
+        headers<span class="token operator">=</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">,</span>
+        body<span class="token operator">=</span>body<span class="token punctuation">,</span>
+        encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span>
+        request<span class="token operator">=</span>request
+    <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>代码内容比较多，我们慢慢来说。</p>
+<p>首先最开始的部分是定义 Pyppeteer 的一些启动参数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'headless'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>headless<span class="token punctuation">,</span>
+    <span class="token string">'dumpio'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>dumpio<span class="token punctuation">,</span>
+    <span class="token string">'devtools'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>devtools<span class="token punctuation">,</span>
+    <span class="token string">'args'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string-interpolation"><span class="token string">f'--window-size=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>window_width<span class="token punctuation">&#125;</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>window_height<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>executable_path<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'executable_path'</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>executable_path
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_extensions<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-extensions'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>hide_scrollbars<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--hide-scrollbars'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>mute_audio<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--mute-audio'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>no_sandbox<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--no-sandbox'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_setuid_sandbox<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-setuid-sandbox'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> self<span class="token punctuation">.</span>disable_gpu<span class="token punctuation">:</span> options<span class="token punctuation">[</span><span class="token string">'args'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'--disable-gpu'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这些参数来自于 from_crawler 里面读取项目 settings 的内容，如配置 Pyppeteer 对应浏览器的无头模式、窗口大小、是否隐藏滚动条、是否弃用沙箱等等。</p>
+<p>紧接着就是利用 options 来启动 Pyppeteer：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">browser <span class="token operator">=</span> <span class="token keyword">await</span> launch<span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span>newPage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">await</span> page<span class="token punctuation">.</span>setViewport<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'width'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>window_width<span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>window_height<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这里启动了 Pyppeteer 对应的浏览器，将其赋值为 browser，然后新建了一个选项卡，赋值为 page，然后通过</p>
+<p>setViewport 方法设定了窗口的宽高。</p>
+<p>接下来就是对一些 Cookies 进行处理，如果 Request 带有 Cookies 的话会被赋值到 Pyppeteer 中：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># set cookies</span>
+<span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>cookies<span class="token punctuation">,</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>setCookie<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span><span class="token string">'name'</span><span class="token punctuation">:</span> k<span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">:</span> v<span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> request<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>setCookie<span class="token punctuation">(</span>request<span class="token punctuation">.</span>cookies<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再然后关键的部分就是进行页面的加载了：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'timeout'</span><span class="token punctuation">:</span> <span class="token number">1000</span> <span class="token operator">*</span> timeout<span class="token punctuation">,</span>
+        <span class="token string">'waitUntil'</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>wait_until
+    <span class="token punctuation">&#125;</span>
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'request %s with options %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+    response <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>
+        request<span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+        options<span class="token operator">=</span>options
+    <span class="token punctuation">)</span>
+<span class="token keyword">except</span> <span class="token punctuation">(</span>PageError<span class="token punctuation">,</span> TimeoutError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'error rendering url %s using pyppeteer'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>_retry<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token number">504</span><span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>这里我们首先制定了加载超时时间 timeout 还有要等待完成的事件 waitUntil，接着调用 page 的 goto 方法访问对应的页面，同时进行了异常检测，如果发生错误就关闭浏览器并重新发起一次重试请求。</p>
+<p>在页面加载出来之后，我们还需要判定我们期望的结果是不是加载出来了，所以这里又增加了 waitFor 的调用：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'waiting for %s finished'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">)</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>waitFor<span class="token punctuation">(</span>request<span class="token punctuation">.</span>wait_for<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> TimeoutError<span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'error waiting for %s of %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>wait_for<span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+        <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_retry<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token number">504</span><span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里 request 有个 wait_for 属性，这里就可以定义想要加载的节点的选择器，如 .item .name 等，这样如果页面在规定时间内加载出来就会继续向下执行，否则就会触发 TimeoutError 并被捕获，关闭浏览器并重新发起一次重试请求。</p>
+<p>等想要的结果加载出来之后，我们还可以执行一些自定义的 JavaScript 代码完成我们想要自定义的功能：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># evaluate script</span>
+<span class="token keyword">if</span> request<span class="token punctuation">.</span>script<span class="token punctuation">:</span>
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'evaluating %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>script<span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>request<span class="token punctuation">.</span>script<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后关键的一步就是将当前页面的源代码打印出来，然后构造一个 HtmlResponse 返回即可：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">_process_request</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">:</span> PyppeteerRequest<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    content <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span>content<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    body <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+     
+     
+    <span class="token comment"># close page and browser</span>
+    logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'close pyppeteer'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+     
+     
+    <span class="token keyword">if</span> <span class="token keyword">not</span> response<span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'get null response by pyppeteer of url %s'</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+     
+     
+    <span class="token comment"># Necessary to bypass the compression middleware (?)</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'content-encoding'</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'Content-Encoding'</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+     
+     
+    <span class="token keyword">return</span> HtmlResponse<span class="token punctuation">(</span>
+        page<span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+        status<span class="token operator">=</span>response<span class="token punctuation">.</span>status<span class="token punctuation">,</span>
+        headers<span class="token operator">=</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">,</span>
+        body<span class="token operator">=</span>body<span class="token punctuation">,</span>
+        encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span>
+        request<span class="token operator">=</span>request
+    <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所以，如果代码可以执行到最后，返回到就是一个 Response 对象，这个 Resposne 对象的 body 就是 Pyppeteer 渲染页面后的结果，因此这个 Response 对象再传给 Spider 解析，就是 JavaScript 渲染后的页面结果了。</p>
+<p>这样我们就通过 Downloader Middleware 通过对接 Pyppeteer 完成了 JavaScript 动态渲染页面的抓取了。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/python/" class="">
+              python
+            </a>
+          
+            <a href="/tags/scrapy/" class="">
+              scrapy
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者: 
+    
+        </strong>Fengqi</a>
+    
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/post/pa-chong/you-ya-de-huo-qu-dong-tai-shu-ju/" target="_blank" title="优雅的获取动态数据">https://jimyfengqi.github.io/post/pa-chong/you-ya-de-huo-qu-dong-tai-shu-ju/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/4.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/post/algorithm/1-liang-shu-zhi-he/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">1-两数之和(Two Sum)</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+原文链接: https://leetcode-cn.com/problems/two-sum
+
+英文原文Given a
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/post/algorithm/python-shi-xian-shi-da-chang-yong-pai-xu-suan-fa/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Python实现十大常用排序算法</div>
+      </div>
+      <!-- <div class="content">
+        排序算法基本内容算法分类比较分类
+非线性时间比较类排序：通过比较来决定元素间的相对次序，
+由于其时间复杂度不能突破O(n
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/reward/alipay.bmp" class="lazyload placeholder" data-srcset="/medias/reward/alipay.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/reward/wechat.bmp" class="lazyload placeholder" data-srcset="/medias/reward/wechat.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || 'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg,https://api.btstu.cn/sjbz/api.php';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/atom.xml"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=215618733"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="#"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:jmps515@163.com"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a target="_blank" rel="noopener" href="https://github.com/fengqi"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+            <!-- 不蒜子统计 -->
+            <div class="footer-busuanzi" >
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+</div>
+
+        
+      
+        
+            <!-- [CNZZ友盟+]统计 -->
+            
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1280461850'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=1280461850&online=1&show=line' ></script>
+    </div>
+
+
+
+
+
+        
+      
+        
+           <!-- copyright info -->
+<div class="footer-copyright">
+    
+        
+         Copyright © 2020 - 2021
+         <a href="https://jimyfengqi.github.io">枫奇丶宛南</a>
+         | Powered by
+         <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a>
+        
+    
+</div>
+
+        
+      
+        
+             <!-- 备案信息+ -->
+             <!-- 备案信息+ -->
+<div class="footer-icp">
+    
+        
+    
+</div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+
+<meting-js
+  class=""
+  server="kugou"
+  type="playlist"
+  id="3947131"
+  fixed='true'
+  autoplay='true'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h1, h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+
+    <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '120px',
+      duration: '400',
+      interval: '30',
+      scale: '1',   //初始缩放大小，可以大于1,变为逐渐缩小
+      origin: 'bottom', // 动画开始的方向
+      easing: 'ease'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>
+   
+
+<!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = 'nick';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "G7kLr5GPm3HmPoDDhv19wI0M-gzGzoHsz",
+        app_key: "xynwI4nfT8WSgBnPvlz7yglu",
+        placeholder: "你是我一生遇到最美的惊喜...",
+        avatar: "wavatar",
+        master: "pYggd4zwTA6uVG50fi2CWp4j",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('on');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
