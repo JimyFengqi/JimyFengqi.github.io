@@ -87,7 +87,7 @@ home_widget:
     background: '#fff'
     html: '
     <div id="ip_welcome" class="ip_welcome">
-      <img src="https://api.amogu.cn/api/ipimg/" >
+      <img src="https://api.dzzui.com/api/ip" >
       <div id="soul">
           <h2>干了这碗毒鸡汤</h2>
           <p><span>{{content}}</span></p>
@@ -107,9 +107,21 @@ home_widget:
     url: https://github.com/jimyfengqi
     background: '#fff'
     html: '
-      <div id="github_container"></div>
-      <script data-pjax src="/custom_widget/githubcalendar/index.js"></script>
+     <img no-lazy width="100%" hright="300px" src="https://ghchart.rshah.org/42b983/jimyfengqi" alt="jimyfengqi github" />
     '
+
+# home_widget:
+#   - class_name: my_github_container
+#     id_name: my_github_container
+#     order: -1
+#     name: Github日历
+#     icon: fa-solid fa-calendar-days
+#     icon_color: '#42b983'
+#     url: https://github.com/jimyfengqi
+#     background: '#fff'
+#     html: '
+#       <img no-lazy width="100%" hright="300px" src="https://ghchart.rshah.org/42b983/jimyfengqi" alt="jimyfengqi github" />
+#     '
 #
 #  - class_name: columnSwider
 #    id_name: columnSwider

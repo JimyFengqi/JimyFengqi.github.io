@@ -45,4 +45,4 @@ after_script:
   - git commit -m "Auto update docs by Travis CI"
   - git log -3
   - git push --force --quiet "https://${GH_TOKEN}@${GITHUB_HEXOREF}" master:master
-  - git push --force --quiet "https://${GH_USER}:${GIEE_PASSWORD}@${GITEE_HEXOREF}" master:master
+  - git push --force --quiet "https://${GITEE_USER}:${GITEE_PASSWORD}@${GITEE_HEXOREF}" master:master

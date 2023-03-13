@@ -183,7 +183,7 @@ swiper:
   # 当在.md文件中，设置swiper:true，会将该文章放到轮播中，
   showPrevNext: true # 是否显示左右切换按钮
   showIndicators: true  # 是否显示指示器
-  autoplay: false # 是否自动轮播
+  autoplay: true # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
   effect: 'slide' # 'fade': 淡入淡出效果 , fade效果暂不支持pjax
@@ -196,6 +196,7 @@ swiper:
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: 'https://assets.mixkit.co/videos/download/mixkit-very-close-shot-of-the-leaves-of-a-tree-wet-18310.mp4' # video，min-width:992px show
+  # defaultVideo: 'https://vd3.bdstatic.com/mda-na5cd0rttsthhyxf/720p/h264/1641458748430610196/mda-na5cd0rttsthhyxf.mp4' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
   defaultTile: '青墨书晚风' # 标题
   defaultDesc: ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']  # 描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
@@ -355,9 +356,9 @@ music:
   #  type: playlist    #require song, playlist, album, search, artist
   #  id: 8062553743     #require	song id / playlist id / album id / search keyword
   source:
-    - server: netease     # 歌手-张卫-脱胎换骨
-      id: 1365053719
-      type: song
+    # - server: netease     # 歌手-张卫-脱胎换骨
+    #   id: 1365053719
+    #   type: song
 #    - server: netease     # 专辑-许嵩单曲集-许嵩
 #      id: 16959
 #      type: album
@@ -376,6 +377,9 @@ music:
     - server: tencent     #个人歌单
       id: 8197627936
       type: playlist
+    - server: tencent     #个人歌单
+      id: 7467921306
+      type: playlist
 #    - server: kugou           # 歌手-Gai-兰花草
 #      id: 0127069EBDBCF0AD6BF0B60CE873835D
 #      type: song
@@ -388,12 +392,9 @@ music:
     - server: kugou         # 华语经典 90后青春回忆
       id: 3428290
       type: playlist
-    - server: kugou         # 外语经典
-      id: 3302755
-      type: playlist
-    - server: kugou         # 华语经典 80后青春回忆
-      id: 3947131
-      type: playlist
+    # - server: kugou         # 华语经典 80后青春回忆
+    #   id: 3947131
+    #   type: playlist
     - server: kugou         #个人歌单
       id: 3947753
       type: playlist
@@ -856,7 +857,7 @@ mermaid:
 
 # pjax
 pjax:
-  on: true
+  on: true          # 页面不刷新跳转，音乐可以不间断播放。关闭则跳转页面时候刷新页面
   animation: circle # false, nprogress, circle
   animationColor: 'orangered' # animation为 nprogress时候的动画颜色, red or #000 ...
   cacheBust: false # url 地址追加时间戳，用以避免浏览器缓存
