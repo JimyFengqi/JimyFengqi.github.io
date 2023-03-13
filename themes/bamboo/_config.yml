@@ -377,8 +377,8 @@ music:
     - server: tencent     #个人歌单
       id: 8197627936
       type: playlist
-    - server: tencent     #个人歌单
-      id: 7467921306
+    - server: tencent     # 200首浴室必备
+      id: 8809628410
       type: playlist
 #    - server: kugou           # 歌手-Gai-兰花草
 #      id: 0127069EBDBCF0AD6BF0B60CE873835D
@@ -389,13 +389,16 @@ music:
 #    - server: kugou         # 专辑-一万个理由-郑源
 #      id: 1787575
 #      type: album
-    - server: kugou         # 华语经典 90后青春回忆
-      id: 3428290
+    - server: kugou         # 油门加满，一路向北
+      id: 4131102
       type: playlist
-    # - server: kugou         # 华语经典 80后青春回忆
-    #   id: 3947131
-    #   type: playlist
-    - server: kugou         #个人歌单
+    - server: kugou         # 华语经典 80后青春回忆
+      id: 3712106
+      type: playlist
+    - server: kugou         # 一人一首成名曲
+      id: 3653373
+      type: playlist      
+    - server: kugou         #个人歌单 
       id: 3947753
       type: playlist
   fixed: true       # 开启吸底模式，建议开启

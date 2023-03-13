@@ -1,6 +1,6 @@
 hexo clean
 hexo generate
-git clone -b master git@github.com:JimyFengqi/JimyFengqi.github.io.git .deploy_git
+git clone -b master git@gitee.com:JimyFengqi/JimyFengqi.gitee.io.git .deploy_git
 mv .deploy_git/.git/ ./public/
 cd ./public
 git add .

@@ -40,6 +40,10 @@ hexo server
 
 # 发布相关
 
+## 通过【travis-ci】网站发布
+
+这个的前提是travis-ci依然可用， 一般它仅有一个月左右的免费使用时间
+之后就可能需要付费， 暂时没研究怎么一直免费的方法
 
 发布的时候选择的自动发布
 关键是脚本文件 `.trails.yml`, 这个文件会关联网站 [travis-ci](https://www.travis-ci.com/)
@@ -60,3 +64,10 @@ git push --force --quiet "https://${GITEE_USER}:${GITEE_PASSWORD}@${GITEE_HEXORE
 |GH_TOKEN|github中生成的 密码token, 一般会有过期时间， 隔一段时间需要自己更新一下|    
 |GITEE_USER|gitee的账号 |
 |GITEE_PASSWORD|gitee的密码 |
+
+## 自己写脚本发布
+
+参考文件 `auto_deploy.sh` 文件
+本质就是自己构建生成要发布的文件
+然后把远程分支的git历史记录拉下来
+最后再重新发布
