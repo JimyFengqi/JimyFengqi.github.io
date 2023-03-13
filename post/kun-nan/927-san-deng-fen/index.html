@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -873,12 +873,12 @@
 <p>如果这三个区间都合法，那么答案就是 <code>[j1+z, j2+z+1]</code>。</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution1-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">threeEqualParts</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token class-name">A</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> IMP <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token constant">IMP</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">N</span> <span class="token operator">=</span> <span class="token class-name">A</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
 
         <span class="token keyword">int</span> <span class="token class-name">S</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token operator">:</span> <span class="token class-name">A</span><span class="token punctuation">)</span> <span class="token class-name">S</span> <span class="token operator">+=</span> x<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">S</span> <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> IMP<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">S</span> <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">IMP</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">T</span> <span class="token operator">=</span> <span class="token class-name">S</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">T</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
             <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token class-name">N</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
@@ -903,15 +903,15 @@
         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> part2 <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOfRange</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">,</span> i2<span class="token punctuation">,</span> j2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> part3 <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOfRange</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">,</span> i3<span class="token punctuation">,</span> j3<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>part1<span class="token punctuation">,</span> part2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> IMP<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>part1<span class="token punctuation">,</span> part3<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> IMP<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>part1<span class="token punctuation">,</span> part2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">IMP</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>part1<span class="token punctuation">,</span> part3<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">IMP</span><span class="token punctuation">;</span>
 
         <span class="token comment">// x, y, z: the number of zeros after part 1, 2, 3</span>
         <span class="token keyword">int</span> x <span class="token operator">=</span> i2 <span class="token operator">-</span> j1 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> y <span class="token operator">=</span> i3 <span class="token operator">-</span> j2 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token class-name">A</span><span class="token punctuation">.</span>length <span class="token operator">-</span> j3 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> z <span class="token operator">||</span> y <span class="token operator">&lt;</span> z<span class="token punctuation">)</span> <span class="token keyword">return</span> IMP<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> z <span class="token operator">||</span> y <span class="token operator">&lt;</span> z<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">IMP</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>j1<span class="token operator">+</span>z<span class="token punctuation">,</span> j2<span class="token operator">+</span>z<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -991,12 +991,12 @@
         
         <div class="tags">
           
-            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
-              数组
-            </a>
-          
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
+            </a>
+          
+            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
+              数组
             </a>
           
         </div>
@@ -1720,9 +1720,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

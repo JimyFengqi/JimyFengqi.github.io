@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -789,7 +789,7 @@
 <p><strong>注意：</strong>本章新知识点较多，请读者做好心理准备，一定要耐心阅读。</p>
 <h2 id="重构模型"><a href="#重构模型" class="headerlink" title="重构模型"></a>重构模型</h2><p>既然要建立树形结构，老的评论模型肯定是要修改了。</p>
 <p>首先安装<code>django-mptt</code>：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token operator">></span> pip <span class="token function">install</span> django-mptt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token operator">></span> pip <span class="token function">install</span> django-mptt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装成功后，在配置中<strong>注册</strong>：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">my_blog<span class="token operator">/</span>settings<span class="token punctuation">.</span>py
@@ -859,7 +859,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <p>一律选择第 1 项、</p>
 <p><strong>然后提示填入数据时，直接输入 0 （不要按照提示输入 timezone.now，这是无效值）</strong></p>
 <p> 就可以了：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token operator">></span> python manage.py makemigrations
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token operator">></span> python manage.py makemigrations
 
 You are trying to <span class="token function">add</span> a non-nullable field <span class="token string">'level'</span> to comment without a default<span class="token punctuation">;</span> we can<span class="token string">'t do that (the database needs something to populate existing rows).
 Please select a fix:
@@ -956,7 +956,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>然而理想越丰满，代码写得就越痛苦。</p>
 <p>首先就是<code>detail.html</code>的代码要大改，主要集中在<strong>显示评论部分</strong>以及相关的<code>JavaScript</code>。</p>
 <p>需要改动的地方先全部贴出来：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -1008,7 +1008,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
                     &#123;% else %&#125;
                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-light btn-sm text-muted<span class="token punctuation">"</span></span> 
-                       <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>userprofile:login<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span>
+                       <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'userprofile:login' %&#125;<span class="token punctuation">"</span></span>
                        <span class="token punctuation">></span></span>
                         回复
                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
@@ -1079,7 +1079,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>这么大段肯定把你看晕了，不要急，让我们拆开来讲解。</p>
 <h3 id="遍历树"><a href="#遍历树" class="headerlink" title="遍历树"></a>遍历树</h3><p>第一个问题，如何遍历树形结构？</p>
 <p>django-mptt提供了一个快捷方式：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">&#123;% load mptt_tags %&#125;
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&#123;% load mptt_tags %&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
     &#123;% recursetree objs %&#125;
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
@@ -1099,7 +1099,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <li><code>node</code>这个变量名太宽泛，用<code>&#123;% with comment=node %&#125;</code>给它起了个别名</li>
 </ul>
 <h3 id="Modal"><a href="#Modal" class="headerlink" title="Modal"></a>Modal</h3><p><strong>Modal</strong>是<strong>Bootstrap</strong>内置的弹窗。本文相关代码如下：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 加载 modal 的按钮 --></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- 加载 modal 的按钮 --></span>
 &#123;% if user.is_authenticated %&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> 
         <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-light btn-sm text-muted<span class="token punctuation">"</span></span> 
@@ -1109,7 +1109,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 &#123;% else %&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-light btn-sm text-muted<span class="token punctuation">"</span></span> 
-   <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>userprofile:login<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span>
+   <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'userprofile:login' %&#125;<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
     回复
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
@@ -1182,7 +1182,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>老实说用 iframe 来加载 ckeditor 弹窗并不是很“优雅”。单页面上多个 ckeditor 的动态加载、取值、传参，博主没能尝试成功。有兴趣的读者可以和我交流。</p>
 </blockquote>
 <h2 id="Ajax提交表单"><a href="#Ajax提交表单" class="headerlink" title="Ajax提交表单"></a>Ajax提交表单</h2><p>在<code>templates</code>中新建<code>comment</code>目录，并新建<code>reply.html</code>，写入代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/comment/reply.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/comment/reply.html
 
 <span class="token comment">&lt;!-- 载入静态文件 --></span>
 &#123;% load staticfiles %&#125;
@@ -1191,7 +1191,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zh-cn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>bootstrap/css/bootstrap.min.css<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'bootstrap/css/bootstrap.min.css' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
@@ -1211,12 +1211,12 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     <span class="token comment">&lt;!-- 提交按钮 --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">confirm_submit</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> article_id <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> parent_comment_id <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>发送<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>jquery/jquery-3.3.1.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>popper/popper-1.14.4.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>bootstrap/js/bootstrap.min.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'jquery/jquery-3.3.1.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'popper/popper-1.14.4.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'bootstrap/js/bootstrap.min.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- csrf token --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>csrf.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'csrf.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
     
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
     <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -1228,9 +1228,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
         <span class="token keyword">let</span> content <span class="token operator">=</span> <span class="token constant">CKEDITOR</span><span class="token punctuation">.</span>instances<span class="token punctuation">[</span><span class="token string">'id_body'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">// 调用 ajax 与后端交换数据</span>
         $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            url<span class="token operator">:</span> <span class="token string">'/comment/post-comment/'</span> <span class="token operator">+</span> article_id <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> comment_id<span class="token punctuation">,</span>
-            type<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
-            data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>body<span class="token operator">:</span> content<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/comment/post-comment/'</span> <span class="token operator">+</span> article_id <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> comment_id<span class="token punctuation">,</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">body</span><span class="token operator">:</span> content<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
             <span class="token comment">// 成功回调</span>
             <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 <span class="token keyword">if</span><span class="token punctuation">(</span>e <span class="token operator">===</span> <span class="token string">'200 OK'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -1255,9 +1255,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     <span class="token keyword">let</span> content <span class="token operator">=</span> <span class="token constant">CKEDITOR</span><span class="token punctuation">.</span>instances<span class="token punctuation">[</span><span class="token string">'id_body'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// 调用 ajax 与后端交换数据</span>
     $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-        url<span class="token operator">:</span> <span class="token string">'/comment/post-comment/'</span> <span class="token operator">+</span> article_id <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> comment_id<span class="token punctuation">,</span>
-        type<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
-        data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>body<span class="token operator">:</span> content<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/comment/post-comment/'</span> <span class="token operator">+</span> article_id <span class="token operator">+</span> <span class="token string">'/'</span> <span class="token operator">+</span> comment_id<span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">body</span><span class="token operator">:</span> content<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
         <span class="token comment">// 成功回调</span>
         <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>e <span class="token operator">===</span> <span class="token string">'200 OK'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -1274,7 +1274,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 </ul>
 <p>前面写视图的时候，二级评论提交成功后会返回<code>200 OK</code>，回调函数接收到这个信号后，就会调用<code>reload()</code>方法，刷新当前的父页面（即文章所在的页面），实现了数据的更新。</p>
 <h3 id="csrf问题"><a href="#csrf问题" class="headerlink" title="csrf问题"></a>csrf问题</h3><p>代码中有这么一行：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>csrf.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'csrf.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>没有这一行，后端会返回<code>403 Forbidden</code>错误，并且表单提交失败。</p>
 <p>还记得之前提交传统表单时的<code>&#123;% csrf_token %&#125;</code>吗？Django为了防止跨域攻击，要求表单必须提供这个token，验证提交者的身份。</p>
@@ -1312,7 +1312,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#111;&#x40;&#x66;&#x6f;&#120;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#100;&#x75;&#x73;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#111;&#x40;&#x66;&#x6f;&#120;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#97;&#105;&#x70;&#104;&#111;&#116;&#111;&#64;&#102;&#111;&#x78;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#100;&#x75;&#115;&#97;&#105;&#x70;&#104;&#111;&#116;&#111;&#64;&#102;&#111;&#x78;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -2043,9 +2043,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

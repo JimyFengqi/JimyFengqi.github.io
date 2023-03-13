@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -785,7 +785,7 @@
 <h2 id="回到顶部浮动按钮"><a href="#回到顶部浮动按钮" class="headerlink" title="回到顶部浮动按钮"></a>回到顶部浮动按钮</h2><p>当用户拜读完你的博文后，可能想回到文章开头重新阅读，或者审视其中的某些内容。如果文章内容较多，不停滑动滚轮回页面顶部未免有点太让人烦躁了。</p>
 <p>一种解决办法是增加一个<strong>回到顶部的浮动按钮</strong>。当页面向下滚动到某个位置后，按钮就呈现在页面右下角；点击按钮，页面就回到顶部。这个功能 Bootstrap 4 似乎没有提供，但也不复杂，就自己用 JavaScript 和 CSS 写吧。</p>
 <p>在<code>templates</code>目录新建<code>back_to_top_func.html</code>文件，写入以下代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/back_to_top_func.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/back_to_top_func.html
 
 <span class="token comment">&lt;!-- 参考了 鹦鹉 的代码，在此致谢 --></span>
 <span class="token comment">&lt;!-- https://ezbox.idv.tw/131/back-to-top-button-without-images --></span>
@@ -796,7 +796,7 @@
     <span class="token comment">// 向上滚动的函数</span>
     <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#BackTop'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'html,body'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>scrollTop<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'html,body'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token literal-property property">scrollTop</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scroll</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -861,7 +861,7 @@
 </ul>
 <p><strong>CSS</strong>部分最长但也很简单，主要定义了按钮的位置、大小、图案等样式。读者可以试着、改动、删除部分代码，看看按钮形态会怎样变化。</p>
 <p>核心代码就写好了。有点小瑕疵的是前面在<code>footer.html</code>中定义了<code>class=&quot;fixed-bottom&quot;</code>，这个属性的显示层级很高，会将浮动按钮给覆盖掉。因此删除<code>templates/footer.html</code>中的<code>fixed-bottom</code>属性：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/footer.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/footer.html
 
 ...
 <span class="token comment">&lt;!-- 删除了 fixed-bottom 属性 --></span>
@@ -874,7 +874,7 @@
 <p>之所以fixed-bottom会覆盖掉浮动按钮，就是因为它将z-index设置成了一个很大的数值。</p>
 </blockquote>
 <p>因为我们想在全站都拥有这个按钮，所以将刚写好的模块引用到<code>base.html</code>中：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 ...
 
@@ -882,7 +882,7 @@
     ...
 
     <span class="token comment">&lt;!-- jquery.js --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>jquery/jquery-3.3.1.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'jquery/jquery-3.3.1.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
     ...
     <span class="token comment">&lt;!-- 在jquery后面引入 --></span>
     &#123;% include 'back_to_top_func.html' %&#125;
@@ -897,7 +897,7 @@
 <h2 id="矢量图标"><a href="#矢量图标" class="headerlink" title="矢量图标"></a>矢量图标</h2><p>与老版本不同，Bootstrap 4 中也没有自带图标。作为补偿，官方也推荐了几款强大且免费的第三方<strong>矢量图标</strong>提供商。我比较喜欢的是<a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome</a>，提供1500+免费图标（以及5000+付费图标），完全够用了。各种你想得到想不到的图标都有：</p>
 <p><img src="https://www.dusaiphoto.com/media/image/image_source/20190411/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE193.jpg" class="lazyload placeholder" data-srcset="https://www.dusaiphoto.com/media/image/image_source/20190411/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE193.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <p>用法也很简单，你甚至不用将其下载到本地（当然想下载也可以）。根据官网的提示，直接在<code>base.html</code>中引入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> 
@@ -915,7 +915,7 @@
 <p>将此标签名称复制到你的网页中，图标就渲染出来了。</p>
 <p>很神奇的是，矢量图标跟普通的字体是完全类似的，你可以通过CSS定义图标的颜色（<code>color</code>）、大小（<code>font-size</code>）等样式。</p>
 <p>尝试一下。将图标代码添加到<code>templates/article/list.html</code>中的列表循环：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 <span class="token comment">&lt;!-- 注脚 --></span>
@@ -949,7 +949,7 @@
 <p><a target="_blank" rel="noopener" href="https://css-tricks.com/couple-takes-sticky-footer/">《Sticky Footer, Five Ways》</a>罗列了5种方法解决这个问题，有兴趣的同学可深入了解。</p>
 </blockquote>
 <p>需要修改<code>base.html</code>和<code>footer.html</code>两个文件。先贴改动代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
@@ -986,7 +986,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/footer.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/footer.html
 
 ...
 <span class="token comment">&lt;!-- 增加 id="footer" 属性 --></span>
@@ -1015,7 +1015,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/static/sticky_sidebar/jquery.sticky-sidebar.min.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>因为只需要在<strong>文章详情</strong>页面用到，所以在详情页中引入模块就够用了：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 <span class="token comment">&lt;!-- 目录 --></span>
@@ -1048,11 +1048,11 @@
 
 &#123;% block script %&#125;
 <span class="token comment">&lt;!-- 引入粘性侧边栏 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>sticky_sidebar/jquery.sticky-sidebar.min.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'sticky_sidebar/jquery.sticky-sidebar.min.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
     <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#sidebar'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stickySidebar</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-        topSpacing<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-        bottomSpacing<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">topSpacing</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">bottomSpacing</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
@@ -1071,7 +1071,7 @@
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#117;&#115;&#x61;&#105;&#112;&#104;&#x6f;&#x74;&#111;&#64;&#x66;&#111;&#x78;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#100;&#117;&#115;&#x61;&#105;&#112;&#104;&#x6f;&#x74;&#111;&#64;&#x66;&#111;&#x78;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#116;&#x6f;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#100;&#x75;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#116;&#x6f;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1801,9 +1801,9 @@
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

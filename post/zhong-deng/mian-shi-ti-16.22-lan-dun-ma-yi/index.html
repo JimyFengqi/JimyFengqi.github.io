@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -910,7 +910,7 @@
     <span class="token punctuation">&#125;</span>
     
     <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token function">printKMoves</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">K</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> direction <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'L'</span><span class="token punctuation">,</span> <span class="token string">'U'</span><span class="token punctuation">,</span> <span class="token string">'R'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> direction <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token char">'L'</span><span class="token punctuation">,</span> <span class="token char">'U'</span><span class="token punctuation">,</span> <span class="token char">'R'</span><span class="token punctuation">,</span> <span class="token char">'D'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token comment">// 用“向量”记录方向，顺序与上一行方向的字符顺序保持一致，每个元素的后一个元素都是可以90°向右变换得到的</span>
         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> offset <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token comment">// 蚂蚁的位置</span>
@@ -946,10 +946,10 @@
         <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> grid <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span>bottom <span class="token operator">-</span> top <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token comment">// 填充白块</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> row <span class="token operator">:</span> grid<span class="token punctuation">)</span>
-            <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token char">'_'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">// 替换黑块</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Position</span> pos <span class="token operator">:</span> blackSet<span class="token punctuation">)</span>
-            grid<span class="token punctuation">[</span>pos<span class="token punctuation">.</span>y <span class="token operator">-</span> top<span class="token punctuation">]</span><span class="token punctuation">[</span>pos<span class="token punctuation">.</span>x <span class="token operator">-</span> left<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'X'</span><span class="token punctuation">;</span>
+            grid<span class="token punctuation">[</span>pos<span class="token punctuation">.</span>y <span class="token operator">-</span> top<span class="token punctuation">]</span><span class="token punctuation">[</span>pos<span class="token punctuation">.</span>x <span class="token operator">-</span> left<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'X'</span><span class="token punctuation">;</span>
         <span class="token comment">// 替换蚂蚁</span>
         grid<span class="token punctuation">[</span>antPos<span class="token punctuation">.</span>y <span class="token operator">-</span> top<span class="token punctuation">]</span><span class="token punctuation">[</span>antPos<span class="token punctuation">.</span>x <span class="token operator">-</span> left<span class="token punctuation">]</span> <span class="token operator">=</span> direction<span class="token punctuation">[</span>antDir<span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token comment">// 利用网格生成字符串列表</span>
@@ -995,6 +995,10 @@
               字符串
             </a>
           
+            <a href="/tags/%E6%A8%A1%E6%8B%9F/" class="">
+              模拟
+            </a>
+          
             <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
               数组
             </a>
@@ -1005,10 +1009,6 @@
           
             <a href="/tags/%E7%9F%A9%E9%98%B5/" class="">
               矩阵
-            </a>
-          
-            <a href="/tags/%E6%A8%A1%E6%8B%9F/" class="">
-              模拟
             </a>
           
         </div>
@@ -1736,8 +1736,8 @@
 <meting-js
   class=""
   server="netease"
-  type="song"
-  id="1365053719"
+  type="playlist"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

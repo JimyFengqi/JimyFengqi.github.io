@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -896,7 +896,7 @@ register <span class="token operator">=</span> template<span class="token punctu
 
 <p>代码功能很简单，就是将文章发布时间和当前时间作比较，然后返回适当的字符串。</p>
 <p>修改文章列表模板文件中与发布时间相关的代码，把刚写的filter用上：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 &#123;% load my_filters_and_tags %&#125;
@@ -973,7 +973,7 @@ register <span class="token operator">=</span> template<span class="token punctu
     <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token string">'comments'</span><span class="token punctuation">:</span> comments<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>函数传入的参数可以是模板中的上下文变量。函数体内部取得了所有相关评论的查询集，然后把结果<code>comments</code>返回。注意返回结果是进入到<code>tag_list.html</code>这个模板中去了，因此新建它并写入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/tag_list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/tag_list.html
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
 &#123;% for comment in comments %&#125;
@@ -982,7 +982,7 @@ register <span class="token operator">=</span> template<span class="token punctu
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后在文章详情页面的模板中，随便找一个位置写入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 &#123;% load my_filters_and_tags %&#125;
@@ -1000,7 +1000,7 @@ register <span class="token operator">=</span> template<span class="token punctu
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#117;&#115;&#x61;&#105;&#x70;&#x68;&#x6f;&#x74;&#x6f;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#x64;&#117;&#115;&#x61;&#105;&#x70;&#x68;&#x6f;&#x74;&#x6f;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#117;&#115;&#97;&#x69;&#112;&#104;&#111;&#116;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#100;&#117;&#115;&#97;&#x69;&#112;&#104;&#111;&#116;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a>添加</li>
 </ul>
 
@@ -1731,9 +1731,9 @@ register <span class="token operator">=</span> template<span class="token punctu
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

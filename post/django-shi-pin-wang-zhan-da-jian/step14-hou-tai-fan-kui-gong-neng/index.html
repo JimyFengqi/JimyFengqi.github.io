@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -786,7 +786,7 @@
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">path<span class="token punctuation">(</span><span class="token string">'feedback_list/'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>FeedbackListView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'feedback_list'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 path<span class="token punctuation">(</span><span class="token string">'feedback_delete/'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>feedback_delete<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'feedback_delete'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>分别表示反馈列表和反馈删除功能。<br>修改myadmin/base.html</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>myadmin:feedback_list<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>feedback_list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>用户反馈<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'myadmin:feedback_list' %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>feedback_list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>用户反馈<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>##视图设置<br>列表是由FeedbackListView负责来展示，代码如下</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">FeedbackListView</span><span class="token punctuation">(</span>AdminUserRequiredMixin<span class="token punctuation">,</span> generic<span class="token punctuation">.</span>ListView<span class="token punctuation">)</span><span class="token punctuation">:</span>
     model <span class="token operator">=</span> Feedback            <span class="token comment"># 复用之前userprofile中定义的模型</span>
@@ -1549,9 +1549,9 @@ path<span class="token punctuation">(</span><span class="token string">'feedback
 
 <meting-js
   class=""
-  server="tencent"
+  server="kugou"
   type="playlist"
-  id="8197627936"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -941,8 +941,8 @@
                 <span class="token comment">// 遍历到第i行第j列的那个数,我们要判断这个数在其所在的行有没有出现过，</span>
                 <span class="token comment">// 同时判断这个数在其所在的列有没有出现过</span>
                 <span class="token comment">// 同时判断这个数在其所在的box中有没有出现过</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> curNumber <span class="token operator">=</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'.'</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+                <span class="token keyword">int</span> curNumber <span class="token operator">=</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">;</span>
                 <span class="token keyword">if</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>curNumber<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> 
                 <span class="token keyword">if</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>curNumber<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
                 <span class="token keyword">if</span><span class="token punctuation">(</span>box<span class="token punctuation">[</span>j<span class="token operator">/</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span>curNumber<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
@@ -1732,9 +1732,9 @@
 
 <meting-js
   class=""
-  server="tencent"
+  server="netease"
   type="playlist"
-  id="8197627936"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

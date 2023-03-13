@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -961,13 +961,13 @@ MaxLevel &#x3D; 32<span aria-hidden="true" class="line-numbers-rows"><span></spa
         <span class="token comment">/**
          * 最大层数
          */</span>
-        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> DEFAULT_MAX_LEVEL <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_MAX_LEVEL</span> <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
         <span class="token comment">/**
          * 随机层数概率，也就是随机出的层数，在 第1层以上(不包括第一层)的概率，层数不超过maxLevel，层数的起始号为1
          */</span>
-        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> DEFAULT_P_FACTOR <span class="token operator">=</span> <span class="token number">0.25</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token constant">DEFAULT_P_FACTOR</span> <span class="token operator">=</span> <span class="token number">0.25</span><span class="token punctuation">;</span>
 
-        <span class="token class-name">Node</span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>DEFAULT_MAX_LEVEL<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//头节点</span>
+        <span class="token class-name">Node</span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token constant">DEFAULT_MAX_LEVEL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//头节点</span>
 
         <span class="token keyword">int</span> currentLevel <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//表示当前nodes的实际层数，它从1开始</span>
 
@@ -1052,7 +1052,7 @@ MaxLevel &#x3D; 32<span aria-hidden="true" class="line-numbers-rows"><span></spa
          */</span>
         <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">randomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">int</span> level <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>DEFAULT_P_FACTOR <span class="token operator">&amp;&amp;</span> level<span class="token operator">&lt;</span>DEFAULT_MAX_LEVEL<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">DEFAULT_P_FACTOR</span> <span class="token operator">&amp;&amp;</span> level<span class="token operator">&lt;</span><span class="token constant">DEFAULT_MAX_LEVEL</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 level <span class="token operator">++</span> <span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
             <span class="token keyword">return</span> level<span class="token punctuation">;</span>
@@ -1107,12 +1107,12 @@ MaxLevel &#x3D; 32<span aria-hidden="true" class="line-numbers-rows"><span></spa
         
         <div class="tags">
           
-            <a href="/tags/%E8%AE%BE%E8%AE%A1/" class="">
-              设计
-            </a>
-          
             <a href="/tags/%E9%93%BE%E8%A1%A8/" class="">
               链表
+            </a>
+          
+            <a href="/tags/%E8%AE%BE%E8%AE%A1/" class="">
+              设计
             </a>
           
         </div>
@@ -1834,9 +1834,9 @@ MaxLevel &#x3D; 32<span aria-hidden="true" class="line-numbers-rows"><span></spa
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

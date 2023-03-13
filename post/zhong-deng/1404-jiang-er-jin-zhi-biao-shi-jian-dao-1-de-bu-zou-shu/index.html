@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -913,18 +913,18 @@ Step 1) 2 是偶数，除 2 得到 1
         <span class="token keyword">int</span> idx <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>idx <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//第一位最后肯定剩1，不另计算</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'0'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 ans<span class="token operator">++</span><span class="token punctuation">;</span>
                 idx<span class="token operator">--</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
             <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
                 ans<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//进位的+1</span>
-                <span class="token keyword">while</span><span class="token punctuation">(</span>idx <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//进位后，连续的1产生连续的0</span>
+                <span class="token keyword">while</span><span class="token punctuation">(</span>idx <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'1'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//进位后，连续的1产生连续的0</span>
                     ans<span class="token operator">++</span><span class="token punctuation">;</span>
                     idx<span class="token operator">--</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span>
                 <span class="token keyword">if</span><span class="token punctuation">(</span>idx <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
-                    s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'1'</span><span class="token punctuation">;</span>
+                    s<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'1'</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>

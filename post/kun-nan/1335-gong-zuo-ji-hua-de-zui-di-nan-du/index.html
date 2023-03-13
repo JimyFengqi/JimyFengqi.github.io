@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -912,28 +912,28 @@ The difficulty of the schedule = 6 + 1 = 7
 <p>返回整个工作计划的 <strong>最小难度</strong>。如果无法制定工作计划，则返回 <strong>-1</strong>。</p>
 <p>示例 1：</p>
 <p><img src="../images/minimum-difficulty-of-a-job-schedule-0.png" class="lazyload placeholder" data-srcset="../images/minimum-difficulty-of-a-job-schedule-0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="1335-1.png"></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6,5</span>,4,3,2,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">2</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6,5</span>,4,3,2,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">2</span>
 输出：7
 解释：第一天，您可以完成前 <span class="token number">5</span> 项工作，总难度 <span class="token operator">=</span> <span class="token number">6</span>.
 第二天，您可以完成最后一项工作，总难度 <span class="token operator">=</span> <span class="token number">1</span>.
 计划表的难度 <span class="token operator">=</span> <span class="token number">6</span> + <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例 2：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9,9</span>,9<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">4</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9,9</span>,9<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">4</span>
 输出：-1
 解释：就算你每天完成一项工作，仍然有一天是空闲的，你无法制定一份能够满足既定工作时间的计划表。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>示例 3：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">3</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">3</span>
 输出：3
 解释：工作计划为每天一项工作，总难度为 <span class="token number">3</span> 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>示例 4：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7,1</span>,7,1,7,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">3</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7,1</span>,7,1,7,1<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">3</span>
 输出：15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>示例 5：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11,111</span>,22,222,33,333,44,444<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">6</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：jobDifficulty <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11,111</span>,22,222,33,333,44,444<span class="token punctuation">]</span>, d <span class="token operator">=</span> <span class="token number">6</span>
 输出：843<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>提示：</p>
@@ -965,7 +965,7 @@ The difficulty of the schedule = 6 + 1 = 7
 <li>逐渐取到当前段落的极值，并继续递归。</li>
 </ol>
 <p>根据上面的流程，我们可以得到类似下面的代码：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> <span class="token constant">LEN</span> <span class="token operator">=</span> jobDifficulty<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">LEN</span> <span class="token operator">&lt;</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1033,7 +1033,7 @@ The difficulty of the schedule = 6 + 1 = 7
 </ul>
 <p>嘿嘿，这下是不是就和 <code>dp[n - 5][3]</code> 的内容都一一对应上了呀。小猪开心的扭了扭尾巴 &gt;.&lt;</p>
 <p>最后，我们把它抽象成 <code>dp[i][j]</code> 吧：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>
   dp<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token function">max</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">,</span>
   dp<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token function">max</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token operator">...</span>
@@ -1047,10 +1047,10 @@ The difficulty of the schedule = 6 + 1 = 7
 <li>根据递推公式推导多个分段的结果。</li>
 <li>返回结果。</li>
 </ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> <span class="token constant">LEN</span> <span class="token operator">=</span> jobDifficulty<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">LEN</span> <span class="token operator">&lt;</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> dp <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> length<span class="token operator">:</span> <span class="token constant">LEN</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span>d <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> dp <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">length</span><span class="token operator">:</span> <span class="token constant">LEN</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span>d <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token constant">LEN</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> curMax <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     jobDifficulty<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> curMax <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>curMax <span class="token operator">=</span> jobDifficulty<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1071,7 +1071,7 @@ The difficulty of the schedule = 6 + 1 = 7
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>按照惯例，我们把这个二维 <code>dp</code> 优化成一维的吧。改动其实并不大，主要就是迭代过程中不断的覆盖之前的值，以达到缩减成一维数组的目的。具体代码如下：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> <span class="token constant">LEN</span> <span class="token operator">=</span> jobDifficulty<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">LEN</span> <span class="token operator">&lt;</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span><span class="token constant">LEN</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1096,7 +1096,7 @@ The difficulty of the schedule = 6 + 1 = 7
 
 <p>这段代码目前跑出了 52ms，暂时 beats 100%。</p>
 <h3 id="再优化"><a href="#再优化" class="headerlink" title="再优化"></a>再优化</h3><p>这里在最内层循环中，我们可以尝试不去遍历所有内容，而是通过一个内容有序的栈来做判断和记录，以尽量减少这里的计算次数。具体代码如下：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">minDifficulty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jobDifficulty<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> <span class="token constant">LEN</span> <span class="token operator">=</span> jobDifficulty<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">LEN</span> <span class="token operator">&lt;</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 
@@ -1170,12 +1170,12 @@ The difficulty of the schedule = 6 + 1 = 7
         
         <div class="tags">
           
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
-            </a>
-          
             <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
               数组
+            </a>
+          
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
             </a>
           
         </div>
@@ -1897,9 +1897,9 @@ The difficulty of the schedule = 6 + 1 = 7
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

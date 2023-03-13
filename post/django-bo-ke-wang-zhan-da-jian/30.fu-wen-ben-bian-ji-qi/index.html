@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -865,7 +865,7 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
 <p><img src="https://www.dusaiphoto.com/media/image/image_source/20190321/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE180.jpg" class="lazyload placeholder" data-srcset="https://www.dusaiphoto.com/media/image/image_source/20190321/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE180.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <p>编辑富文本搞定后，还需要在前台界面中展示出来。富文本是以类似<code>html</code>的格式进行保存的，因此还要在展示评论的代码加入<code>|safe</code>过滤器，防止浏览器进行转义。</p>
 <p>修改<code>detail.html</code>中展示评论的部分代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -900,12 +900,12 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
 <p>注意这里的static是项目中的静态文件目录（与前面的章节相同），而不是env文件夹中的static目录。</p>
 </blockquote>
 <p>然后在需要代码高亮的<strong>模板文件</strong>中引用prism的静态文件，对代码进行渲染：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>prism/prism.css<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'prism/prism.css' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
 ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -946,7 +946,7 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后将<code>detail.html</code>原来评论表单中的正文部分（即前面章节写的<code>&lt;textarea&gt;</code>）替换如下：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -980,7 +980,7 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
 <p>不错，编辑器已经可以正常使用了，但还有一个小问题：似乎编辑器宽度没有自适应，右边大片白白的空间也太浪费了。继续努力。</p>
 <h2 id="宽度自适应"><a href="#宽度自适应" class="headerlink" title="宽度自适应"></a>宽度自适应</h2><p>首先在配置文件中将宽度设置为<code>auto</code>，这一步我们已经做好了。</p>
 <p>Ckeditor编辑器本身有一个<code>inline-block</code>的样式，阻碍了自适应效果，需要用<code>Jquery</code>语法将其清除掉。在详情页面底部加入代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 <span class="token comment">&lt;!-- 注意这是错误的示范！ --></span>
 
@@ -999,21 +999,21 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
 <p>比较容易想到的办法是将引入Jquery.js的标签提到更顶部的位置，在block模板插入前就加载。这样做的问题是JS文件加载通常较慢，它会阻塞后面的代码，从而减缓页面整体加载速度。本文不采用这种办法。</p>
 </blockquote>
 <p>解决方案是在<code>base.html</code>中新增专门用于拼接<code>JavaScript</code>脚本的位置，命名为<code>&#123;% block script %&#125;</code>。注意它必须放置在<code>Jquery</code>标签的后面：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 ...
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
     ...
     <span class="token comment">&lt;!-- 已有代码 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>jquery/jquery-3.3.1.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'jquery/jquery-3.3.1.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
     ...
     <span class="token comment">&lt;!-- 新增代码 --></span>
     &#123;% block script %&#125;&#123;% endblock script %&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后将<code>detail.html</code>中的JS代码放到这个块中：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -1031,7 +1031,7 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现在，博文和其评论都可以漂亮的排版了。对于有些不喜欢Markdown的人来说，甚至可以连博文都使用<code>django-cdeditor</code>提供的富文本编辑器。我自己还是倾向用Markdown写文章：写作效率比好看更重要，并且主流网站几乎都支持Markdown，多平台发稿很方便。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#116;&#x6f;&#x40;&#102;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x64;&#x75;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#116;&#x6f;&#x40;&#102;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#111;&#116;&#111;&#x40;&#x66;&#111;&#x78;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x64;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#111;&#116;&#111;&#x40;&#x66;&#111;&#x78;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 <blockquote>
@@ -1083,16 +1083,16 @@ CKEDITOR_CONFIGS <span class="token operator">=</span> <span class="token punctu
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/15.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/28.wen-zhang-biao-qian/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/29.wen-zhang-biao-ti-tu/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--28.文章标签</div>
+        <div class="title-text">Django博客网站搭建--29.文章标题图</div>
       </div>
       
       <!-- <div class="content">
-        “标签”是作者从文章中提取的核心词汇，其他用户可以通过标签快速了解文章的关注点。每一篇文章的标签可能都不一样，并且还可能
+        现在虽然博客的功能大都实现了，但是界面还是比较朴素，特别是首页的文章列表几乎全是文字，看多了难免疲劳。因此，给每个文章标
       </div> -->
     </a>
   </div>

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -865,12 +865,12 @@
 <p>设 $N = M<em>q + r$（$r &lt; M$），前 $L</em>q$ 个数字有 $M<em>q$ 个神奇数字，$(L</em>q + 1, L<em>q + 2, \cdots)$ 之间有 $r$ 个神奇数字。可以暴力搜 $r$，下一个神奇数字要么是 $L</em>q + A$ 要么是 $L*q + B$，依此类推。</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution1-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">nthMagicalNumber</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">A</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">B</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> MOD <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> <span class="token constant">MOD</span> <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">L</span> <span class="token operator">=</span> <span class="token class-name">A</span> <span class="token operator">/</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">,</span> <span class="token class-name">B</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">B</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">M</span> <span class="token operator">=</span> <span class="token class-name">L</span> <span class="token operator">/</span> <span class="token class-name">A</span> <span class="token operator">+</span> <span class="token class-name">L</span> <span class="token operator">/</span> <span class="token class-name">B</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> q <span class="token operator">=</span> <span class="token class-name">N</span> <span class="token operator">/</span> <span class="token class-name">M</span><span class="token punctuation">,</span> r <span class="token operator">=</span> <span class="token class-name">N</span> <span class="token operator">%</span> <span class="token class-name">M</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">long</span> ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> q <span class="token operator">*</span> <span class="token class-name">L</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
+        <span class="token keyword">long</span> ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> q <span class="token operator">*</span> <span class="token class-name">L</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
             <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> ans<span class="token punctuation">;</span>
 
@@ -883,7 +883,7 @@
         <span class="token punctuation">&#125;</span>
 
         ans <span class="token operator">+=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>heads<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> heads<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>ans <span class="token operator">%</span> MOD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>ans <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -984,7 +984,7 @@ public:
 <p>$f(x)$ 为小于等于 $x$ 的神奇数字的个数。$f(x) = \lfloor \frac{x}{A} \rfloor + \lfloor \frac{x}{B} \rfloor - \lfloor \frac{x}{L} \rfloor$。有 $\lfloor \frac{x}{A} \rfloor$ 个数字能被 $A$ 整除的，$\lfloor \frac{x}{B} \rfloor$ 个数字能被 $B$ 整除，同时需要减去 $\lfloor \frac{x}{L} \rfloor$ 个能被 $A$，$B$ 整除的数。</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution2-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">nthMagicalNumber</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">A</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">B</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> MOD <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> <span class="token constant">MOD</span> <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">L</span> <span class="token operator">=</span> <span class="token class-name">A</span> <span class="token operator">/</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">,</span> <span class="token class-name">B</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">B</span><span class="token punctuation">;</span>
 
         <span class="token keyword">long</span> lo <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -998,7 +998,7 @@ public:
                 hi <span class="token operator">=</span> mi<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
 
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>lo <span class="token operator">%</span> MOD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>lo <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1159,19 +1159,19 @@ public:
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/8.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/zhong-deng/877-shi-zi-you-xi/" class="post-nav-link">
+    <a href="/post/kun-nan/879-ying-li-ji-hua/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">877-石子游戏(Stone Game)</div>
+        <div class="title-text">879-盈利计划(Profitable Schemes)</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/stone-game
+原文链接: https://leetcode-cn.com/problems/profitable-schemes
 
-英文原文Alic
+
       </div> -->
     </a>
   </div>
@@ -1182,18 +1182,16 @@ public:
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/kun-nan/879-ying-li-ji-hua/" class="post-nav-link">
+    <a href="/post/zhong-deng/528-an-quan-chong-sui-ji-xuan-ze/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">879-盈利计划(Profitable Schemes)</div>
+        <div class="title-text">528-按权重随机选择(Random Pick with Weight)</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/profitable-schemes
-
-
+原文链接: https://leetcode-cn.com/problems/random-pick-with-wei
       </div> -->
     </a>
   </div>
@@ -1846,9 +1844,9 @@ public:
 
 <meting-js
   class=""
-  server="tencent"
+  server="kugou"
   type="playlist"
-  id="8197627936"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

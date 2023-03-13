@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -788,15 +788,15 @@
 <pre><code>1.插件提供的定时任务管理将不在可用，当我们只需要任务定期执行而不需要人为调度的时候这点忽略不计。
 2.无法高效的管理或追踪定时任务，定时任务的跟踪其实交给日志更合理，但是对任务的修改就没有那么方便了，不过如果不需要经常变更/增减任务的话这点也在可接受范围内。
 </code></pre>
-<h1 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">django-admin startproject Website
-cd Website
+<h1 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">django-admin startproject Website
+<span class="token builtin class-name">cd</span> Website
 python3 manage.py startapp hot
-touch .&#x2F;Website&#x2F;celery.py  .&#x2F;hot&#x2F;tasks.py start-celery.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">touch</span> ./Website/celery.py  ./hot/tasks.py start-celery.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面的命令分别为：</p>
 <ul>
 <li>创建一个名字为Website的项目</li>
 <li>创建一个名字为hot的应用</li>
-<li>创建celery相关的文件<br>创建完成后，基本的目录结构：<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">..&#x2F;Website&#x2F;
+<li>创建celery相关的文件<br>创建完成后，基本的目录结构：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">..</span>/Website/
 ├── hot
 │   ├── admin.py
 │   ├── apps.py
@@ -1029,9 +1029,9 @@ args：是个元组，给出任务需要的参数，如果不需要参数也可�
 <p>至此，配置celery beat的部分就结束了。</p>
 <h3 id="启动celery-beat"><a href="#启动celery-beat" class="headerlink" title="启动celery beat"></a>启动celery beat</h3><p>配置完成后只需要启动celery了。</p>
 <p>启动之前配置一下环境。不要用root运行celery！不要用root运行celery！不要用root运行celery！重要的事情说三遍。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># start-celery.sh：
-export REDIS_ADDR&#x3D;127.0.0.1
-celery -A Website worker -l info -B -f &#x2F;path&#x2F;to&#x2F;log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># start-celery.sh：</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">REDIS_ADDR</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1
+celery <span class="token parameter variable">-A</span> Website worker <span class="token parameter variable">-l</span> info <span class="token parameter variable">-B</span> <span class="token parameter variable">-f</span> /path/to/log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>-A 表示app所在的目录，-B表示启动celery beat运行定时任务。</p>
 <p>celery正常启动后就可以通过日志来查看任务是否正常运行了：</p>
 
@@ -1764,7 +1764,7 @@ celery -A Website worker -l info -B -f &#x2F;path&#x2F;to&#x2F;log<span aria-hid
   class=""
   server="kugou"
   type="playlist"
-  id="3428290"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

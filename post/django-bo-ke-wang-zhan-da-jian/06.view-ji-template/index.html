@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -832,7 +832,7 @@
 <p>细心的你肯定注意到了，之前的Django文件后缀都是<code>.py</code>，代表Python文件；这里的模板文件后缀是<code>.html</code>，这又是什么呢？</p>
 <p><strong>HTML是一种用于创建网页的标记语言。</strong>它被用来结构化信息，标注哪些文字是标题、哪些文字是正文等（当然不仅仅这点功能）。也可以简单理解为“给数据排版”的文件，跟你写文档用的Office Word一样一样的 。</p>
 <p>在<code>list.html</code>文件中写入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 &#123;% for article in articles %&#125;
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>&#123;&#123; article.title &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
@@ -897,7 +897,7 @@ TEMPLATES <span class="token operator">=</span> <span class="token punctuation">
 <p>下一章将学习编写一个漂亮的网页模板。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#100;&#x75;&#115;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#115;&#x61;&#105;&#112;&#x68;&#111;&#x74;&#111;&#64;&#102;&#111;&#120;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x64;&#x75;&#115;&#x61;&#105;&#112;&#x68;&#111;&#x74;&#111;&#64;&#102;&#111;&#120;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -946,17 +946,17 @@ TEMPLATES <span class="token operator">=</span> <span class="token punctuation">
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/04.bian-xie-model/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/08.bian-xie-wen-zhang-xiang-qing-ye-mian/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--04.编写Model</div>
+        <div class="title-text">Django博客网站搭建--08.编写文章详情页面</div>
       </div>
       
       <!-- <div class="content">
-        Django 框架主要关注的是模型（Model）、模板（Template）和视图（Views），称为MTV模式。
-它们各
+        有了文章列表页面后，当然还需要详情页面，方便用户对某一篇感兴趣的文章深入阅读。
+编写视图函数打开article/view
       </div> -->
     </a>
   </div>
@@ -967,16 +967,15 @@ TEMPLATES <span class="token operator">=</span> <span class="token punctuation">
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/08.bian-xie-wen-zhang-xiang-qing-ye-mian/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--08.编写文章详情页面</div>
+        <div class="title-text">Django博客网站搭建--07.使用Bootstrap改写模板</div>
       </div>
       <!-- <div class="content">
-        有了文章列表页面后，当然还需要详情页面，方便用户对某一篇感兴趣的文章深入阅读。
-编写视图函数打开article/view
+        注意：学本章之前请检查 Django 版本，确保安装的是 Django 2 而不是 Django 3，否则后面所有的章节
       </div> -->
     </a>
   </div>
@@ -1629,9 +1628,9 @@ TEMPLATES <span class="token operator">=</span> <span class="token punctuation">
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3302755"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

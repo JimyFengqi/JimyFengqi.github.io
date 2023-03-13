@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -866,7 +866,7 @@
 <p><img src="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/build.svg" class="lazyload placeholder" data-srcset="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/build.svg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Gitlab build badges"> <img src="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/coverage.svg?job=coverage" class="lazyload placeholder" data-srcset="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/coverage.svg?job=coverage" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Gitlab coverage badges"></p>
 <h3 id="2-安装-GitLab-Runner"><a href="#2-安装-GitLab-Runner" class="headerlink" title="2 安装 GitLab Runner"></a>2 安装 GitLab Runner</h3><p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/runner/install/index.html">这里</a>有 GitLab Runner安装相关的资源和文档可供大家参考。以下仅以咱们公司常用的<code>Centos</code>为例来做安装说明。</p>
 <h4 id="1-在线安装"><a href="#1-在线安装" class="headerlink" title="(1) 在线安装"></a>(1) 在线安装</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 添加官方的repo.</span>
-<span class="token function">curl</span> -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+<span class="token function">curl</span> <span class="token parameter variable">-L</span> https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
 
 <span class="token comment"># yum 安装Gtilab Runner.</span>
 <span class="token function">sudo</span> yum <span class="token function">install</span> gitlab-runner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -875,7 +875,7 @@
 <span class="token function">sudo</span> yum –y <span class="token function">install</span> <span class="token function">git</span>
 
 <span class="token comment"># rpm离线安装事先下载好的 Gitlab Runner rpm包.</span>
-<span class="token function">rpm</span> -ivh gitlab-runner-10.5.0-1.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> gitlab-runner-10.5.0-1.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p><strong>注</strong>：Gitlab Runner 依赖了<code>Git</code>，所以，离线安装 Gitlab Runner 之前得首先安装Git，离线安装包可以从<a target="_blank" rel="noopener" href="https://packages.gitlab.com/runner/gitlab-runner">这里</a>下载。</p>

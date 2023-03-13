@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -900,14 +900,14 @@
         <span class="token keyword">int</span> m<span class="token operator">=</span>n<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> sum<span class="token operator">=</span>n<span class="token punctuation">;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> item<span class="token operator">:</span>s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            count<span class="token punctuation">[</span>item<span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//统计字符数目</span>
+            count<span class="token punctuation">[</span>item<span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//统计字符数目</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">int</span> l<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>r<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">&lt;</span>n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            count<span class="token punctuation">[</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span><span class="token comment">//更新窗口外的字符数量</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;</span>n<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token string">'Q'</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token string">'W'</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token string">'E'</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token string">'R'</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            count<span class="token punctuation">[</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span><span class="token comment">//更新窗口外的字符数量</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;</span>n<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token char">'Q'</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token char">'W'</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token char">'E'</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token operator">&amp;&amp;</span>count<span class="token punctuation">[</span><span class="token char">'R'</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 sum<span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span>r<span class="token operator">-</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//更新最短长度</span>
-                count<span class="token punctuation">[</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//尝试缩小窗口</span>
+                count<span class="token punctuation">[</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//尝试缩小窗口</span>
                 l<span class="token operator">++</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
             r<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//继续扩大窗口</span>
@@ -1674,9 +1674,9 @@
 
 <meting-js
   class=""
-  server="netease"
+  server="tencent"
   type="playlist"
-  id="4888271555"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -877,7 +877,7 @@ Each word would be put on only one column and that in one column there will be o
 <p>这里是第 172 期的第 2 题，也是题目列表中的第 1324 题 – 『竖直打印单词』</p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个字符串 <code>s</code>。请你按照单词在 <code>s</code> 中的出现顺序将它们全部竖直返回。<br>单词应该以字符串列表的形式返回，必要时用空格补位，但输出尾部的空格需要删除（不允许尾随空格）。<br>每个单词只能放在一列上，每一列中也只能有一个单词。</p>
 <p>示例 1：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：s <span class="token operator">=</span> <span class="token string">"HOW ARE YOU"</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：s <span class="token operator">=</span> <span class="token string">"HOW ARE YOU"</span>
 输出：<span class="token punctuation">[</span><span class="token string">"HAY"</span>,<span class="token string">"ORO"</span>,<span class="token string">"WEU"</span><span class="token punctuation">]</span>
 解释：每个单词都应该竖直打印。
  <span class="token string">"HAY"</span>
@@ -885,7 +885,7 @@ Each word would be put on only one column and that in one column there will be o
  <span class="token string">"WEU"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例 2：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：s <span class="token operator">=</span> <span class="token string">"TO BE OR NOT TO BE"</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：s <span class="token operator">=</span> <span class="token string">"TO BE OR NOT TO BE"</span>
 输出：<span class="token punctuation">[</span><span class="token string">"TBONTB"</span>,<span class="token string">"OEROOE"</span>,<span class="token string">"   T"</span><span class="token punctuation">]</span>
 解释：题目允许使用空格补位，但不允许输出末尾出现空格。
 <span class="token string">"TBONTB"</span>
@@ -893,7 +893,7 @@ Each word would be put on only one column and that in one column there will be o
 <span class="token string">"   T"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例 3：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">输入：s <span class="token operator">=</span> <span class="token string">"CONTEST IS COMING"</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入：s <span class="token operator">=</span> <span class="token string">"CONTEST IS COMING"</span>
 输出：<span class="token punctuation">[</span><span class="token string">"CIC"</span>,<span class="token string">"OSO"</span>,<span class="token string">"N M"</span>,<span class="token string">"T I"</span>,<span class="token string">"E N"</span>,<span class="token string">"S G"</span>,<span class="token string">"T"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>提示：</p>
@@ -922,7 +922,7 @@ Each word would be put on only one column and that in one column there will be o
 <li>返回结果数组。</li>
 </ol>
 <p>基于这个流程，我们可以实现类似这样的代码：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">printVertically</span> <span class="token operator">=</span> <span class="token parameter">s</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">printVertically</span> <span class="token operator">=</span> <span class="token parameter">s</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> words <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> maxLen <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> words<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -958,7 +958,7 @@ Each word would be put on only one column and that in one column there will be o
 <li>返回结果数组。</li>
 </ol>
 <p>基于这个流程，我们可以实现类似这样的代码：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">printVertically</span> <span class="token operator">=</span> <span class="token parameter">s</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">printVertically</span> <span class="token operator">=</span> <span class="token parameter">s</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> ret <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> word <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">,</span> <span class="token operator">++</span>idx<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">const</span> char <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1015,12 +1015,12 @@ Each word would be put on only one column and that in one column there will be o
               字符串
             </a>
           
-            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
-              数组
-            </a>
-          
             <a href="/tags/%E6%A8%A1%E6%8B%9F/" class="">
               模拟
+            </a>
+          
+            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
+              数组
             </a>
           
         </div>
@@ -1744,9 +1744,9 @@ Each word would be put on only one column and that in one column there will be o
 
 <meting-js
   class=""
-  server="netease"
+  server="kugou"
   type="playlist"
-  id="4888271555"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

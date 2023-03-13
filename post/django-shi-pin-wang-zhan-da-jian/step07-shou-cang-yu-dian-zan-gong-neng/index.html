@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -818,7 +818,7 @@ path<span class="token punctuation">(</span><span class="token string">'&lt;int:
         videos <span class="token operator">=</span> user<span class="token punctuation">.</span>collected_videos<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> videos<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>与首页展示的功能类似，这里同样继承了ListView通用视图类。并使用了公共函数get_page_list对数据进行分页。<br>在获取收藏数据列表时，我们用的是user.collected_videos.all()，其中collected_videos就是前面定义的别名。<br>并通过配置template_name将数据传递给模板文件users/collect_videos.html。<br>###前端代码<br>模板文件关键代码</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ui header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>我的收藏<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ui header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>我的收藏<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ui unstackable items<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
     &#123;% for item in video_list %&#125;
@@ -830,7 +830,7 @@ path<span class="token punctuation">(</span><span class="token string">'&lt;int:
             &#123;% endthumbnail %&#125;
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>middle aligned content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>video:detail<span class="token punctuation">'</span> item.pk %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item.title &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'video:detail' item.pk %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item.title &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     &#123;% empty %&#125;
@@ -1591,9 +1591,9 @@ path<span class="token punctuation">(</span><span class="token string">'&lt;int:
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

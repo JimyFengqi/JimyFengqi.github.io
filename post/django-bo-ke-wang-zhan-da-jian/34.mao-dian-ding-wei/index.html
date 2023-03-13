@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -788,16 +788,16 @@
 <p>但是仔细想想，似乎还有不方便的地方：如果页面中评论较多，想找到感兴趣的那一条评论还是要费点功夫的。所以这个消息通知，最好是能够不仅前往正确的页面，还要前往正确的位置（需求是无穷无尽的..）。</p>
 <p>为了实现这个功能，本章就要介绍一个非常古老的功能：<strong>锚点定位</strong>。以及如何在Django中实现它。</p>
 <h2 id="锚点是什么"><a href="#锚点是什么" class="headerlink" title="锚点是什么"></a>锚点是什么</h2><p>我们在写<code>html</code>文件的容器时，经常会用到<code>id</code>属性：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fruit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>apple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fruit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>apple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这个<code>id</code>属性不仅可以作为<code>Javascript</code>或者<code>css</code>代码查询某个容器的标记，还可以作为锚点，定位页面应该前往的位置。输入下面的地址：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">http://www.myblog.com/home#fruit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">http://www.myblog.com/home#fruit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>浏览器就会打开<code>home</code>页面，并且视窗前往<code>id=&quot;fruit&quot;</code>的容器。</p>
 <p>明白了锚点是什么，下面就通过<strong>三种不同的实现方法</strong>，看看锚点在Django博客项目中是如何应用的。</p>
 <h2 id="三种实现"><a href="#三种实现" class="headerlink" title="三种实现"></a>三种实现</h2><h3 id="html拼接"><a href="#html拼接" class="headerlink" title="html拼接"></a>html拼接</h3><p>锚点首先要实现的功能，就是<strong>当管理员点击消息通知时，浏览器视窗前往此通知的评论位置</strong>。</p>
 <p>因此首先修改文章详情页面，给渲染评论的<code>div</code>容器添加<code>id</code>属性：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 <span class="token comment">&lt;!-- 已有代码，遍历树形结构 --></span>
@@ -822,7 +822,7 @@
 
 <p>我们还是用<code>comment.id</code>来给每条评论赋予唯一的<code>id</code>值。注意<code>id</code>属性保持<strong>唯一性</strong>。前面在二级回复的<strong>Modal</strong>中用了<code>comment_&#123;&#123; comment.id &#125;&#125;</code>，这里千万不要重复了。</p>
 <p>然后修改通知列表模板，添加锚点：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/notice/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/notice/list.html
 
 ...
 &#123;% for notice in notices %&#125;
@@ -913,7 +913,7 @@
 </blockquote>
 <p>现在数据在<code>iframe</code>中了。但是我们需要刷新的是<code>iframe</code>的父页面啊，所以还要**继续把数据往父页面“扔”**。</p>
 <p>修改二级评论的模板：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/comment/reply.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/comment/reply.html
 
 ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
@@ -944,7 +944,7 @@
 <p>由于现在ajax获取的是json数据，因此用<code>e.code</code>获取视图返回的状态。</p>
 <p>旧代码用<code>parent.location.reload()</code>刷新了父页面。同样的，用<code>parent.abc()</code>可以调用父页面的<code>abc()</code>函数。这样就把数据传递到父页面里去了。</p>
 <p>这下就好说了。在父页面中（文章详情模板）添加需要执行锚点拼接的函数：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -974,7 +974,7 @@
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#x6f;&#64;&#102;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#100;&#x75;&#x73;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#x6f;&#64;&#102;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#115;&#97;&#105;&#112;&#x68;&#x6f;&#116;&#111;&#64;&#102;&#x6f;&#120;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x64;&#x75;&#115;&#97;&#105;&#112;&#x68;&#x6f;&#116;&#111;&#64;&#102;&#x6f;&#120;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1704,9 +1704,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947131"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -752,11 +752,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 4.2k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 4.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 16分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 18分钟 |
           </span>
   
           
@@ -1008,6 +1008,194 @@
   <span class="token key atrule">listFolded</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 列表默认折叠</span>
   <span class="token key atrule">hideLrc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>     <span class="token comment"># 隐藏歌词</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="中文版选项"><a href="#中文版选项" class="headerlink" title="中文版选项"></a>中文版选项</h3><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">默认</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id(编号)</td>
+<td align="center">require</td>
+<td align="center">歌曲ID /播放列表ID /专辑ID /搜索关键字</td>
+</tr>
+<tr>
+<td align="center">server(平台)</td>
+<td align="center">require</td>
+<td align="center">音乐平台：netease，tencent，kugou，xiami，baidu</td>
+</tr>
+<tr>
+<td align="center">type（类型）</td>
+<td align="center">require</td>
+<td align="center">song，playlist，album，search，artist</td>
+</tr>
+<tr>
+<td align="center">auto（支持类种 类）</td>
+<td align="center">options</td>
+<td align="center">音乐链接，支持：netease，tencent，xiami</td>
+</tr>
+<tr>
+<td align="center">fixed（固定模式）</td>
+<td align="center">false</td>
+<td align="center">启用固定模式，默认false</td>
+</tr>
+<tr>
+<td align="center">mini（迷你模式）</td>
+<td align="center">false</td>
+<td align="center">启用迷你模式,默认false</td>
+</tr>
+<tr>
+<td align="center">autoplay（自动播放）</td>
+<td align="center">false</td>
+<td align="center">音频自动播放，默认false</td>
+</tr>
+<tr>
+<td align="center">theme(主题颜色)</td>
+<td align="center">#2980b9</td>
+<td align="center">默认#2980b9</td>
+</tr>
+<tr>
+<td align="center">loop（循环）</td>
+<td align="center">all</td>
+<td align="center">播放器循环播放，值：“all”，one”，“none”</td>
+</tr>
+<tr>
+<td align="center">order(顺序)</td>
+<td align="center">list</td>
+<td align="center">播放器播放顺序，值：“list”，“random”</td>
+</tr>
+<tr>
+<td align="center">preload(加载)</td>
+<td align="center">auto</td>
+<td align="center">值：“none”，“metadata”，“’auto”</td>
+</tr>
+<tr>
+<td align="center">volume（声量）</td>
+<td align="center">0.7</td>
+<td align="center">默认音量，请注意播放器会记住用户设置，用户自己设置音量后默认音量将不起作用</td>
+</tr>
+<tr>
+<td align="center">mutex（限制）</td>
+<td align="center">true</td>
+<td align="center">防止同时播放多个玩家，在该玩家开始播放时暂停其他玩家</td>
+</tr>
+<tr>
+<td align="center">lrc-type（歌词）</td>
+<td align="center">0</td>
+<td align="center">歌词显示</td>
+</tr>
+<tr>
+<td align="center">list-folded（列表折叠）</td>
+<td align="center">false</td>
+<td align="center">指示列表是否应该首先折叠</td>
+</tr>
+<tr>
+<td align="center">list-max-height（最大高度）</td>
+<td align="center">340px</td>
+<td align="center">列出最大高度</td>
+</tr>
+<tr>
+<td align="center">storage-name（储存名称）</td>
+<td align="center">metingjs</td>
+<td align="center">存储播放器设置的localStorage键</td>
+</tr>
+</tbody></table>
+<h3 id="英文版选项"><a href="#英文版选项" class="headerlink" title="英文版选项"></a>英文版选项</h3><table>
+<thead>
+<tr>
+<th align="center">option</th>
+<th align="center">default</th>
+<th align="center">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="center">require</td>
+<td align="center">song id / playlist id / album id / search keyword</td>
+</tr>
+<tr>
+<td align="center">server</td>
+<td align="center">require</td>
+<td align="center">music platform: netease, tencent, kugou, xiami, baidu</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">require</td>
+<td align="center">song, playlist, album, search, artist</td>
+</tr>
+<tr>
+<td align="center">auto</td>
+<td align="center">options</td>
+<td align="center">music link, support: netease, tencent, xiami</td>
+</tr>
+<tr>
+<td align="center">fixed</td>
+<td align="center">false</td>
+<td align="center">enable fixed mode</td>
+</tr>
+<tr>
+<td align="center">mini</td>
+<td align="center">false</td>
+<td align="center">enable mini mode</td>
+</tr>
+<tr>
+<td align="center">autoplay</td>
+<td align="center">false</td>
+<td align="center">audio autoplay</td>
+</tr>
+<tr>
+<td align="center">theme</td>
+<td align="center">#2980b9</td>
+<td align="center">main color</td>
+</tr>
+<tr>
+<td align="center">loop</td>
+<td align="center">all</td>
+<td align="center">player loop play, values: ‘all’, ‘one’, ‘none’</td>
+</tr>
+<tr>
+<td align="center">order</td>
+<td align="center">list</td>
+<td align="center">player play order, values: ‘list’, ‘random’</td>
+</tr>
+<tr>
+<td align="center">preload</td>
+<td align="center">auto</td>
+<td align="center">values: ‘none’, ‘metadata’, ‘auto’</td>
+</tr>
+<tr>
+<td align="center">volume</td>
+<td align="center">0.7</td>
+<td align="center">default volume, notice that player will remember user setting, default volume will not work after user set volume themselves</td>
+</tr>
+<tr>
+<td align="center">mutex</td>
+<td align="center">true</td>
+<td align="center">prevent to play multiple player at the same time, pause other players when this player start play</td>
+</tr>
+<tr>
+<td align="center">lrc-type</td>
+<td align="center">0</td>
+<td align="center">lyric type</td>
+</tr>
+<tr>
+<td align="center">list-folded</td>
+<td align="center">false</td>
+<td align="center">indicate whether list should folded at first</td>
+</tr>
+<tr>
+<td align="center">list-max-height</td>
+<td align="center">340px</td>
+<td align="center">list max height</td>
+</tr>
+<tr>
+<td align="center">storage-name</td>
+<td align="center">metingjs</td>
+<td align="center">localStorage key that store player setting</td>
+</tr>
+</tbody></table>
 <h2 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h2><p>可以在<code>source/_posts/xxx.md</code>文件中设置<code>copyright</code>true或者false，单独设置某个文章的版权信息是否显示，也可以在主题文件夹下的<code>_config.yml</code>文件中的<code>copyright</code>属性设置true或者false对所有文章的版权信息进行显示隐藏控制</p>
 <h2 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h2><p>可以在<code>source/_posts/xxx.md</code>文件中设置<code>top: true</code>，将该文章放在首页的文章置顶栏目中，可以在主题文件夹下的<code>_config.yml</code>文件中的<code>topArticle</code>属性设置true或者false控制首页的文章置顶栏目显示和隐藏。</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
@@ -1115,7 +1303,7 @@
 </blockquote>
 <p>例如，我将该文件下的所有颜色设置为<code>skyblue</code>，显示效果如下<br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/120336/2/13322/273081/5f69b8d1E737e6277/8fdc796d2d3a82b3.png" class="lazyload placeholder" data-srcset="https://img13.360buyimg.com/ddimg/jfs/t1/120336/2/13322/273081/5f69b8d1E737e6277/8fdc796d2d3a82b3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="theme-color"></p>
 <p>代码高亮颜色，可以通过之前介绍的代码高亮进行更改</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>代码高亮如遇到花括号变成了<code>&amp;#123;&amp;#125;</code>这样的字符串，在根目录下输入npm install <a href="mailto:&#104;&#x65;&#x78;&#111;&#64;&#x34;&#46;&#50;&#x2e;&#49;">&#104;&#x65;&#x78;&#111;&#64;&#x34;&#46;&#50;&#x2e;&#49;</a>即可。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>代码高亮如遇到花括号变成了<code>&amp;#123;&amp;#125;</code>这样的字符串，在根目录下输入npm install <a href="mailto:&#104;&#x65;&#x78;&#111;&#x40;&#52;&#46;&#x32;&#x2e;&#49;">&#104;&#x65;&#x78;&#111;&#x40;&#52;&#46;&#x32;&#x2e;&#49;</a>即可。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -1852,9 +2040,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

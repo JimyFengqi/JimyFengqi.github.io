@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -924,7 +924,7 @@
 	cnt <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span> <span class="token comment">// 初始前缀和为 0，需将其计入出现次数</span>
 	ans<span class="token punctuation">,</span> pre <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
 	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> ch <span class="token operator">:=</span> <span class="token keyword">range</span> word <span class="token punctuation">&#123;</span>
-		pre <span class="token operator">^=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>ch <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token comment">// 计算当前前缀和</span>
+		pre <span class="token operator">^=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>ch <span class="token operator">-</span> <span class="token char">'a'</span><span class="token punctuation">)</span> <span class="token comment">// 计算当前前缀和</span>
 		ans <span class="token operator">+=</span> cnt<span class="token punctuation">[</span>pre<span class="token punctuation">]</span> <span class="token comment">// 所有字母均出现偶数次</span>
 		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1024</span><span class="token punctuation">;</span> i <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 枚举其中一个字母出现奇数次</span>
 			ans <span class="token operator">+=</span> cnt<span class="token punctuation">[</span>pre<span class="token operator">^</span>i<span class="token punctuation">]</span> <span class="token comment">// 反转第 i 个字母的出现次数的奇偶性</span>
@@ -971,12 +971,12 @@
               字符串
             </a>
           
-            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="">
-              哈希表
-            </a>
-          
             <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" class="">
               前缀和
+            </a>
+          
+            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="">
+              哈希表
             </a>
           
             <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="">
@@ -1702,9 +1702,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

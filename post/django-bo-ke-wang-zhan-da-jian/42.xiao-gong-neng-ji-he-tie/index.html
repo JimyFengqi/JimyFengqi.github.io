@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -831,7 +831,7 @@
 </ul>
 <p><code>gt</code>的原理也是类似。</p>
 <h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>模板得到上下文后，就要相应修改：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/detail.html
 
 ...
 
@@ -875,7 +875,7 @@
 context <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token string">'column'</span><span class="token punctuation">:</span> column<span class="token punctuation">,</span> <span class="token string">'order'</span><span class="token punctuation">:</span> order <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后在模板中通过<code>column</code>和<code>order</code>的值，控制按钮的样式：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">/list.html
 
 <span class="token comment">&lt;!-- 栏目 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">...</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>
@@ -904,12 +904,12 @@ context <span class="token operator">=</span> <span class="token punctuation">&#
 <h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><p>就是<a target="_blank" rel="noopener" href="https://www.dusaiphoto.com/">我的博客</a>顶部的“黑条”，它是所有板块的入口。</p>
 <p>如果导航栏也采用类似上面的<strong>传递值给模板</strong>来定位，那么要求所有的app都要传递同一个”标记”到模板中。理论上可行，但是也会导致app之间耦合得太紧，个人感觉不是好的实践。</p>
 <p>所以我采用了一种笨办法：直接在模板中读取当前的url，从而判断页面位置：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">/header.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">/header.html
 
 ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>  <span class="token punctuation">"</span>
              ...
-             &#123;% if <span class="token punctuation">'</span>/xxx<span class="token punctuation">'</span> in request.path %&#125;
+             &#123;% if '/xxx' in request.path %&#125;
              layui-this
              &#123;% endif %&#125;
              <span class="token punctuation">"</span></span>
@@ -923,7 +923,7 @@ context <span class="token operator">=</span> <span class="token punctuation">&#
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#97;&#x69;&#x70;&#104;&#x6f;&#x74;&#x6f;&#64;&#x66;&#111;&#x78;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#100;&#x75;&#115;&#97;&#x69;&#x70;&#104;&#x6f;&#x74;&#x6f;&#64;&#x66;&#111;&#x78;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#117;&#115;&#x61;&#x69;&#112;&#x68;&#x6f;&#116;&#111;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x64;&#117;&#115;&#x61;&#x69;&#112;&#x68;&#x6f;&#116;&#111;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -992,15 +992,16 @@ context <span class="token operator">=</span> <span class="token punctuation">&#
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/11.shan-chu-wen-zhang/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--41.期末总结</div>
+        <div class="title-text">Django博客网站搭建--11.删除文章</div>
       </div>
       <!-- <div class="content">
-        本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过
+        既然有了写文章的功能，那当然也必须要有删除文章的功能了。
+不安全的方式有了之前的学习做铺垫，删除文章实现起来就比较简单了
       </div> -->
     </a>
   </div>
@@ -1653,9 +1654,9 @@ context <span class="token operator">=</span> <span class="token punctuation">&#
 
 <meting-js
   class=""
-  server="netease"
+  server="tencent"
   type="playlist"
-  id="4888271555"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

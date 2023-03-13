@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -953,8 +953,8 @@ str<span class="token punctuation">.</span>foo  <span class="token comment">// u
 <li>简单对象（类型是<code>Object</code>）能通过对象字面量创建：</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>
-    firstName<span class="token operator">:</span> ‘Jane’<span class="token punctuation">,</span> 
-    lastName<span class="token operator">:</span> ‘Doe’
+    <span class="token literal-property property">firstName</span><span class="token operator">:</span> ‘Jane’<span class="token punctuation">,</span> 
+    <span class="token literal-property property">lastName</span><span class="token operator">:</span> ‘Doe’
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>上面的对象有两个属性：<code>firstName</code>属性的值是“Jane”，<code>lastName</code>属性的值是“Doe”。</p>
@@ -1130,15 +1130,15 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
 
 <p>因此最好假装只有一个零（正如我们看到假值时所做的那样：**-0 和 +0 都是假值**）。</p>
 <h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p><code>JavaScript</code>中有下列算数运算符：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">加<span class="token operator">:</span> number1 <span class="token operator">+</span> number2
-减<span class="token operator">:</span> number1 <span class="token operator">-</span> number2
-乘<span class="token operator">:</span> number1 <span class="token operator">*</span> number2
-除<span class="token operator">:</span> number1 <span class="token operator">/</span> number2
-模<span class="token operator">:</span> number1 <span class="token operator">%</span> number2
-自增<span class="token operator">:</span> <span class="token operator">++</span>variable<span class="token punctuation">,</span> variable<span class="token operator">++</span>
-自减<span class="token operator">:</span> –variable<span class="token punctuation">,</span> variable–
-负值<span class="token operator">:</span> <span class="token operator">-</span>value
-正值（转换为数字）<span class="token operator">:</span> <span class="token operator">+</span>value<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">加</span><span class="token operator">:</span> number1 <span class="token operator">+</span> number2
+<span class="token literal-property property">减</span><span class="token operator">:</span> number1 <span class="token operator">-</span> number2
+<span class="token literal-property property">乘</span><span class="token operator">:</span> number1 <span class="token operator">*</span> number2
+<span class="token literal-property property">除</span><span class="token operator">:</span> number1 <span class="token operator">/</span> number2
+<span class="token literal-property property">模</span><span class="token operator">:</span> number1 <span class="token operator">%</span> number2
+<span class="token literal-property property">自增</span><span class="token operator">:</span> <span class="token operator">++</span>variable<span class="token punctuation">,</span> variable<span class="token operator">++</span>
+<span class="token literal-property property">自减</span><span class="token operator">:</span> –variable<span class="token punctuation">,</span> variable–
+<span class="token literal-property property">负值</span><span class="token operator">:</span> <span class="token operator">-</span>value
+<span class="token literal-property property">正值（转换为数字）</span><span class="token operator">:</span> <span class="token operator">+</span>value<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>全局对象<code>Math</code>通过函数提供更多算数运算操作。</p>
 <p><code>JavaScript</code>中也有位运算符（例如：&amp;）。</p>
@@ -1471,7 +1471,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="十三、对象和继承"><a href="#十三、对象和继承" class="headerlink" title="十三、对象和继承"></a>十三、对象和继承</h2><p>和所有的值类型一样，对象有属性。事实上，你可以将对象当作一组属性的集合，每个属性都是一对（键和值）。键是字符串，值可以是任意<code>JavaScript</code>值。到目前为止，我们仅仅见过键是标识符的属性，因为点操作符处理的键必须为标识符。在这节，你讲见到另一种访问属性的方法，能将任意字符串作为键。</p>
 <h3 id="单个对象"><a href="#单个对象" class="headerlink" title="单个对象"></a>单个对象</h3><p>在<code>JavaScript</code>中，你可以直接创建对象，通过对象字面量：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> jane <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span>
 
     <span class="token function-variable function">describe</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token string">'use strict'</span><span class="token punctuation">;</span>
@@ -1502,7 +1502,7 @@ jane<span class="token punctuation">.</span>foo <span class="token operator">!==
 <span class="token string">'newProperty'</span> <span class="token keyword">in</span> jane   <span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="任意键属性"><a href="#任意键属性" class="headerlink" title="任意键属性"></a>任意键属性</h3><p>属性的键可以是任意字符串。到目前为止，我们看到的对象字面量中的和点操作符后的属性关键字。按这种方法你只能使用标识符。如果你想用其他任意字符串作为键名，你必须在对象字面量里加上引号，并使用方括号获取和设置属性。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string">'not an identifier'</span><span class="token operator">:</span> <span class="token number">123</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">'not an identifier'</span><span class="token operator">:</span> <span class="token number">123</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 obj<span class="token punctuation">[</span><span class="token string">'not an identifier'</span><span class="token punctuation">]</span>    <span class="token comment">//123</span>
 obj<span class="token punctuation">[</span><span class="token string">'not an identifier'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">456</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
@@ -1521,8 +1521,8 @@ jane<span class="token punctuation">[</span><span class="token string">'na'</spa
 
 <h3 id="方法内部的函数"><a href="#方法内部的函数" class="headerlink" title="方法内部的函数"></a>方法内部的函数</h3><p>每个函数都有一个特殊变量<code>this</code>。如果你在方法内部嵌入函数是很不方便的，因为你不能从函数中访问方法的<code>this</code>。下面是一个例子，我们调用<code>forEach</code>循环一个数组：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> jane <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span>
-    friends<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'Tarzan'</span><span class="token punctuation">,</span> <span class="token string">'Cheeta'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">friends</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'Tarzan'</span><span class="token punctuation">,</span> <span class="token string">'Cheeta'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token function-variable function">logHiToFriends</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token string">'use strict'</span><span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">friend</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -2399,9 +2399,9 @@ Math<span class="token punctuation">.</span><span class="token function">cos</sp
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

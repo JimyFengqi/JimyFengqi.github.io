@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -969,7 +969,7 @@ The total cost was 25, and this is the minimum possible.
 
     <span class="token comment">// 不用Integer.MAX_VALUE,因为Integer.MAX_VALUE + 正数 会溢出变为负数</span>
 
-    <span class="token keyword">private</span> <span class="token keyword">int</span> MAX_VALUE <span class="token operator">=</span> <span class="token number">99999999</span><span class="token punctuation">;</span> 
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token constant">MAX_VALUE</span> <span class="token operator">=</span> <span class="token number">99999999</span><span class="token punctuation">;</span> 
 
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mergeStones</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> stones<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
@@ -987,7 +987,7 @@ The total cost was 25, and this is the minimum possible.
 
             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> m <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> <span class="token operator">++</span>m<span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> MAX_VALUE<span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> m <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> <span class="token operator">++</span>m<span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span>
 
             <span class="token punctuation">&#125;</span>
 
@@ -1063,7 +1063,7 @@ The total cost was 25, and this is the minimum possible.
 
                 <span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span>
 
                 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token operator">=</span> i<span class="token punctuation">;</span> p <span class="token operator">&lt;</span> j<span class="token punctuation">;</span> p <span class="token operator">+=</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token comment">// 枚举分界点</span>
 
@@ -1133,12 +1133,12 @@ The total cost was 25, and this is the minimum possible.
         
         <div class="tags">
           
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
-            </a>
-          
             <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
               数组
+            </a>
+          
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
             </a>
           
         </div>
@@ -1862,9 +1862,9 @@ The total cost was 25, and this is the minimum possible.
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3947753"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

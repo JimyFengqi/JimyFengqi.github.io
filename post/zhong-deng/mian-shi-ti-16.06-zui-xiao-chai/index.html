@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -853,7 +853,7 @@
 <li>比较两个指针指向的数字的大小，并更新较小的那个的指针，使其向后移动一位。更新的过程顺便计算 ans</li>
 <li>最后返回 ans</li>
 </ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
     i <span class="token operator">=</span> j <span class="token operator">=</span> <span class="token number">0</span>
     ans <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
     <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums1<span class="token punctuation">)</span> <span class="token keyword">and</span> j <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -873,7 +873,7 @@
 <h2 id="母题-2"><a href="#母题-2" class="headerlink" title="母题 2"></a>母题 2</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你两个非空数组 nums1 和 nums2，让你从每个数组中分别挑一个，使得二者差的绝对值最小。</p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>数组没有说明是有序的，可以选择暴力。两两计算绝对值，返回最小的即可。</p>
 <p>代码：</p>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
     ans <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
     <span class="token keyword">for</span> num1 <span class="token keyword">in</span> nums1<span class="token punctuation">:</span>
         <span class="token keyword">for</span> num2 <span class="token keyword">in</span> nums2<span class="token punctuation">:</span>
@@ -899,7 +899,7 @@
 <li>空间复杂度：$O(1)$</li>
 </ul>
 <p>我们也可以使用堆来处理，代码更简单，逻辑更清晰。这里我们使用小顶堆，作用就是选出最小值。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">:</span>
     ans <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
     max_value <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">for</span> nums <span class="token keyword">in</span> matrix<span class="token punctuation">)</span>
     heap <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i<span class="token punctuation">,</span> nums <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">]</span>
@@ -930,7 +930,7 @@
 <h2 id="母题-5"><a href="#母题-5" class="headerlink" title="母题 5"></a>母题 5</h2><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你两个有序的非空数组 nums1 和 nums2，让你将两个数组合并，使得新的数组有序。</p>
 <p>LeetCode 地址： <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-sorted-array/">https://leetcode-cn.com/problems/merge-sorted-array/</a></p>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>和母题 1 类似。</p>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
     i <span class="token operator">=</span> j <span class="token operator">=</span> <span class="token number">0</span>
     ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums1<span class="token punctuation">)</span> <span class="token keyword">and</span> j <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -953,7 +953,7 @@
 </ul>
 <h2 id="母题-6"><a href="#母题-6" class="headerlink" title="母题 6"></a>母题 6</h2><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你 k 个有序的非空数组 nums1 和 nums2，让你将 k 个数组合并，使得新的数组有序。</p>
 <h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>和母题 5 类似。 只不过不是两个，而是多个。我们继续套用堆的思路。</p>
-<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">import</span> heapq
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> heapq
 
 
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -985,7 +985,7 @@
 <blockquote>
 <p>大家可以把母题 5 使用递归写一下。</p>
 </blockquote>
-<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token comment"># Definition for singly-linked list.</span>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
 <span class="token keyword">class</span> <span class="token class-name">ListNode</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>val <span class="token operator">=</span> x
@@ -1007,7 +1007,7 @@
 <li>时间复杂度：$O(N)$，其中 N 为两个链表中较短的那个的长度。</li>
 <li>空间复杂度：$O(N)$，其中 N 为两个链表中较短的那个的长度。</li>
 </ul>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token comment"># Definition for singly-linked list.</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
 <span class="token keyword">class</span> <span class="token class-name">ListNode</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>val <span class="token operator">=</span> x
@@ -1043,7 +1043,7 @@
 <h2 id="母题-8"><a href="#母题-8" class="headerlink" title="母题 8"></a>母题 8</h2><h3 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你 k 个有序的链表，让你将 k 个链表合并，使得新的链表有序。</p>
 <p>LeetCode 地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">https://leetcode-cn.com/problems/merge-k-sorted-lists/</a></p>
 <h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>和母题 7 类似，我们使用递归可以轻松解决。其实本质上就是</p>
-<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token comment"># Definition for singly-linked list.</span>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
 <span class="token keyword">class</span> <span class="token class-name">ListNode</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>val <span class="token operator">=</span> x
@@ -1072,7 +1072,7 @@
 <li>时间复杂度：$O(k * N)$，其中 N 为两个链表中较短的那个的长度</li>
 <li>空间复杂度：$O(max(k, N))$</li>
 </ul>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token comment"># Definition for singly-linked list.</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
 <span class="token keyword">class</span> <span class="token class-name">ListNode</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>val <span class="token operator">=</span> x
@@ -1881,9 +1881,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3947753"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

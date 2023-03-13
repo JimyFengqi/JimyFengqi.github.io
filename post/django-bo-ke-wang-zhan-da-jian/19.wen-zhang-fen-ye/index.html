@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -848,7 +848,7 @@
 </ul>
 <p>这里用到了另一种方法：在GET请求中，在url的末尾附上<code>?key=value</code>的键值对，视图中就可以通过<code>request.GET.get(&#39;key&#39;)</code>来查询<code>value</code>的值。</p>
 <p>然后改写模板，在最末尾的<code>&lt;/div&gt;</code>前面，加入分页的内容：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 
@@ -909,7 +909,7 @@
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#97;&#105;&#112;&#x68;&#x6f;&#x74;&#x6f;&#x40;&#x66;&#111;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#100;&#x75;&#115;&#97;&#105;&#112;&#x68;&#x6f;&#x74;&#x6f;&#x40;&#x66;&#111;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#x73;&#97;&#105;&#112;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x64;&#x75;&#x73;&#97;&#105;&#112;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -958,17 +958,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/4.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/16.chong-zhi-yong-hu-mi-ma/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--16.重置用户密码</div>
+        <div class="title-text">Django博客网站搭建--20.浏览量</div>
       </div>
       
       <!-- <div class="content">
-        随着技术的发展，验证用户身份的手段越来越多，指纹、面容、声纹应有尽有，但密码依然是最重要的手段。
-互联网处处都有密码的身
+        文章浏览量是所有社交类网站所必备的数据，足以显示其重要性了。
+博主可以通过浏览量来评估某篇文章的受欢迎程度，读者也能够通
       </div> -->
     </a>
   </div>
@@ -979,16 +979,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/18.shang-chuan-tou-xiang/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--18.上传头像</div>
+        <div class="title-text">Django博客网站搭建--15.用户的删除</div>
       </div>
       <!-- <div class="content">
-        到目前为止我们的博客处理的都是文字。现代互联网早就进入了“读图”时代，图片的维护、展示也就相当重要。
-上一章中预留了av
+        这一章将实现删除用户数据的功能。实际上删除用户和前面的删除文章是完全类似的，有了之前的铺垫，这一章会非常的轻松。
+权限与
       </div> -->
     </a>
   </div>
@@ -1641,9 +1641,9 @@
 
 <meting-js
   class=""
-  server="tencent"
+  server="netease"
   type="playlist"
-  id="8197627936"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -902,12 +902,12 @@
         
     <span class="token keyword">return</span> zero_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution1-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>math<span class="token punctuation">.</span></span><span class="token class-name">BigInteger</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution1-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>math<span class="token punctuation">.</span></span><span class="token class-name">BigInteger</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     
     <span class="token comment">// Calculate n!</span>
-    <span class="token class-name">BigInteger</span> nFactorial <span class="token operator">=</span> <span class="token class-name">BigInteger</span><span class="token punctuation">.</span>ONE<span class="token punctuation">;</span>
+    <span class="token class-name">BigInteger</span> nFactorial <span class="token operator">=</span> <span class="token class-name">BigInteger</span><span class="token punctuation">.</span><span class="token constant">ONE</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         nFactorial <span class="token operator">=</span> nFactorial<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
@@ -915,8 +915,8 @@
     <span class="token comment">// Count how many 0's are on the end.</span>
     <span class="token keyword">int</span> zeroCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>nFactorial<span class="token punctuation">.</span><span class="token function">mod</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>TEN<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        nFactorial <span class="token operator">=</span> nFactorial<span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>TEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>nFactorial<span class="token punctuation">.</span><span class="token function">mod</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span><span class="token constant">TEN</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span><span class="token constant">ZERO</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        nFactorial <span class="token operator">=</span> nFactorial<span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span><span class="token constant">TEN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         zeroCount<span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     
@@ -1936,9 +1936,9 @@ tens &#x3D; fives<span aria-hidden="true" class="line-numbers-rows"><span></span
 
 <meting-js
   class=""
-  server="tencent"
+  server="kugou"
   type="playlist"
-  id="8197627936"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

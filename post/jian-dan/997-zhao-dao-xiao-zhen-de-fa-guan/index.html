@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -922,7 +922,7 @@
 <li>遍历 trust，如果 trust[i] 为 [a, b] 说明 a 信任 b，那么更新 a 的出度 + 1，b 的入读 + 1。</li>
 <li>遍历所有节点，将满足<strong>出度为0，入度为 N - 1的节点</strong>输出。</li>
 </ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
      <span class="token keyword">def</span> <span class="token function">findJudge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> N<span class="token punctuation">,</span> trust<span class="token punctuation">)</span><span class="token punctuation">:</span>
         in_degree <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>N <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
         out_degree <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>N <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
@@ -941,7 +941,7 @@
 </ul>
 <h2 id="一个数组"><a href="#一个数组" class="headerlink" title="一个数组"></a>一个数组</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>上面的分析中指出了<strong>法官👩‍⚖️ 实际上就是出度为0，入度为 N - 1的节点</strong>。这固然没错，然而我们仍然可以换个角度来思考，<strong>法官👩‍⚖️ 同样是 入度 - 出度 == N - 1 的点</strong>，并且不是法官的人不可能是。</p>
 <p>这样我们无需同时维护入度和出度的信息，转而维护<code>入读和出度的差值</code>即可。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
      <span class="token keyword">def</span> <span class="token function">findJudge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> N<span class="token punctuation">,</span> trust<span class="token punctuation">)</span><span class="token punctuation">:</span>
         count <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>N <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">for</span> i<span class="token punctuation">,</span> j <span class="token keyword">in</span> trust<span class="token punctuation">:</span>
@@ -1734,9 +1734,9 @@
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

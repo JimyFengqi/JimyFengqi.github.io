@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -981,10 +981,10 @@ public:
     stack <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
     str <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
     <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'('</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'('</span> <span class="token punctuation">&#123;</span>
             stack <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> str<span class="token punctuation">)</span>
             str <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">')'</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">')'</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">for</span> j<span class="token punctuation">,</span> n <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">&#123;</span>
                 str<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> str<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> str<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> str<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
             <span class="token punctuation">&#125;</span>
@@ -1179,9 +1179,9 @@ public:
     pair <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
     stack <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
     <span class="token keyword">for</span> i<span class="token punctuation">,</span> b <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token string">'('</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token char">'('</span> <span class="token punctuation">&#123;</span>
             stack <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token string">')'</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token char">')'</span> <span class="token punctuation">&#123;</span>
             j <span class="token operator">:=</span> stack<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
             stack <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
             pair<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> pair<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">,</span> i
@@ -1190,7 +1190,7 @@ public:
 
     ans <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
     <span class="token keyword">for</span> i<span class="token punctuation">,</span> step <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">+=</span> step <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'('</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">')'</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'('</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">')'</span> <span class="token punctuation">&#123;</span>
             i <span class="token operator">=</span> pair<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
             step <span class="token operator">=</span> <span class="token operator">-</span>step
         <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
@@ -1267,12 +1267,12 @@ public:
         
         <div class="tags">
           
-            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
-              字符串
-            </a>
-          
             <a href="/tags/%E6%A0%88/" class="">
               栈
+            </a>
+          
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
+              字符串
             </a>
           
         </div>
@@ -1994,9 +1994,9 @@ public:
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -1008,18 +1008,18 @@
 <h3 id="4-7-分组小括号：推荐使用"><a href="#4-7-分组小括号：推荐使用" class="headerlink" title="4.7 分组小括号：推荐使用"></a>4.7 分组小括号：推荐使用</h3><p>除非作者和<code>reviewer</code>都认为去掉小括号也不会使代码被误解，或是去掉小括号能让代码更易于阅读，否则我们不应该去掉小括号。我们没有理由假设读者能记住整个Java运算符优先级表。</p>
 <h3 id="4-8-特殊结构"><a href="#4-8-特殊结构" class="headerlink" title="4.8 特殊结构"></a>4.8 特殊结构</h3><h4 id="4-8-1-枚举类型"><a href="#4-8-1-枚举类型" class="headerlink" title="4.8.1 枚举类型"></a>4.8.1 枚举类型</h4><p>枚举常量间用逗号隔开，换行是可选的。而且还允许附加的空行（通常只有一个）。以下就是一种可能性的示例：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">enum</span> <span class="token class-name">Answer</span> <span class="token punctuation">&#123;</span>
-    YES <span class="token punctuation">&#123;</span>
+    <span class="token constant">YES</span> <span class="token punctuation">&#123;</span>
         <span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">return</span> <span class="token string">"yes"</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 
-    NO<span class="token punctuation">,</span>
-    MAYBE
+    <span class="token constant">NO</span><span class="token punctuation">,</span>
+    <span class="token constant">MAYBE</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>没有方法和Javadoc的枚举类可写成数组初始化的格式：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">enum</span> <span class="token class-name">Suit</span> <span class="token punctuation">&#123;</span> CLUBS<span class="token punctuation">,</span> HEARTS<span class="token punctuation">,</span> SPADES<span class="token punctuation">,</span> DIAMONDS <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">enum</span> <span class="token class-name">Suit</span> <span class="token punctuation">&#123;</span> <span class="token constant">CLUBS</span><span class="token punctuation">,</span> <span class="token constant">HEARTS</span><span class="token punctuation">,</span> <span class="token constant">SPADES</span><span class="token punctuation">,</span> <span class="token constant">DIAMONDS</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>由于枚举类也是一个类，因此所有适用于其它类的格式规则也适用于枚举类。</p>
 <h4 id="4-8-2-变量声明"><a href="#4-8-2-变量声明" class="headerlink" title="4.8.2 变量声明"></a>4.8.2 变量声明</h4><h5 id="4-8-2-1-每次声明一个变量"><a href="#4-8-2-1-每次声明一个变量" class="headerlink" title="4.8.2.1 每次声明一个变量"></a>4.8.2.1 每次声明一个变量</h5><p>不要使用组合声明。例如：<code>int a, b;</code>是不允许的。</p>
@@ -1102,12 +1102,12 @@
 <h4 id="5-2-4-常量名"><a href="#5-2-4-常量名" class="headerlink" title="5.2.4 常量名"></a>5.2.4 常量名</h4><p>常量名命名模式为<code>CONSTANT_CASE</code>，全部字母大写，用下划线分隔单词。那到底什么算是一个常量呢？</p>
 <p>每个常量都是一个静态<code>final</code>字段，其内容是不可变的，且没有可检测的副作用。这包括原始类型、字符串、不可变类型和不可变类型的不可变集合。如果任何一个实例的观测状态是可变的，则它肯定不会是一个常量。只是永远不打算改变对象也是不够的。例如：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 常量</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> NUMBER <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">ImmutableList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> NAMES <span class="token operator">=</span> <span class="token class-name">ImmutableList</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Ed"</span><span class="token punctuation">,</span> <span class="token string">"Ann"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">ImmutableMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">></span></span> AGES <span class="token operator">=</span> <span class="token class-name">ImmutableMap</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Ed"</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">"Ann"</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Joiner</span> COMMA_JOINER <span class="token operator">=</span> <span class="token class-name">Joiner</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 因为Joiner是不可变的</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">SomeMutableType</span><span class="token punctuation">[</span><span class="token punctuation">]</span> EMPTY_ARRAY <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">enum</span> <span class="token class-name">SomeEnum</span> <span class="token punctuation">&#123;</span> ENUM_CONSTANT <span class="token punctuation">&#125;</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">NUMBER</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">ImmutableList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token constant">NAMES</span> <span class="token operator">=</span> <span class="token class-name">ImmutableList</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Ed"</span><span class="token punctuation">,</span> <span class="token string">"Ann"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">ImmutableMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">></span></span> <span class="token constant">AGES</span> <span class="token operator">=</span> <span class="token class-name">ImmutableMap</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Ed"</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">"Ann"</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Joiner</span> <span class="token constant">COMMA_JOINER</span> <span class="token operator">=</span> <span class="token class-name">Joiner</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token char">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 因为Joiner是不可变的</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">SomeMutableType</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token constant">EMPTY_ARRAY</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">enum</span> <span class="token class-name">SomeEnum</span> <span class="token punctuation">&#123;</span> <span class="token constant">ENUM_CONSTANT</span> <span class="token punctuation">&#125;</span>
 
 <span class="token comment">// 非常量</span>
 <span class="token keyword">static</span> <span class="token class-name">String</span> nonFinal <span class="token operator">=</span> <span class="token string">"non-final"</span><span class="token punctuation">;</span>
@@ -1981,9 +1981,9 @@ CREATE TAB
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3947131"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

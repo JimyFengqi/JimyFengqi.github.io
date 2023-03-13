@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -887,7 +887,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>很简单吧。剩下的就是专心写前端代码了。</p>
 <h3 id="JS与Ajax"><a href="#JS与Ajax" class="headerlink" title="JS与Ajax"></a>JS与Ajax</h3><p>由于校验数据保存在浏览器中，因此前端的工作较多。</p>
 <p>先把完整代码贴出来（讲解在后面）：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -901,7 +901,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-outline-danger<span class="token punctuation">"</span></span>
             <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
             <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">validate_is_like</span><span class="token punctuation">(</span>
-                     <span class="token string">'&#123;% url '</span>article<span class="token operator">:</span>increase_likes<span class="token string">' article.id %&#125;'</span><span class="token punctuation">,</span>
+                     <span class="token string">'&#123;% url '</span><span class="token literal-property property">article</span><span class="token operator">:</span>increase_likes<span class="token string">' article.id %&#125;'</span><span class="token punctuation">,</span>
                      <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> article<span class="token punctuation">.</span>id <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
                      <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> article<span class="token punctuation">.</span>likes <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
                      <span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span>
@@ -923,7 +923,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token comment">&lt;!-- 以下均为新代码 --></span>
 
 <span class="token comment">&lt;!-- csrf token --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>csrf.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'csrf.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
     <span class="token comment">// 点赞功能主函数</span>
     <span class="token keyword">function</span> <span class="token function">validate_is_like</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> id<span class="token punctuation">,</span> likes</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -996,12 +996,12 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 &#123;% endblock script %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>代码内容很多，接下来拆分讲解。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 新增点赞代码 --></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- 新增点赞代码 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mt-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-outline-danger<span class="token punctuation">"</span></span>
             <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
             <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">validate_is_like</span><span class="token punctuation">(</span>
-                     <span class="token string">'&#123;% url '</span>article<span class="token operator">:</span>increase_likes<span class="token string">' article.id %&#125;'</span><span class="token punctuation">,</span>
+                     <span class="token string">'&#123;% url '</span><span class="token literal-property property">article</span><span class="token operator">:</span>increase_likes<span class="token string">' article.id %&#125;'</span><span class="token punctuation">,</span>
                      <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> article<span class="token punctuation">.</span>id <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
                      <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> article<span class="token punctuation">.</span>likes <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
                      <span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span>
@@ -1017,7 +1017,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>上面的 HTML 代码功能很简单，提供一个点赞的按钮，点击此按钮时会触发叫做<code>validate_is_like</code>的 JavaScript 函数。<strong>特别需要注意</strong>的是 <code>&#39;&#123;% url 'article:increase_likes' article.id %&#125;&#39;</code> 都是用的单引号，这里千万不能用双引号，原因请读者思考一下。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>csrf.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'csrf.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>还记得<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial/blob/master/static/csrf.js">csrf.js</a>吗？我们在多级评论章节已经将它引入了，目的是让 Ajax 也能通过 csrf 校验。如果还没有这个文件的请点击链接下载。</p>
 <p>接下来就是占据最多版面的函数<code>validate_is_like()</code>，我们来拆分里面的内容。</p>
@@ -1134,7 +1134,7 @@ $<span class="token punctuation">.</span><span class="token function">post</span
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#117;&#115;&#97;&#105;&#112;&#104;&#x6f;&#x74;&#x6f;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#x64;&#117;&#115;&#97;&#105;&#112;&#104;&#x6f;&#x74;&#x6f;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#x61;&#x69;&#x70;&#x68;&#x6f;&#116;&#x6f;&#64;&#x66;&#111;&#x78;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#100;&#x75;&#115;&#x61;&#x69;&#x70;&#x68;&#x6f;&#116;&#x6f;&#64;&#x66;&#111;&#x78;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1183,17 +1183,16 @@ $<span class="token punctuation">.</span><span class="token function">post</span
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/37.ri-zhi-ji-lu/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/36.zi-dong-hua-ce-shi/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--37.日志记录</div>
+        <div class="title-text">Django博客网站搭建--36.自动化测试</div>
       </div>
       
       <!-- <div class="content">
-        上一章学习了自动化测试，很好，现在我们可以绞尽脑汁写出一份全面的测试，来保证代码永远健康了。
-话虽如此，但是作为一个独立
+        测试是伴随着开发进行的，开发有多久，测试就要多久。本教程已经进行了30多章了，都是如何测试的？当然是runserver啦
       </div> -->
     </a>
   </div>
@@ -1204,15 +1203,15 @@ $<span class="token punctuation">.</span><span class="token function">post</span
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/40.jiang-xiang-mu-bu-shu-dao-yun-fu-wu-qi/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--40.将项目部署到云服务器</div>
+        <div class="title-text">Django博客网站搭建--41.期末总结</div>
       </div>
       <!-- <div class="content">
-        我们的博客虽然还有很多不完善的地方，但是没关系，越早把它部署到互联网上，才能越早发现线上特有的问题。现在也提倡渐进式开发
+        本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过
       </div> -->
     </a>
   </div>
@@ -1865,9 +1864,9 @@ $<span class="token punctuation">.</span><span class="token function">post</span
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

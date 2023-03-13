@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -880,7 +880,7 @@
 
     <span class="token keyword">while</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> input<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isOperation</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token char">'0'</span><span class="token punctuation">;</span>
 
         index<span class="token operator">++</span><span class="token punctuation">;</span>
 
@@ -936,15 +936,15 @@
 
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'+'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'-'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">-</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'*'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
 
@@ -958,7 +958,7 @@
 
 <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">isOperation</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token char">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'*'</span><span class="token punctuation">;</span>
 
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -997,7 +997,7 @@
 
     <span class="token keyword">while</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> input<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isOperation</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> input<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token char">'0'</span><span class="token punctuation">;</span>
 
         index<span class="token operator">++</span><span class="token punctuation">;</span>
 
@@ -1053,15 +1053,15 @@
 
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'+'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'-'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">-</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'*'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
 
@@ -1075,7 +1075,7 @@
 
 <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">isOperation</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token char">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'*'</span><span class="token punctuation">;</span>
 
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1131,13 +1131,13 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
 
 也就是计算 <span class="token number">3</span> <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">5</span> 的解
 
-分成 <span class="token number">3</span> 和 <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">5</span> 两部分，<span class="token number">3</span> 对应的下标是 <span class="token number">1</span> ，对应的运算符就是 opList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'-'</span> 。
+分成 <span class="token number">3</span> 和 <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">5</span> 两部分，<span class="token number">3</span> 对应的下标是 <span class="token number">1</span> ，对应的运算符就是 opList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'-'</span> 。
 
 也就是计算 <span class="token number">3</span> <span class="token operator">-</span> <span class="token number">20</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">17</span>
 
     
 
-分成 <span class="token number">3</span> <span class="token operator">-</span> <span class="token number">4</span> 和 <span class="token number">5</span> 两部分，<span class="token number">4</span> 的下标是 <span class="token number">2</span> ，对应的运算符就是 opList<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'*'</span>。
+分成 <span class="token number">3</span> <span class="token operator">-</span> <span class="token number">4</span> 和 <span class="token number">5</span> 两部分，<span class="token number">4</span> 的下标是 <span class="token number">2</span> ，对应的运算符就是 opList<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'*'</span>。
 
 也就是计算 <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">5</span>
 
@@ -1177,7 +1177,7 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
 
         <span class="token punctuation">&#125;</span>
 
-        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+        num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token char">'0'</span><span class="token punctuation">;</span>
 
     <span class="token punctuation">&#125;</span>
 
@@ -1263,15 +1263,15 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
 
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'+'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'-'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">-</span> num2<span class="token punctuation">;</span>
 
-        <span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token char">'*'</span><span class="token operator">:</span>
 
             <span class="token keyword">return</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
 
@@ -1285,7 +1285,7 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
 
 <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">isOperation</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> c <span class="token operator">==</span> <span class="token char">'+'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'-'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'*'</span><span class="token punctuation">;</span>
 
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1346,24 +1346,24 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
         
         <div class="tags">
           
-            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
-              递归
-            </a>
-          
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
               字符串
-            </a>
-          
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
             </a>
           
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
             </a>
           
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
+            </a>
+          
             <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" class="">
               记忆化搜索
+            </a>
+          
+            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
+              递归
             </a>
           
         </div>
@@ -1402,17 +1402,17 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/15.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/zhong-deng/240-sou-suo-er-wei-ju-zhen-ii/" class="post-nav-link">
+    <a href="/post/kun-nan/239-hua-dong-chuang-kou-zui-da-zhi/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">240-搜索二维矩阵 II(Search a 2D Matrix II)</div>
+        <div class="title-text">239-滑动窗口最大值(Sliding Window Maximum)</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/search-a-2d-matrix-i
+原文链接: https://leetcode-cn.com/problems/sliding-window-maxim
       </div> -->
     </a>
   </div>
@@ -1423,18 +1423,16 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/jian-dan/242-you-xiao-de-zi-mu-yi-wei-ci/" class="post-nav-link">
+    <a href="/post/zhong-deng/240-sou-suo-er-wei-ju-zhen-ii/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">242-有效的字母异位词(Valid Anagram)</div>
+        <div class="title-text">240-搜索二维矩阵 II(Search a 2D Matrix II)</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/valid-anagram
-
-英文原文G
+原文链接: https://leetcode-cn.com/problems/search-a-2d-matrix-i
       </div> -->
     </a>
   </div>
@@ -2087,9 +2085,9 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

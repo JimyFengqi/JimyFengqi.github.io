@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -896,7 +896,7 @@
 <p><strong>算法</strong></p>
 <p>假设前三个点分别是 <code>p1, p2, p3</code>，并且  <code>p2</code> 与 <code>p3</code> 在最终的矩形中处于对角位置。那么第四个点一定是 <code>p4 = p2 + p3 - p1</code>（向量计算），因为 <code>p1, p2, p4, p3</code> 一定形成一个平行四边形，满足 <code>p1 + (p2 - p1) + (p3 - p1) = p4</code>。</p>
 <p>如果计算得到的第四个点存在于给定的点集中（我们可以使用一个 <code>HashSet</code> 来判定是否存在），那么接下来我们应该判定平行四边形的某一个角的度数是否为 90 度。最简单的判定方法就是计算向量 <code>(p2 - p1)</code> 与 <code>(p3 - p1)</code> 的点积。（另一种方法是我们把它们都规范化成长度为 1 的向量，然后检查其中一个是否与另一个旋转 90 度相等）</p>
-<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[hEzYRLSC-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token class-name">Point</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[hEzYRLSC-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token class-name">Point</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">minAreaFreeRect</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> points<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -909,7 +909,7 @@
             pointSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
 
-        <span class="token keyword">double</span> ans <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+        <span class="token keyword">double</span> ans <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token class-name">Point</span> p1 <span class="token operator">=</span> <span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">!=</span> i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -931,7 +931,7 @@
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
 
-        <span class="token keyword">return</span> ans <span class="token operator">&lt;</span> <span class="token class-name">Double</span><span class="token punctuation">.</span>MAX_VALUE <span class="token operator">?</span> ans <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> ans <span class="token operator">&lt;</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span> <span class="token operator">?</span> ans <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-python" data-language="python"><div class="caption"><span>[hEzYRLSC-Python]</span></div><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -967,7 +967,7 @@
 <p><strong>算法</strong></p>
 <p>对于每一个点对，按照它们的 <code>中点</code> 与 <code>中点距</code> 进行分类。我们只需要记录其中一个点 <code>P</code> 就可以了，因为另一个点可以计算得出 <code>P&#39; = 2 * center - P</code>（向量计算）。</p>
 <p>对于每对 <code>中点</code> 与 <code>中点距</code>，我们检查每一个可行的矩形（假设两个点对分别为 <code>P, P&#39;, Q, Q&#39;</code>）。这个矩形的面积 <code>dist(P, Q) * dist(P, Q&#39;)</code> 可作为一个候选答案。</p>
-<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[DYbWiAKp-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token class-name">Point</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[DYbWiAKp-Java]</span></div><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token class-name">Point</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">minAreaFreeRect</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> points<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -991,7 +991,7 @@
                 seen<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>r2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>center<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
 
-        <span class="token keyword">double</span> ans <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+        <span class="token keyword">double</span> ans <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Point</span><span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Point</span><span class="token punctuation">></span><span class="token punctuation">></span></span> info<span class="token operator">:</span> seen<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Point</span> center<span class="token operator">:</span> info<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token comment">// center is twice actual</span>
                 <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Point</span><span class="token punctuation">></span></span> candidates <span class="token operator">=</span> info<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>center<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1000,16 +1000,16 @@
                     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> clen<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                         <span class="token class-name">Point</span> <span class="token class-name">P</span> <span class="token operator">=</span> candidates<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
                         <span class="token class-name">Point</span> <span class="token class-name">Q</span> <span class="token operator">=</span> candidates<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token class-name">Point</span> Q2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>center<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        Q2<span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token class-name">Q</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token class-name">Q</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">double</span> area <span class="token operator">=</span> <span class="token class-name">P</span><span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span><span class="token class-name">Q</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">P</span><span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span>Q2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">Point</span> <span class="token constant">Q2</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token constant">Q2</span><span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token class-name">Q</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token class-name">Q</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">double</span> area <span class="token operator">=</span> <span class="token class-name">P</span><span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span><span class="token class-name">Q</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">P</span><span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span><span class="token constant">Q2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                         <span class="token keyword">if</span> <span class="token punctuation">(</span>area <span class="token operator">&lt;</span> ans<span class="token punctuation">)</span>
                             ans <span class="token operator">=</span> area<span class="token punctuation">;</span>
                     <span class="token punctuation">&#125;</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
 
-        <span class="token keyword">return</span> ans <span class="token operator">&lt;</span> <span class="token class-name">Double</span><span class="token punctuation">.</span>MAX_VALUE <span class="token operator">?</span> ans <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> ans <span class="token operator">&lt;</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span> <span class="token operator">?</span> ans <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-python" data-language="python"><div class="caption"><span>[DYbWiAKp-Python]</span></div><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1067,12 +1067,12 @@
         
         <div class="tags">
           
-            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
-              数组
-            </a>
-          
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
+            </a>
+          
+            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
+              数组
             </a>
           
             <a href="/tags/%E5%87%A0%E4%BD%95/" class="">
@@ -1800,7 +1800,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3302755"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

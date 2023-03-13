@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -959,7 +959,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 </blockquote>
 <h3 id="文章详情模板"><a href="#文章详情模板" class="headerlink" title="文章详情模板"></a>文章详情模板</h3><p>到最后一步了，坚持。所有后台的功能已经写完了，就差把所有这些展现到页面中了。</p>
 <p>修改文章详情页面：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -975,7 +975,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     &#123;% if user.is_authenticated %&#125;
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> 
-                <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>comment:post_comment<span class="token punctuation">'</span> article.id %&#125;<span class="token punctuation">"</span></span> 
+                <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'comment:post_comment' article.id %&#125;<span class="token punctuation">"</span></span> 
                 <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span>
             <span class="token punctuation">></span></span>
             &#123;% csrf_token %&#125;
@@ -1000,7 +1000,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     &#123;% else %&#125;
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row justify-content-center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            请<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>userprofile:login<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>后回复
+            请<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'userprofile:login' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>后回复
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
     &#123;% endif %&#125;
@@ -1065,7 +1065,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>如果你没有看本章代码，而是完全靠自己完成了评论功能，那么恭喜你获得了<strong>“Django入门程序员”</strong>的称号！不要小看“入门”两字，万事开头难嘛。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#117;&#115;&#97;&#x69;&#x70;&#x68;&#x6f;&#116;&#111;&#64;&#102;&#111;&#120;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#100;&#117;&#115;&#97;&#x69;&#x70;&#x68;&#x6f;&#116;&#111;&#64;&#102;&#111;&#120;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#x6f;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#100;&#x75;&#115;&#97;&#x69;&#x70;&#104;&#x6f;&#116;&#x6f;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 <blockquote>
@@ -1145,16 +1145,15 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/15.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/27.wen-zhang-lan-mu/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/28.wen-zhang-biao-qian/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--27.文章栏目</div>
+        <div class="title-text">Django博客网站搭建--28.文章标签</div>
       </div>
       <!-- <div class="content">
-        博客的文章类型通常不止一种：有时候你会写高深莫测的技术文章，有时候又纯粹只记录一下当天的心情。
-因此对文章的分类就显得相
+        “标签”是作者从文章中提取的核心词汇，其他用户可以通过标签快速了解文章的关注点。每一篇文章的标签可能都不一样，并且还可能
       </div> -->
     </a>
   </div>
@@ -1807,9 +1806,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3302755"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

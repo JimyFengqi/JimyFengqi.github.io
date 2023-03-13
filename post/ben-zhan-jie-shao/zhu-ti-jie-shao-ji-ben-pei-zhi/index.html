@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -844,7 +844,7 @@
   <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'default'</span> <span class="token comment"># default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>另外，当你使用的是prismjs作为代码高亮的话,你还可以在单独的文章中设置代码高亮主题，这样可以实现不同的页面，有不同的代码高亮主题，文章中设置代码如下</p>
 <p>title: Hexo主题–Bamboo介绍<br>date: 2021-01-5 23:28<br>swiper: true<br>swiperImg: ‘/medias/11.jpg’<br>img: ‘/medias/7.jpg’<br>categories: 前端<br>tags: [Hexo, hexo-theme-bamboo]<br>top: true<br>prismjs: dark # 设置该篇文章的代码高亮主题为dark</p></div><div class="tab-pane" id="tab-2-3"><p>如果使用hexo-prism-plugin这个Hexo插件来做代码高亮，安装命令如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i <span class="token parameter variable">-S</span> hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后，修改 Hexo 根目录下的_config.yml 文件中的 highlight.enable 的值为 false，prismjs.enable值为false, 并新增该插件相关的配置，主要配置如下：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
@@ -860,20 +860,20 @@
   custom_css<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个插件目前渲染有点小问题，代码高亮如遇到花括号变成了&#123;&#125;这样的字符串，以下方式可解决：<br>将node_modules\hexo-prism-plugin\src\index.js中的map改为如下</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token string">'&amp;#39;'</span><span class="token operator">:</span> <span class="token string">'\''</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;amp;'</span><span class="token operator">:</span> <span class="token string">'&amp;'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;gt;'</span><span class="token operator">:</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;lt;'</span><span class="token operator">:</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;quot;'</span><span class="token operator">:</span> <span class="token string">'"'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;#123;'</span><span class="token operator">:</span> <span class="token string">'&#123;'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;#125;'</span><span class="token operator">:</span> <span class="token string">'&#125;'</span>
+  <span class="token string-property property">'&amp;#39;'</span><span class="token operator">:</span> <span class="token string">'\''</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;amp;'</span><span class="token operator">:</span> <span class="token string">'&amp;'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;gt;'</span><span class="token operator">:</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;lt;'</span><span class="token operator">:</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;quot;'</span><span class="token operator">:</span> <span class="token string">'"'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;#123;'</span><span class="token operator">:</span> <span class="token string">'&#123;'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'&amp;#125;'</span><span class="token operator">:</span> <span class="token string">'&#125;'</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后重启服务，hexo clean &amp;&amp; hexo s即可<br>卸载命令如下，如果你安装了此插件，后来想使用前两种高亮，请先卸载此插件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> un hexo-install prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></div></div>
 
 
 <p>这个主题采用的是<a target="_blank" rel="noopener" href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a>这个Hexo插件来做代码高亮，安装命令如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i <span class="token parameter variable">-S</span> hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后，修改 Hexo 根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并新增 <code>prism</code> 插件相关的配置，主要配置如下：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
@@ -885,7 +885,7 @@
   custom_css<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>本主题中还使用到了 <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a> 的 Hexo 插件来做内容搜索，安装命令如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span>
@@ -1038,7 +1038,7 @@ books   <span class="token comment">#书籍</span><span aria-hidden="true" class
 <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></div></div>
 
 <h3 id="中文链接转拼音（可选的）"><a href="#中文链接转拼音（可选的）" class="headerlink" title="中文链接转拼音（可选的）"></a>中文链接转拼音（可选的）</h3><p>如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用 <a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin">hexo-permalink-pinyin</a> Hexo 插件使在生成文章时生成中文拼音的永久链接。<br>安装命令如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-permalink-pinyin --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink_pinyin</span><span class="token punctuation">:</span>
@@ -1048,7 +1048,7 @@ books   <span class="token comment">#书籍</span><span aria-hidden="true" class
 <p><strong>注</strong>：除了此插件外，<a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a> 插件也可以生成非中文的链接。</p>
 </blockquote>
 <h3 id="添加-RSS-订阅支持（可选的）"><a href="#添加-RSS-订阅支持（可选的）" class="headerlink" title="添加 RSS 订阅支持（可选的）"></a>添加 RSS 订阅支持（可选的）</h3><p>本主题中还使用到了 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 的 Hexo 插件来做 <code>RSS</code>，安装命令如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">feed</span><span class="token punctuation">:</span>
@@ -1802,9 +1802,9 @@ books   <span class="token comment">#书籍</span><span aria-hidden="true" class
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3428290"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

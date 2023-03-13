@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -1036,7 +1036,7 @@ LOGGING <span class="token operator">=</span> <span class="token punctuation">&#
 <li><code>backupCount</code>：日志文件保存日期为30天</li>
 </ul>
 <p>接下来把系统时间往后调一天，然后重新启动服务器：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python manage.py runserver --noreload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python manage.py runserver <span class="token parameter variable">--noreload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>注意这次启动有点不一样</strong>，后面有个<code>--noreload</code>后缀。这是因为通常Django的调试服务器运行时会顺带启动重载器，所以每当重载器检测到代码有变化后，会自动重启服务器，相当的方便。但问题是分割文件与重载器同时操作日志文件会产生冲突，因此这里一定要用<code>--noreload</code>暂时将重载器禁止掉。</p>
 <p>然后就可以愉快的刷几条消息到文件中啦。你会发现老日志已经更名为<code>debug.log.2019-07-17</code>了，而刚刷的新消息则保存在<code>debug.log</code>中。</p>
@@ -1068,7 +1068,7 @@ logger <span class="token operator">=</span> logging<span class="token punctuati
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#x61;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#64;&#102;&#x6f;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#100;&#x75;&#x73;&#x61;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#64;&#102;&#x6f;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#117;&#x73;&#97;&#105;&#x70;&#x68;&#x6f;&#x74;&#111;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x64;&#117;&#x73;&#97;&#105;&#x70;&#x68;&#x6f;&#x74;&#111;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1117,16 +1117,16 @@ logger <span class="token operator">=</span> logging<span class="token punctuati
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/36.zi-dong-hua-ce-shi/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--36.自动化测试</div>
+        <div class="title-text">Django博客网站搭建--41.期末总结</div>
       </div>
       
       <!-- <div class="content">
-        测试是伴随着开发进行的，开发有多久，测试就要多久。本教程已经进行了30多章了，都是如何测试的？当然是runserver啦
+        本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过
       </div> -->
     </a>
   </div>
@@ -1137,16 +1137,15 @@ logger <span class="token operator">=</span> logging<span class="token punctuati
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/39.dian-zan-gong-neng/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/40.jiang-xiang-mu-bu-shu-dao-yun-fu-wu-qi/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--39.点赞功能</div>
+        <div class="title-text">Django博客网站搭建--40.将项目部署到云服务器</div>
       </div>
       <!-- <div class="content">
-        假设你的博客已经顺利部署到了线上。你写了很多好文章，和粉丝们互动并感受成就感。
-现在你想更进一步，努力提高文章质量，使其
+        我们的博客虽然还有很多不完善的地方，但是没关系，越早把它部署到互联网上，才能越早发现线上特有的问题。现在也提倡渐进式开发
       </div> -->
     </a>
   </div>

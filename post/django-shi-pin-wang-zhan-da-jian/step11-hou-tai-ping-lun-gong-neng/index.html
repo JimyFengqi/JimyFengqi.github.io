@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -817,20 +817,20 @@ $<span class="token punctuation">.</span><span class="token function">getScript<
       <span class="token keyword">var</span> comment_id <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>tr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"comment-id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.ui.tiny.modal.delete'</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          closable  <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">closable</span>  <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
           <span class="token function-variable function">onDeny</span>    <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
           <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
           <span class="token function-variable function">onApprove</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
             $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-                url<span class="token operator">:</span> api_comment_delete<span class="token punctuation">,</span>
-                data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                    <span class="token string">'comment_id'</span><span class="token operator">:</span>comment_id<span class="token punctuation">,</span>
-                    <span class="token string">'csrf_token'</span><span class="token operator">:</span> csrftoken
+                <span class="token literal-property property">url</span><span class="token operator">:</span> api_comment_delete<span class="token punctuation">,</span>
+                <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                    <span class="token string-property property">'comment_id'</span><span class="token operator">:</span>comment_id<span class="token punctuation">,</span>
+                    <span class="token string-property property">'csrf_token'</span><span class="token operator">:</span> csrftoken
                 <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-                type<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
-                dataType<span class="token operator">:</span> <span class="token string">'json'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">dataType</span><span class="token operator">:</span> <span class="token string">'json'</span><span class="token punctuation">,</span>
                 <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
                      <span class="token keyword">var</span> code <span class="token operator">=</span> data<span class="token punctuation">.</span>code
@@ -865,9 +865,9 @@ $<span class="token punctuation">.</span><span class="token function">getScript<
 新文件：   templates&#x2F;myadmin&#x2F;comment_list.html
 新文件：   templates&#x2F;myadmin&#x2F;comment_list_modal.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>其中base.html文件需要将评论地址添加进去,实现跳转</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>myadmin:comment_list<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>comment_list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>评论列表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'myadmin:comment_list' %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>comment_list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>评论列表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>comment_list.html文件为新添加的文件，大体布局跟video_list.html类似</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">&#123;% extends 'myadmin/base.html' %&#125;
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&#123;% extends 'myadmin/base.html' %&#125;
 &#123;% load static %&#125;
 &#123;% load video_tag %&#125;
 &#123;% block content %&#125;
@@ -930,7 +930,7 @@ $<span class="token punctuation">.</span><span class="token function">getScript<
     <span class="token keyword">var</span> search_url <span class="token operator">=</span> <span class="token string">"&#123;% url 'myadmin:comment_list' %&#125;"</span>
     <span class="token keyword">var</span> api_comment_delete <span class="token operator">=</span> <span class="token string">"&#123;% url 'myadmin:comment_delete' %&#125;"</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>js/myadmin/comment_list.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'js/myadmin/comment_list.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 &#123;% endblock script %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>小功能，它调用了自定义标签 video_tag，使用这个里面的函数时需要的时候需要提前注册<br>在设置中添加libraries</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># videoproject/settings.py</span>
@@ -1023,22 +1023,22 @@ path('
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-shi-pin-wang-zhan-da-jian/step09-hou-tai-shi-pin-guan-li-gong-neng/" class="post-nav-link">
+    <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django视频网站搭建--step09后台视频管理功能</div>
+        <div class="title-text">Django视频网站搭建--step10后台视频分类功能</div>
       </div>
       <!-- <div class="content">
-        #后台视频管理功能从本讲开始，我们开始视频管理功能的开发，视频管理包括
+        #视频分类视频分类的功能，主要包括以下内容
 
-视频上传
-视频列表
-视频编辑
-视频删除
+分类列表
+添加分类
+修改分类
+删除分类
 
-这一
+分类管理功能包括分类的增删改查。
       </div> -->
     </a>
   </div>
@@ -1693,7 +1693,7 @@ path('
   class=""
   server="kugou"
   type="playlist"
-  id="3302755"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

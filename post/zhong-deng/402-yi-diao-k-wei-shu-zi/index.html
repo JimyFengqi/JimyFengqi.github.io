@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -940,7 +940,7 @@ num 不会包含任何前导零。
 <p><img src="../images/remove-k-digits-4.jpg" class="lazyload placeholder" data-srcset="../images/remove-k-digits-4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">{:width=”500px”}<br>（图 5）</p>
 <p>我们需要把思路逆转过来。刚才我的关注点一直是<strong>丢弃</strong>，题目要求我们丢弃 k 个。反过来说，不就是让我们保留 $n - k$ 个元素么？其中 n 为数字长度。 那么我们只需要按照上面的方法遍历完成之后，再截取前<strong>n - k</strong>个元素即可。</p>
 <p>按照上面的思路，我们来选择数据结构。由于我们需要<strong>保留</strong>和<strong>丢弃相邻</strong>的元素，因此使用栈这种在一端进行添加和删除的数据结构是再合适不过了，我们来看下代码实现。</p>
-<h3 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeKdigits</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
         stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         remain <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">-</span> k
@@ -1191,12 +1191,12 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
         
         <div class="tags">
           
-            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
-              字符串
-            </a>
-          
             <a href="/tags/%E6%A0%88/" class="">
               栈
+            </a>
+          
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
+              字符串
             </a>
           
             <a href="/tags/%E8%B4%AA%E5%BF%83/" class="">
@@ -1243,19 +1243,19 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/zhong-deng/400-di-n-wei-shu-zi/" class="post-nav-link">
+    <a href="/post/zhong-deng/399-chu-fa-qiu-zhi/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">400-第 N 位数字(Nth Digit)</div>
+        <div class="title-text">399-除法求值(Evaluate Division)</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/nth-digit
+原文链接: https://leetcode-cn.com/problems/evaluate-division
 
-英文原文Given
+英
       </div> -->
     </a>
   </div>
@@ -1930,9 +1930,9 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

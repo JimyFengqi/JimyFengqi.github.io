@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -923,7 +923,7 @@ num 不会包含任何前导零。
 <p><img src="../images/remove-duplicate-letters-4.jpg" class="lazyload placeholder" data-srcset="../images/remove-duplicate-letters-4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"><br>（图 5）</p>
 <p>我们需要把思路逆转过来。刚才我的关注点一直是<strong>丢弃</strong>，题目要求我们丢弃 k 个。反过来说，不就是让我们保留 $n - k$ 个元素么？其中 n 为数字长度。 那么我们只需要按照上面的方法遍历完成之后，再截取前<strong>n - k</strong>个元素即可。</p>
 <p>按照上面的思路，我们来选择数据结构。由于我们需要<strong>保留</strong>和<strong>丢弃相邻</strong>的元素，因此使用栈这种在一端进行添加和删除的数据结构是再合适不过了，我们来看下代码实现。</p>
-<h3 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeKdigits</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
         stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         remain <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">-</span> k
@@ -969,7 +969,7 @@ num 不会包含任何前导零。
 <p>还记得上面题目的边界条件么？如果栈中剩下的元素大于 $n - k$，我们选择截取前 $n - k$ 个数字。然而本题中的 k 是分散在各个字符中的，因此这种思路不可行的。</p>
 <p>不过不必担心。由于题目是要求只出现一次。我们可以在遍历的时候简单地判断其是否在栈上即可。</p>
 <p>代码：</p>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeDuplicateLetters</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
         stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         remain_counter <span class="token operator">=</span> collections<span class="token punctuation">.</span>Counter<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
@@ -993,7 +993,7 @@ num 不会包含任何前导零。
 <li>无序序列： 可以使用遍历的方式，最坏的情况下时间复杂度为 $O(N)$。我们也可以使用空间换时间的方式，使用 $N$的空间 换取 $O(1)$的时间复杂度。</li>
 </ul>
 <p>由于本题中的 stack 并不是有序的，因此我们的优化点考虑空间换时间。而由于每种字符仅可以出现一次，这里使用 hashset 即可。</p>
-<h3 id="代码（Python）-1"><a href="#代码（Python）-1" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<h3 id="代码（Python）-1"><a href="#代码（Python）-1" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeDuplicateLetters</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
         stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         seen <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1064,7 +1064,7 @@ k &#x3D; 3
 <blockquote>
 <p>我们将从 num1 中挑选的 k1 个数组成的数组称之为 A，将从 num2 中挑选的 k2 个数组成的数组称之为 B，</p>
 </blockquote>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
     ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">while</span> A <span class="token keyword">or</span> B<span class="token punctuation">:</span>
         bigger <span class="token operator">=</span> A <span class="token keyword">if</span> A <span class="token operator">></span> B <span class="token keyword">else</span> B
@@ -1092,7 +1092,7 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <li>将 A 和 B 按照上面的 merge 方法合并</li>
 <li>上面我们暴力了 k 种组合情况，我们只需要将 k 种情况取出最大值即可。</li>
 </ul>
-<h3 id="代码（Python）-2"><a href="#代码（Python）-2" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<h3 id="代码（Python）-2"><a href="#代码（Python）-2" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">maxNumber</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
 
         <span class="token keyword">def</span> <span class="token function">pick_max</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1159,12 +1159,12 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
         
         <div class="tags">
           
-            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
-              字符串
-            </a>
-          
             <a href="/tags/%E6%A0%88/" class="">
               栈
+            </a>
+          
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
+              字符串
             </a>
           
             <a href="/tags/%E8%B4%AA%E5%BF%83/" class="">
@@ -1894,9 +1894,9 @@ A &lt; B # False<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

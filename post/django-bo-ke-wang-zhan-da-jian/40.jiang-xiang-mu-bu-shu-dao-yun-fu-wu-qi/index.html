@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -871,7 +871,7 @@ STATIC_ROOT <span class="token operator">=</span> os<span class="token punctuati
 <p>教程为了演示，上传了媒体资源和数据库，实际开发时可千万不要上传。</p>
 </blockquote>
 <p>然后更新 Git 记录并上传到 GitHub。重新回到<strong>服务器的命令行</strong>，给项目代码创建目录并进入此目录：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~$ <span class="token function">mkdir</span> -p /home/sites/dusaiphoto.com
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~$ <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /home/sites/dusaiphoto.com
 ~$ <span class="token builtin class-name">cd</span> /home/sites/dusaiphoto.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>目录位置是随便你的，但建议找个地方统一管理所有的网站项目。</p>
@@ -880,14 +880,14 @@ STATIC_ROOT <span class="token operator">=</span> os<span class="token punctuati
 
 <p>这里拉取的博客教程的代码。建议读者先拉取教程代码来测试，成功之后再重新部署自己的代码。完成之后可以输入 <code>ls</code> 指令，看看代码文件夹是否正常生成了。</p>
 <p>接着在服务器生成虚拟环境：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">..</span>/dusaiphoto.com$ virtualenv --python<span class="token operator">=</span>python3.5 <span class="token function">env</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">..</span>/dusaiphoto.com$ virtualenv <span class="token parameter variable">--python</span><span class="token operator">=</span>python3.5 <span class="token function">env</span>
 <span class="token punctuation">..</span>/dusaiphoto.com$ <span class="token builtin class-name">source</span> env/bin/activate
 <span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/dusaiphoto.com$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>这里用 <code>virtualenv</code> 生成并激活了虚拟环境。python 版本选择 3.5 还是 3.7 都可以，区别并不大。</p>
 <p>接下来就是安装库、收集静态资源、数据迁移了：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/dusaiphoto.com$ <span class="token builtin class-name">cd</span> django_blog_tutorial
-<span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ pip3 <span class="token function">install</span> -r requirements.txt
+<span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ pip3 <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt
 <span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ python3 manage.py collectstatic
 <span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ python3 manage.py migrate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -938,7 +938,7 @@ STATIC_ROOT <span class="token operator">=</span> os<span class="token punctuati
 <p>如果你已经申请好域名了，就把配置中有 IP 的地方都修改为域名，比如：server_name <a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">www.dusaiphoto.com</a>;</p>
 </blockquote>
 <p>写好后就退出 <code>vi</code> 编辑器，回到命令行。因为我们写的只是 Nginx 的<strong>可用配置</strong>，所以还需要把这个配置文件链接到<strong>在用配置</strong>上去：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/sites-available$ <span class="token function">sudo</span> <span class="token function">ln</span> -s /etc/nginx/sites-available/dusaiphoto.com /etc/nginx/sites-enabled<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/sites-available$ <span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /etc/nginx/sites-available/dusaiphoto.com /etc/nginx/sites-enabled<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>至此 Nginx 就配置好了，接下来搞定 <code>Gunicorn</code>。</p>
 <blockquote>
@@ -947,7 +947,7 @@ STATIC_ROOT <span class="token operator">=</span> os<span class="token punctuati
 <h3 id="Gunicorn及测试"><a href="#Gunicorn及测试" class="headerlink" title="Gunicorn及测试"></a>Gunicorn及测试</h3><p><strong>先回到项目所在的目录</strong>，并且进入<strong>虚拟环境</strong>，然后输入：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ pip3 <span class="token function">install</span> gunicorn
 <span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ <span class="token function">sudo</span> <span class="token function">service</span> nginx reload
-<span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">..</span>/django_blog_tutorial$ gunicorn <span class="token parameter variable">--bind</span> unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>这里的三个步骤分别是：</p>
 <ul>
@@ -987,7 +987,7 @@ python3 manage.py collectstatic
 python3 manage.py migrate
 <span class="token comment"># 重启 gunicorn</span>
 <span class="token function">pkill</span> gunicorn
-gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+gunicorn <span class="token parameter variable">--bind</span> unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>加上 <code>cd</code> 更改目录的指令，部署过程有十几条指令，手动输入也太麻烦了。简单粗暴的办法是利用 XShell 的宏，把部署指令写成顺序执行的脚本，点几个按钮就完成了，非常方便。</p>
 <blockquote>
@@ -1005,7 +1005,7 @@ gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria
 </ul>
 <p>域名搞定之后，接着就可以着手考虑把网站升级为 https 版本了，这是大趋势，一定要做。（这个也留给读者自己折腾）</p>
 <p>另外，开发时为了效率把所有静态资源都下载到本地，但是部署时不推荐这样做，原因是静态文件通常体积都较大，你花血汗钱买的服务器载入会很慢。尽量远程 CDN 调用，像这样：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>国内推荐<a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a>，速度快还免费。</p>
 <p>媒体资源也是类似，小图还无所谓，大图就要放在<a target="_blank" rel="noopener" href="https://portal.qiniu.com/signup?code=1hfqrn5z85c9e">七牛云</a>这类的对象存储云上，否则你网页的载入速度会很悲剧的。</p>
@@ -1017,7 +1017,7 @@ gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#x75;&#115;&#x61;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#64;&#x66;&#111;&#x78;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#100;&#x75;&#115;&#x61;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#64;&#x66;&#111;&#x78;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#x73;&#x61;&#105;&#x70;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x64;&#x75;&#x73;&#x61;&#105;&#x70;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1066,17 +1066,17 @@ gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/39.dian-zan-gong-neng/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/37.ri-zhi-ji-lu/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--39.点赞功能</div>
+        <div class="title-text">Django博客网站搭建--37.日志记录</div>
       </div>
       
       <!-- <div class="content">
-        假设你的博客已经顺利部署到了线上。你写了很多好文章，和粉丝们互动并感受成就感。
-现在你想更进一步，努力提高文章质量，使其
+        上一章学习了自动化测试，很好，现在我们可以绞尽脑汁写出一份全面的测试，来保证代码永远健康了。
+话虽如此，但是作为一个独立
       </div> -->
     </a>
   </div>
@@ -1749,9 +1749,9 @@ gunicorn --bind unix:/tmp/118.31.35.48.socket my_blog.wsgi:application<span aria
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3428290"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -853,7 +853,7 @@ n: 13   k: 2
 <p>接下来 ，我们一一拆解这些问题。</p>
 <h3 id="理顺思路："><a href="#理顺思路：" class="headerlink" title="理顺思路："></a>理顺思路：</h3><p><strong>1. 确定指定前缀下所有子节点数</strong><br>现在的任务就是给定一个前缀，返回下面子节点总数。</p>
 <p>我们现在的思路就是用下一个前缀的起点减去当前前缀的起点，那么就是当前前缀下的所有子节点数总和啦。</p>
-<pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js"><span class="token comment">//prefix是前缀，n是上界</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript"><span class="token comment">//prefix是前缀，n是上界</span>
 <span class="token keyword">var</span> <span class="token function-variable function">getCount</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">prefix<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">let</span> cur <span class="token operator">=</span> prefix<span class="token punctuation">;</span>
     <span class="token keyword">let</span> next <span class="token operator">=</span> prefix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//下一个前缀</span>
@@ -872,7 +872,7 @@ n: 13   k: 2
     <span class="token keyword">return</span> count<span class="token punctuation">;</span><span class="token comment">//把当前前缀下的子节点和返回去。</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当然，不知道大家发现一个问题没有，当 next 的值大于上界的时候，那以这个前缀为根节点的十叉树就不是满十叉树了啊，应该到上界那里，后面都不再有子节点。因此，$count += next - cur$ 还是有些问题的，我们来修正这个问题:</p>
-<pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js">count <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">-</span> cur<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript">count <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">-</span> cur<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>你可能会问:咦？怎么是 <code>n+1</code> ,而不是 $n$ 呢？不是说好了 $n$ 是上界吗？</p>
 <p>我举个例子，假若现在上界 $n$为 12，算出以 1 为前缀的子节点数，首先 1 本身是一个节点，接下来要算下面 10，11，12，一共有 4 个子节点。</p>
 <p>那么如果用 $Math.min(n, next) - cur$ 会怎么样？</p>
@@ -880,12 +880,12 @@ n: 13   k: 2
 <p>现在，我们搞定了前缀的子节点数问题。</p>
 <p><strong>2. 第k个数在当前前缀下</strong><br>现在无非就是往子树里面去看。</p>
 <p>prefix这样处理就可以了。</p>
-<pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js">prefix <span class="token operator">*=</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript">prefix <span class="token operator">*=</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>3.第k个数不在当前前缀下</strong><br>说白了，当前的前缀小了嘛，我们扩大前缀。</p>
-<pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js">prefix <span class="token operator">++</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript">prefix <span class="token operator">++</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="框架搭建："><a href="#框架搭建：" class="headerlink" title="框架搭建："></a>框架搭建：</h3><p>整合一下刚刚的思路。</p>
-<pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">findKthNumber</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript"><span class="token keyword">let</span> <span class="token function-variable function">findKthNumber</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//作为一个指针，指向当前所在位置，当p==k时，也就是到了排位第k的数</span>
   <span class="token keyword">let</span> prefix <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//前缀</span>
   <span class="token keyword">while</span><span class="token punctuation">(</span>p <span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -901,7 +901,7 @@ n: 13   k: 2
   <span class="token keyword">return</span> prefix<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="完整代码展示："><a href="#完整代码展示：" class="headerlink" title="完整代码展示："></a>完整代码展示：</h3><pre class="line-numbers language-js" data-language="js"><div class="caption"><span>[-js]</span></div><code class="language-js"><span class="token comment">/**
+<h3 id="完整代码展示："><a href="#完整代码展示：" class="headerlink" title="完整代码展示："></a>完整代码展示：</h3><pre class="line-numbers language-javascript" data-language="javascript"><div class="caption"><span>[-js]</span></div><code class="language-javascript"><span class="token comment">/**
  * @param &#123;number&#125; n
  * @param &#123;number&#125; k
  * @return &#123;number&#125;
@@ -1685,8 +1685,8 @@ n: 13   k: 2
 <meting-js
   class=""
   server="netease"
-  type="song"
-  id="1365053719"
+  type="playlist"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -855,7 +855,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 </blockquote>
 <p><strong>这里会一次性写大量代码，不要着急慢慢看，理解了就很简单了。</strong></p>
 <p>首先写<code>base.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 <span class="token comment">&lt;!-- 载入静态文件 --></span>
 &#123;% load staticfiles %&#125;
@@ -870,7 +870,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
     <span class="token comment">&lt;!-- 预留网站标题的位置 --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
     <span class="token comment">&lt;!-- 引入bootstrap的css文件 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>bootstrap/css/bootstrap.min.css<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'bootstrap/css/bootstrap.min.css' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
@@ -881,10 +881,10 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
     <span class="token comment">&lt;!-- 引入注脚 --></span>
     &#123;% include 'footer.html' %&#125;
     <span class="token comment">&lt;!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>jquery/jquery-3.3.1.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>popper/popper-1.14.4.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'jquery/jquery-3.3.1.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'popper/popper-1.14.4.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    
     <span class="token comment">&lt;!-- 引入bootstrap的js文件 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>bootstrap/js/bootstrap.min.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'bootstrap/js/bootstrap.min.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -897,7 +897,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 <li> jquery.js 和 popper.js 要在 bootstrap.js 前引入。</li>
 </ul>
 <p>然后是<code>header.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/header.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/header.html
 
 <span class="token comment">&lt;!-- 定义导航栏 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navbar navbar-expand-lg navbar-dark bg-dark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -921,7 +921,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 
 <p>标签内的<code>class</code>属性是Bootstrap样式的定义方法。试着改写或删除其中一些内容，观察页面的变化。</p>
 <p>然后改写之前的<code>list.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 <span class="token comment">&lt;!-- extends表明此页面继承自 base.html 文件 --></span>
 &#123;% extends "base.html" %&#125;
@@ -967,7 +967,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 <li>摘要中的<code>&#123;&#123; article.body|slice:'100' &#125;&#125;</code>取出了文章的正文；其中的<code>|slice:&#39;100&#39;</code>是Django的过滤器语法，表示取出正文的前100个字符，避免摘要太长。</li>
 </ul>
 <p>最后写入<code>footer.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">&#123;% load staticfiles %&#125;
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&#123;% load staticfiles %&#125;
 <span class="token comment">&lt;!-- Footer --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
@@ -995,7 +995,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 <p>下一章我们将学习编写文章详情页面。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#117;&#x73;&#97;&#105;&#x70;&#x68;&#x6f;&#116;&#x6f;&#64;&#102;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#100;&#117;&#x73;&#97;&#105;&#x70;&#x68;&#x6f;&#116;&#x6f;&#64;&#102;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#x73;&#97;&#105;&#112;&#x68;&#111;&#116;&#111;&#64;&#x66;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x64;&#x75;&#x73;&#97;&#105;&#112;&#x68;&#111;&#116;&#111;&#64;&#x66;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1044,17 +1044,17 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/08.bian-xie-wen-zhang-xiang-qing-ye-mian/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/06.view-ji-template/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--08.编写文章详情页面</div>
+        <div class="title-text">Django博客网站搭建--06.View及Template</div>
       </div>
       
       <!-- <div class="content">
-        有了文章列表页面后，当然还需要详情页面，方便用户对某一篇感兴趣的文章深入阅读。
-编写视图函数打开article/view
+        改写视图函数上一章我们感受了视图的工作流程。
+为了让视图真正发挥作用，改写article/views.py中的artic
       </div> -->
     </a>
   </div>
@@ -1726,9 +1726,9 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 
 <meting-js
   class=""
-  server="netease"
+  server="kugou"
   type="playlist"
-  id="4888271555"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

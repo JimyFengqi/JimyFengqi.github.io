@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -752,7 +752,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 557 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 545 |
           </span>
   
           <span class="min2read">
@@ -843,20 +843,20 @@ age 21 30
 <p>注意到是转置，假如原始文本有<code>m</code>行<code>n</code>列（字段），那么转置后的文本应该有<code>n</code>行<code>m</code>列，即原始文本的每个字段都对应新文本的一行。我们可以用数组<code>res</code>来储存新文本，将新文本的每一行存为数组<code>res</code>的一个元素。</p>
 <p>在<code>END</code>之前我们遍历<code>file.txt</code>的每一行，并做一个判断：在第一行时，每碰到一个字段就将其按顺序放在<code>res</code>数组中；从第二行开始起，每碰到一个字段就将其追加到对应元素的末尾（中间添加一个空格）。</p>
 <p>文本处理完了，最后需要输出。在<code>END</code>后遍历数组，输出每一行。注意<code>printf</code>不会自动换行，而<code>print</code>会自动换行。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">awk &#39;&#123;
-    for (i&#x3D;1;i&lt;&#x3D;NF;i++)&#123;
-        if (NR&#x3D;&#x3D;1)&#123;
-            res[i]&#x3D;$i
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">awk</span> <span class="token string">'&#123;
+    for (i=1;i&lt;=NF;i++)&#123;
+        if (NR==1)&#123;
+            res[i]=$i
         &#125;
         else&#123;
-            res[i]&#x3D;res[i]&quot; &quot;$i
+            res[i]=res[i]" "$i
         &#125;
     &#125;
 &#125;END&#123;
-    for(j&#x3D;1;j&lt;&#x3D;NF;j++)&#123;
+    for(j=1;j&lt;=NF;j++)&#123;
         print res[j]
     &#125;
-&#125;&#39; file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;'</span> file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后打个小广告 -&gt; <a target="_blank" rel="noopener" href="https://www.cocobolo.top/linux/2019/07/04/194.%E8%BD%AC%E7%BD%AE%E6%96%87%E4%BB%B6(awk).html">我的博客</a>有更详细的本题知识点。</p>
 <h2 id="统计信息"><a href="#统计信息" class="headerlink" title="统计信息"></a>统计信息</h2><table>
@@ -1616,9 +1616,9 @@ age 21 30
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

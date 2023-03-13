@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -916,7 +916,7 @@
 </li>
 </ol>
 <p>对这两种情况求 minCam，取结果较小者。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">minCameraCover</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
   <span class="token keyword">const</span> <span class="token function-variable function">minCam</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> placeCam<span class="token punctuation">,</span> watched</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> 
@@ -931,7 +931,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="递归的结束条件"><a href="#递归的结束条件" class="headerlink" title="递归的结束条件"></a>递归的结束条件</h4><p>即 base case。当遍历到 null 节点时：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
 
   <span class="token keyword">if</span> <span class="token punctuation">(</span>placeCam<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token comment">// 父节点问当前null节点: 有相机的minCam，但null节点不可能有相机</span>
@@ -950,7 +950,7 @@
 
 
 <h4 id="执行结果：对是对，遇到这个-case-就超时"><a href="#执行结果：对是对，遇到这个-case-就超时" class="headerlink" title="执行结果：对是对，遇到这个 case 就超时"></a>执行结果：对是对，遇到这个 case 就超时</h4><p><img src="../images/binary-tree-cameras-1.png" class="lazyload placeholder" data-srcset="../images/binary-tree-cameras-1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image.png"></p>
-<h4 id="代码-超时"><a href="#代码-超时" class="headerlink" title="代码 (超时)"></a>代码 (超时)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<h4 id="代码-超时"><a href="#代码-超时" class="headerlink" title="代码 (超时)"></a>代码 (超时)</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">minCameraCover</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
   <span class="token comment">// 以root为根节点的子树，放置的最少相机数</span>
@@ -1039,19 +1039,19 @@
 </li>
 </ol>
 <p>把这三个 minCam 返回给父调用，一次递归调用就返回出当前子树的三种状态：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">return</span> <span class="token punctuation">&#123;</span> withCam<span class="token punctuation">,</span> noCamWatchByDad<span class="token punctuation">,</span> noCamWatchBySon <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>当前子树，通过子递归调用，拿到左右子树返回出的三种状态，去递推出当前子树的三种状态：withCam、noCamWatchByDad、noCamWatchBySon。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> left <span class="token operator">=</span> <span class="token function">minCam</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> right <span class="token operator">=</span> <span class="token function">minCam</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样就是树形 DP，一次递归调用，只用执行两次子调用。</p>
-<h4 id="优化后代码"><a href="#优化后代码" class="headerlink" title="优化后代码"></a>优化后代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<h4 id="优化后代码"><a href="#优化后代码" class="headerlink" title="优化后代码"></a>优化后代码</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">minCameraCover</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
   <span class="token keyword">const</span> <span class="token function-variable function">minCam</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -1060,11 +1060,11 @@
 
       <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
 
-        withCam<span class="token operator">:</span> <span class="token number">Infinity</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">withCam</span><span class="token operator">:</span> <span class="token number">Infinity</span><span class="token punctuation">,</span>
 
-        noCamWatchByDad<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">noCamWatchByDad</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
 
-        noCamWatchBySon<span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token literal-property property">noCamWatchBySon</span><span class="token operator">:</span> <span class="token number">0</span>
 
       <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
@@ -1181,20 +1181,20 @@
         
         <div class="tags">
           
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
-            </a>
-          
-            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
-              深度优先搜索
-            </a>
-          
             <a href="/tags/%E6%A0%91/" class="">
               树
             </a>
           
             <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="">
               二叉树
+            </a>
+          
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
+            </a>
+          
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
+              深度优先搜索
             </a>
           
         </div>
@@ -1254,18 +1254,18 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/8.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/zhong-deng/970-qiang-zheng-shu/" class="post-nav-link">
+    <a href="/post/zhong-deng/969-jian-bing-pai-xu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">970-强整数(Powerful Integers)</div>
+        <div class="title-text">969-煎饼排序(Pancake Sorting)</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/powerful-integers
+原文链接: https://leetcode-cn.com/problems/pancake-sorting
 
-英
+英文原
       </div> -->
     </a>
   </div>
@@ -1918,9 +1918,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3428290"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

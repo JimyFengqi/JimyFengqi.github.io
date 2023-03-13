@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -892,7 +892,7 @@
         f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment"># 不选第 i 个物品</span>
         <span class="token keyword">if</span> v <span class="token operator">>=</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment"># 第 i 个物品的体积必须小于 v 才能选</span>
             f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token operator">-</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>V<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 返回前 n 个物品的最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>V<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 返回前 n 个物品的最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h4><p>然而，我们有一种优化方法，只使用一维数组来实现，这样可使空间复杂度降到 <code>O(V)</code>。</p>
 <pre class="line-numbers language-python" data-language="python"><div class="caption"><span>[]</span></div><code class="language-python"><span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> n<span class="token punctuation">:</span> <span class="token comment"># 枚举前 i 个物品</span>
@@ -986,16 +986,16 @@
         
         <div class="tags">
           
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
+              数学
             </a>
           
             <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
               数组
             </a>
           
-            <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
-              数学
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
             </a>
           
         </div>
@@ -1719,9 +1719,9 @@
 
 <meting-js
   class=""
-  server="tencent"
+  server="netease"
   type="playlist"
-  id="8197627936"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

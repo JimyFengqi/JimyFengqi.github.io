@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -905,7 +905,7 @@
         <span class="token keyword">int</span> rightVaild <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token comment">//先将整个字符串作为右半部分滑窗的内容</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch <span class="token operator">:</span> s<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> num <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> num <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token char">'a'</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>rightCount<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 rightVaild<span class="token operator">++</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
@@ -915,7 +915,7 @@
         <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token comment">//慢慢调整左半部分滑窗，从左往右遍历，增大左半部分，缩减右半部分，进行滑窗</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch <span class="token operator">:</span> s<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> num <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> num <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token char">'a'</span><span class="token punctuation">;</span>
             <span class="token comment">//左边没有出现过这种字符，那么左边字符 +1</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>leftCount<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 leftVaild<span class="token operator">++</span><span class="token punctuation">;</span>
@@ -1697,9 +1697,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

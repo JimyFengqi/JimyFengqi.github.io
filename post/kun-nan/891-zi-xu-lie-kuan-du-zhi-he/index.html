@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -865,18 +865,18 @@ The sum of these widths is 6.
 <p>$$<br>= \sum\limits_{i = 0}^{n-1} (2^i - 2^{N-i-1}) A_i<br>$$</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[DorYCcF2-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sumSubseqWidths</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token class-name">A</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> MOD <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> <span class="token constant">MOD</span> <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> <span class="token class-name">N</span> <span class="token operator">=</span> <span class="token class-name">A</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
         <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> pow2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token class-name">N</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
         pow2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-            pow2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> pow2<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
+            pow2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> pow2<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
 
         <span class="token keyword">long</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-            ans <span class="token operator">=</span> <span class="token punctuation">(</span>ans <span class="token operator">+</span> <span class="token punctuation">(</span>pow2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> pow2<span class="token punctuation">[</span><span class="token class-name">N</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
+            ans <span class="token operator">=</span> <span class="token punctuation">(</span>ans <span class="token operator">+</span> <span class="token punctuation">(</span>pow2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> pow2<span class="token punctuation">[</span><span class="token class-name">N</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
 
         <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
@@ -939,12 +939,12 @@ The sum of these widths is 6.
               排序
             </a>
           
-            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
-              数组
-            </a>
-          
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
+            </a>
+          
+            <a href="/tags/%E6%95%B0%E7%BB%84/" class="">
+              数组
             </a>
           
         </div>
@@ -1668,7 +1668,7 @@ The sum of these widths is 6.
   class=""
   server="kugou"
   type="playlist"
-  id="3947753"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

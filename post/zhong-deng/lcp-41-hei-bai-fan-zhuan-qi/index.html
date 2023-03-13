@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -834,7 +834,7 @@
 <p>由于需要模拟每个空格下黑棋后的棋盘变化，不复制一份棋盘的话，每次模拟结束时需要还原现场，比较麻烦。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'.'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token comment">// copy the board</span>
             <span class="token comment">// To Do..</span>
         <span class="token punctuation">&#125;</span>
@@ -853,15 +853,15 @@
     <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
     
     <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'O'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token char">'O'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token comment">// 遇到不是白子时，可能是黑子或者空格</span>
             <span class="token comment">// 如果是黑子，则代表这个方向搜索到的白子可以被翻转</span>
-            flag <span class="token operator">=</span> arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'X'</span><span class="token punctuation">;</span>
+            flag <span class="token operator">=</span> arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'X'</span><span class="token punctuation">;</span>
             <span class="token keyword">break</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
             <span class="token comment">// 保存白子（新黑子）下标并翻转</span>
             temp<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>x <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'X'</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'X'</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
         x <span class="token operator">+=</span> step_x<span class="token punctuation">;</span>
         y <span class="token operator">+=</span> step_y<span class="token punctuation">;</span>
@@ -870,7 +870,7 @@
         <span class="token comment">// 需要还原现场，将保存的新黑子下标还原成白子</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>temp<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">var</span> pos <span class="token operator">=</span> temp<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            arr<span class="token punctuation">[</span>pos <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span>pos <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'O'</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>pos <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span>pos <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'O'</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
 
@@ -1147,21 +1147,21 @@ public:
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/4.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/kun-nan/lcp-42-wan-ju-tao-quan/" class="post-nav-link">
+    <a href="/post/jian-dan/lcp-39-wu-ren-ji-fang-zhen/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">LCP 42-玩具套圈</div>
+        <div class="title-text">LCP 39-无人机方阵</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/vFjcfV
+原文链接: https://leetcode-cn.com/problems/0jQkd0
 
 英文原文
 
-中文题目「力
+中文题目在 
       </div> -->
     </a>
   </div>
@@ -1172,16 +1172,16 @@ public:
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/4.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/zhong-deng/lcp-46-zhi-yuan-zhe-diao-pei/" class="post-nav-link">
+    <a href="/post/kun-nan/lcp-42-wan-ju-tao-quan/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">LCP 46-志愿者调配</div>
+        <div class="title-text">LCP 42-玩具套圈</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/05ZEDJ
+原文链接: https://leetcode-cn.com/problems/vFjcfV
 
 英文原文
 

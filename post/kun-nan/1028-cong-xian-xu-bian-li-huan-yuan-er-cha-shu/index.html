@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -899,7 +899,7 @@
 <li>找到栈顶爸爸的节点，一定可以当儿子，当不了左儿子，就当右儿子</li>
 </ul>
 <p><img src="../images/recover-a-tree-from-preorder-traversal-4.png" class="lazyload placeholder" data-srcset="../images/recover-a-tree-from-preorder-traversal-4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image.png"></p>
-<h4 id="迭代版-代码"><a href="#迭代版-代码" class="headerlink" title="迭代版 代码"></a>迭代版 代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">recoverFromPreorder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<h4 id="迭代版-代码"><a href="#迭代版-代码" class="headerlink" title="迭代版 代码"></a>迭代版 代码</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">recoverFromPreorder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 维护一个栈</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">let</span> curLevel <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 当前构建的节点所属的level</span>
@@ -940,7 +940,7 @@
 <li>问题卡在了少了这行 <code>index -= curLevel </code></li>
 <li>第level层子树构建完毕，结束递归，return null，此时 index 多进了curLevel的长度，要退回来</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">recoverFromPreorder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">S</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">recoverFromPreorder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">S</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>   <span class="token comment">// 遍历字符串的指针</span>
 
   <span class="token keyword">const</span> <span class="token function-variable function">buildTree</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">S</span><span class="token punctuation">,</span> level</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token comment">// 构建当前子树，它属于第level层</span>
@@ -1002,16 +1002,16 @@
               字符串
             </a>
           
-            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
-              深度优先搜索
-            </a>
-          
             <a href="/tags/%E6%A0%91/" class="">
               树
             </a>
           
             <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="">
               二叉树
+            </a>
+          
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
+              深度优先搜索
             </a>
           
         </div>
@@ -1735,7 +1735,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3947131"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -879,14 +879,14 @@ XYZ YYZ XZZ XYY XXY</pre>
 <p><img src="../images/domino-and-tromino-tiling-0.png" class="lazyload placeholder" data-srcset="../images/domino-and-tromino-tiling-0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">{:width=500}</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution1-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">numTilings</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> MOD <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> <span class="token constant">MOD</span> <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
         <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ndp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            ndp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b11</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
-            ndp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
-            ndp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
-            ndp<span class="token punctuation">[</span><span class="token number">0b11</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
+            ndp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b11</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
+            ndp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
+            ndp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
+            ndp<span class="token punctuation">[</span><span class="token number">0b11</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0b00</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b01</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span><span class="token number">0b10</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
             dp <span class="token operator">=</span> ndp<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -920,7 +920,7 @@ XYZ YYZ XZZ XYY XXY</pre>
 <p>令 $T$ 为<em>方法一</em>中 <code>dp -&gt; ndp</code> 的线性转换矩阵，那么 $T^n$ 表示连续 $n$ 次转换。</p>
 <p>为了提高 $T^n$ 的计算效率，我们使用 $T^{2k} = T^k * T^k$ 和 $T^{2k + 1} = T * T^{2k}$ 公式将计算复杂度降低到 $O(\log n)$。</p>
 <pre class="line-numbers language-java" data-language="java"><div class="caption"><span>[solution2-Java]</span></div><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> MOD <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token constant">MOD</span> <span class="token operator">=</span> <span class="token number">1_000_000_007</span><span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">numTilings</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token class-name">T</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
@@ -933,8 +933,8 @@ XYZ YYZ XZZ XYY XXY</pre>
             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token class-name">B</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                 <span class="token keyword">long</span> entry <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
                 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token class-name">B</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span>
-                    entry <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token class-name">B</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">%</span> MOD<span class="token punctuation">;</span>
-                ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>entry <span class="token operator">%</span> MOD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    entry <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token class-name">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token class-name">B</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">;</span>
+                ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>entry <span class="token operator">%</span> <span class="token constant">MOD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
 
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
@@ -1057,19 +1057,19 @@ XYZ YYZ XZZ XYY XXY</pre>
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/8.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/zhong-deng/789-tao-tuo-zu-ai-zhe/" class="post-nav-link">
+    <a href="/post/zhong-deng/788-xuan-zhuan-shu-zi/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">789-逃脱阻碍者(Escape The Ghosts)</div>
+        <div class="title-text">788-旋转数字(Rotated Digits)</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/escape-the-ghosts
+原文链接: https://leetcode-cn.com/problems/rotated-digits
 
-英
+英文原文
       </div> -->
     </a>
   </div>
@@ -1080,18 +1080,18 @@ XYZ YYZ XZZ XYY XXY</pre>
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/zhong-deng/791-zi-ding-yi-zi-fu-chuan-pai-xu/" class="post-nav-link">
+    <a href="/post/zhong-deng/789-tao-tuo-zu-ai-zhe/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">791-自定义字符串排序(Custom Sort String)</div>
+        <div class="title-text">789-逃脱阻碍者(Escape The Ghosts)</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/custom-sort-string
+原文链接: https://leetcode-cn.com/problems/escape-the-ghosts
 
-
+英
       </div> -->
     </a>
   </div>
@@ -1744,9 +1744,9 @@ XYZ YYZ XZZ XYY XXY</pre>
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

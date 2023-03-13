@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -956,8 +956,8 @@
 	<span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> servers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 		data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-			prioity<span class="token operator">:</span> servers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>
-			index<span class="token operator">:</span> i<span class="token punctuation">,</span>
+			<span class="token literal-property property">prioity</span><span class="token operator">:</span> servers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">index</span><span class="token operator">:</span> i<span class="token punctuation">,</span>
 		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">&#125;</span>
 	<span class="token keyword">this</span><span class="token punctuation">.</span>heap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Heap</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">lower<span class="token punctuation">,</span> higher</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -992,8 +992,8 @@
 			<span class="token keyword">let</span> item <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>heap<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 			<span class="token keyword">this</span><span class="token punctuation">.</span>idle<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-				time<span class="token operator">:</span> time <span class="token operator">+</span> tmp<span class="token punctuation">,</span>
-				handle<span class="token operator">:</span> item<span class="token punctuation">,</span>
+				<span class="token literal-property property">time</span><span class="token operator">:</span> time <span class="token operator">+</span> tmp<span class="token punctuation">,</span>
+				<span class="token literal-property property">handle</span><span class="token operator">:</span> item<span class="token punctuation">,</span>
 			<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 			index<span class="token operator">++</span><span class="token punctuation">;</span>

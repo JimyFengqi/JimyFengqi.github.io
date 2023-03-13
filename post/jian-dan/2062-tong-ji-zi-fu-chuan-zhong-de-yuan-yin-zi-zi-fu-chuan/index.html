@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -903,7 +903,7 @@
 
 <h2 id="高赞题解"><a href="#高赞题解" class="headerlink" title="高赞题解"></a>高赞题解</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">countVowelSubstrings</span><span class="token punctuation">(</span>word <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>ans <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> s <span class="token operator">:=</span> <span class="token keyword">range</span> strings<span class="token punctuation">.</span><span class="token function">FieldsFunc</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>r <span class="token builtin">rune</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token operator">!</span>strings<span class="token punctuation">.</span><span class="token function">ContainsRune</span><span class="token punctuation">(</span><span class="token string">"aeiou"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 分割出仅包含元音的字符串</span>
-		cnt <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token string">'v'</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+		cnt <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token char">'v'</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 		l <span class="token operator">:=</span> <span class="token number">0</span>
 		<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> ch <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">&#123;</span>
 			cnt<span class="token punctuation">[</span>ch<span class="token punctuation">]</span><span class="token operator">++</span>
@@ -911,7 +911,7 @@
 				cnt<span class="token punctuation">[</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">--</span>
 				l<span class="token operator">++</span>
 			<span class="token punctuation">&#125;</span>
-			<span class="token keyword">if</span> cnt<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token string">'i'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token string">'o'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token string">'u'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 必须包含全部五种元音</span>
+			<span class="token keyword">if</span> cnt<span class="token punctuation">[</span><span class="token char">'a'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token char">'e'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token char">'i'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token char">'o'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> cnt<span class="token punctuation">[</span><span class="token char">'u'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 必须包含全部五种元音</span>
 				ans <span class="token operator">+=</span> l <span class="token operator">+</span> <span class="token number">1</span>
 			<span class="token punctuation">&#125;</span>
 		<span class="token punctuation">&#125;</span>
@@ -1679,7 +1679,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3428290"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

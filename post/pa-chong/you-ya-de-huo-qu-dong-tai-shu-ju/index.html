@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -791,10 +791,10 @@
 <p>如 <a target="_blank" rel="noopener" href="https://dynamic5.scrape.center/page/2">https://dynamic5.scrape.center/page/2</a> 就是第二页内容，<a target="_blank" rel="noopener" href="https://dynamic5.scrape.center/page/3">https://dynamic5.scrape.center/page/3</a> 就是第三页内容。</p>
 <p>那我们这个案例就来试着爬取一下前十页的图书信息吧。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>首先我们来新建一个项目，叫做 scrapypyppeteer，命令如下：</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">scrapy startproject scrapypyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">scrapy startproject scrapypyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>接着进入项目，然后新建一个 Spider，名称为 book，命令如下：</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd scrapypyppeteer
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> scrapypyppeteer
 scrapy genspider book dynamic5.scrape.center<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>这时候可以发现在项目的 spiders 文件夹下就出现了一个名为 spider.py 的文件，内容如下：</p>
@@ -839,7 +839,7 @@ scrapy genspider book dynamic5.scrape.center<span aria-hidden="true" class="line
 <p>此时如果我们想要获取 HTML 渲染结果的话就得使用 Downloader Middleware 来实现了。</p>
 <p>这里我们直接拿一个我已经写好的组件来演示了，组件的名称叫做 GerapyPyppeteer，这里面已经写好了 Scrapy 和 Pyppeteer 结合的中间件，下面我们来介绍下。</p>
 <p>我们可以借助于 pip3 来安装，命令如下：</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">pip3 install gerapy-pyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip3 <span class="token function">install</span> gerapy-pyppeteer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>GerapyPyppeteer 提供了两部分内容，一部分是 Downloader Middleware，一部分是 Request。</p>
 <p>首先我们需要开启中间件，在 settings 里面开启 PyppeteerMiddleware，配置如下：</p>
@@ -1914,9 +1914,9 @@ page <span class="token operator">=</span> <span class="token keyword">await</sp
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

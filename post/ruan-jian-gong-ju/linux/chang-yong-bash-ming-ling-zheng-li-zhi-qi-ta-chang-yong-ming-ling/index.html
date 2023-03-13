@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -789,7 +789,7 @@
 <span class="token function">hostname</span> blinkfox-system
 
 <span class="token comment"># 使用 -F 选项，从指定的文件中读取主机名</span>
-<span class="token function">hostname</span> -F /root/hostname.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">hostname</span> <span class="token parameter variable">-F</span> /root/hostname.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="2-uptime-查看系统运行时间"><a href="#2-uptime-查看系统运行时间" class="headerlink" title="2. uptime - 查看系统运行时间"></a>2. uptime - 查看系统运行时间</h2><p><code>uptime</code>命令用于打印系统的运行时间等信息。使用如下：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">uptime</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -811,19 +811,19 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">who</span>
 
 <span class="token comment"># 显示系统的启动时间</span>
-<span class="token function">who</span> -b
+<span class="token function">who</span> <span class="token parameter variable">-b</span>
 
 <span class="token comment"># 显示系统登录进程</span>
-<span class="token function">who</span> -l
+<span class="token function">who</span> <span class="token parameter variable">-l</span>
 
 <span class="token comment"># 显示与当前标准输入关联的用户信息</span>
-<span class="token function">who</span> -m
+<span class="token function">who</span> <span class="token parameter variable">-m</span>
 
 <span class="token comment"># 显示系统的运行级别</span>
-<span class="token function">who</span> -r
+<span class="token function">who</span> <span class="token parameter variable">-r</span>
 
 <span class="token comment"># 显示所有登录用户的用户名和登录用户数</span>
-<span class="token function">who</span> -q<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">who</span> <span class="token parameter variable">-q</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="4-uname-查看系统信息"><a href="#4-uname-查看系统信息" class="headerlink" title="4. uname - 查看系统信息"></a>4. uname - 查看系统信息</h2><p><code>uname</code>命令用于打印内核名称和版本、主机名等系统信息。命令的语法如下所示：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -833,22 +833,22 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">uname</span>
 
 <span class="token comment"># 使用 -n 选项，只打印系统的主机名</span>
-<span class="token function">uname</span> -n
+<span class="token function">uname</span> <span class="token parameter variable">-n</span>
 
 <span class="token comment"># 使用 -r 选项，打印内核版本信息</span>
-<span class="token function">uname</span> -r
+<span class="token function">uname</span> <span class="token parameter variable">-r</span>
 
 <span class="token comment"># 使用 -m 选项，打印系统的硬件名称</span>
-<span class="token function">uname</span> -m
+<span class="token function">uname</span> <span class="token parameter variable">-m</span>
 
 <span class="token comment"># 使用 -p 选项，打印系统的处理器类型信息</span>
-<span class="token function">uname</span> -p
+<span class="token function">uname</span> <span class="token parameter variable">-p</span>
 
 <span class="token comment"># 使用 -i 选项，打印系统的硬件平台信息</span>
-<span class="token function">uname</span> -i
+<span class="token function">uname</span> <span class="token parameter variable">-i</span>
 
 <span class="token comment"># 使用 -a 选项，打印上述所有示例中的信息</span>
-<span class="token function">uname</span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">uname</span> <span class="token parameter variable">-a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="5-date-显示和设置系统日期和时间"><a href="#5-date-显示和设置系统日期和时间" class="headerlink" title="5. date - 显示和设置系统日期和时间"></a>5. date - 显示和设置系统日期和时间</h2><p><code>date</code>命令用于以多种格式显示日期和时间，或设置系统的日期和时间。<code>date</code>命令的语法如下所示：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">date</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>+FORMAT<span class="token punctuation">]</span>
@@ -862,34 +862,34 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">date</span> +<span class="token string">"%Y-%m-%d"</span>
 
 <span class="token comment"># 格式化输出昨天的日期</span>
-<span class="token function">date</span> -d <span class="token string">"1 day ago"</span> +<span class="token string">"%Y-%m-%d"</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"1 day ago"</span> +<span class="token string">"%Y-%m-%d"</span>
 
 <span class="token comment"># 2秒后格式化输出</span>
-<span class="token function">date</span> -d <span class="token string">"2 second"</span> +<span class="token string">"%Y-%m-%d %H:%M.%S"</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"2 second"</span> +<span class="token string">"%Y-%m-%d %H:%M.%S"</span>
 
 <span class="token comment"># 普通格式化转出</span>
-<span class="token function">date</span> -d <span class="token string">"2009-12-12"</span> +<span class="token string">"%Y/%m/%d %H:%M.%S"</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"2009-12-12"</span> +<span class="token string">"%Y/%m/%d %H:%M.%S"</span>
 
 <span class="token comment"># apache格式转换</span>
-<span class="token function">date</span> -d <span class="token string">"Dec 5, 2009 12:00:37 AM"</span> +<span class="token string">"%Y-%m-%d %H:%M.%S"</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"Dec 5, 2009 12:00:37 AM"</span> +<span class="token string">"%Y-%m-%d %H:%M.%S"</span>
 
 <span class="token comment"># 日期加减操作</span>
 <span class="token function">date</span> +%Y%m%d <span class="token comment">#显示前天年月日</span>
-<span class="token function">date</span> -d <span class="token string">"+1 day"</span> +%Y%m%d <span class="token comment">#显示前一天的日期</span>
-<span class="token function">date</span> -d <span class="token string">"-1 day"</span> +%Y%m%d <span class="token comment">#显示后一天的日期</span>
-<span class="token function">date</span> -d <span class="token string">"-1 month"</span> +%Y%m%d <span class="token comment">#显示上一月的日期</span>
-<span class="token function">date</span> -d <span class="token string">"+1 month"</span> +%Y%m%d <span class="token comment">#显示下一月的日期</span>
-<span class="token function">date</span> -d <span class="token string">"-1 year"</span> +%Y%m%d <span class="token comment">#显示前一年的日期</span>
-<span class="token function">date</span> -d <span class="token string">"+1 year"</span> +%Y%m%d <span class="token comment">#显示下一年的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"+1 day"</span> +%Y%m%d <span class="token comment">#显示前一天的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"-1 day"</span> +%Y%m%d <span class="token comment">#显示后一天的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"-1 month"</span> +%Y%m%d <span class="token comment">#显示上一月的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"+1 month"</span> +%Y%m%d <span class="token comment">#显示下一月的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"-1 year"</span> +%Y%m%d <span class="token comment">#显示前一年的日期</span>
+<span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">"+1 year"</span> +%Y%m%d <span class="token comment">#显示下一年的日期</span>
 
 <span class="token comment"># 设定时间</span>
-<span class="token function">date</span> -s <span class="token comment"># 设置当前时间，只有root权限才能设置，其他只能查看</span>
-<span class="token function">date</span> -s <span class="token number">20160816</span> <span class="token comment"># 设置成20160816，这样会把具体时间设置成空00:00:00</span>
-<span class="token function">date</span> -s 01:01:01 <span class="token comment"># 设置具体时间，不会对日期做更改</span>
-<span class="token function">date</span> -s <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment"># 这样可以设置全部时间 </span>
-<span class="token function">date</span> -s <span class="token string">"01:01:01 20120523"</span> <span class="token comment"># 这样可以设置全部时间</span>
-<span class="token function">date</span> -s <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment"># 这样可以设置全部时间 </span>
-<span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment"># 这样可以设置全部时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token comment"># 设置当前时间，只有root权限才能设置，其他只能查看</span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token number">20160816</span> <span class="token comment"># 设置成20160816，这样会把具体时间设置成空00:00:00</span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> 01:01:01 <span class="token comment"># 设置具体时间，不会对日期做更改</span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment"># 这样可以设置全部时间 </span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token string">"01:01:01 20120523"</span> <span class="token comment"># 这样可以设置全部时间</span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment"># 这样可以设置全部时间 </span>
+<span class="token function">date</span> <span class="token parameter variable">-s</span> <span class="token string">"20120523 01:01:01"</span> <span class="token comment"># 这样可以设置全部时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="6-id-显示用户属性"><a href="#6-id-显示用户属性" class="headerlink" title="6. id - 显示用户属性"></a>6. id - 显示用户属性</h2><p><code>id</code>命令用于打印输出用户<code>uid</code>、<code>gid</code>、用户名和组名等用户身份信息。<code>id</code>命令的语法如下所示：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -899,22 +899,22 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">id</span>
 
 <span class="token comment"># 使用 -u 选项，输出用户的 uid</span>
-<span class="token function">id</span> -u
+<span class="token function">id</span> <span class="token parameter variable">-u</span>
 
 <span class="token comment">#-u 选项和 -n 选项结合使用，输出账户的用户名</span>
-<span class="token function">id</span> -un
+<span class="token function">id</span> <span class="token parameter variable">-un</span>
 
 <span class="token comment"># 使用 -g 选项，输出帐号当前起作用的gid</span>
-<span class="token function">id</span> -g
+<span class="token function">id</span> <span class="token parameter variable">-g</span>
 
 <span class="token comment"># -g 与 -n 选项结合使用，输出帐号当前起作用的用户组名</span>
-<span class="token function">id</span> -gn
+<span class="token function">id</span> <span class="token parameter variable">-gn</span>
 
 <span class="token comment"># 使用 -G 选项，输出帐号所属的所有群组id</span>
-<span class="token function">id</span> -G root
+<span class="token function">id</span> <span class="token parameter variable">-G</span> root
 
 <span class="token comment"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span>
-<span class="token function">id</span> -Gn root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">id</span> <span class="token parameter variable">-Gn</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       </div>
       <div class="post-tags-categories">
         
@@ -1642,9 +1642,9 @@ s
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="tencent"
+  type="playlist"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

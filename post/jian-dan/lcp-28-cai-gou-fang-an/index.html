@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -814,15 +814,15 @@
 <h3 id="🧠-解题思路"><a href="#🧠-解题思路" class="headerlink" title="🧠 解题思路"></a>🧠 解题思路</h3><p>通过分析题意，我们得知其需求很简单，就是在 $nums$ 中找到两个数 $a$ 和 $b$，并且让其满足 $a + b &lt;= target$ 即可！</p>
 <p>首先，如果通过双 $for$ 暴破，很显然，会超时的……，别问我怎么知道的哈！！</p>
 <p>咳，咳咳…，言归正传，先整个例子便于讲解：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">nums：<span class="token punctuation">[</span><span class="token number">2</span>，<span class="token number">2</span>，<span class="token number">1</span>，<span class="token number">9</span><span class="token punctuation">]</span>     target<span class="token operator">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">nums：<span class="token punctuation">[</span><span class="token number">2</span>，<span class="token number">2</span>，<span class="token number">1</span>，<span class="token number">9</span><span class="token punctuation">]</span>     target<span class="token operator">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>首先，获取两个数，求和之后再和某个数做比较，这个题其实和 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/solution/shuang-zhi-zhen-he-wei-sde-liang-ge-shu-wy7r4/">剑指 Offer 57. 和为s的两个数字</a> 极为相似，不知道的小伙伴可以先行看看这道题熟悉一下思路。</p>
 <p>首先，为了便于计算，我们先对 $nums$ 做升序排序。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">nums：<span class="token punctuation">[</span><span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">2</span>，<span class="token number">9</span><span class="token punctuation">]</span>     target<span class="token operator">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">nums：<span class="token punctuation">[</span><span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">2</span>，<span class="token number">9</span><span class="token punctuation">]</span>     target<span class="token operator">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后，创建一个指针 $i$ 指针指向 $nums$ 首位，再创建一个指针 $j$ 指向 $nums$ 末位，然后通过遍历，找到符合 $nums[i] + nums[j] &lt;= target$ 条件的 $i$，$j$ 区间范围。</p>
 <p>既然该范围的边界值之和都满足了条件，那么代表该区间内的所有数字和 $nums[i]$ 相加都满足条件，所以，我们可以通过 $j - i$ 来获取到当前有多少个数，可以和 $nums[i]$ 相加后满足条件！</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">i：<span class="token number">0</span>    j：<span class="token number">3</span>    nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>，满足条件 <span class="token operator">&lt;=</span> <span class="token number">10</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">i：<span class="token number">0</span>    j：<span class="token number">3</span>    nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>，满足条件 <span class="token operator">&lt;=</span> <span class="token number">10</span>
 
 所以，当 i <span class="token operator">=</span> <span class="token number">0</span> 时，存在 j <span class="token operator">-</span> i <span class="token operator">=</span> <span class="token number">3</span> 种方案，即：<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
 
@@ -1724,9 +1724,9 @@ int purchasePlans(int* nums, int numsSize, int target)&#123;
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947131"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

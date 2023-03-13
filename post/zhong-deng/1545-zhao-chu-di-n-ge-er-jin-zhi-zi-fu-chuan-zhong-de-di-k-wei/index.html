@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -913,14 +913,14 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">private</span><span class="token operator">:</span>
     <span class="token keyword">char</span> <span class="token function">ch_not</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token string">'1'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
-        <span class="token keyword">else</span>          <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token string">'0'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token char">'0'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token char">'1'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span>          <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token char">'0'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">char</span> <span class="token function">findKthBit</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token string">'0'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token char">'0'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
         <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>k <span class="token operator">==</span> mid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token string">'1'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>k <span class="token operator">==</span> mid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token char">'1'</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>k <span class="token operator">&lt;</span> mid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token function">findKthBit</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
         <span class="token keyword">return</span> <span class="token function">ch_not</span><span class="token punctuation">(</span><span class="token function">findKthBit</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span>n<span class="token punctuation">)</span> <span class="token operator">-</span> k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     <span class="token punctuation">&#125;</span>
@@ -957,12 +957,12 @@
         
         <div class="tags">
           
-            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
-              递归
-            </a>
-          
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
               字符串
+            </a>
+          
+            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
+              递归
             </a>
           
         </div>
@@ -1684,9 +1684,9 @@
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3302755"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

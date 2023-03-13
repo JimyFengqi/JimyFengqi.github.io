@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -1279,8 +1279,8 @@ class Solution:
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>javaScript:</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
-前序遍历<span class="token operator">:</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
+<span class="token literal-property property">前序遍历</span><span class="token operator">:</span>
 
 <span class="token keyword">var</span> <span class="token function-variable function">preorderTraversal</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
@@ -1290,7 +1290,7 @@ class Solution:
     <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-中序遍历<span class="token operator">:</span>
+<span class="token literal-property property">中序遍历</span><span class="token operator">:</span>
 
 <span class="token keyword">var</span> <span class="token function-variable function">inorderTraversal</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
@@ -1300,7 +1300,7 @@ class Solution:
     <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-后序遍历<span class="token operator">:</span>
+<span class="token literal-property property">后序遍历</span><span class="token operator">:</span>
 
 <span class="token keyword">var</span> <span class="token function-variable function">postorderTraversal</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
@@ -1597,8 +1597,8 @@ func (l *List) Back() *Element
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>javaScript</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
-前序遍历<span class="token operator">:</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
+<span class="token literal-property property">前序遍历</span><span class="token operator">:</span>
 
 <span class="token comment">// 入栈 右 -> 左</span>
 <span class="token comment">// 出栈 中 -> 左 -> 右</span>
@@ -1615,7 +1615,7 @@ func (l *List) Back() *Element
     <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-中序遍历<span class="token operator">:</span>
+<span class="token literal-property property">中序遍历</span><span class="token operator">:</span>
 
 <span class="token comment">// 入栈 左 -> 右</span>
 <span class="token comment">// 出栈 左 -> 中 -> 右</span>
@@ -1639,7 +1639,7 @@ func (l *List) Back() *Element
     <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-后序遍历<span class="token operator">:</span>
+<span class="token literal-property property">后序遍历</span><span class="token operator">:</span>
 
 <span class="token comment">// 入栈 左 -> 右</span>
 <span class="token comment">// 出栈 中 -> 右 -> 左 结果翻转</span>
@@ -1937,7 +1937,7 @@ func preorderTraversal(root *TreeNode) []int &#123;
 <blockquote>
 <p>前序遍历统一迭代法</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token comment">// 前序遍历：中左右</span>
 <span class="token comment">// 压栈顺序：右左中</span>
 
@@ -1962,7 +1962,7 @@ func preorderTraversal(root *TreeNode) []int &#123;
 <blockquote>
 <p>中序遍历统一迭代法</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token comment">//  中序遍历：左中右</span>
 <span class="token comment">//  压栈顺序：右中左</span>
  
@@ -1987,7 +1987,7 @@ func preorderTraversal(root *TreeNode) []int &#123;
 <blockquote>
 <p>后序遍历统一迭代法</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token comment">// 后续遍历：左右中</span>
 <span class="token comment">// 压栈顺序：中右左</span>
  
@@ -2063,8 +2063,8 @@ func preorderTraversal(root *TreeNode) []int &#123;
         
         <div class="tags">
           
-            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
-              深度优先搜索
+            <a href="/tags/%E6%A0%88/" class="">
+              栈
             </a>
           
             <a href="/tags/%E6%A0%91/" class="">
@@ -2075,8 +2075,8 @@ func preorderTraversal(root *TreeNode) []int &#123;
               二叉树
             </a>
           
-            <a href="/tags/%E6%A0%88/" class="">
-              栈
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
+              深度优先搜索
             </a>
           
         </div>
@@ -2802,7 +2802,7 @@ func preorderTraversal(root *TreeNode) []int &#123;
   class=""
   server="kugou"
   type="playlist"
-  id="3947131"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

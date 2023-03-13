@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -878,7 +878,7 @@ Hence, answer[0] = 8, and so on.
 <p>递归到底部就遇到结果已知的case，随着递归的出栈，结果向上返回，就求出了每个子树的<code>distSum</code>。</p>
 <p>底部的 base case 就是叶子节点，显然，我们需要遍历当前 root 节点的所有邻居，如果它的邻居只有它的父亲，说明它是叶子节点：<code>nodeNum</code>为 1，<code>distSum</code>为 0。</p>
 <p>要想遍历所有的邻居，需要先构建邻接关系表：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> graph <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token constant">N</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> graph<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -899,7 +899,7 @@ Hence, answer[0] = 8, and so on.
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>先递归压栈压到底，遇到base case，自底而上，由小子树的结果，算出大子树的结果：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">postOrder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
     <span class="token keyword">const</span> neighbors <span class="token operator">=</span> graph<span class="token punctuation">[</span>root<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 与它相连的节点们</span>
@@ -936,7 +936,7 @@ Hence, answer[0] = 8, and so on.
 <p>$$distSum[i] = distSum[root] - nodeNum[i] + (N - nodeNum[i])$$</p>
 <p>从上往下计算，不是等到遇到底部的 base case 再计算。而是，在递归当前节点的子树之前，就更新当前节点的<code>distSum</code>，使之正确，然后用正确的<code>distSum</code>，递推出子节点的 <code>distSum</code>。</p>
 <p>因此先处理当前节点（做计算），再递归压栈，即前序遍历：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">preOrder</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
     <span class="token keyword">const</span> neighbors <span class="token operator">=</span> graph<span class="token punctuation">[</span>root<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -961,7 +961,7 @@ Hence, answer[0] = 8, and so on.
 
 
 <p>可见，我们用了两次 DFS，前者计算出每个子树的<code>nodeNum</code>和<code>distSum</code>，后者计算出真正的<code>distSum</code>（每个节点与「其他所有节点」的距离和），注意二者的区别。</p>
-<h4 id="最终代码"><a href="#最终代码" class="headerlink" title="最终代码"></a>最终代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<h4 id="最终代码"><a href="#最终代码" class="headerlink" title="最终代码"></a>最终代码</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
 <span class="token keyword">const</span> <span class="token function-variable function">sumOfDistancesInTree</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">N</span><span class="token punctuation">,</span> edges</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
   <span class="token comment">// 建立映射表，graph[i]：存放节点i 和 与它相连的所有节点</span>
@@ -1113,16 +1113,16 @@ Hence, answer[0] = 8, and so on.
         
         <div class="tags">
           
+            <a href="/tags/%E6%A0%91/" class="">
+              树
+            </a>
+          
             <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
               动态规划
             </a>
           
             <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="">
               深度优先搜索
-            </a>
-          
-            <a href="/tags/%E6%A0%91/" class="">
-              树
             </a>
           
             <a href="/tags/%E5%9B%BE/" class="">
@@ -1165,19 +1165,19 @@ Hence, answer[0] = 8, and so on.
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/jian-dan/832-fan-zhuan-tu-xiang/" class="post-nav-link">
+    <a href="/post/zhong-deng/835-tu-xiang-chong-die/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">832-翻转图像(Flipping an Image)</div>
+        <div class="title-text">835-图像重叠(Image Overlap)</div>
       </div>
       
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/flipping-an-image
+原文链接: https://leetcode-cn.com/problems/image-overlap
 
-英
+英文原文Y
       </div> -->
     </a>
   </div>
@@ -1188,18 +1188,18 @@ Hence, answer[0] = 8, and so on.
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/2.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/3.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/zhong-deng/835-tu-xiang-chong-die/" class="post-nav-link">
+    <a href="/post/jian-dan/836-ju-xing-chong-die/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">835-图像重叠(Image Overlap)</div>
+        <div class="title-text">836-矩形重叠(Rectangle Overlap)</div>
       </div>
       <!-- <div class="content">
         
-原文链接: https://leetcode-cn.com/problems/image-overlap
+原文链接: https://leetcode-cn.com/problems/rectangle-overlap
 
-英文原文Y
+英
       </div> -->
     </a>
   </div>
@@ -1852,9 +1852,9 @@ Hence, answer[0] = 8, and so on.
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

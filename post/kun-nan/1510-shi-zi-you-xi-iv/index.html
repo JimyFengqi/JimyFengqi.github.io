@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -951,15 +951,15 @@ If Alice starts removing 1 stone, Bob will remove 4 stones then Alice only can r
         <span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> month <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> year <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         string t<span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">isdigit</span><span class="token punctuation">(</span>date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            day <span class="token operator">=</span> day<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>date<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span><span class="token comment">//天数</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>date<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span>
+            day <span class="token operator">=</span> day<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>date<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">;</span><span class="token comment">//天数</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>date<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token char">' '</span><span class="token punctuation">)</span>
             i<span class="token operator">++</span><span class="token punctuation">;</span>
         i<span class="token operator">++</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">isalpha</span><span class="token punctuation">(</span>date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             t <span class="token operator">+=</span> date<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//月份的字符串</span>
         i<span class="token operator">++</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> date<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            year <span class="token operator">=</span> year<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>date<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span><span class="token comment">//年</span>
+            year <span class="token operator">=</span> year<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>date<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">;</span><span class="token comment">//年</span>
         <span class="token keyword">return</span> <span class="token function">to_string</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>m<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span><span class="token punctuation">(</span>day<span class="token operator">>=</span><span class="token number">10</span> <span class="token operator">?</span> <span class="token function">to_string</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token operator">+</span><span class="token function">to_string</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>   
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1171,12 +1171,12 @@ Bob 拿走最后一个石子并赢得胜利（<span class="token number">7</span
         
         <div class="tags">
           
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
-            </a>
-          
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
+            </a>
+          
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
+              动态规划
             </a>
           
             <a href="/tags/%E5%8D%9A%E5%BC%88/" class="">
@@ -1904,9 +1904,9 @@ Bob 拿走最后一个石子并赢得胜利（<span class="token number">7</span
 
 <meting-js
   class=""
-  server="netease"
+  server="tencent"
   type="playlist"
-  id="4888271555"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -858,7 +858,7 @@
 <p>除此之外还有一点小的代码优化工作：将需要重复用到<code>order = request.GET.get(&#39;order&#39;)</code>提取到顶部，让模块稍稍清爽一点。</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>还是修改文章列表的模板文件。</p>
 <p>需要修改的内容稍多，仔细一些不要看错：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 
@@ -867,12 +867,12 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;?search=&#123;&#123; search &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;?search=&#123;&#123; search &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
                     最新
                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;?order=total_views&amp;search=&#123;&#123; search &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;?order=total_views&amp;search=&#123;&#123; search &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
                     最热
                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
@@ -941,7 +941,7 @@
 <p>另外笔者这样实现搜索不一定是最优的。相信你已经掌握多种途径来实现搜索功能了（POST请求？搜索专用视图？另写url？），尽情尝试一番吧。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#102;&#111;&#x78;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#100;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#102;&#111;&#x78;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#97;&#105;&#x70;&#x68;&#111;&#116;&#x6f;&#64;&#x66;&#x6f;&#x78;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#100;&#x75;&#x73;&#97;&#105;&#x70;&#x68;&#111;&#116;&#x6f;&#64;&#x66;&#x6f;&#x78;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 <blockquote>
@@ -993,17 +993,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/10.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/21.zui-re-wen-zhang/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/18.shang-chuan-tou-xiang/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--21.最热文章</div>
+        <div class="title-text">Django博客网站搭建--18.上传头像</div>
       </div>
       
       <!-- <div class="content">
-        有了浏览量之后，文章受欢迎的程度就有了评价标准。随之而来的就有根据浏览量对文章进行排序的需求，即显示“最热文章”。
-现在
+        到目前为止我们的博客处理的都是文字。现代互联网早就进入了“读图”时代，图片的维护、展示也就相当重要。
+上一章中预留了av
       </div> -->
     </a>
   </div>
@@ -1014,15 +1014,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/10.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/23.wen-zhang-mu-lu/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/21.zui-re-wen-zhang/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--23.文章目录</div>
+        <div class="title-text">Django博客网站搭建--21.最热文章</div>
       </div>
       <!-- <div class="content">
-        对会读书的人来说，读一本书要做的第一件事，就是仔细阅读这本书的目录。阅读目录可以对整体内容有所了解，并清楚地知道感兴趣的
+        有了浏览量之后，文章受欢迎的程度就有了评价标准。随之而来的就有根据浏览量对文章进行排序的需求，即显示“最热文章”。
+现在
       </div> -->
     </a>
   </div>
@@ -1677,7 +1678,7 @@
   class=""
   server="kugou"
   type="playlist"
-  id="3428290"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -814,7 +814,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p><code>&lt;int:id&gt;</code>：Django2.0的<code>path</code>新语法用**尖括号&lt;&gt;**定义需要传递的参数。这里需要传递名叫<code>id</code>的整数到视图函数中去。</p>
 <p><strong>重申一下老版本的Django是没有<code>path</code>语法的。</strong></p>
 <h2 id="编写模板"><a href="#编写模板" class="headerlink" title="编写模板"></a>编写模板</h2><p>在<code>templates/article/</code>中新建<code>detail.html</code>文件，编写如下代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 <span class="token comment">&lt;!-- extends表明此页面继承自 base.html 文件 --></span>
 &#123;% extends "base.html" %&#125;
@@ -849,7 +849,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p><img src="https://www.dusaiphoto.com/media/image/image_source/20180916/34.jpg" class="lazyload placeholder" data-srcset="https://www.dusaiphoto.com/media/image/image_source/20180916/34.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <h2 id="优化网页入口"><a href="#优化网页入口" class="headerlink" title="优化网页入口"></a>优化网页入口</h2><p>虽然已经实现了文章详情功能，但是通过输入url访问的方式实在太不友好。</p>
 <p>改写<code>header.html</code>，让用户可通过导航栏右侧的<strong>文章</strong>链接返回首页：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/header.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/header.html
 
 ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
@@ -857,7 +857,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         
             <span class="token comment">&lt;!-- 改写了这里的 href --></span> 
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav-link<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>文章<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav-link<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>文章<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
           
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
@@ -880,14 +880,14 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>通过这样的方法就将链接跳转的指向给配置好了，只要对应url的名称不变，url本身无论怎么变化，Django都可以解析到正确的地址，很灵活。</p>
 <p>当然你也可以直接在<code>href</code>中写入url的地址，但是一旦url有变化，所有相关的链接都会失效，维护性不好。</p>
 <p>然后再改写<code>list.html</code>，让用户可点击<strong>阅读本文</strong>按钮进入文章详情：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- 同样改写 href --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_detail<span class="token punctuation">'</span> article.id %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>阅读本文<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_detail' article.id %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>阅读本文<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
     
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
@@ -904,7 +904,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>下一章将学习使用Markdown语法对文章正文进行排版。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#117;&#115;&#x61;&#x69;&#x70;&#x68;&#x6f;&#x74;&#111;&#x40;&#102;&#x6f;&#120;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x64;&#117;&#115;&#x61;&#x69;&#x70;&#x68;&#x6f;&#x74;&#111;&#x40;&#102;&#x6f;&#120;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#117;&#x73;&#97;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#x40;&#x66;&#111;&#120;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#100;&#117;&#x73;&#97;&#x69;&#112;&#104;&#111;&#x74;&#x6f;&#x40;&#x66;&#111;&#120;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -953,17 +953,17 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/06.view-ji-template/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/04.bian-xie-model/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--06.View及Template</div>
+        <div class="title-text">Django博客网站搭建--04.编写Model</div>
       </div>
       
       <!-- <div class="content">
-        改写视图函数上一章我们感受了视图的工作流程。
-为了让视图真正发挥作用，改写article/views.py中的artic
+        Django 框架主要关注的是模型（Model）、模板（Template）和视图（Views），称为MTV模式。
+它们各
       </div> -->
     </a>
   </div>
@@ -974,15 +974,16 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/14.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/07.shi-yong-bootstrap-gai-xie-mo-ban/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/06.view-ji-template/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--07.使用Bootstrap改写模板</div>
+        <div class="title-text">Django博客网站搭建--06.View及Template</div>
       </div>
       <!-- <div class="content">
-        注意：学本章之前请检查 Django 版本，确保安装的是 Django 2 而不是 Django 3，否则后面所有的章节
+        改写视图函数上一章我们感受了视图的工作流程。
+为了让视图真正发挥作用，改写article/views.py中的artic
       </div> -->
     </a>
   </div>
@@ -1635,9 +1636,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3428290"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -785,9 +785,9 @@
 <p>中文搜索需要进行中文分词，使用jieba。</p>
 <p>直接在django项目中使用whoosh需要关注一些基础细节问题，而通过haystack这一搜索框架，可以方便地在django中直接添加搜索功能，无需关注索引建立、搜索解析等细节问题。</p>
 <p>haystack支持多种搜索引擎，不仅仅是whoosh，使用solr、elastic search等搜索，也可通过haystack，而且直接切换引擎即可，甚至无需修改搜索代码。</p>
-<h1 id="配置搜索"><a href="#配置搜索" class="headerlink" title="配置搜索"></a>配置搜索</h1><h2 id="1-安装相关包"><a href="#1-安装相关包" class="headerlink" title="1.安装相关包"></a>1.安装相关包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install django-haystack
-pip install whoosh
-pip install jieba<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="配置搜索"><a href="#配置搜索" class="headerlink" title="配置搜索"></a>配置搜索</h1><h2 id="1-安装相关包"><a href="#1-安装相关包" class="headerlink" title="1.安装相关包"></a>1.安装相关包</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> django-haystack
+pip <span class="token function">install</span> whoosh
+pip <span class="token function">install</span> jieba<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-配置django的settings"><a href="#2-配置django的settings" class="headerlink" title="2.配置django的settings"></a>2.配置django的settings</h2><p>修改settings.py文件，添加haystack应用：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -858,7 +858,7 @@ HAYSTACK_SIGNAL_PROCESSOR <span class="token operator">=</span> <span class="tok
 &#123;&#123; object.title &#125;&#125;
 &#123;&#123; object.body &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-指定搜索结果页面"><a href="#6-指定搜索结果页面" class="headerlink" title="6.指定搜索结果页面"></a>6.指定搜索结果页面</h2><p>在templates/search/下面，建立一个search.html页面。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
@@ -911,9 +911,9 @@ analyzer<span class="token operator">=</span>ChineseAnalyzer<span class="token p
     &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;查询&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意，由于我们自定义了search_view的路由，因此，这里的action需要写成写对的位置，或者</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>blog:haystack<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="10-自定义搜索视图"><a href="#10-自定义搜索视图" class="headerlink" title="10. 自定义搜索视图"></a>10. 自定义搜索视图</h2><h2 id="11-序列化API设置"><a href="#11-序列化API设置" class="headerlink" title="11. 序列化API设置"></a>11. 序列化API设置</h2><h3 id="1-安装相关包-1"><a href="#1-安装相关包-1" class="headerlink" title="1.安装相关包"></a>1.安装相关包</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install drf-haystack 
-pip install djangorestframework <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'blog:haystack' %&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="10-自定义搜索视图"><a href="#10-自定义搜索视图" class="headerlink" title="10. 自定义搜索视图"></a>10. 自定义搜索视图</h2><h2 id="11-序列化API设置"><a href="#11-序列化API设置" class="headerlink" title="11. 序列化API设置"></a>11. 序列化API设置</h2><h3 id="1-安装相关包-1"><a href="#1-安装相关包-1" class="headerlink" title="1.安装相关包"></a>1.安装相关包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> drf-haystack 
+pip <span class="token function">install</span> djangorestframework <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>安装需要的第三方包</p>
 <h3 id="2-编写序列化类"><a href="#2-编写序列化类" class="headerlink" title="2.编写序列化类"></a>2.编写序列化类</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># blog/serializer.py</span>
 <span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -954,7 +954,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     path<span class="token punctuation">(</span><span class="token string">'api/'</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span>router<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>   <span class="token comment"># API路由</span>
 <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="12-生成索引"><a href="#12-生成索引" class="headerlink" title="12.生成索引"></a>12.生成索引</h2><p>手动生成一次索引：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">python3 manage.py rebuild_index<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python3 manage.py rebuild_index<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="丰富的自定义"><a href="#丰富的自定义" class="headerlink" title="丰富的自定义"></a>丰富的自定义</h1><p>上面只是快速完成一个基本的搜索引擎，haystack还有更多可自定义，来实现个性化的需求。</p>
 <pre><code>参考官方文档：http://django-haystack.readthedocs.io/en/master/
 </code></pre>
@@ -1734,9 +1734,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <meting-js
   class=""
-  server="kugou"
+  server="netease"
   type="playlist"
-  id="3947131"
+  id="4888271555"
   fixed='true'
   autoplay='true'
   theme='#42b983'

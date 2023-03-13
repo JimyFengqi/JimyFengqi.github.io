@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -841,7 +841,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
 <h3 id="重写文章列表"><a href="#重写文章列表" class="headerlink" title="重写文章列表"></a>重写文章列表</h3><p>之前我们用<strong>卡片类型</strong>的UI界面展示文章列表。</p>
 <p>卡片的好处是简洁大方，但是<strong>随着数据的增多</strong>，卡片小小的版面已经不堪重负了。</p>
 <p>因此这里重写<code>list.html</code>模板的列表循环：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">article/list.html
 
 ...
 
@@ -854,11 +854,11 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
             &#123;% if article.column %&#125;
                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> 
                     <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm mb-2
-                        &#123;% if article.column.title == <span class="token punctuation">'</span>Django<span class="token punctuation">'</span> %&#125;
+                        &#123;% if article.column.title == 'Django' %&#125;
                             btn-success
-                        &#123;% elif article.column.title == <span class="token punctuation">'</span>Java<span class="token punctuation">'</span> %&#125;
+                        &#123;% elif article.column.title == 'Java' %&#125;
                             btn-danger
-                        &#123;% elif article.column.title == <span class="token punctuation">'</span>HTML<span class="token punctuation">'</span> %&#125;
+                        &#123;% elif article.column.title == 'HTML' %&#125;
                             btn-warning
                         &#123;% endif %&#125;
                     <span class="token punctuation">"</span></span>
@@ -869,7 +869,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
             <span class="token comment">&lt;!-- 标题 --></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span>
                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_detail<span class="token punctuation">'</span> article.id %&#125;<span class="token punctuation">"</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_detail' article.id %&#125;<span class="token punctuation">"</span></span>
                        <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> 
                     <span class="token punctuation">></span></span>
                         &#123;&#123; article.title &#125;&#125;
@@ -909,7 +909,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
 <p>感觉还不错！</p>
 <h2 id="修改写文章功能"><a href="#修改写文章功能" class="headerlink" title="修改写文章功能"></a>修改写文章功能</h2><p>展示已经没问题了，但是发表新文章时还不能选择栏目。</p>
 <p>修改写文章的模板，在表单中新增下面的内容：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/create.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/create.html
 
 ...
 
@@ -983,7 +983,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
 <p>测试一下，写文章的栏目功能应该可以正常工作了。</p>
 <h2 id="修改更新视图"><a href="#修改更新视图" class="headerlink" title="修改更新视图"></a>修改更新视图</h2><p>更新文章的视图同样也需要升级一下。</p>
 <p>还是先更改模板：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/update.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/update.html
 
 ...
 
@@ -1077,7 +1077,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
 <p>以上内容就不在这里赘述了。留给读者去尝试实现。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#100;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#100;&#117;&#x73;&#97;&#x69;&#112;&#x68;&#111;&#x74;&#111;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#115;&#x61;&#105;&#x70;&#104;&#111;&#116;&#x6f;&#x40;&#x66;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#x64;&#x75;&#115;&#x61;&#105;&#x70;&#104;&#111;&#116;&#x6f;&#x40;&#x66;&#x6f;&#120;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1126,16 +1126,16 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/24.ping-lun/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/23.wen-zhang-mu-lu/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--24.评论</div>
+        <div class="title-text">Django博客网站搭建--23.文章目录</div>
       </div>
       
       <!-- <div class="content">
-        在没有互联网的年代，我们用日记来记录每天的心得体会。小的时候我有一个带锁的日记本，生怕被别人看见里面写了啥，钥匙藏得那叫
+        对会读书的人来说，读一本书要做的第一件事，就是仔细阅读这本书的目录。阅读目录可以对整体内容有所了解，并清楚地知道感兴趣的
       </div> -->
     </a>
   </div>
@@ -1148,15 +1148,21 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/26.ji-yu-lei-de-shi-tu/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/25.ke-jian-xiu-xi/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--26.基于类的视图</div>
+        <div class="title-text">Django博客网站搭建--25.课间休息</div>
       </div>
       <!-- <div class="content">
-        说是完结，马上又开始写进阶篇了。
-本章不会为博客项目增加新功能，但是也同样重要，因为我们要学习高逼格的基于类的视图。
-什
+        教程看到这里，你已经学会如下内容：
+
+搭建开发环境
+博文管理
+用户管理
+发表评论
+若干其他功能
+
+搭建简单的小博客，以上
       </div> -->
     </a>
   </div>
@@ -1811,7 +1817,7 @@ admin<span class="token punctuation">.</span>site<span class="token punctuation"
   class=""
   server="kugou"
   type="playlist"
-  id="3947131"
+  id="3428290"
   fixed='true'
   autoplay='true'
   theme='#42b983'

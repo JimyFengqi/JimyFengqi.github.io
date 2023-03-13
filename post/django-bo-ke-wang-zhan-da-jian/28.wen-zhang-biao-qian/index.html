@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -843,7 +843,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 
 <p>需要注意的是，如果提交的表单使用了<code>commit=False</code>选项，则必须调用<code>save_m2m()</code>才能正确的保存标签，就像普通的多对多关系一样。</p>
 <p>最后就是在发表文章的模板中添加标签的表单项了：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/create.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/create.html
 
 ...
 <span class="token comment">&lt;!-- 提交文章的表单 --></span>
@@ -870,7 +870,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <h2 id="列表中显示标签"><a href="#列表中显示标签" class="headerlink" title="列表中显示标签"></a>列表中显示标签</h2><p>虽然保存标签的功能已经实现了，还得把它显示出来才行。</p>
 <p>显示标签最常用的位置是在<strong>文章列表</strong>中，方便用户筛选感兴趣的文章。</p>
 <p>修改文章列表的模板，将标签显示出来：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 <span class="token comment">&lt;!-- 栏目 --></span>
@@ -896,14 +896,14 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <h2 id="标签过滤"><a href="#标签过滤" class="headerlink" title="标签过滤"></a>标签过滤</h2><p>有时候用户想搜索带有某一个标签的所有文章，现在就来做这个功能。</p>
 <p>与搜索功能一样，只需要调取数据时用<code>filter()</code>方法过滤结果就可以了。</p>
 <p>修改<code>&lt;a&gt;</code>标签中的<code>href</code>，使其带有<code>tag</code>参数返回到View中：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 
 <span class="token comment">&lt;!-- 标签 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>
     &#123;% for tag in article.tags.all %&#125;
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;?tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;?tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span>
            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>badge badge-secondary<span class="token punctuation">"</span></span> 
         <span class="token punctuation">></span></span>
             &#123;&#123; tag &#125;&#125;
@@ -972,19 +972,19 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <p><code>Model.objects.filter(tags__name__in=[&quot;tag1&quot;, &quot;tag2&quot;])</code></p>
 </blockquote>
 <p>为了实现带参数的交叉查询，还要将<strong>翻页</strong>等位置的<code>href</code>修改一下：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/list.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/list.html
 
 ...
 
 <span class="token comment">&lt;!-- 所有类似地方加上 tag 参数，如排序、翻页等 --></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;?search=&#123;&#123; search &#125;&#125;&amp;column=&#123;&#123; column &#125;&#125;&amp;tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;?search=&#123;&#123; search &#125;&#125;&amp;column=&#123;&#123; column &#125;&#125;&amp;tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     最新
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 
 ...
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_list<span class="token punctuation">'</span> %&#125;?order=total_views&amp;search=&#123;&#123; search &#125;&#125;&amp;column=&#123;&#123; column &#125;&#125;&amp;tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_list' %&#125;?order=total_views&amp;search=&#123;&#123; search &#125;&#125;&amp;column=&#123;&#123; column &#125;&#125;&amp;tag=&#123;&#123; tag &#125;&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     最热
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 
@@ -1010,7 +1010,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <hr>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#x75;&#x73;&#97;&#105;&#x70;&#104;&#x6f;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x64;&#x75;&#x73;&#97;&#105;&#x70;&#104;&#x6f;&#x74;&#111;&#x40;&#x66;&#x6f;&#x78;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#x64;&#117;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#x74;&#111;&#64;&#x66;&#111;&#x78;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x64;&#117;&#x73;&#x61;&#x69;&#112;&#x68;&#111;&#x74;&#111;&#64;&#x66;&#111;&#x78;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1059,16 +1059,16 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/11.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/5.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/29.wen-zhang-biao-ti-tu/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/24.ping-lun/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--29.文章标题图</div>
+        <div class="title-text">Django博客网站搭建--24.评论</div>
       </div>
       
       <!-- <div class="content">
-        现在虽然博客的功能大都实现了，但是界面还是比较朴素，特别是首页的文章列表几乎全是文字，看多了难免疲劳。因此，给每个文章标
+        在没有互联网的年代，我们用日记来记录每天的心得体会。小的时候我有一个带锁的日记本，生怕被别人看见里面写了啥，钥匙藏得那叫
       </div> -->
     </a>
   </div>
@@ -1079,15 +1079,17 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/9.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/30.fu-wen-ben-bian-ji-qi/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/26.ji-yu-lei-de-shi-tu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django博客网站搭建--30.富文本编辑器</div>
+        <div class="title-text">Django博客网站搭建--26.基于类的视图</div>
       </div>
       <!-- <div class="content">
-        前面我们已经实现了用Markdown语法写文章了。但是文章的评论用Markdown就不太合适了，你不能强求用户也花时间去
+        说是完结，马上又开始写进阶篇了。
+本章不会为博客项目增加新功能，但是也同样重要，因为我们要学习高逼格的基于类的视图。
+什
       </div> -->
     </a>
   </div>
@@ -1740,9 +1742,9 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3947753"
+  id="8197627936"
   fixed='true'
   autoplay='true'
   theme='#42b983'

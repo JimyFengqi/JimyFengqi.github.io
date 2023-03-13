@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -819,10 +819,10 @@ path(&#39;chunked_upload_complete&#x2F;&#39;, views.MyChunkedUploadCompleteView.
 </ul>
 <p>由于上传前需要做一些校验的操作，代码较复杂，所以我们把上传的代码封装到了一个js中:static/js/myadmin/video_upload.js，<br>这些内容基本都是django_chunked_upload中的demo模板内容，主要的代码如下：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#chunked_upload"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fileupload</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  url<span class="token operator">:</span> api_chunked_uplad<span class="token punctuation">,</span>
-  dataType<span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
-  maxChunkSize<span class="token operator">:</span> <span class="token number">100000</span><span class="token punctuation">,</span> <span class="token comment">// Chunks of 100 kB</span>
-  formData<span class="token operator">:</span> form_data<span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> api_chunked_uplad<span class="token punctuation">,</span>
+  <span class="token literal-property property">dataType</span><span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">maxChunkSize</span><span class="token operator">:</span> <span class="token number">100000</span><span class="token punctuation">,</span> <span class="token comment">// Chunks of 100 kB</span>
+  <span class="token literal-property property">formData</span><span class="token operator">:</span> form_data<span class="token punctuation">,</span>
   <span class="token function-variable function">add</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// Called before starting upload</span>
     <span class="token keyword">var</span> fileSize <span class="token operator">=</span> data<span class="token punctuation">.</span>originalFiles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'size'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> type <span class="token operator">=</span> data<span class="token punctuation">.</span>originalFiles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -848,7 +848,7 @@ path(&#39;chunked_upload_complete&#x2F;&#39;, views.MyChunkedUploadCompleteView.
   <span class="token function-variable function">chunkdone</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// Called after uploading each chunk</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>form_data<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
       form_data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
-        <span class="token punctuation">&#123;</span><span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"upload_id"</span><span class="token punctuation">,</span> <span class="token string">"value"</span><span class="token operator">:</span> data<span class="token punctuation">.</span>result<span class="token punctuation">.</span>upload_id<span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#123;</span><span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"upload_id"</span><span class="token punctuation">,</span> <span class="token string-property property">"value"</span><span class="token operator">:</span> data<span class="token punctuation">.</span>result<span class="token punctuation">.</span>upload_id<span class="token punctuation">&#125;</span>
       <span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">var</span> progress <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>loaded <span class="token operator">/</span> data<span class="token punctuation">.</span>total <span class="token operator">*</span> <span class="token number">100.0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -856,25 +856,25 @@ path(&#39;chunked_upload_complete&#x2F;&#39;, views.MyChunkedUploadCompleteView.
     <span class="token keyword">if</span><span class="token punctuation">(</span>progress <span class="token operator">></span> lastprogress<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         lastprogress <span class="token operator">=</span> progress
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#upload_progress'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">progress</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            percent<span class="token operator">:</span> progress
+            <span class="token literal-property property">percent</span><span class="token operator">:</span> progress
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token function-variable function">done</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// Called when the file has completely uploaded</span>
     $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      type<span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
-      url<span class="token operator">:</span> api_chunked_upload_complete<span class="token punctuation">,</span>
-      data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        csrfmiddlewaretoken<span class="token operator">:</span> csrf<span class="token punctuation">,</span>
-        upload_id<span class="token operator">:</span> data<span class="token punctuation">.</span>result<span class="token punctuation">.</span>upload_id<span class="token punctuation">,</span>
-        md5<span class="token operator">:</span> md5
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">url</span><span class="token operator">:</span> api_chunked_upload_complete<span class="token punctuation">,</span>
+      <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">csrfmiddlewaretoken</span><span class="token operator">:</span> csrf<span class="token punctuation">,</span>
+        <span class="token literal-property property">upload_id</span><span class="token operator">:</span> data<span class="token punctuation">.</span>result<span class="token punctuation">.</span>upload_id<span class="token punctuation">,</span>
+        <span class="token literal-property property">md5</span><span class="token operator">:</span> md5
       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      dataType<span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">dataType</span><span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
       <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#upload_label'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'上传成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#upload_progress'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">progress</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            percent<span class="token operator">:</span> <span class="token number">100</span>
+            <span class="token literal-property property">percent</span><span class="token operator">:</span> <span class="token number">100</span>
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#next_layout'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#next'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -1084,17 +1084,23 @@ path<span class="token punctuation">(</span><span class="token string">'video_de
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/10.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-shi-pin-wang-zhan-da-jian/step11-hou-tai-ping-lun-gong-neng/" class="post-nav-link">
+    <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django视频网站搭建--step11后台评论功能</div>
+        <div class="title-text">Django视频网站搭建--step10后台视频分类功能</div>
       </div>
       
       <!-- <div class="content">
-        #后台评论功能本讲中来讲评论管理功能，数据库中的每一条是来自用户的评价，
-因此后台中的评论管理只有评论列表和评论删除功能
+        #视频分类视频分类的功能，主要包括以下内容
+
+分类列表
+添加分类
+修改分类
+删除分类
+
+分类管理功能包括分类的增删改查。
       </div> -->
     </a>
   </div>
@@ -1105,22 +1111,16 @@ path<span class="token punctuation">(</span><span class="token string">'video_de
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/django-shi-pin-wang-zhan-da-jian/step10-hou-tai-shi-pin-fen-lei-gong-neng/" class="post-nav-link">
+    <a href="/post/django-shi-pin-wang-zhan-da-jian/step08-hou-tai-deng-lu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Django视频网站搭建--step10后台视频分类功能</div>
+        <div class="title-text">Django视频网站搭建--step08后台登录</div>
       </div>
       <!-- <div class="content">
-        #视频分类视频分类的功能，主要包括以下内容
-
-分类列表
-添加分类
-修改分类
-删除分类
-
-分类管理功能包括分类的增删改查。
+        #后台登录功能从本讲起，我们会介绍后台管理系统的开发，后台管理
+主要是对数据库中的数据进行增、删、改、查的操作，满足网站
       </div> -->
     </a>
   </div>
@@ -1773,9 +1773,9 @@ path<span class="token punctuation">(</span><span class="token string">'video_de
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3302755"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'

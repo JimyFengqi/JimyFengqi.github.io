@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -815,7 +815,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <p>这里几乎与文章详情的写法一样，没有新的内容。再次注意文章的id是如何传递到视图中的。</p>
 <p>最后我们希望能够在文章详情的页面进行删除的操作（当然也可以在专门的管理文章的页面中），因此修改模板<code>detail.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -841,7 +841,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p><em>layer</em>是一款备受青睐的web弹层组件，具备全方位的解决方案。首先到官网下载Layer插件：<a target="_blank" rel="noopener" href="https://layer.layui.com/">Layer</a></p>
 <p>解压后将里面的<strong>layer文件夹（含有layer.js的）</strong>直接复制到项目的<code>static</code>文件夹下。</p>
 <p>为了未来在所有页面都能使用Layer弹窗功能，在<code>base.html</code>中通过标签引入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/base.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/base.html
 
 ...
 
@@ -849,17 +849,17 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     ...
 
     <span class="token comment">&lt;!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>jquery/jquery-3.3.1.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'jquery/jquery-3.3.1.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
     ...
     <span class="token comment">&lt;!-- 引入layer.js --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static <span class="token punctuation">'</span>layer/layer.js<span class="token punctuation">'</span> %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% static 'layer/layer.js' %&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>layer插件依赖jquery才能正常工作，因此要在jquery的后面引入layer。</strong></p>
 <p>再次改写模板文件<code>detail.html</code>：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 
@@ -880,9 +880,9 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
         <span class="token comment">// 调用layer弹窗组件</span>
         layer<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
             <span class="token comment">// 弹窗标题</span>
-            title<span class="token operator">:</span> <span class="token string">"确认删除"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"确认删除"</span><span class="token punctuation">,</span>
             <span class="token comment">// 正文</span>
-            content<span class="token operator">:</span> <span class="token string">"确认删除这篇文章吗？"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"确认删除这篇文章吗？"</span><span class="token punctuation">,</span>
             <span class="token comment">// 点击确定按钮后调用的回调函数</span>
             <span class="token function-variable function">yes</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> layero</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                 <span class="token comment">// 指定应当前往的 url</span>
@@ -922,7 +922,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 </ul>
 <p>由于攻击者并不能得到用户的 cookie 内容（仅仅是靠浏览器转发），所以通常情况下是无法构造出正确的 <code>csrf_token</code>  的，从而防范了此类攻击。原理就是这样，下面来看看如何实现安全的删除功能。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>首先修改删除文章的链接，以及点击它时调用的函数：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">templates/article/detail.html
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">templates/article/detail.html
 
 ...
 <span class="token comment">&lt;!-- · &lt;a href="#" onclick="confirm_delete()">删除文章&lt;/a> --></span>
@@ -931,7 +931,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> 
       <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> 
       <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>safe_delete<span class="token punctuation">"</span></span>
-      <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url <span class="token punctuation">'</span>article:article_safe_delete<span class="token punctuation">'</span> article.id %&#125;<span class="token punctuation">"</span></span> 
+      <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;% url 'article:article_safe_delete' article.id %&#125;<span class="token punctuation">"</span></span> 
       <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span>
       <span class="token punctuation">></span></span>
     &#123;% csrf_token %&#125;
@@ -944,8 +944,8 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <span class="token operator">...</span>
 <span class="token keyword">function</span> <span class="token function">confirm_safe_delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     layer<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-        title<span class="token operator">:</span> <span class="token string">"确认删除"</span><span class="token punctuation">,</span>
-        content<span class="token operator">:</span> <span class="token string">"确认删除这篇文章吗？"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"确认删除"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"确认删除这篇文章吗？"</span><span class="token punctuation">,</span>
         <span class="token function-variable function">yes</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> layero</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'form#safe_delete button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             layer<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -994,7 +994,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 <p>下一章将学习如何更新文章，准备好继续作战吧。</p>
 <ul>
 <li>有疑问请在<a target="_blank" rel="noopener" href="http://www.dusaiphoto.com/">杜赛的个人网站</a>留言，我会尽快回复。</li>
-<li>或Email私信我：<a href="mailto:&#x64;&#117;&#115;&#x61;&#105;&#112;&#x68;&#x6f;&#x74;&#x6f;&#64;&#102;&#x6f;&#120;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x64;&#117;&#115;&#x61;&#105;&#112;&#x68;&#x6f;&#x74;&#x6f;&#64;&#102;&#x6f;&#120;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a></li>
+<li>或Email私信我：<a href="mailto:&#100;&#x75;&#x73;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#100;&#x75;&#x73;&#97;&#x69;&#112;&#x68;&#x6f;&#116;&#x6f;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
 <li>项目完整代码：<a target="_blank" rel="noopener" href="https://github.com/stacklens/django_blog_tutorial">Django_blog_tutorial</a></li>
 </ul>
 
@@ -1043,16 +1043,17 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/13.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/6.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/" class="post-nav-link">
+    <a href="/post/django-bo-ke-wang-zhan-da-jian/42.xiao-gong-neng-ji-he-tie/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django博客网站搭建--41.期末总结</div>
+        <div class="title-text">Django博客网站搭建--42.小功能集合贴</div>
       </div>
       
       <!-- <div class="content">
-        本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过
+        有些功能独立的小功能，单独一篇文章不够分量，于是在这里集中解释了。
+和读者常见问题帖一样，本篇是持续更新的，想到一个写一
       </div> -->
     </a>
   </div>
@@ -1725,9 +1726,9 @@ lang=”en”这是一个W3C的标准；lang代表语言，en是英语；改成z
 
 <meting-js
   class=""
-  server="netease"
-  type="song"
-  id="1365053719"
+  server="kugou"
+  type="playlist"
+  id="3947753"
   fixed='true'
   autoplay='true'
   theme='#42b983'

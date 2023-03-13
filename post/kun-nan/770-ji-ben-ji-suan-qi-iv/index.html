@@ -107,7 +107,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
 </head>
 
   
@@ -1067,9 +1067,9 @@ evalvars = [], evalints = []
     <span class="token punctuation">&#125;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">Poly</span> <span class="token function">combine</span><span class="token punctuation">(</span><span class="token class-name">Poly</span> left<span class="token punctuation">,</span> <span class="token class-name">Poly</span> right<span class="token punctuation">,</span> <span class="token keyword">char</span> symbol<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token string">'+'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">mul</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token char">'+'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token char">'-'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>symbol <span class="token operator">==</span> <span class="token char">'*'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> left<span class="token punctuation">.</span><span class="token function">mul</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">throw</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 
@@ -1078,11 +1078,11 @@ evalvars = [], evalints = []
         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Character</span><span class="token punctuation">></span></span> symbols <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> expr<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'('</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token char">'('</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                 <span class="token keyword">int</span> bal <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span>
                 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> expr<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'('</span><span class="token punctuation">)</span> bal<span class="token operator">++</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">')'</span><span class="token punctuation">)</span> bal<span class="token operator">--</span><span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token char">'('</span><span class="token punctuation">)</span> bal<span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token char">')'</span><span class="token punctuation">)</span> bal<span class="token operator">--</span><span class="token punctuation">;</span>
                     <span class="token keyword">if</span> <span class="token punctuation">(</span>bal <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span>
                 bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">parse</span><span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1091,21 +1091,21 @@ evalvars = [], evalints = []
                 <span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span>
                 search <span class="token operator">:</span> <span class="token punctuation">&#123;</span>
                     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> expr<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span>
-                        <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token char">' '</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                             bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">make</span><span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                             <span class="token keyword">break</span> search<span class="token punctuation">;</span>
                         <span class="token punctuation">&#125;</span>
                     bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">make</span><span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span>
                 i <span class="token operator">=</span> j<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char">' '</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
                 symbols<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>expr<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
             i<span class="token operator">++</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
 
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> symbols<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>j<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>symbols<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>symbols<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token char">'*'</span><span class="token punctuation">)</span>
                 bucket<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span> <span class="token function">combine</span><span class="token punctuation">(</span>bucket<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> bucket<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> symbols<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token keyword">if</span> <span class="token punctuation">(</span>bucket<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Poly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1192,7 +1192,7 @@ evalvars = [], evalints = []
             <span class="token class-name">StringBuilder</span> word <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             word<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">""</span> <span class="token operator">+</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> token<span class="token operator">:</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                word<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                word<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token char">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 word<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
             ans<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>word<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1256,24 +1256,24 @@ evalvars = [], evalints = []
         
         <div class="tags">
           
-            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
-              递归
+            <a href="/tags/%E6%A0%88/" class="">
+              栈
             </a>
           
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
               字符串
             </a>
           
-            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="">
-              哈希表
-            </a>
-          
             <a href="/tags/%E6%95%B0%E5%AD%A6/" class="">
               数学
             </a>
           
-            <a href="/tags/%E6%A0%88/" class="">
-              栈
+            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="">
+              哈希表
+            </a>
+          
+            <a href="/tags/%E9%80%92%E5%BD%92/" class="">
+              递归
             </a>
           
         </div>
@@ -1312,12 +1312,12 @@ evalvars = [], evalints = []
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/12.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/defaultImage/7.jpg" class="lazyload placeholder" data-srcset="/medias/defaultImage/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/zhong-deng/769-zui-duo-neng-wan-cheng-pai-xu-de-kuai/" class="post-nav-link">
+    <a href="/post/kun-nan/768-zui-duo-neng-wan-cheng-pai-xu-de-kuai-ii/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">769-最多能完成排序的块(Max Chunks To Make Sorted)</div>
+        <div class="title-text">768-最多能完成排序的块 II(Max Chunks To Make Sorted II)</div>
       </div>
       
       <!-- <div class="content">
@@ -1995,9 +1995,9 @@ evalvars = [], evalints = []
 
 <meting-js
   class=""
-  server="kugou"
+  server="tencent"
   type="playlist"
-  id="3302755"
+  id="7467921306"
   fixed='true'
   autoplay='true'
   theme='#42b983'
