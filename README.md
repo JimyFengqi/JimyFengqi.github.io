@@ -113,3 +113,40 @@ git push origin <本地分支名>
 ```sh
 git push --set-upstream origin <本地分支名>
 ```
+
+## 3.3下载代码相关
+
+仅仅下载 .git 文件目录，加上参数 --no-checkout, 下载指定分支， 加上参数 -b {分支名字}
+
+```sh
+git clone --no-checkout -b master git@gitee.com:JimyFengqi/JimyFengqi.gitee.io.git .deploy_git
+```
+
+## 3.4 寻找git库位置
+
+显示.git位置命令
+
+```sh
+git rev-parse --git-dir  
+git rev-parse --show-topleavel
+```
+
+显示距离 从.git到这里的路径
+
+```sh
+git rev-parse --show-cdup
+```
+
+## 3.5 commit相关
+
+代码提交的时候，不运行本地的测试，比如 pre-commit
+
+```sh
+git commit --no-verify
+```
+
+修改提交者信息
+
+```sh
+git commit --amend --author=“Author Name email@address.com”
+```
