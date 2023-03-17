@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>代码整洁之道内容概要 | 凤起丶宛南</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '3';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+
+  
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+  </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+        <script src="/js/valine/av-min@3.0.4.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            <link src="/js/aos/aos@2.3.4.min.css"></link>
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+        
+            <script src="/js/aos/aos@2.3.4.min.js"></script>
+        
+    
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">凤起丶宛南</h3>
+      <h5 class="drawer-box-head_desc">从来没有真正的绝境，只有心灵的迷途</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-cowbell-more"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">凤起丶宛南</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友链">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-cowbell-more"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/books">
+                      
+                      <i class="fas fa-book" style="margin-top: -20px;"></i>
+                      
+                      <span>书单</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+         <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://statics.sh1a.qingstor.com/2018/10/15/code.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        代码整洁之道内容概要
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2018-10-15 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/" class="post-detail-header_category">
+              编程之道
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 6.7k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 22分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>读了代码整洁之道，觉得这本书写的很好，所以就将里面自己觉得很经典的内容记录下来，作为自己以后写代码的标准和准则。同时也为那些曾经困惑过的人一点参考吧！</p>
+<h2 id="一、在正式开始之前，我们先思考几个几个问题："><a href="#一、在正式开始之前，我们先思考几个几个问题：" class="headerlink" title="一、在正式开始之前，我们先思考几个几个问题："></a>一、在正式开始之前，我们先思考几个几个问题：</h2><h3 id="1-需求与代码哪个重要？"><a href="#1-需求与代码哪个重要？" class="headerlink" title="1.需求与代码哪个重要？"></a>1.需求与代码哪个重要？</h3><p>答：并不是所有的产品都能提出合理的需求，当你面对一个提出不合理需求的产品的时候，你需要坚持自己的原则，不能妥协。</p>
+<h3 id="2-易读和易懂是一回事吗？"><a href="#2-易读和易懂是一回事吗？" class="headerlink" title="2.易读和易懂是一回事吗？"></a>2.易读和易懂是一回事吗？</h3><p>答：易读的代码和易懂的代码是有区别的，不是易读的代码就是易懂的代码。</p>
+<h3 id="3-什么是测试驱动代码？"><a href="#3-什么是测试驱动代码？" class="headerlink" title="3.什么是测试驱动代码？"></a>3.什么是测试驱动代码？</h3><p>答：测试驱动代码，你写的代码要可以执行单元测试。如果你发现你的代码很难写单元测试，那么你就要思考你的代码是不是已经不整洁了，或者说已经乱成一团了。</p>
+<h3 id="4-什么是简单的代码？"><a href="#4-什么是简单的代码？" class="headerlink" title="4.什么是简单的代码？"></a>4.什么是简单的代码？</h3><p>答：<br>1.能通过所有测试<br>2.没有重复代码<br>3.体现系统中全部设计理念<br>4.包含尽量少的实体，包括，类，函数，方法等</p>
+<p>如果某段代码在程序设计中反复出现，就证明想法在代码中没有很好的体现出来。总之，不要重复代码，只做一件事，表达力，小规模抽象。</p>
+<h2 id="二、第二章-有意义的命名"><a href="#二、第二章-有意义的命名" class="headerlink" title="二、第二章 有意义的命名"></a>二、第二章 有意义的命名</h2><h3 id="1-名副其实"><a href="#1-名副其实" class="headerlink" title="1.名副其实"></a>1.名副其实</h3><p>变量，函数或类的名称应该已经答复了所有的大问题。它应该告诉你，它为什么会存在，它做什么事情，应该怎么用。如果名称需要注释来补充，那么就不算名副其实。</p>
+<h3 id="2-避免误导"><a href="#2-避免误导" class="headerlink" title="2.避免误导"></a>2.避免误导</h3><p>必须避免留下掩藏代码本意的错误线索。</p>
+<h3 id="3-做有意义的区分"><a href="#3-做有意义的区分" class="headerlink" title="3.做有意义的区分"></a>3.做有意义的区分</h3><p>只要体现出有意义的区分，使用a和the这样的前缀就没有错。废话就是冗余。</p>
+<h3 id="4-使用读得出来的名称"><a href="#4-使用读得出来的名称" class="headerlink" title="4.使用读得出来的名称"></a>4.使用读得出来的名称</h3><p>不要用傻乎乎的自造词，而不是恰当的英语词。</p>
+<h3 id="5-使用可搜索的名称"><a href="#5-使用可搜索的名称" class="headerlink" title="5.使用可搜索的名称"></a>5.使用可搜索的名称</h3><p>使用便于搜索的名字。</p>
+<h3 id="6-避免使用编码"><a href="#6-避免使用编码" class="headerlink" title="6.避免使用编码"></a>6.避免使用编码</h3><p>把类型或者作用域编进名称里面，徒然增加了解码的负担。没理由要求每位新人都在弄清要应付的代码之外，还要再搞懂另一种编码”语言”。</p>
+<h3 id="7-避免思维映射"><a href="#7-避免思维映射" class="headerlink" title="7.避免思维映射"></a>7.避免思维映射</h3><p>不应当让读者在脑中把你的名称翻译为他们熟知的名称，尤其是在经常出现在选择是使用问题领域术语还是解决方案领域术语的时候。</p>
+<h3 id="8-类名或对象名最好使用名词或者名词短语"><a href="#8-类名或对象名最好使用名词或者名词短语" class="headerlink" title="8.类名或对象名最好使用名词或者名词短语"></a>8.类名或对象名最好使用名词或者名词短语</h3><h3 id="9-方法名最好使用动词或者动词短语"><a href="#9-方法名最好使用动词或者动词短语" class="headerlink" title="9.方法名最好使用动词或者动词短语"></a>9.方法名最好使用动词或者动词短语</h3><h3 id="10-别扮可爱"><a href="#10-别扮可爱" class="headerlink" title="10.别扮可爱"></a>10.别扮可爱</h3><p>命名一定要通俗易懂。</p>
+<h3 id="11-每一个概念对应一个词"><a href="#11-每一个概念对应一个词" class="headerlink" title="11.每一个概念对应一个词"></a>11.每一个概念对应一个词</h3><p>给每个抽象概念选择一个词，并一以贯之</p>
+<h3 id="12-别用双关语词"><a href="#12-别用双关语词" class="headerlink" title="12.别用双关语词"></a>12.别用双关语词</h3><p>避免将同一个词用于不同目的，遵循一词一义的原则</p>
+<h3 id="13-使用解决方案领域名"><a href="#13-使用解决方案领域名" class="headerlink" title="13.使用解决方案领域名"></a>13.使用解决方案领域名</h3><h3 id="14-使用源自所涉领域名"><a href="#14-使用源自所涉领域名" class="headerlink" title="14.使用源自所涉领域名"></a>14.使用源自所涉领域名</h3><h3 id="15-添加有意义的语境"><a href="#15-添加有意义的语境" class="headerlink" title="15.添加有意义的语境"></a>15.添加有意义的语境</h3><p>在一个bean中定义变量名的时候，变量名一定是基于实际使用场景。</p>
+<h3 id="16-不要添加没用的语境"><a href="#16-不要添加没用的语境" class="headerlink" title="16.不要添加没用的语境"></a>16.不要添加没用的语境</h3><h2 id="三、第三章-函数"><a href="#三、第三章-函数" class="headerlink" title="三、第三章 函数"></a>三、第三章 函数</h2><h3 id="1-短小"><a href="#1-短小" class="headerlink" title="1.短小"></a>1.短小</h3><p>函数第一规则是要短小。第二条规则是还要更短小。</p>
+<h3 id="2-只做一件事"><a href="#2-只做一件事" class="headerlink" title="2.只做一件事"></a>2.只做一件事</h3><ul>
+<li>函数应该做一件事。做好这件事。只做一件事。如果可以从你的函数中还能拆分出一个函数，该函数不仅只是单纯地重新诠释其实现，那么你设计的函数就不是一个好的函数。</li>
+<li>函数中的区段，如果函数被切分了多个区段，这就证明该函数做的事情太多了。</li>
+</ul>
+<h3 id="3-每个函数一个抽象层级"><a href="#3-每个函数一个抽象层级" class="headerlink" title="3.每个函数一个抽象层级"></a>3.每个函数一个抽象层级</h3><h3 id="4-switch语句"><a href="#4-switch语句" class="headerlink" title="4.switch语句"></a>4.switch语句</h3><p>确保每个switch都埋藏在较低的抽象层级，而且永远不重复。</p>
+<h3 id="5-使用描述性的名称"><a href="#5-使用描述性的名称" class="headerlink" title="5.使用描述性的名称"></a>5.使用描述性的名称</h3><p>命名方式要保持一致。使用与模块名一脉相承的短语、名词和动词给函数命名。例如：includeSetupPages。</p>
+<h3 id="6-函数参数"><a href="#6-函数参数" class="headerlink" title="6.函数参数"></a>6.函数参数</h3><ul>
+<li>最理想的函数参数的数量是零个，其次是一，再次是二，应尽量避免三。有足够的理由才能用上三个以上的参数。</li>
+<li>如果函数看来需要两个，三个或者三个以上参数，就说明其中一些参数应该封装为类了。</li>
+<li>函数和函数的参数命名一般是动名词比较好。</li>
+</ul>
+<h3 id="7-无副作用"><a href="#7-无副作用" class="headerlink" title="7.无副作用"></a>7.无副作用</h3><h3 id="8-分割指令与查询"><a href="#8-分割指令与查询" class="headerlink" title="8.分割指令与查询"></a>8.分割指令与查询</h3><p>函数要么做什么事，要么回答什么事，但二者不可兼得</p>
+<h3 id="9-使用异常替代返回错误码"><a href="#9-使用异常替代返回错误码" class="headerlink" title="9.使用异常替代返回错误码"></a>9.使用异常替代返回错误码</h3><ul>
+<li>返回错误码的时候，就是在要求调用者立刻处理错误。</li>
+<li>如果使用异常替代返回错误码，错误处理代码就能从住路径代码中分离出来，得到简化。</li>
+<li>抽离try/catch代码块</li>
+</ul>
+<h3 id="10-别重复自己"><a href="#10-别重复自己" class="headerlink" title="10.别重复自己"></a>10.别重复自己</h3><h3 id="11-结构化编程"><a href="#11-结构化编程" class="headerlink" title="11.结构化编程"></a>11.结构化编程</h3><h2 id="四、第四章-注释"><a href="#四、第四章-注释" class="headerlink" title="四、第四章 注释"></a>四、第四章 注释</h2><h3 id="1-如果你代码写的足够好的话，可以让人一看就懂，那么你就不需要再写注释。如果你的代码需要注释，那么你就需要想想是不是你的表达水平有问题。"><a href="#1-如果你代码写的足够好的话，可以让人一看就懂，那么你就不需要再写注释。如果你的代码需要注释，那么你就需要想想是不是你的表达水平有问题。" class="headerlink" title="1.如果你代码写的足够好的话，可以让人一看就懂，那么你就不需要再写注释。如果你的代码需要注释，那么你就需要想想是不是你的表达水平有问题。"></a>1.如果你代码写的足够好的话，可以让人一看就懂，那么你就不需要再写注释。如果你的代码需要注释，那么你就需要想想是不是你的表达水平有问题。</h3><h3 id="2-真正好的注释是想办法不用写注释，那么什么样的注释需要写呢？"><a href="#2-真正好的注释是想办法不用写注释，那么什么样的注释需要写呢？" class="headerlink" title="2.真正好的注释是想办法不用写注释，那么什么样的注释需要写呢？"></a>2.真正好的注释是想办法不用写注释，那么什么样的注释需要写呢？</h3><ul>
+<li>法律信息</li>
+<li>提供信息的注释</li>
+<li>提供意图的解释</li>
+<li>阐释</li>
+<li>警告</li>
+<li>TODO注释</li>
+<li>TODO是一种程序要认为应该要做的，但是由于某种原因没有做的</li>
+<li>放大,放大某些看似不合理的地方</li>
+</ul>
+<h2 id="五、第六章-对象和数据结构"><a href="#五、第六章-对象和数据结构" class="headerlink" title="五、第六章 对象和数据结构"></a>五、第六章 对象和数据结构</h2><h3 id="1-得墨忒定律"><a href="#1-得墨忒定律" class="headerlink" title="1.得墨忒定律"></a>1.得墨忒定律</h3><p>模块不应该了解他所操作对象的内部情形。对象隐藏数据曝露操作，这就意味着对象不应该通过存取器曝露其内部结构。</p>
+<h2 id="六、第七章-错误处理"><a href="#六、第七章-错误处理" class="headerlink" title="六、第七章 错误处理"></a>六、第七章 错误处理</h2><h3 id="1-将业务逻辑和出错处理一定要隔离开，但是并不是所有的情况都试用，在不适用的情况下我们可以创建一个配置对象将特殊情况给予返回。"><a href="#1-将业务逻辑和出错处理一定要隔离开，但是并不是所有的情况都试用，在不适用的情况下我们可以创建一个配置对象将特殊情况给予返回。" class="headerlink" title="1.将业务逻辑和出错处理一定要隔离开，但是并不是所有的情况都试用，在不适用的情况下我们可以创建一个配置对象将特殊情况给予返回。"></a>1.将业务逻辑和出错处理一定要隔离开，但是并不是所有的情况都试用，在不适用的情况下我们可以创建一个配置对象将特殊情况给予返回。</h3><h3 id="2-异常处理不能过多的曝露实现细节，主要提现在异常抛出的栈信息上。"><a href="#2-异常处理不能过多的曝露实现细节，主要提现在异常抛出的栈信息上。" class="headerlink" title="2.异常处理不能过多的曝露实现细节，主要提现在异常抛出的栈信息上。"></a>2.异常处理不能过多的曝露实现细节，主要提现在异常抛出的栈信息上。</h3><h2 id="七、第八章-边界"><a href="#七、第八章-边界" class="headerlink" title="七、第八章 边界"></a>七、第八章 边界</h2><h3 id="1-整洁的边界，边界上的代码要清晰的分割和定义了期望的测试。应该避免我们的代码过多地了解第三方代码中的特定信息。"><a href="#1-整洁的边界，边界上的代码要清晰的分割和定义了期望的测试。应该避免我们的代码过多地了解第三方代码中的特定信息。" class="headerlink" title="1.整洁的边界，边界上的代码要清晰的分割和定义了期望的测试。应该避免我们的代码过多地了解第三方代码中的特定信息。"></a>1.整洁的边界，边界上的代码要清晰的分割和定义了期望的测试。应该避免我们的代码过多地了解第三方代码中的特定信息。</h3><h2 id="八、第九章-单元测试"><a href="#八、第九章-单元测试" class="headerlink" title="八、第九章 单元测试"></a>八、第九章 单元测试</h2><h3 id="1-TDD三定律"><a href="#1-TDD三定律" class="headerlink" title="1.TDD三定律"></a>1.TDD三定律</h3><ul>
+<li>在编写不能通过的单元测试前，不可编写生产代码。</li>
+<li>只可编写刚好无法通过的单元测试，不能编译也算不通过</li>
+<li>只可编写刚好足以通过当前失败测试的生产代码</li>
+</ul>
+<h3 id="2-整洁测试三要素"><a href="#2-整洁测试三要素" class="headerlink" title="2.整洁测试三要素"></a>2.整洁测试三要素</h3><ul>
+<li>可读性</li>
+<li>可读性</li>
+<li>可读性</li>
+</ul>
+<h3 id="3-整洁测试的五条原则："><a href="#3-整洁测试的五条原则：" class="headerlink" title="3.整洁测试的五条原则："></a>3.整洁测试的五条原则：</h3><ul>
+<li>快速，测试应该够快</li>
+<li>独立，测试应该相互独立</li>
+<li>可重复，测试应当可在任何环境中重复通过。</li>
+<li>自足验证，测试应该有布尔值输出，无论测试是成功还是失败，不应该人工通过log来确认测试是否成功或者失败。</li>
+<li>及时，测试应及时编写。单元测试应该恰好在使其通过的生产代码之前编写。如果在编写生产代码之后编写测试，你会发现生产代码难以测试。你可能会认为某些生产代码本身难以测试。你可能不会去设计可测试的代码。</li>
+</ul>
+<h2 id="九、第十章-类"><a href="#九、第十章-类" class="headerlink" title="九、第十章 类"></a>九、第十章 类</h2><h3 id="1-单一权责原则，类或者模块应有且只有一条加以修改的理由。"><a href="#1-单一权责原则，类或者模块应有且只有一条加以修改的理由。" class="headerlink" title="1.单一权责原则，类或者模块应有且只有一条加以修改的理由。"></a>1.单一权责原则，类或者模块应有且只有一条加以修改的理由。</h3><h3 id="2-内聚，如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。内聚性高，意味着类中的方法和变量相互依赖，相互结合成一个逻辑整体。"><a href="#2-内聚，如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。内聚性高，意味着类中的方法和变量相互依赖，相互结合成一个逻辑整体。" class="headerlink" title="2.内聚，如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。内聚性高，意味着类中的方法和变量相互依赖，相互结合成一个逻辑整体。"></a>2.内聚，如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。内聚性高，意味着类中的方法和变量相互依赖，相互结合成一个逻辑整体。</h3><h2 id="十、第十一章-系统"><a href="#十、第十一章-系统" class="headerlink" title="十、第十一章 系统"></a>十、第十一章 系统</h2><h3 id="1-将系统的构造与使用分开"><a href="#1-将系统的构造与使用分开" class="headerlink" title="1.将系统的构造与使用分开"></a>1.将系统的构造与使用分开</h3><p>软件系统应将起始过程和启始过程之后的运行时逻辑分离开，在起始过程中构建应用对象，也会存在相互缠结的依赖关系。（延迟初始化可以加快程序运行速度）</p>
+<h4 id="1-1分解main"><a href="#1-1分解main" class="headerlink" title="1.1分解main"></a>1.1分解main</h4><p>将程序的构造放到main，并使其与运行时逻辑分开，main只管构造并将构造后的数据对象发送给各个应用，或者被各个应用使用。但是，不参与运行时的任何逻辑控制。</p>
+<h4 id="1-2工厂模式"><a href="#1-2工厂模式" class="headerlink" title="1.2工厂模式"></a>1.2工厂模式</h4><p>使用该模式可以将系统构造和系统运行时逻辑分开。</p>
+<h4 id="1-3依赖注入（需要强化理解）"><a href="#1-3依赖注入（需要强化理解）" class="headerlink" title="1.3依赖注入（需要强化理解）"></a>1.3依赖注入（需要强化理解）</h4><h4 id="1-4扩容"><a href="#1-4扩容" class="headerlink" title="1.4扩容"></a>1.4扩容</h4><p>“一开始就做对系统”纯属神话。反之，我们应该只去实现今天的用户故事，然后重构，明天再扩展系统，实现新用户的故事。这就是迭代和增量敏捷的精髓所在。测试驱动开发，重构以及他们打造出的整洁的代码。</p>
+<h4 id="1-5测试驱动系统架构"><a href="#1-5测试驱动系统架构" class="headerlink" title="1.5测试驱动系统架构"></a>1.5测试驱动系统架构</h4><p>最佳的系统架构由模块化的关注面领域组成，每个关注面均用纯编程语言对象实现。不同的领域之间用最不具有侵害性的方面或类方面工具结合起来。这种架构就能测试驱动，就像代码一样。(需要关注面向切片编程(POJO))</p>
+<h4 id="1-6优化决策"><a href="#1-6优化决策" class="headerlink" title="1.6优化决策"></a>1.6优化决策</h4><p>模块化和关注面切分成就了分散化管理和决策。在巨大的系统中，不管是一座城市或是一个软件项目，无人能做所有的决策。最好是授权给最有资格的人。拥有模块化关注面的POJO系统提供的敏捷能力，允许我们基于最新的知识做出优化的，时机刚好的决策。决策的复杂性降低了。</p>
+<h2 id="十一、第十二章-迭进"><a href="#十一、第十二章-迭进" class="headerlink" title="十一、第十二章 迭进"></a>十一、第十二章 迭进</h2><h3 id="1-通过迭进设计达到代码整洁的目的："><a href="#1-通过迭进设计达到代码整洁的目的：" class="headerlink" title="1. 通过迭进设计达到代码整洁的目的："></a>1. 通过迭进设计达到代码整洁的目的：</h3><p>通过这几个原则可以让你的设计变简单（DIP，SRP）</p>
+<ul>
+<li>运行所有测试</li>
+<li>不可重复，</li>
+<li>表达了程序员的意图</li>
+<li>尽可能减少类和方法的数量</li>
+<li>以上规则按其重要程度排序</li>
+</ul>
+<h3 id="2-简单设计规则1-运行所有测试"><a href="#2-简单设计规则1-运行所有测试" class="headerlink" title="2. 简单设计规则1:运行所有测试"></a>2. 简单设计规则1:运行所有测试</h3><p>编写的测试越多就越能持续走向编写较易测试的代码，紧耦合的代码很难编写测试。遵循有关编写测试并持续运行测试的简单，明确的规则，系统就会更贴近OO低耦合度，高内聚度的目标。编写测试引致更好的设计。</p>
+<h3 id="3-简单设计规则2-4：重构"><a href="#3-简单设计规则2-4：重构" class="headerlink" title="3. 简单设计规则2-4：重构"></a>3. 简单设计规则2-4：重构</h3><p>在重构过程中，可以应用有关优秀软件设计的一切知识。提升内聚性，降低耦合度，切分关注面，模块化系统性关注面，缩小函数和类的尺寸，选用更好的名称，如此等等。这也是简单设计原则后三条规则的地方:消除重复，保证表达力，尽可能减少类和方法的数量。</p>
+<h3 id="4-不可重复"><a href="#4-不可重复" class="headerlink" title="4. 不可重复"></a>4. 不可重复</h3><h3 id="5-表达力"><a href="#5-表达力" class="headerlink" title="5. 表达力"></a>5. 表达力</h3><h3 id="6-尽可能少的类和方法"><a href="#6-尽可能少的类和方法" class="headerlink" title="6. 尽可能少的类和方法"></a>6. 尽可能少的类和方法</h3><h2 id="十二、第十三章-并发编程"><a href="#十二、第十三章-并发编程" class="headerlink" title="十二、第十三章 并发编程"></a>十二、第十三章 并发编程</h2><h3 id="1-为什么要并发"><a href="#1-为什么要并发" class="headerlink" title="1. 为什么要并发"></a>1. 为什么要并发</h3><p>并发是一种解耦策略。它帮我们把做什么和何时做分解开。</p>
+<h3 id="2-并发的防御原则"><a href="#2-并发的防御原则" class="headerlink" title="2. 并发的防御原则"></a>2. 并发的防御原则</h3><h3 id="13-1-单一权责原则（SRP）"><a href="#13-1-单一权责原则（SRP）" class="headerlink" title="13.1 单一权责原则（SRP）"></a>13.1 单一权责原则（SRP）</h3><p>并发代码应该从其他代码中分离出来，因为，并发代码相比于其他的代码是很复杂的存在。但是，并发实现细节常常直接嵌入到其他生产代码中。那么下面几个问题需要考虑，</p>
+<ul>
+<li>并发相关代码由自己的开发，修改和调优生命周期</li>
+<li>开发相关代码由自己要对付的挑战，和非并发相关代码不同，而且往往更为困难</li>
+<li>即便没有周边应用程序增加负担，写得不好的并发代码可能的出错方式数量已经足具挑战性。</li>
+</ul>
+<blockquote>
+<p>建议：分离并发相关代码与其他代码。</p>
+</blockquote>
+<h3 id="13-2-限制数据作用域"><a href="#13-2-限制数据作用域" class="headerlink" title="13.2 限制数据作用域"></a>13.2 限制数据作用域</h3><p>两个线程修改共享对象的同一字段时，可能相互干扰，导致未预期的行为。解决方案之一是采用<code>synchronized</code>关键字在代码中保护一块使用共享对象的临界区。限制临界区的数量很重要。更新共享数据的地方越多，就越可能出错。</p>
+<blockquote>
+<p>建议：谨记数据封装，严格限制对可能被共享的数据的访问。</p>
+</blockquote>
+<h3 id="13-3-使用数据副本"><a href="#13-3-使用数据副本" class="headerlink" title="13.3 使用数据副本"></a>13.3 使用数据副本</h3><p>避免共享数据的好方法之一就是一开始就避免共享数据。在某些情况下，有可能复制对象并以只读方式对待。在另外一种情况下，有可能复制对象，从多个线程收集所有副本的结果，并在单个线程中合并这些结果。</p>
+<h3 id="13-4-线程尽可能地独立"><a href="#13-4-线程尽可能地独立" class="headerlink" title="13.4　线程尽可能地独立"></a>13.4　线程尽可能地独立</h3><p>让每个线程在自己的世界中存在，不与其他线程共享数据。每个线程处理一个客户端请求，从不共享的源头接纳所有请求数据，存储为本地变量。</p>
+<p>建议：尝试将数据分解到可被独立线程操作的独立子集。</p>
+<h3 id="13-5-了解执行模型"><a href="#13-5-了解执行模型" class="headerlink" title="13.5 了解执行模型"></a>13.5 了解执行模型</h3><h4 id="13-5-1-生产者－－－消费者模型"><a href="#13-5-1-生产者－－－消费者模型" class="headerlink" title="13.5.1 生产者－－－消费者模型"></a>13.5.1 生产者－－－消费者模型</h4><p>一个或多个生产者线程创建某些工作，并置于缓存或队列中。一个或多个消费者线程从队列中获取并完成这些工作。生产者和消费者之间的队列是一种限定资源。</p>
+<h4 id="13-5-2-读者－－－作者模型"><a href="#13-5-2-读者－－－作者模型" class="headerlink" title="13.5.2 读者－－－作者模型"></a>13.5.2 读者－－－作者模型</h4><p>当存在一个主要为读者线程提供信息源，但只偶尔被作者线程更新的共享资源，吞吐量就会是个问题。增加吞吐量，会导致线程饥饿和过时信息的积累。更新会影响吞吐量。协调读者线程，不去读作者线程正在更新的消息，这是一种辛苦的平衡工作。作者线程倾向于长期锁定许多读者线程，从而导致吞吐量问题。</p>
+<p>挑战之处在于平衡读者线程和作者线程的需求，实现正确的操作，提供合理的吞吐量，避免线程饥饿。</p>
+<h4 id="13-5-3哲学家问题（故事内容不在这里描述）"><a href="#13-5-3哲学家问题（故事内容不在这里描述）" class="headerlink" title="13.5.3哲学家问题（故事内容不在这里描述）"></a>13.5.3哲学家问题（故事内容不在这里描述）</h4><p>从哲学家问题可以反映出编写并发经常遇到的问题，死锁，活锁，吞吐量和效率降低等问题。那么学习这些基础问题的解决算法可以帮助你解决大多数的并发问题，因为大多的并发问题都是上述问题的变种。</p>
+<h3 id="13-6-警惕同步方法之间的依赖"><a href="#13-6-警惕同步方法之间的依赖" class="headerlink" title="13.6 警惕同步方法之间的依赖"></a>13.6 警惕同步方法之间的依赖</h3><p>同步方法之间的依赖会导致并发代码中的狡猾缺陷。Java语言有synchronized概念，可以用来保护单个方法。然而，如果在同一共享类中由多个同步方法，系统就可能写得不太正确了。</p>
+<blockquote>
+<p>建议：避免使用一个共享对象的多个方法。如果有时必须使用一个共享对象的多个方法。这种情况发生时，有３中写对代码的手段：</p>
+</blockquote>
+<ul>
+<li>基于客户端的锁定－－客户端代码在调用第一个方法前锁定服务端，确保锁的范围覆盖了调用最后一个方法的代码。</li>
+<li>基于服务端的锁定－－在服务端内创建锁定服务端的方法，调用所有方法，然后解锁。让客户端代码调用新的方法。</li>
+<li>适配服务端－－创建执行锁定的中间层。这是一种基于服务端的锁定例子，但不修改原始服务端代码。</li>
+</ul>
+<h3 id="13-7保持同步区域微小"><a href="#13-7保持同步区域微小" class="headerlink" title="13.7保持同步区域微小"></a>13.7保持同步区域微小</h3><p>应该尽可能少地设计临界区，如果有请尽可能减小同步区域。</p>
+<h3 id="13-8-编写线程需要注意的几点："><a href="#13-8-编写线程需要注意的几点：" class="headerlink" title="13.8　编写线程需要注意的几点："></a>13.8　编写线程需要注意的几点：</h3><h4 id="1-将伪失败看作可能的线程问题。线程代码中的缺陷可能在一千或者一百万次执行中才会显现一次。所以，不要将系统错误归咎于偶发事件。"><a href="#1-将伪失败看作可能的线程问题。线程代码中的缺陷可能在一千或者一百万次执行中才会显现一次。所以，不要将系统错误归咎于偶发事件。" class="headerlink" title="(1). 将伪失败看作可能的线程问题。线程代码中的缺陷可能在一千或者一百万次执行中才会显现一次。所以，不要将系统错误归咎于偶发事件。"></a>(1). 将伪失败看作可能的线程问题。线程代码中的缺陷可能在一千或者一百万次执行中才会显现一次。所以，不要将系统错误归咎于偶发事件。</h4><h4 id="2-先使非线程代码可工作。确保线程之外的代码可以工作。不要同时追踪非线程缺陷和线程缺陷。确保代码在线程之外可以工作。"><a href="#2-先使非线程代码可工作。确保线程之外的代码可以工作。不要同时追踪非线程缺陷和线程缺陷。确保代码在线程之外可以工作。" class="headerlink" title="(2). 先使非线程代码可工作。确保线程之外的代码可以工作。不要同时追踪非线程缺陷和线程缺陷。确保代码在线程之外可以工作。"></a>(2). 先使非线程代码可工作。确保线程之外的代码可以工作。不要同时追踪非线程缺陷和线程缺陷。确保代码在线程之外可以工作。</h4><h4 id="3-编写可插拔的线程代码。编写在数个环境下运行的线程代码"><a href="#3-编写可插拔的线程代码。编写在数个环境下运行的线程代码" class="headerlink" title="(3). 编写可插拔的线程代码。编写在数个环境下运行的线程代码"></a>(3). 编写可插拔的线程代码。编写在数个环境下运行的线程代码</h4><ul>
+<li>1.单线程与多线程在执行时不同的情况</li>
+<li>2.线程代码与实物或测试替身互动</li>
+<li>3.用运行速度,缓慢和有变动的测试替身执行</li>
+<li>4.将测试配置为能运行一定数量的迭代</li>
+</ul>
+<blockquote>
+<p>建议：编写可插拔的线程代码，这样就能在不同的配置环境下运行。</p>
+</blockquote>
+<h4 id="4-编写可调整的线程代码"><a href="#4-编写可调整的线程代码" class="headerlink" title="(4). 编写可调整的线程代码"></a>(4). 编写可调整的线程代码</h4><p>在系统运行时允许线程发生变动。允许线程依据吞吐量和使用率自我调整。</p>
+<h4 id="5-运行多余处理器数量的线程"><a href="#5-运行多余处理器数量的线程" class="headerlink" title="(5). 运行多余处理器数量的线程"></a>(5). 运行多余处理器数量的线程</h4><p>任务交换越频繁，越有可能找到错过临界区或导致死锁的代码。</p>
+<h4 id="6-在不同平台上运行"><a href="#6-在不同平台上运行" class="headerlink" title="(6). 在不同平台上运行"></a>(6). 在不同平台上运行</h4><h4 id="7-调整代码并强迫错误发生"><a href="#7-调整代码并强迫错误发生" class="headerlink" title="(7). 调整代码并强迫错误发生"></a>(7). 调整代码并强迫错误发生</h4><h2 id="十三、第14章-逐步改进"><a href="#十三、第14章-逐步改进" class="headerlink" title="十三、第14章 逐步改进"></a>十三、第14章 逐步改进</h2><p>代码并不是一次就能写的很干净的，需要我们不断的迭代和优化。</p>
+<h2 id="十四、第17章-味道与启发"><a href="#十四、第17章-味道与启发" class="headerlink" title="十四、第17章 味道与启发"></a>十四、第17章 味道与启发</h2><h3 id="1-注释"><a href="#1-注释" class="headerlink" title="1. 注释"></a>1. 注释</h3><h4 id="1-不恰当的注释信息"><a href="#1-不恰当的注释信息" class="headerlink" title="(1). 不恰当的注释信息"></a>(1). 不恰当的注释信息</h4><p>让注释传达本该更好地在源代码控制系统，问题追踪系统或任何其他记录系统中保存的信息，是不恰当的。例如，修改历史记录只会用大量过时而无趣的文本搞乱源代码文件。注释只应该描述有关代码和设计的技术性信息。</p>
+<h4 id="2-废弃的注释"><a href="#2-废弃的注释" class="headerlink" title="(2). 废弃的注释"></a>(2). 废弃的注释</h4><p>过时，无关或不正确的注释就是废弃的注释。</p>
+<h4 id="3-冗余注释"><a href="#3-冗余注释" class="headerlink" title="(3). 冗余注释"></a>(3). 冗余注释</h4><p>如果注释描述的是某种充分自我描述了的东西，那么注释就是多余的。注释应该谈及代码自身没有提到的东西。</p>
+<h4 id="4-注释要写就要写最好的注释，别画蛇添足"><a href="#4-注释要写就要写最好的注释，别画蛇添足" class="headerlink" title="(4). 注释要写就要写最好的注释，别画蛇添足"></a>(4). 注释要写就要写最好的注释，别画蛇添足</h4><h4 id="5-注释掉的代码，看到注释掉的代码就删。"><a href="#5-注释掉的代码，看到注释掉的代码就删。" class="headerlink" title="(5). 注释掉的代码，看到注释掉的代码就删。"></a>(5). 注释掉的代码，看到注释掉的代码就删。</h4><h3 id="2-环境"><a href="#2-环境" class="headerlink" title="2. 环境"></a>2. 环境</h3><h4 id="1-需要多步才能实现的构建"><a href="#1-需要多步才能实现的构建" class="headerlink" title="(1). 需要多步才能实现的构建"></a>(1). 需要多步才能实现的构建</h4><p>构建系统应该是单步的小操作。不应该从源代码控制系统中一小点一小点签出代码。不应该需要一系列神秘指令或环境依赖脚本来构建单个元素。不应该四出寻找额外的小jar,xml文件和其他系统所需的杂物。你应该能够用单个命令签出系统，并单个指令构建它。</p>
+<h4 id="2-需要多步才能做到测试"><a href="#2-需要多步才能做到测试" class="headerlink" title="(2). 需要多步才能做到测试"></a>(2). 需要多步才能做到测试</h4><p>你应该能够用单个指令就可以运行全部单元测试。能够运行全部测试是如此基础和重要，应该快速，轻易和直接了当地做到。</p>
+<h3 id="3-函数"><a href="#3-函数" class="headerlink" title="3. 函数"></a>3. 函数</h3><ul>
+<li>函数的参数应该少。</li>
+<li>输出参数违反直觉。如果非要修改，那就修改函数所在对象好了。</li>
+<li>标示参数，布尔值参数宣告函数做了不止一件事，应该消灭掉，即函数只做一件事。</li>
+<li>永不被调用的方法应该丢弃。</li>
+</ul>
+<h3 id="4-一般性问题"><a href="#4-一般性问题" class="headerlink" title="4. 一般性问题"></a>4. 一般性问题</h3><p>(1). 如果代码需要有多种语言，那么应该尽力减少源文件中额外语言的数量和范围。</p>
+<p>(2). 明显的行为未被实现，如果明显的行为未被实现，读者和用户就不能再依靠他们对函数名称的直觉。他们不再信任原作者，不得不阅读代码细节。</p>
+<p>(3). 不正确的边界行为，追索每种边界条件，编写测试。</p>
+<p>(4). 忽视安全</p>
+<p>(5). 重复，尽可能找到并消除重复。</p>
+<p>(6). 在错误的抽象层级上的代码，创建分离较高层级一般性概念与较低层级细节概念的抽象模型，这很重要。</p>
+<p>(7). 基类不可多度依赖于派生类，基类应该对派生类一无所知。</p>
+<p>(8). 信息过多，设计良好的模块有着非常小的接口，让你事半功倍。设计良好的接口并不提供许多需要依靠的函数，所以耦合度比较低。</p>
+<p>优秀的软件开发人员学会限制类或模块中暴露的接口数量。类中的方法越少越好。函数知道的变量越少越好。类拥有的实体变量越少越好。隐藏你的数据。隐藏你的工具函数。隐藏你的常量和你的临时变量。不要创建拥有大量方法或大量实体变量的类。不要为子类创建大量受保护变量和函数。尽力保持接口紧凑。通过限制信息来控制耦合度。</p>
+<p>(9). 死代码一定要删除。</p>
+<p>(10). 垂直分隔，变量和函数应该在靠近被使用的地方定义。私有函数应该刚好在其首次被使用的位置下面定义。</p>
+<p>(11). 前后不一致，从一而终即一旦选中，就小心持续遵循。如果在特定函数中用了response的变量来持有HttpServletResponse对象，则在其他用到HttpServletResponse对象的函数中也用同样的变量名。这样会让你的代码更易阅读。</p>
+<p>(12). 混淆视听，没用的变量或者函数直接删掉，以免造成不必要的干扰。</p>
+<p>(13). 人为耦合，不互相依赖的东西不该耦合。一般来说，人为耦合是指两个没有直接目的之间的模块的耦合。其根源是将变量，常量或函数不恰当地放在临时方便的位置。</p>
+<p>(14). 特性依恋，类的方法只应对其所属类中的变量和函数感兴趣，不该垂青其他类中的变量和函数。当方法通过某个其他对象的访问器和修改器来操作该对象内部数据，则它就依恋于该对象所属类的范围。</p>
+<p>(15). 选择算子参数，尽量不要把boolean作为函数参数</p>
+<p>(16). 晦涩意图，代码要尽可能具有表达力。</p>
+<p>(17). 位置错误的权责，我们可以采用最小惊异原则来帮助我们即代码应该放在读者自然而然期待它所在的地方。</p>
+<p>(18). 不恰当的静态方法，对于没有机会打算让它有多态行为的函数可以作为动态函数，否则可选用静态函数。</p>
+<p>(19). 使用解释性变量，命名要有意义。</p>
+<p>(20). 函数名称应该表达其行为</p>
+<p>(21). 理解算法</p>
+<p>(22). 把逻辑依赖改为物理依赖：</p>
+<ul>
+<li>1.逻辑依赖：原始数据和业务逻辑之间的依赖关系。例如：定义的常量和业务逻辑存在着依赖关系或者说被捆绑在了一起，即当业务逻辑发生变化或者存在其他可能性的时候且定义的常量无法满足导致常量需要修改。</li>
+<li>2.物理依赖：函数方法和业务逻辑之间的依赖关系。例如：为了解决逻辑依赖的问题，我们可以通过构造一个方法将数据和业务隔离。</li>
+</ul>
+<p>(23). 用多态替代<code>if/else</code> 或 <code>switch/case</code></p>
+<p>(24). 遵循标准约定</p>
+<p>(25). 用命名常量替代魔术数，魔术数不仅仅指的是数字，也泛指任何不能自我描述的符号。</p>
+<p>(26). 准确，在可以用List的时候，非要把变量声明为ArrayList就过分拘束了。在代码中做决定时，确认自己足够准确。明确自己为何要这么做，如果遇到异常情况如何处理。别懒得理会决定的准确性。代码中的含糊和不准确性要么是意见不同的结果，要么源于懒惰。无论原因是什么，都要消除。</p>
+<p>(27). 结构甚于约定，坚守结构甚于约定的设计决策。</p>
+<p>(28). 封装条件，如果没有if或while语句的上下文，布尔逻辑就难以理解。应该把解释了条件意图的函数抽离出来。</p>
+<p>例如：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">shouldBeDeleted</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>要好于</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>timer<span class="token punctuation">.</span><span class="token function">hasExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>timer<span class="token punctuation">.</span><span class="token function">isRecurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(29). 避免否定性条件，尽可能将条件表示为肯定形式。</p>
+<p>(30). 函数只该做一件事</p>
+<p>(31). 掩蔽时序耦合，排列函数参数，好让它们被调用的次序显而易见。</p>
+<p>(32). 别随意，构建代码需要理由，而且理由应于代码结构相契合。</p>
+<p>(33). 封装边界条件，把处理边界条件的代码集中到一处，不要散落于代码中。</p>
+<p>(34). 函数应该只在一个抽象层级上，函数中的语句应该在同意抽象级上，该层级应该是函数名所示操作的下一层。</p>
+<p>(35). 在较高层级放置可配置数据，如果你有个已知并在较高抽象层级的默认常量或配置值，不要将它埋藏到较低层级的函数中。把它作为较高层级函数调用较低层级函数时的一个参数。位于较高层级的配置性常量易于修改。它们向下贯穿应用程序。应用程序的较低层级并不拥有这些常量的值。</p>
+<p>(36). 避免传递浏览，编写害羞代码。</p>
+<p>(37). 不要继承常量</p>
+<h3 id="17-5-测试"><a href="#17-5-测试" class="headerlink" title="17.5 测试"></a>17.5 测试</h3><ol>
+<li>使用覆盖率工具，覆盖率工具能汇报你测试策略中的缺口。使用测试覆盖率工具能更容易地找到不足的模块，类和函数。</li>
+<li>别略过小测试</li>
+<li>被忽略的测试就是对不确定事物的疑问。</li>
+<li>测试边界条件</li>
+<li>全面测试相近的缺陷，缺陷趋向于扎堆。</li>
+<li>测试失败的模式有启发性。</li>
+<li>测试覆盖率的模式有启发性，查看被或未被以通过的测试执行的代码，往往能发现失败的测试为何失败的线索。</li>
+<li>测试应该快速。</li>
+</ol>
+<p>来自：<a target="_blank" rel="noopener" href="http://www.uml.org.cn/codeNorms/201701162.asp">代码整洁之道内容概要</a></p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81/" class="">
+              整洁代码
+            </a>
+          
+            <a href="/tags/%E9%87%8D%E6%9E%84/" class="">
+              重构
+            </a>
+          
+            <a href="/tags/%E6%B5%8B%E8%AF%95/" class="">
+              测试
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者: 
+    
+        </strong>Fengqi</a>
+    
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/post/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/" target="_blank" title="代码整洁之道内容概要">https://jimyfengqi.github.io/post/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://statics.sh1a.qingstor.com/2018/10/16/command.jpg" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2018/10/16/command.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/post/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ming-ling-mo-shi/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">Java面向对象设计之命令模式</div>
+      </div>
+      
+      <!-- <div class="content">
+        一、模式动机在软件设计中，我们经常需要向某些对象发送请求，但是并不知道请求的接收者是谁，也不知道被请求的操作是哪个，我们
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://statics.sh1a.qingstor.com/2018/10/14/observer.jpg" class="lazyload placeholder" data-srcset="https://statics.sh1a.qingstor.com/2018/10/14/observer.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/post/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-guan-cha-zhe-mo-shi/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Java面向对象设计之观察者模式</div>
+      </div>
+      <!-- <div class="content">
+        一、模式动机建立一种对象与对象之间的依赖关系，一个对象发生改变时将自动通知其他对象，其他对象将相应做出反应。在此，发生改
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/reward/alipay.bmp" class="lazyload placeholder" data-srcset="/medias/reward/alipay.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/reward/wechat.bmp" class="lazyload placeholder" data-srcset="/medias/reward/wechat.bmp" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || 'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg,https://api.btstu.cn/sjbz/api.php';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/atom.xml"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=215618733"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="#"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:jmps515@163.com"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a target="_blank" rel="noopener" href="https://github.com/fengqi"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+            <!-- 不蒜子统计 -->
+            <div class="footer-busuanzi" >
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+</div>
+
+        
+      
+        
+            <!-- [CNZZ友盟+]统计 -->
+            
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1280461850'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=1280461850&online=1&show=line' ></script>
+    </div>
+
+
+
+
+
+        
+      
+        
+           <!-- copyright info -->
+<div class="footer-copyright">
+    
+        
+         Copyright © 2020 - 2021
+         <a href="https://jimyfengqi.github.io">枫奇丶宛南</a>
+         | Powered by
+         <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a>
+        
+    
+</div>
+
+        
+      
+        
+             <!-- 备案信息+ -->
+             <!-- 备案信息+ -->
+<div class="footer-icp">
+    
+        
+    
+</div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+
+<meting-js
+  class=""
+  server="netease"
+  type="playlist"
+  id="4888271555"
+  fixed='true'
+  autoplay='true'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h1, h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+
+    <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '120px',
+      duration: '400',
+      interval: '30',
+      scale: '1',   //初始缩放大小，可以大于1,变为逐渐缩小
+      origin: 'bottom', // 动画开始的方向
+      easing: 'ease'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>
+   
+
+<!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = 'nick';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "G7kLr5GPm3HmPoDDhv19wI0M-gzGzoHsz",
+        app_key: "xynwI4nfT8WSgBnPvlz7yglu",
+        placeholder: "你是我一生遇到最美的惊喜...",
+        avatar: "wavatar",
+        master: "pYggd4zwTA6uVG50fi2CWp4j",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('on');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
