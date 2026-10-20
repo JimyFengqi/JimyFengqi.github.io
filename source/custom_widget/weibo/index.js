@@ -12,16 +12,22 @@ new Vue({
     this.getWeiboList();
   },
   methods: {
-    // 请求开源api, 获取历史上的今天数据
+    // 请求开源api, 获取微博热搜数据 (60s API, 替代已失效的 tenapi)
     getWeiboList() {
-      fetch("https://tenapi.cn/resou/", {
+      fetch("https://60s.viki.moe/v2/weibo", {
         method: "GET", // *GET, POST, PUT, DELETE, etc.
       })
         .then((res) => {
           return res.json();
         })
         .then((data) => {
-          this.content = data.list;
+          // 60s 返回结构: { code, data: [ { title, hot_value, link } ] }
+          // 适配旧模板使用的字段名: name / hot / url
+          this.content = (data.data || []).map((item) => ({
+            name: item.title,
+            hot: item.hot_value,
+            url: item.link,
+          }));
         })
         .catch((err) => {
           console.log("err", err);
