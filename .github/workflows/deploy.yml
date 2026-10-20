@@ -1,0 +1,59 @@
+name: Deploy Hexo to master
+
+# 触发条件：每次 push 到 hexo(源码)分支时自动构建发布
+on:
+  push:
+    branches:
+      - hexo
+  # 允许在 GitHub 网页上手动触发
+  workflow_dispatch:
+
+# 需要写权限才能把生成的站点推送到 master 分支
+permissions:
+  contents: write
+
+# 同一时间只跑一个发布，新 push 会取消正在进行的旧任务
+concurrency:
+  group: deploy-master
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出 hexo 源码分支
+      - name: Checkout source (hexo)
+        uses: actions/checkout@v4
+        with:
+          ref: hexo
+
+      # 2. 安装 Node (与本地一致, Hexo 8 需 >= 20.19)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # 3. 安装依赖 (按 lockfile 精确安装)
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. 清理并生成静态站点到 public/
+      - name: Build site
+        run: |
+          npx hexo clean
+          npx hexo generate
+
+      # 5. 发布 public/ 到 master 分支
+      #    使用 Actions 内置的 GITHUB_TOKEN 认证(无需自备 PAT, 无过期问题)
+      - name: Deploy to master
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+          # 覆盖式发布(等价于本地的 force push), 不保留历史
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Auto deploy by GitHub Actions: ${{ github.sha }}'
