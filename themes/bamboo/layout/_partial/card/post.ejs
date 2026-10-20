@@ -35,7 +35,7 @@ var hashCode = function (str) {
           <div class="post-img-mobile">
             <a href="<%- url_for(post.path) %>" style="background-size: cover;
               background-position: center center;">
-              <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="">
+              <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="" onerror="this.onerror=null;this.src='<%- url_for('/medias/defaultImage/1.jpg') %>'">
             </a>
           </div>
         </div>
@@ -60,7 +60,7 @@ var hashCode = function (str) {
       <div class="post-img">
         <a href="<%- url_for(post.path) %>" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="">
+          <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="" onerror="this.onerror=null;this.src='<%- url_for('/medias/defaultImage/1.jpg') %>'">
         </a>
       </div>
     </article>

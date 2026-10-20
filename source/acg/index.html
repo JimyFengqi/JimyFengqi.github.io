@@ -57,17 +57,18 @@
 			var btn = document.getElementById('acg-refresh');
 			var dataset = [];
 
-			// 展示用图源：原始新浪图床已对外链做防盗链(403)无法在浏览器加载，
-			// 这里用可用的二次元随机图作为展示，onerror 再兜底到 picsum。
-			function showcaseImg() {
-				return 'https://www.loliapi.com/acg/?_=' + Date.now();
+			// 展示用图源：数据库里的原始新浪图床地址已对外链防盗链(403)、浏览器无法加载，
+			// 故展示改用稳定快速的图源(picsum, 按记录id取不同图), onerror 再兜底。
+			// 原始 url 仍在下方 JSON 数据中如实展示。
+			function showcaseImg(rec) {
+				return 'https://picsum.photos/seed/acg' + (rec ? rec.id : Math.floor(Math.random() * 99999)) + '/800/450';
 			}
 
 			// 随机抽取一条记录(等价于原 PHP 的 ORDER BY RANDOM() LIMIT 1)
 			function pick() {
 				if (!dataset.length) return;
 				var rec = dataset[Math.floor(Math.random() * dataset.length)];
-				imgEl.src = showcaseImg();
+				imgEl.src = showcaseImg(rec);
 				var apiData = { code: '200', id: rec.id, imgurl: rec.url };
 				// 部分早期记录没有尺寸信息(原PHP是首次访问时惰性计算), 有才输出
 				if (rec.width != null) apiData.width = rec.width;

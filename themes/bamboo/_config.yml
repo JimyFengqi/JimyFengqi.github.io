@@ -333,7 +333,7 @@ baiduAnalytics:
   id:
 
 # 百度搜索资源平台提交链接
-baiduPush: true
+baiduPush: false  # 百度推送(zz.bdstatic push.js)在未注册百度站长的站点上会请求 baidu.com/search/error.html 报错, 且对 github.io 无意义, 关闭
 
 # 文章目录
 toc:
