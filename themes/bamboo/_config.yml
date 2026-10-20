@@ -258,7 +258,7 @@ cursor_effect:
 
 # 头部导航是否显示天气
 weather:
-  on: true
+  on: false   # qweather.net 免费组件已失效(DNS无法解析)，且会级联触发 speedtest.cn / baidu 定位请求报错，故关闭
 
 # 全文搜索功能
 search:
@@ -599,7 +599,7 @@ bubble:
 
 # valine 评论
 valine:
-  on: true
+  on: false   # LeanCloud(lncld.net) 后端已失效, 评论查询报错, 暂时关闭(见下方说明, 可换 twikoo/giscus)
   appid: G7kLr5GPm3HmPoDDhv19wI0M-gzGzoHsz
   appkey: xynwI4nfT8WSgBnPvlz7yglu
   avatar: 'wavatar' # 匿名者头像选项 https://valine.js.org/avatar.html
@@ -648,7 +648,7 @@ gitalk:
 
 # utterance 评论
 utterance:
-  on: true
+  on: false   # repo 未配置, 处于不可用状态, 先关闭; 需评论请填 repo 后再开启(或改用 twikoo/giscus)
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：jimyfengqi/jimyfengqi.github.io
   repo:
   # 主题
@@ -970,8 +970,8 @@ CDN:
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
   live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js
-  paceJs: //cdn.bootcss.com/pace/1.0.2/pace.min.js
-  paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
+  paceJs: https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js
+  paceCss: https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
   typedJs: https://cdn.jsdelivr.net/npm/typed.js@2.0.11
   echarts: https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js
