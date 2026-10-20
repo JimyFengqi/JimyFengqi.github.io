@@ -37,11 +37,12 @@ die()  { printf '\033[1;31m[deploy][错误]\033[0m %s\n' "$*" >&2; exit 1; }
 
 # ---- 1. 加载 Node (environment-modules) ---------------------------------------
 load_node() {
-  local want_ver="${NODE_MODULE##*/}"   # 例如 18.16.1
+  local want_ver="${NODE_MODULE##*/}"   # 例如 22.15.1 (Hexo 8 需要 Node >= 20.19)
 
   # 若当前 node 已是目标版本则直接用
   if command -v node >/dev/null 2>&1 && [ "$(node -v)" = "v${want_ver}" ]; then
     log "Node 已是目标版本 $(node -v)"
+    check_node_min
     return 0
   fi
 
@@ -62,8 +63,18 @@ load_node() {
   fi
 
   command -v node >/dev/null 2>&1 || die "未找到 node，请确认 'module load $NODE_MODULE' 可用"
+  check_node_min
   log "使用 Node $(node -v) ($(command -v node))"
   log "使用 npm  $(npm -v)"
+}
+
+# Hexo 8 要求 Node >= 20.19.0，这里做个下限检查，版本过低直接报错而非构建失败
+check_node_min() {
+  local major
+  major="$(node -v | sed 's/^v\([0-9]*\).*/\1/')"
+  if [ "${major:-0}" -lt 20 ]; then
+    die "Hexo 8 需要 Node >= 20.19，当前为 $(node -v)。请用 NODE_MODULE=nodejs/22.15.1 等较新版本。"
+  fi
 }
 
 # ---- 2. 从 ~/.secrets.csh 解析 GITHUB_TOKEN -----------------------------------

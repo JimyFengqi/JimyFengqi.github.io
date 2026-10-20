@@ -14,8 +14,8 @@ updates:
           - minor
           - patch
     ignore:
-      # Hexo 及其生态的大版本(major)升级属于破坏性变更，
-      # 需要手动验证(见 P2/Hexo 6 升级计划)，这里先忽略，避免自动 PR 把构建搞坏。
+      # 已手动升级到 Hexo 8。后续 Hexo 大版本(major)升级仍属破坏性变更，
+      # 需手动验证(新分支+构建验证后合并)，这里忽略自动 major PR 避免构建被搞坏。
       - dependency-name: "hexo"
         update-types: ["version-update:semver-major"]
       - dependency-name: "hexo-*"

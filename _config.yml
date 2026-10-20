@@ -51,6 +51,8 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future:
+# 代码高亮引擎 (Hexo 7+ 新增的顶层开关, 必须设置才能让下方 prismjs 配置生效)
+syntax_highlighter: prismjs
 # 三种代码格式选择一种
 highlight:   # 默认的代码格式
   enable: false
