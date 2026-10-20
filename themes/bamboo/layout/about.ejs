@@ -198,7 +198,7 @@ var books = theme.books.data || {};
 			<% Object.keys(books).forEach(function(book) { %>
 				<div class="book-item">
 					<div class="logo">
-						<img src="<%- books[book].img %>" alt="">
+						<img src="<%- books[book].img %>" alt="<%- book %>" onerror="this.onerror=null;this.src='/medias/logo.png'">
 					</div>
 					<div class="name">
 						<%- book %>
