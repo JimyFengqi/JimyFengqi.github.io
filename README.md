@@ -86,9 +86,73 @@ npm run deploy:local   # 本地构建并发布 (= ./deploy.sh)
 ## 五、构建与发布
 
 > 旧的 **Travis CI 已停用**（`.travis.yml` 仅作历史保留，不再生效）。
-> 现在统一用本地脚本 `deploy.sh` 构建并发布。
+> 现在有两种发布方式：**首选 GitHub Actions 全自动发布（5.1）**，本地脚本 `deploy.sh` 作兜底（5.2）。
 
-### 5.1 一键发布（推荐）
+### 5.1 GitHub Actions 自动发布（首选，推荐）
+
+工作流文件：`.github/workflows/deploy.yml`。
+
+**用法**：改完源码后只需一步——
+
+```sh
+git push origin hexo
+```
+
+GitHub 云端会**自动**：检出代码 → 装 Node → `npm ci` → `hexo clean && hexo generate` → 把 `public/` 发布到 `master`。
+GitHub Pages 从 `master` 提供服务，几分钟后站点自动更新。无需本机、无需手动跑脚本。
+
+> 也可在 GitHub 网页 **Actions → Deploy Hexo to master → Run workflow** 手动触发（`workflow_dispatch`）。
+
+#### 它为什么能"自动"？原理说明
+
+整条链路靠两件事驱动：**触发器** + **凭据**。
+
+**1）触发器（on）**：工作流声明了 `on: push: branches: [hexo]`，GitHub 监听到 `hexo` 分支有新提交就自动拉起一次运行（Runner 是 GitHub 提供的云端临时虚拟机 `ubuntu-latest`）。
+
+**2）凭据：`${{ secrets.GITHUB_TOKEN }}` 是关键，也最容易被误解**
+
+- 它**不是**你的个人访问令牌（PAT，`ghp_...`），也不是 `~/.secrets.csh` 里那个。
+- 它是 **GitHub Actions 在每次运行开始时自动临时生成**并注入运行环境的令牌，名字固定叫 `GITHUB_TOKEN`。
+- **你无需创建、无需存储、无需配置**；运行结束它立即失效（生命周期仅限这一次运行）。
+- 之所以"能自己获取"，本质是**工作流跑在 GitHub 自己的基础设施里**：GitHub 知道当前运行属于哪个仓库、由谁触发，于是按仓库的 `permissions` 设置颁发一个作用域刚好够用的一次性凭据。
+- 对比本地 `deploy.sh`：它跑在你自己的机器上，GitHub 不会"送"令牌，所以必须自带会过期的 PAT。
+
+**三者的权限/有效期对比：**
+
+| 方式 | 使用的凭据 | 有效期 | 是否需维护 |
+| :--- | :--- | :--- | :--- |
+| GitHub Actions | 内置 `GITHUB_TOKEN`（自动注入） | 仅本次运行 | 否 |
+| 本地 deploy.sh | 自备 PAT（存 `~/.secrets.csh`） | 有过期时间 | 需定期更新 |
+
+#### 工作流里的几个关键配置
+
+```yaml
+permissions:
+  contents: write            # 授予该 GITHUB_TOKEN 对本仓库的写权限(才能推 master)
+concurrency:
+  group: deploy-master
+  cancel-in-progress: true   # 新 push 自动取消正在跑的旧构建, 避免并发发布打架
+```
+
+发布动作用了 `peaceiris/actions-gh-pages`，`force_orphan: true` 表示**覆盖式发布**（等价于本地的 force push，`master` 只保留一条最新产物提交、不累积历史）。
+
+> ⚠️ **一次性仓库设置**：Actions 要能推 `master`，需在
+> **仓库 → Settings → Actions → General → Workflow permissions** 选 **"Read and write permissions"**。
+> 工作流里虽已声明 `permissions: contents: write`，但仓库若设为只读会覆盖它。
+
+#### 可拓展方向（按需）
+
+- **部署到 GitHub Pages 官方环境**：也可改用官方 `actions/deploy-pages`（配合 `actions/upload-pages-artifact`），把 Pages 源切换为"GitHub Actions"模式，省去 `master` 分支；本项目沿用"发布到 master 分支"的传统模式，改动最小。
+- **同步 Gitee 镜像**：两种做法——
+  1. **Gitee 后台"镜像同步"**：在 Gitee 仓库管理里设置从 GitHub 自动拉取，零 CI 配置，最省事；
+  2. **在工作流里加一步推 Gitee**：把 Gitee 账号/密码(或令牌)存到 **仓库 Settings → Secrets and variables → Actions**，再在工作流里 `git push` 到 Gitee（引用 `${{ secrets.GITEE_xxx }}`）。
+- **构建缓存加速**：工作流已用 `actions/setup-node` 的 `cache: npm` 缓存依赖；文章多时还可缓存 Hexo 的 `db.json`。
+- **PR 预览 / 校验**：可加一个只在 Pull Request 上跑 `hexo generate` 的 job（不发布），用于提交前校验构建是否通过。
+- **定时构建**：`on: schedule: - cron: '...'` 可定时重建（例如依赖每日热榜之类的动态内容时）。
+
+### 5.2 本地脚本发布（兜底 / 调试）
+
+需要在本机手动发布或调试时使用：
 
 ```sh
 bash deploy.sh                 # 构建并强制推送到 GitHub 的 master
@@ -103,7 +167,9 @@ SKIP_INSTALL=1 bash deploy.sh  # 依赖已装好时跳过安装以加速
 3. `npm ci` → `hexo clean` → `hexo generate` 生成 `public/`。
 4. 在 `public/` 内初始化一个临时 git 仓库，提交后 **强制推送**到 `master`；推送完删除临时 `.git`，避免令牌残留。
 
-### 5.2 凭据管理（重要）
+### 5.3 凭据管理（重要）
+
+> 仅 **5.2 本地脚本发布** 需要下面的凭据；**5.1 GitHub Actions 发布不需要**（它用内置 `GITHUB_TOKEN`）。
 
 - 发布所需的凭据**不写入仓库**，而是放在本地的密钥文件里（例如 `~/.secrets.csh`，仅本机、权限 600）。
 - `deploy.sh` 运行时从该文件按**变量名**读取，用完即从内存清除；仓库内不出现任何明文令牌/密码。
@@ -118,7 +184,7 @@ SKIP_INSTALL=1 bash deploy.sh  # 依赖已装好时跳过安装以加速
 
 > ⚠️ 切勿将上述令牌/密码提交到仓库或写进任何被 git 跟踪的文件。
 
-### 5.3 本地已配置提交签名时
+### 5.4 本地已配置提交签名时
 
 若本机开启了 git 提交/推送签名（`commit.gpgsign` / `push.gpgsign = true`），
 而远程（如 GitHub HTTPS）不支持 signed push，推送会报
@@ -176,7 +242,7 @@ git commit --amend --author="Name <email@x>"   # 修改提交者信息
 - Node 要求随之提升到 **>= 20.19**（`package.json` 的 `engines` 与 `deploy.sh` 已同步）。
 
 ### 发布链路
-- 弃用 Travis CI，改为本地 `deploy.sh`（见上文第五节）。
+- 弃用 Travis CI，改为 **GitHub Actions 自动发布**（首选），本地 `deploy.sh` 作兜底（见上文第五节）。
 - Gitee 镜像：若本机到 Gitee 的网络受限（端口被封/上行限速）导致推送超时，
   可改用 **Gitee 后台的"镜像同步"** 从 GitHub 自动拉取，或在网络通畅的机器上执行 `PUSH_GITEE=1 bash deploy.sh`。
 
