@@ -1,36 +1,93 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="author" content="Xlch">
-		<title>随机二次元图片API</title>
-  		<link rel="shortcut icon" href="../favicon.ico">
+		<meta name="author" content="Fengqi">
+		<title>随机二次元图片 API（静态版）</title>
+		<link rel="shortcut icon" href="../favicon.ico">
 		<meta name="keywords" content="图库,二次元图片,二次元API,动漫图片API,图片API">
-		<meta name="description" content="随机二次元图片API,随机动漫壁纸,每天刷一刷，每次不一样。">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="main.css?ver=1.0">
+		<meta name="description" content="随机二次元图片API,随机动漫壁纸,每次刷新不一样(纯静态客户端版,可在GitHub Pages运行)。">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="main.css?ver=2.0">
 	</head>
 	<body>
 		<div>
-			<p class="title title2">随机二次元图片API</p>
+			<p class="title title2">随机二次元图片 API</p>
 		</div>
 		<div class="container">
+			<!-- 随机图片展示 -->
+			<div class="well" style="text-align:center;">
+				<img id="acg-img" src="" alt="随机二次元图片"
+					style="max-width:100%;max-height:60vh;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.3);"
+					referrerpolicy="no-referrer"
+					onerror="this.onerror=null;this.src='https://picsum.photos/800/450';">
+				<div style="margin-top:12px;">
+					<button id="acg-refresh" class="btn btn-primary">换 一 张</button>
+				</div>
+			</div>
+
+			<!-- API 数据(与原 PHP 版 JSON 契约一致) -->
 			<div class="well">
-				<p>目前系统共收录 1000+ 张图片 API最后更新时间:2018-04-18</p>
-				<p>图片默认均为http，采用新浪图片，高速访问</p>
-				<p>API基本调用格式：</p>
-				<pre>https://xxx.xxx/acgurl.php</pre>
-				<p>参数：</p>
-				<pre>return=json/http/https/img</pre>
-				<p>JSON调用格式</p>
-                <pre>https://xxx.xxx/acgurl.php?return=json</pre>
-				<p>JSON数据</p>
-				<pre style="text-shadow: initial;"><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"code"</span>:<span class="json_string">"200"</span><span class="json_note"> #图片状态码</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"acgurl"</span>:<span class="json_string">"https:\/\/ws1.sinaimg.cn\/large\/0072Vf1pgy1foxkfy08umj31kw0w0nng.jpg"</span><span class="json_note"> #图片地址</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"width"</span>:<span class="json_string">"2048"</span><span class="json_note"> #图片宽</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"height"</span>:<span class="json_string">"1152"</span><span class="json_note"> #图片高</span><br>}</span></pre>
+				<p>本数据集共收录 <b id="acg-count">—</b> 条记录（由 <code>acgimg.db</code> 导出为静态 <code>acgimg.json</code>）。</p>
+				<p>当前随机记录的 API 数据：</p>
+				<pre id="acg-json" style="text-shadow:none;">加载中…</pre>
+			</div>
+
+			<!-- 使用说明 -->
+			<div class="well">
+				<p>说明：原版是 <code>PHP + SQLite</code> 接口，依赖服务器执行 PHP；本站为 GitHub Pages 静态托管，无法运行 PHP。</p>
+				<p>因此改造为<b>纯前端静态版</b>：数据库已导出为 <code>acgimg.json</code>，由浏览器随机抽取一条，等价于原来的随机 API。</p>
+				<p>以 JSON 方式获取数据：</p>
+				<pre>fetch('/acg/acgimg.json').then(r =&gt; r.json())</pre>
+				<p>返回的每条记录字段：</p>
+				<pre style="text-shadow:none;"><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"id"</span>:<span class="json_number">1</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"url"</span>:<span class="json_string">"https://..."</span>,<span class="json_note"> # 原始图片地址</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"width"</span>:<span class="json_number">1920</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json_key">"height"</span>:<span class="json_number">1080</span><br>}</span></pre>
 			</div>
 		</div>
+
 		<div class="bottom">
-        	<p> Copyright &copy; 2017 <a target="_black" href="https://www.toubiec.cn/" title="顾轩博客">顾轩博客</a> 备案号:<a href="http://www.miibeian.gov.cn" target="_blank">闽ICP备16027597号-3</a><p>
-        	<!-- 统计代码 -->
+			<p>Copyright &copy; 2017 原作者 顾轩博客 · 静态改造 by Fengqi<p>
 		</div>
+
+		<script>
+		(function () {
+			var imgEl = document.getElementById('acg-img');
+			var jsonEl = document.getElementById('acg-json');
+			var countEl = document.getElementById('acg-count');
+			var btn = document.getElementById('acg-refresh');
+			var dataset = [];
+
+			// 展示用图源：原始新浪图床已对外链做防盗链(403)无法在浏览器加载，
+			// 这里用可用的二次元随机图作为展示，onerror 再兜底到 picsum。
+			function showcaseImg() {
+				return 'https://www.loliapi.com/acg/?_=' + Date.now();
+			}
+
+			// 随机抽取一条记录(等价于原 PHP 的 ORDER BY RANDOM() LIMIT 1)
+			function pick() {
+				if (!dataset.length) return;
+				var rec = dataset[Math.floor(Math.random() * dataset.length)];
+				imgEl.src = showcaseImg();
+				var apiData = { code: '200', id: rec.id, imgurl: rec.url };
+				// 部分早期记录没有尺寸信息(原PHP是首次访问时惰性计算), 有才输出
+				if (rec.width != null) apiData.width = rec.width;
+				if (rec.height != null) apiData.height = rec.height;
+				jsonEl.textContent = JSON.stringify(apiData, null, 4);
+			}
+
+			fetch('acgimg.json')
+				.then(function (r) { return r.json(); })
+				.then(function (data) {
+					dataset = data || [];
+					countEl.textContent = dataset.length;
+					pick();
+				})
+				.catch(function (e) {
+					jsonEl.textContent = '数据集加载失败: ' + e;
+				});
+
+			btn.addEventListener('click', pick);
+		})();
+		</script>
 	</body>
 </html>

@@ -37,6 +37,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'acg/**'   # acg 是独立的静态API/展示页, 不套用博客主题布局, 原样输出
 
 # Writing
 new_post_name: :title.md # File name of new posts
