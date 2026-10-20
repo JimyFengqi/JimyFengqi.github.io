@@ -53,7 +53,7 @@ widget_library_sticky:
   - class_name: marryTime
     id_name: marryTime
     order: -1
-    name: 恋爱墙
+    name: 相守时光
     icon: fas fa-heart
     icon_color: '#d63130'
     url: '#htmer_time'
