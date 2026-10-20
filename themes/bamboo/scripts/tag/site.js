@@ -37,10 +37,28 @@ function postSiteCard(args) {
     result += '<div class="img"><img src="' + screenshot + '"/></div>';
   }
   result += '<div class="info style="background: rgb(0, 0, 0) center center"">';
-  if (avatar.length > 0) {
-    result += '<img src="' + avatar + '"/>';
-  } else {
 
+  // 兜底图标：若站点自身 favicon/avatar 加载失败(404/被拦截)，
+  // 用 icon.horse 按域名取图标；再失败则用本地占位图，保证始终有图标显示。
+  let fallback = 'https://icon.horse/icon/';
+  try {
+    fallback += new URL(url).hostname;
+  } catch (e) {
+    fallback = '/medias/logo.png';
+  }
+  const localPlaceholder = '/medias/logo.png';
+  const onerr =
+    ' onerror="if(this.dataset.fb!==\'1\'){this.dataset.fb=\'1\';this.src=\'' +
+    fallback +
+    '\';}else{this.onerror=null;this.src=\'' +
+    localPlaceholder +
+    '\';}"';
+
+  if (avatar.length > 0) {
+    result += '<img src="' + avatar + '"' + onerr + '/>';
+  } else {
+    // 没填 avatar 时直接用 icon.horse 按域名取图标
+    result += '<img src="' + fallback + '"' + onerr + '/>';
   }
 
   result += '<span class="title">' + title + '</span>';

@@ -1,35 +1,50 @@
+// 欢迎挂件：左侧访客 IP 信息卡片 + 右侧毒鸡汤(一言)
+// Vue 实例挂载在最外层 #ip_welcome 上，使 IP 卡片与毒鸡汤共用同一个实例。
 new Vue({
-  el: "#soul", // el不要是最外面的id_name，应该是html: ''里的div的id
+  el: "#ip_welcome",
   data: function () {
     return {
-      content:'干了这碗毒鸡汤',
-      classOption: {
-        singleHeight: 30,
+      content: "干了这碗毒鸡汤",
+      ip: {
+        ip: "",
+        loc: "",
+        org: "",
+        tz: "",
       },
     };
   },
   created() {
     this.getSoul();
+    this.getIp();
   },
   methods: {
-    change(){
-       this.getSoul();
+    change() {
+      this.getSoul();
     },
-    // 请求开源api, 获取一言/毒鸡汤 (60s API, 替代已失效的 btstu)
+    // 一言/毒鸡汤 (60s API)
     getSoul() {
-      fetch("https://60s.viki.moe/v2/hitokoto", {
-        method: "GET", // *GET, POST, PUT, DELETE, etc.
-      })
-        .then((res) => {
-          return res.json();
-        })
+      fetch("https://60s.viki.moe/v2/hitokoto", { method: "GET" })
+        .then((res) => res.json())
         .then((data) => {
-          // 60s 返回结构: { code, data: { hitokoto } }
           this.content = (data.data && data.data.hitokoto) || this.content;
         })
-        .catch((err) => {
-          console.log("err", err);
-        });
+        .catch((err) => console.log("soul err", err));
+    },
+    // 访客 IP 信息 (ip.011102.xyz, 返回 JSON, 支持 CORS)
+    getIp() {
+      fetch("https://ip.011102.xyz/", { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => {
+          var i = (data && data.IP) || {};
+          var locParts = [i.Country, i.Region, i.City].filter(Boolean);
+          this.ip = {
+            ip: i.IP || "",
+            loc: locParts.join(" · ") || "未知",
+            org: i.ASOrganization || "未知",
+            tz: i.Timezone || "未知",
+          };
+        })
+        .catch((err) => console.log("ip err", err));
     },
   },
 });

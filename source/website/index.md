@@ -115,6 +115,114 @@ toc:  false
 {% endsitegroup %}
 
 <!-- endtab -->
+
+<!-- tab 图片素材 -->
+
+{% sitegroup %}
+    {% site PxHere, url=https://pxhere.com/, description=免费高清图片 %}
+    {% site Foodiesfeed, url=https://www.foodiesfeed.com/, description=免费美食图片 %}
+    {% site Unsplash, url=https://unsplash.com/, description=高质量免费图库 %}
+    {% site Pixabay, url=https://pixabay.com/, description=免费图片与视频素材 %}
+    {% site 千亿像素看中国, url=https://bigpixel.cn/, description=超高分辨率全景图 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 动图 GIF -->
+
+{% sitegroup %}
+    {% site Giphy, url=https://giphy.com/, description=全球最大GIF动图库 %}
+    {% site Tenor, url=https://tenor.com/, description=GIF动图搜索 %}
+    {% site GIF ABYSS, url=https://gifs.alphacoders.com/, description=高质量GIF动图 %}
+    {% site Soogif, url=https://www.soogif.com/, description=国内GIF动图制作与搜索 %}
+    {% site 闪萌, url=http://www.weshineapp.com/, description=表情包与GIF %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 壁纸 -->
+
+{% sitegroup %}
+    {% site WallHaven, url=https://wallhaven.cc/, description=高质量壁纸站 %}
+    {% site 10Wallpaper, url=https://www.10wallpaper.com/, description=多分辨率壁纸 %}
+    {% site alphacoders, url=https://wall.alphacoders.com/?lang=Chinese, description=海量壁纸 %}
+    {% site 极简壁纸, url=https://bz.zzzmh.cn/index, description=极简风格壁纸 %}
+    {% site 3G壁纸, url=https://www.3gbizhi.com/, description=各类高清壁纸 %}
+    {% site 必应壁纸, url=https://bing.ioliu.cn/, description=必应每日壁纸归档 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 图标素材 -->
+
+{% sitegroup %}
+    {% site 阿里矢量图库, url=https://www.iconfont.cn/, description=iconfont 矢量图标库 %}
+    {% site iconstore, url=https://iconstore.co/, description=免费图标集合 %}
+    {% site icooon-mono, url=https://icooon-mono.com/, description=免费单色图标 %}
+    {% site iconfinder, url=https://www.iconfinder.com/, description=图标搜索引擎 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab PSD/设计 -->
+
+{% sitegroup %}
+    {% site 素材中国, url=http://www.sccnn.com/, description=设计素材下载 %}
+    {% site 站长素材PSD, url=https://sc.chinaz.com/psd/, description=免费PSD模板 %}
+    {% site freepik, url=https://www.freepik.com/psd, description=免费PSD与矢量素材 %}
+    {% site freebiesbug, url=https://freebiesbug.com/, description=设计资源分享 %}
+    {% site 极光绘画, url=https://weavesilk.com/, description=对称光效绘画 %}
+    {% site 数字函数绘画, url=https://www.desmos.com/, description=Desmos 图形计算器 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 音频 -->
+
+{% sitegroup %}
+    {% site Mixkit音乐, url=https://mixkit.co/free-stock-music/, description=免费商用音乐 %}
+    {% site 爱给网, url=https://www.aigei.com/, description=音效/配乐素材 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 学习 -->
+
+{% sitegroup %}
+    {% site 我要自学网, url=https://www.51zxw.net/, description=视频教程自学网 %}
+    {% site 学堂在线, url=https://www.xuetangx.com/, description=中文慕课平台 %}
+    {% site 多邻国, url=https://www.duolingo.cn/, description=趣味语言学习 %}
+    {% site 迅捷画图, url=https://www.liuchengtu.com/, description=在线流程图工具 %}
+    {% site 在线公开课导航, url=http://coursegraph.com/navigation/, description=公开课资源导航 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab 其他实用 -->
+
+{% sitegroup %}
+    {% site 视频片头动画, url=https://panzoid.com/, description=在线片头动画制作 %}
+    {% site 在线抠图, url=https://www.remove.bg/, description=一键去背景抠图 %}
+    {% site 字体下载, url=https://www.zitijia.com/, description=字体家 %}
+    {% site Pixiv, url=https://www.pixiv.net/, description=二次元插画社区 %}
+    {% site 论文下载 i-Data, url=https://www.cn-ki.net/, description=文献搜索下载 %}
+    {% site SmallPDF, url=https://smallpdf.com/, description=在线PDF格式转换 %}
+    {% site AirDroid Web, url=http://web.airdroid.com/, description=文件传输/远程控制/投屏 %}
+    {% site 随机网站, url=https://sharkle.com/, description=随机跳转有趣网站 %}
+    {% site 二次元捏脸, url=https://picrew.me/, description=在线头像捏脸 %}
+{% endsitegroup %}
+
+<!-- endtab -->
+
+<!-- tab PPT 模板 -->
+
+{% sitegroup %}
+    {% site 优品PPT, url=https://www.ypppt.com/, description=免费PPT模板下载 %}
+    {% site 第一PPT, url=http://www.1ppt.com/, description=PPT模板/素材/教程 %}
+    {% site 叮当设计, url=https://www.dingdangsheji.com/, description=设计与PPT素材 %}
+{% endsitegroup %}
+
+<!-- endtab -->
 {% endtabs %}
 
 ## js 代码片段
@@ -137,131 +245,3 @@ toc:  false
         https://fe.padding.me/#/
         https://github.com/CavsZhouyou/Front-End-Interview-Notebook
         https://lgwebdream.github.io/FE-Interview/ 每日一题
-
-
-# PPT 模板类
-
-    1.51PPT 模板：http://www.51pptmoban.com/
-    2.优品 PPT：https://www.ypppt.com/
-    3.第一 PPT：http://www.1ppt.com/
-    4.叮当设计：https://www.dingdangsheji.com/
-    5.PPT 超级市场：http://ppt.sotary.com/web/wxapp/index.html
-
-# 静态图片
-
-    1.PH：https://pxhere.com/
-    2.CC0 图片网：https://cc0.cn/
-    3.Foodiesfeed：https://www.foodiesfeed.com/
-    4.Unplash：https://unsplash.com/
-    5.Pixabay：https://pixabay.com/
-
-# 动态图
-
-    1.Giphy：https://giphy.com/
-    2.GfyCat：https://gfycat.com/
-    3.Tenor：https://tenor.com/
-    4.GIF ABYSS：https://gifs.alphacoders.com/
-    5.动图宇宙：https://biaoqingsoso.com/
-    6.Soogif：https://www.soogif.com/
-    7.闪萌：http://www.weshineapp.com/
-
-# 壁纸类
-
-    1.WallHaven：https://wallhaven.cc/
-    2.10Wallpaper：https://www.10wallpaper.com/
-    3.alphacoders：https://wall.alphacoders.com/?lang=Chinese
-    4.极简壁纸：https://bz.zzzmh.cn/index
-    5.3G 壁纸：https://www.3gbizhi.com/
-    6.必应壁纸：https://bing.ioliu.cn/
-
-# 图标类
-
-    1.阿里巴巴矢量图库：https://www.iconfont.cn/
-    2.Ikonate：https://ikonate.com/
-    3.iconstore：https://iconstore.co/
-    4.icoon：https://icooon-mono.com/
-    5.iconfinder：https://www.iconfinder.com/
-
-# PSD 模板
-
-    1.素材中国：http://www.sccnn.com/
-    2.站长素材：https://sc.chinaz.com/psd/
-    3.365PSD：https://cn.365psd.com/free-psd
-    4.freepik：https://www.freepik.com/psd
-    5.freebiesbug： https://freebiesbug.com/
-
-# 音频类
-
-    1.Mixkit：https://mixkit.co/free-stock-music/
-    2.爱给网：https://www.aigei.com/
-    3.淘声网：https://www.tosound.com/
-    4.耳聆：https://www.ear0.com/
-
-# 学习网站
-
-    1.我要自学网，https://www.51zxw.net/
-    2.学堂在线，https://next.xuetangx.com/
-    3.doyoudo, https://m.doyoudo.com/path/12
-    4.多邻国，https://www.duolingo.cn/
-    5.迅捷画图(工具网站),https://www.liuchengtu.com/
-
-# 未分类网站
-
-    1.视频片头动画模板 https://panzoid.com/
-
-    2.在线抠图 https://www.remove.bg/
-
-    3.字体下载 https://www.zitijia.com/
-        p 站 （二次元插画网站） https://www.pixiv.net/
-
-    5.论文下载 https://www.cn-ki.net/
-
-    6.文档格式在线转换 https://smallpdf.com/
-
-    7.录屏投屏 http://web.airdroid.com/
-
-    8.各大网站热榜 https://tophub.today/
-
-    9.超清图片壁纸 https://www.pexels.com/
-
-    10.找网站的网站 http://www.addog.vip/
-
-    11.视频片头动画制作 https：//panzoid.com
-
-    12.在线抠图网站 https：//www.remove.bg/
-
-    13.免费下载字体 https：//www.zitijia.com/
-
-    14.二次元插画 P 站 https：www.pixiv.net/
-
-    15.论文搜索免费下载 IDATA https：//www.cn-ki.net/
-
-    16.文档格式在线转换（SmaLLPDF) https://smaLLpdf.com/
-
-    17.文件传输、远程控制、直播录屏 https://web.airdroid.com/
-
-    18.今日热榜 各大网站榜单资讯—一站式推送 https://tophub.today/
-
-    19.超清图片壁纸网站 pexels https://www.pexels.com/
-
-    20.极品干货、打遍天下无敌手网站 https://www.addog.vip/
-
-    21、在线公开课导航：http://coursegraph.com/navigation/
-
-    22、全国图书馆参考咨询联盟：http://www.ucdrs.superlib.net/
-
-    23、笔记本打印网站：mygraphpaper.com/
-
-    24、迅捷 pdf 转换器：app.xunjiepdf.com/
-
-    25、随机网站：sharkle.com/
-
-    26、极光绘画：weavesilk.com/
-
-    27、数字函数绘画：desmos.com/
-
-    28、千亿像素看中国：bigpixel.cn/
-
-    29、在线名字生成器：qmsjmfb.com/
-
-    30、二次元捏脸：picrew.me/

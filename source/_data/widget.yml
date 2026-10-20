@@ -87,11 +87,19 @@ home_widget:
     background: '#fff'
     html: '
     <div id="ip_welcome" class="ip_welcome">
-      <img src="https://www.loliapi.com/acg/pc/" >
-      <div id="soul">
+      <div class="ip-card">
+        <div class="ip-card__title"><i class="fas fa-map-marker-alt"></i> 欢迎你，来自远方的朋友</div>
+        <ul class="ip-card__list">
+          <li><span class="k">IP</span><span class="v">{{ ip.ip || "获取中…" }}</span></li>
+          <li><span class="k">归属</span><span class="v">{{ ip.loc || "未知" }}</span></li>
+          <li><span class="k">运营商</span><span class="v">{{ ip.org || "未知" }}</span></li>
+          <li><span class="k">时区</span><span class="v">{{ ip.tz || "未知" }}</span></li>
+        </ul>
+      </div>
+      <div id="soul" class="soul-card">
           <h2>干了这碗毒鸡汤</h2>
-          <p><span>{{content}}</span></p>
-          <button @click="change()">再 来 一 碗 </button>
+          <p class="soul-text"><span>{{ content }}</span></p>
+          <button @click="change()">再来一碗</button>
       </div>
     </div>
     <link href="/custom_widget/soul/index.css" rel="stylesheet">

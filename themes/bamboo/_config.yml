@@ -196,7 +196,7 @@ swiper:
   bubble: true # 轮播图是否显示气泡,也可以打开底下的花瓣或者雪花特效 sakura（花瓣）: true snow(雪花): true
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
-  defaultVideo: 'https://assets.mixkit.co/videos/download/mixkit-very-close-shot-of-the-leaves-of-a-tree-wet-18310.mp4' # video，min-width:992px show
+  defaultVideo: 'https://assets.mixkit.co/videos/18310/18310-720.mp4' # video，min-width:992px show (旧的 /videos/download/ 地址已 403 失效, 换用 mixkit 现行直链)
   # defaultVideo: 'https://vd3.bdstatic.com/mda-na5cd0rttsthhyxf/720p/h264/1641458748430610196/mda-na5cd0rttsthhyxf.mp4' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
   defaultTile: '青墨书晚风' # 标题
@@ -558,6 +558,18 @@ notice:
   title: '公告'
   background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
   list: # list相当于数组对象，[{title:'xx',date: 'xx', url: 'xxx', color: 'red'}]根据自己实际情况，增加或者删除
+    - title: '#博客升级到 Hexo 8，构建更快更安全'
+      date: '2026-10-20'
+      url: '/'
+      color: '#e4572e'   # 字体颜色
+    - title: '#修复失效挂件与接口，更新网站收藏'
+      date: '2026-10-20'
+      url: '/website/'
+      color: '#2a9d8f'
+    - title: '#清理失效友链，欢迎交换新友链'
+      date: '2026-10-20'
+      url: '/friends/'
+      color: '#4a7fd1'
     - title: '#博客上线了'
       date: '2021-10-20'
       url: '/'   # 可以为空, 也可以是本地页面地址如 '/archives'
