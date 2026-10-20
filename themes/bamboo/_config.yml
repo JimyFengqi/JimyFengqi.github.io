@@ -37,6 +37,7 @@ menu:
        icon: fas fa-book
      - name: 网站收藏
        url: /website
+       icon: fas fa-compass
 
 
 # github地址, 头部导航右上角的github链接

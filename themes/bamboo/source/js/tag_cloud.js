@@ -13,11 +13,26 @@ var mouseY = 0;
 var howElliptical = 1;
 var aA = null;
 var oDiv = null;
+var tagCloudTimer = null;
 
-window.onload = function () {
+function initTagCloud() {
     var i = 0;
     var oTag = null;
     oDiv = document.getElementById('div_tag');
+    // 页面上没有标签云容器(非 tags 页面)时直接返回
+    if (!oDiv) {
+        return;
+    }
+    // pjax 二次进入时清除上一次的定时器与状态，避免重复叠加
+    if (tagCloudTimer) {
+        clearInterval(tagCloudTimer);
+        tagCloudTimer = null;
+    }
+    mcList = [];
+    active = false;
+    lasta = 1;
+    lastb = 1;
+
     aA = oDiv.getElementsByTagName('a');
     for (i = 0; i < aA.length; i++) {
         oTag = {};
@@ -40,8 +55,17 @@ window.onload = function () {
         mouseX /= 5;
         mouseY /= 5;
     };
-    setInterval(update, 30);
-};
+    tagCloudTimer = setInterval(update, 30);
+}
+
+// 首次加载
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initTagCloud();
+} else {
+    window.addEventListener('load', initTagCloud);
+}
+// pjax 站内跳转后重新初始化(本主题使用 pjax, window.onload 不会再次触发)
+document.addEventListener('pjax:complete', initTagCloud);
 
 function update() {
     var a;
