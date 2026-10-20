@@ -1,7 +1,24 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 20
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    # 一次最多 5 个 PR，避免被大量更新淹没
+    open-pull-requests-limit: 5
+    # 把次要/补丁更新合并成单个 PR，减少噪音
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # Hexo 及其生态的大版本(major)升级属于破坏性变更，
+      # 需要手动验证(见 P2/Hexo 6 升级计划)，这里先忽略，避免自动 PR 把构建搞坏。
+      - dependency-name: "hexo"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "hexo-*"
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: "deps"
