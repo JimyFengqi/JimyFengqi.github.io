@@ -411,8 +411,8 @@ projects:
     hexo-theme-bamboo:
       icon: fas fa-rocket
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: https://github.com/yuang01/hexo-theme-bamboo
-      desc: 一个响应式设计的 Hexo 博客主题。
+      url: https://github.com/JimyFengqi/hexo-theme-bomboo
+      desc: 基于 hexo-theme-bamboo 大量定制的响应式 Hexo 主题。
     Fenix:
       icon: fas fa-database
       iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
