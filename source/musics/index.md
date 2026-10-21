@@ -72,30 +72,63 @@ layout: "musics"
 {% endtabs %}
 ```
 
-## 二、竖排展示（每首一行，共 13 首）
+## 二、竖排展示（不同宽度 tabs，共 13 首）
 
-{% audios vertical %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-3s.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-6s.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-9s.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-12s.mp3 %}
+{% tabs tab-audios-v %}
+
+<!-- tab 整行(100%) -->
+整行宽度（每行 1 首，共 1 首）
+{% audios, 1 %}
 {% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-15s.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3 %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3 %}
 {% endaudios %}
+<!-- endtab -->
+
+<!-- tab 半行(50%) -->
+半行宽度（每行 2 首，共 4 首）
+{% audios, 2 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-3s.mp3 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-6s.mp3 %}
+{% endaudios %}
+<!-- endtab -->
+
+<!-- tab 三分之一(33%) -->
+三分之一宽度（每行 3 首，共 8 首）
+{% audios, 3 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-9s.mp3 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-12s.mp3 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-15s.mp3 %}
+{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3 %}
+{% audio https://samplelib.com/lib/preview/mp3/sample-3s.mp3 %}
+{% endaudios %}
+<!-- endtab -->
+{% endtabs %}
 
 ### 上述代码
 
 ```
-{% audios vertical %}
-{% audio https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3 %}
-{% audio https://samplelib.com/lib/preview/mp3/sample-3s.mp3 %}
-... 共 13 首 (两个音源交替)
+{% tabs tab-audios-v %}
+
+<!-- tab 整行(100%) -->
+{% audios, 1 %}
+{% audio ...Song-5.mp3 %}   # 1 首
 {% endaudios %}
+<!-- endtab -->
+
+<!-- tab 半行(50%) -->
+{% audios, 2 %}
+{% audio ... %}             # 4 首
+{% endaudios %}
+<!-- endtab -->
+
+<!-- tab 三分之一(33%) -->
+{% audios, 3 %}
+{% audio ... %}             # 8 首
+{% endaudios %}
+<!-- endtab -->
+{% endtabs %}
 ```
