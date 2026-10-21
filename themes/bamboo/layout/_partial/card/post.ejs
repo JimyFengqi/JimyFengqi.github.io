@@ -13,55 +13,52 @@ var hashCode = function (str) {
     return hash;
 };
 %>
-<section class="posts">
+<section class="posts posts-grid">
   <% page.posts.each(function (post, i) { %>
     <%
       var img = '/medias/defaultImage/1.jpg';
       var imgs = theme.imgs;
-      if (!imgs || imgs.length === 0) {
-          return img;
+      if (imgs && imgs.length > 0) {
+        img = imgs[Math.abs(hashCode(post.title) % imgs.length)];
       }
-      img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
+      var cover = post.img || post.swiperImg || img;
+      var defImg = url_for('/medias/defaultImage/1.jpg');
+      // 概要: 直接截取正文纯文本前 250 字符(舍弃 excerpt)
+      var excerptText = strip_html(post.content)
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+      if (excerptText.length > 250) { excerptText = excerptText.substring(0, 250) + '…'; }
     %>
-    <article class="post reveal" style="<% if(i % 2 == 0 && theme.homePostImgsPosition.on) { %>flex-direction: row-reverse;<% } %>   <% if(theme.homePostImgsPosition.on === false && theme.homePostImgsPosition.left) { %>flex-direction: row-reverse;<% } %>">
-      <div class="post-main">
-        <div class="post-info">
-           <div class="post-title">
-            <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
-          </div>
-          <div class="post-content">
-            <%- post.excerpt || strip_html(post.content).substring(0, 120) %>
-          </div>
-          <div class="post-img-mobile">
-            <a href="<%- url_for(post.path) %>" style="background-size: cover;
-              background-position: center center;">
-              <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="" onerror="this.onerror=null;this.src='<%- url_for('/medias/defaultImage/1.jpg') %>'">
-            </a>
-          </div>
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="<%- url_for(post.path) %>"
+         style="background-image:url('<%- url_for(cover) %>');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title"><%= post.title %></span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          <%= excerptText %>
         </div>
-        <div class="post-more" line_style="solid">
-          <div class="post-meta">
-            <div class="post-time">
-             <i class="fad fa-calendar-alt" aria-hidden="true"></i>
-             <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
-            </div>
-            <div class="post-tags">
-              <%- partial('_partial/post/tags', {post: post}) %>
-            </div>
-            <div class="post-categories">
-              <%- partial('_partial/post/categories', {post: post}) %>
-            </div>
-          </div>
-          <a href="<%- url_for(post.path) %>">
-            <i class="iconfont iconmore" pointer style="float: right" title="阅读更多"></i>
-          </a>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            <%- date(post.date, "YYYY-MM-DD") %>
+          </span>
+          <span class="post-card-cat">
+            <%- partial('_partial/post/categories', {post: post}) %>
+          </span>
         </div>
-      </div>
-      <div class="post-img">
-        <a href="<%- url_for(post.path) %>" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="" onerror="this.onerror=null;this.src='<%- url_for('/medias/defaultImage/1.jpg') %>'">
-        </a>
+        <div class="post-card-tags">
+          <%- partial('_partial/post/tags', {post: post}) %>
+        </div>
       </div>
     </article>
   <% }) %>

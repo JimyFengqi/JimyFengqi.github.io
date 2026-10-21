@@ -7,8 +7,15 @@
   align-items: center;
   margin-bottom: 20px;
 
+  // 页码信息始终水平居中(即使第一页没有"上一页"按钮也不会偏移)
+  .page-info {
+    flex: 1;
+    text-align: center;
+  }
+
   .page-nav-pre, .page-nav-next {
     background-color: $color-primary;
+    flex: 0 0 auto;
   }
 
   .page-nav-pre {

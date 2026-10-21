@@ -203,3 +203,189 @@
     }
   }
 }
+
+// ============================================================
+// 新版文章卡片：双排网格 + 竖向卡片
+// 上半封面(图中居中标题) / 概要 / 时间+分类 / 标签
+// ============================================================
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 20px auto;
+
+  // 覆盖旧 .post 的横向 flex 规则
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 360px;
+    margin: 0;
+    background: convert(hexo-config('color_scheme.common.postListBackground'));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px -8px rgba(0, 0, 0, 0.55);
+    }
+  }
+
+  // 上半 50%：封面图 + 居中标题
+  .post-card-cover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    // 封面图缩放动画的基础
+    transition: transform 0.5s ease;
+
+    .post-card-cover-mask {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      transition: background 0.3s;
+    }
+
+    .post-card-title {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-size: 1.25em;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 16px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+
+  // 悬停: 封面图放大 + 遮罩变浅(让访客明确知道悬停在此卡片)
+  .post-card:hover .post-card-cover {
+    transform: scale(1.08);
+  }
+  .post-card:hover .post-card-cover .post-card-cover-mask {
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .post-card:hover .post-card-title {
+    transform: scale(0.94); // 图放大时标题相对缩回, 视觉更稳
+    transition: transform 0.5s ease;
+  }
+
+  // 下半：概要 / 元信息 / 标签
+  .post-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .post-card-excerpt {
+    color: rgba(0, 0, 0, 0.66);
+    font-size: 0.9em;
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    a { text-decoration: none; }
+  }
+
+  // 时间(左) + 分类(右)
+  .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #888;
+
+    .post-card-time i {
+      margin-right: 4px;
+      color: #3ecf8e; // 时间图标：绿色(保留)
+    }
+
+    .post-card-cat {
+      text-align: right;
+      i, .iconbookmark1 {
+        color: convert(hexo-config('color_scheme.common.theme')); // 分类图标：主题色
+        margin-right: 3px;
+      }
+      a { color: #888; text-decoration: none; }
+      a:hover { color: convert(hexo-config('color_scheme.common.theme')) !important; }
+      // 分类内部可能带包裹块, 让它内联排布
+      .article-category { display: inline; }
+    }
+  }
+
+  // 底部标签：横向排列
+  .post-card-tags {
+    margin-top: 8px;
+    font-size: 0.78em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+
+    > i, .icontag {
+      color: convert(hexo-config('color_scheme.common.theme')); // 标签图标：主题色
+      margin-right: 6px;
+      flex: 0 0 auto;
+    }
+    // 标签列表横排
+    .article-tag-list,
+    ul {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+    .article-tag-list-item,
+    li {
+      display: inline-block;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+    a {
+      color: #999;
+      text-decoration: none;
+    }
+    a:hover { color: convert(hexo-config('color_scheme.common.theme')) !important; }
+  }
+}
+
+// 窄屏单列
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// 标签/分类详情页: 让文章网格与下方分页(.w-70)宽度一致、居中, 避免过宽
+.tag .posts-grid,
+.category .posts-grid {
+  width: 70%;
+  margin: 20px auto;
+
+  @media (max-width: 992px) {
+    width: 90%;
+  }
+  @media (max-width: 551px) {
+    width: 100%;
+  }
+}

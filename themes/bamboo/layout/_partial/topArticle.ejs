@@ -17,8 +17,10 @@
 <div class="topArticle reveal">
 	<h3><i class="fas fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
 	<div class="articles">
+		<% var topCount = 0; %>
 		<% site.posts.sort('-date').each(function (post, i) { %>
-			<% if(post.top) { %>
+			<% if(post.top && topCount < 3) { %>
+				<% topCount++; %>
 				<div class="article-link">
 					<%
 						var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
