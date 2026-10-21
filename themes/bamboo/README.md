@@ -1,60 +1,55 @@
-# hexo-theme-bamboo
+# hexo-theme-bamboo（本站定制版）
 
-本主题时基于hexo-theme-bamboo dev分支 2.6.9版本修改而来
+> 本主题 **fork 并大量修改** 自 [yuang01/hexo-theme-bamboo](https://github.com/yuang01/hexo-theme-bamboo)
+> （最初基于其 dev 分支 2.6.9 版本），为本博客 <https://jimyfengqi.github.io/> 定制。
+>
+> ⚠️ 本目录已与上游分叉，**不要直接用上游版本覆盖**，否则会丢失下列定制。
+> 升级上游前请先 `git clone https://github.com/yuang01/hexo-theme-bamboo.git` 对比差异。
 
-![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=dev)
-![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/master?label=master)
-![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
-![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
+## 与上游的主要差异（本站定制）
 
-<table>
-    <tr>
-            <th>首页轮播(支持三种显示方式)</th>
-            <th>首页内容</th>
-    </tr>
-    <tr>
-        <td><img src="https://img11.360buyimg.com/ddimg/jfs/t1/186409/13/3127/2116584/609e272eE21314c58/17d1dc0bc257fefb.png" /></td>
-        <td><img src="https://img14.360buyimg.com/ddimg/jfs/t1/181291/12/4004/1573843/609e272cE973c9c76/0d1d36d2e85b4231.png" /></td>
-    </tr>
-  <tr>
-            <th>暗黑模式</th>
-            <th>文章内容</th>
-    </tr>
-    <tr>
-        <td><img src="https://img12.360buyimg.com/ddimg/jfs/t1/182808/27/4130/743199/609e2728Edd209b4b/30dc231a7446a625.png" /></td>
-        <td><img src="https://img11.360buyimg.com/ddimg/jfs/t1/180598/31/4047/606158/609e2929E85cd5694/4f91990995bc1931.png" /></td>
-    </tr>
-</table>
+### 兼容性
+- 适配 **Hexo 8**（上游早期版本面向 Hexo 5）。
+- 代码高亮依赖站点配置顶层 `syntax_highlighter: prismjs` 才生效（Hexo 7+ 变更）。
 
-<!-- more -->
-## 下载
+### 首页文章列表改版（`layout/_partial/card/post.ejs` + `source/css/_partial/posts.styl`）
+- 由横向单卡列表改为 **3 列网格的竖向卡片**：
+  - 上半 50% 封面图 + 居中标题
+  - 概要取正文前 250 字符（去标签/解码实体）
+  - 时间(左) + 分类(右)，底部横向标签
+- 悬停动画：封面放大 + 遮罩变浅 + 卡片上浮。
+- 暗色模式适配卡片文字/背景（`source/css/_partial/dark.styl`）。
 
-首先你需要有一个[Hexo](https://hexo.io/zh-cn/)，按照官网的方法，很容易的就能创建一个hexo博客。
+### 翻页行为（`layout/index.ejs`）
+- 顶部统一用 `isFirstPage` 判断：翻页（第 2 页起）保留 banner，移除公告/欢迎挂件/座右铭/推荐文章/右侧边栏，内容区占满。
 
-#### 当你有了hexo博客之后，进入`themes`文件夹下使用 `Git clone` 命令来下载
+### 分页器（`source/css/_partial/paginator.styl`）
+- `.page-info` 居中修复：第 1 页无"上一页"按钮时页码也居中（全站分页通用）。
+- tags/categories 详情页文章网格限宽 70%，与分页器对齐。
 
-github安装
+### 失效外链治理
+- 失效 CDN（bootcss 的 pace/animejs）改用 jsDelivr。
+- 默认随机封面兜底改为本地 `source/medias/defaultImage/`；`{% site %}` 标签与友链头像增加 `onerror` 兜底（失败回退 icon.horse，再回退本地 logo）。
+- 默认关闭已失效/无意义的服务：天气组件（qweather）、百度推送（baiduPush）、Valine/LeanCloud 评论。
 
-``` bash
+### 媒体标签增强（`scripts/tag/media.js` + `source/css/_tag/media.styl`）
+- 新增 `audios` 网格标签（对应已有的 `videos`），支持 `col 1/2/3/4/8` 横排与 `vertical` 竖排，用于音乐演示页。
+
+### 图表（echarts）
+- 关于页文章统计图、分类页雷达图：修复被 ScrollReveal 隐藏导致 0 尺寸初始化空白的问题；初始化加 `data-pjax` 以适配 pjax 跳转。
+
+> 以上为主要改动清单，细节以源码为准。本主题由站点仓库一并维护，不单独发布。
+
+---
+
+## 原主题安装方式（仅供参考）
+
+进入 hexo 的 `themes` 文件夹下 clone 上游主题：
+
+```bash
 git clone https://github.com/yuang01/hexo-theme-bamboo.git
 ```
 
-gitee安装
+然后在站点 `_config.yml` 中把 `theme` 指向该主题目录，并在主题的 `_config.yml` 中配置。
 
-```bash
-git clone https://gitee.com/yuang01/hexo-theme-bamboo.git
-```
-
-修改hexo根目录下的站点配置文件`_config.yml`，把主题改为`hexo-theme-bamboo`，通过主题文件夹下的`config.yml`配置主题即可
-
-#### 或者npm来安装，进入hexo根目录使用如下命令
-
-```bash
-npm i hexo-theme-bamboo
-```
-
-注意：此方法只支持Hexo在5.0.0版本以上
-**通过 npm 安装并不会在 themes 里生成主题文件夹，而是在 node_modules 里生成**
-修改hexo根目录下的站点配置文件`_config.yml`，把主题改为`bamboo`
-
-接着在hexo根目录下新建文件`_config.bamboo.yml`,从`node_modules`文件夹下找到`hexo-theme-bamboo`文件夹下的`_config.yml`，将里面的内容复制到`_config.bamboo.yml`文件中即可，在`_config.bamboo.yml`文件中对主题进行配置
+> 注意：本站用的是**定制版**（即本目录），并非上游原版。
