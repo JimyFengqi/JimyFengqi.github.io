@@ -381,9 +381,9 @@ music:
 #    - server: kugou         # 专辑-一万个理由-郑源
 #      id: 1787575
 #      type: album   
-    - server: kugou         #个人歌单 
-      id: 3947753
-      type: playlist
+#    - server: kugou         #个人歌单 
+#      id: 3947753
+#      type: playlist
   fixed: true       # 开启吸底模式，建议开启
   autoplay: true   # 是否自动播放, 有些浏览器会禁用自动播放，目前edge可以自动播放
   theme: '#42b983'
@@ -408,10 +408,10 @@ baseInfo:
 projects:
   on: true
   data:
-    hexo-theme-matery:
+    hexo-theme-bamboo:
       icon: fas fa-rocket
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: http://github.com/jimyfengqi/hexo-theme-matery
+      url: https://github.com/yuang01/hexo-theme-bamboo
       desc: 一个响应式设计的 Hexo 博客主题。
     Fenix:
       icon: fas fa-database
