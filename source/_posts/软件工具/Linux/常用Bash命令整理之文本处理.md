@@ -5,7 +5,6 @@ author: blinkfox
 categories: 软件工具
 tags:
   - Linux
-abbrlink: 1806483487
 date: 2018-10-11 22:05:00
 ---
 

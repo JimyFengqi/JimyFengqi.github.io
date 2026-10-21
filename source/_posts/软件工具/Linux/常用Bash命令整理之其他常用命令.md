@@ -3,7 +3,6 @@ title: 常用Bash命令整理之其他常用命令
 author: blinkfox
 categories: 软件工具
 tags: Linux
-abbrlink: 3575732874
 date: 2018-10-13 18:15:00
 ---
 

@@ -5,7 +5,6 @@ categories:
 tags:
   - 递归
   - 链表
-abbrlink: 962551202
 date: 2021-12-03 21:32:24
 ---
 

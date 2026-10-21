@@ -5,7 +5,6 @@ categories:
 tags:
   - 位运算
   - 数学
-abbrlink: 692005770
 date: 2021-12-03 21:37:16
 ---
 

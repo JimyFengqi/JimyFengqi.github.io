@@ -3,7 +3,6 @@ title: Django视频网站搭建--step2注册登录功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 3402743585
 date: 2020-08-21 17:35:46
 ---
 #注册登录功能

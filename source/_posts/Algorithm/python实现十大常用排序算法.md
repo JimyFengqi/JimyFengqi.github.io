@@ -5,7 +5,6 @@ categories: Algorithm
 tags: [排序, 算法]
 swiper: true
 top: true
-abbrlink: 4
 ---
 
 # 排序算法基本内容

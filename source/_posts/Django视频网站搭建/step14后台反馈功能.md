@@ -3,7 +3,6 @@ title: Django视频网站搭建--step14后台反馈功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 1586862056
 date: 2020-08-28 16:41:31
 ---
 #后天反馈功能

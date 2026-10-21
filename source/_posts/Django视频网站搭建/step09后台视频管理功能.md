@@ -3,7 +3,6 @@ title: Django视频网站搭建--step09后台视频管理功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 1800145423
 date: 2020-08-27 16:33:40
 ---
 #后台视频管理功能

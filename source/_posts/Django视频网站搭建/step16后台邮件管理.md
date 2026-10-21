@@ -3,7 +3,6 @@ title: Django视频网站搭建--step16后台邮件管理
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 482180152
 date: 2020-08-28 18:56:46
 ---
 #邮件管理功能

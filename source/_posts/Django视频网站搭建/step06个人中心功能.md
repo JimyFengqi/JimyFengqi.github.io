@@ -3,7 +3,6 @@ title: Django视频网站搭建--step06个人中心功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 1427529209
 date: 2020-11-17 18:04:22
 ---
 #个人中心功能

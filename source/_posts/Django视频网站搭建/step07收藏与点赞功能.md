@@ -3,7 +3,6 @@ title: Django视频网站搭建--step07收藏与点赞功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 282249136
 date: 2020-11-17 18:05:47
 ---
 #收藏与点赞功能

@@ -24,10 +24,6 @@ permalink_pinyin:   # 链接中文字符转拼音
   enable: true
   separator: '-' # default: '-
 
-abbrlink:  # abbrlink生效，需要将permalink设置为 posts/:abbrlink/
-  alg: crc32  #support crc16(default) and crc32
-  rep: dec    #support dec(default) and hex
-
 # Directory
 source_dir: source
 public_dir: public

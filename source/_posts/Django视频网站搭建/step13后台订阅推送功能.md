@@ -3,7 +3,6 @@ title: Django视频网站搭建--step13后台订阅推送功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 254395507
 date: 2020-08-28 16:19:08
 ---
 #订阅邮件推送功能

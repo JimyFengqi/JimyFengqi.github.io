@@ -6,7 +6,6 @@ categories: 软件设计
 tags:
   - Java
   - 设计模式
-abbrlink: 4285598026
 date: 2018-10-18 22:55:00
 ---
 

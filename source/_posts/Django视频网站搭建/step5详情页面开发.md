@@ -3,7 +3,6 @@ title: Django视频网站搭建--step5详情页面开发
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 2386286241
 date: 2020-11-17 18:05:47
 ---
 #详情页面开发

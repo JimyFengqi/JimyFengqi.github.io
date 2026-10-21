@@ -3,7 +3,6 @@ title: Django综合篇之添加xadmin功能
 categories: Django全网站搭建
 tags:
   - django
-abbrlink: 2146647189
 date: 2020-09-17 23:49:29
 ---
 #添加xadmin功能

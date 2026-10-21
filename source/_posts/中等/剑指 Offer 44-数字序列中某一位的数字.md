@@ -5,7 +5,6 @@ categories:
 tags:
   - 数学
   - 二分查找
-abbrlink: 1500972412
 date: 2021-12-03 21:38:13
 ---
 

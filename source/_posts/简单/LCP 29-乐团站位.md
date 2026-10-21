@@ -4,7 +4,6 @@ categories:
   - 简单
 tags:
   - 数学
-abbrlink: 871349586
 date: 2021-12-03 21:33:22
 ---
 

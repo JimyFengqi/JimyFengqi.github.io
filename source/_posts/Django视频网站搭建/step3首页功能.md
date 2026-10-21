@@ -3,7 +3,6 @@ title: Django视频网站搭建--step3首页功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 3889211928
 date: 2020-11-17 18:05:47
 ---
 #首页功能

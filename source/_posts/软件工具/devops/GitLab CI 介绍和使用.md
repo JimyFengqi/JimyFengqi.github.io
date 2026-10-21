@@ -7,7 +7,6 @@ tags:
   - GitLab CI
   - DevOps
   - Jenkins
-abbrlink: 1875426716
 date: 2018-11-22 23:30:00
 ---
 

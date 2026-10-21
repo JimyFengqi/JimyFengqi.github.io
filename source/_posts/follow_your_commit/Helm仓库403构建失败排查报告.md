@@ -8,7 +8,6 @@ tags:
   - 权限
   - Jenkins
   - CI/CD
-abbrlink: 3499945832
 date: 2026-10-21 09:00:00
 ---
 

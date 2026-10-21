@@ -5,7 +5,6 @@ categories:
 tags:
   - 栈
   - 数组
-abbrlink: 720793338
 date: 2021-12-03 21:31:13
 ---
 

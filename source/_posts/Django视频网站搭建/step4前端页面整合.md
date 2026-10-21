@@ -3,7 +3,6 @@ title: Django视频网站搭建--step4前端页面整合
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 1020996230
 date: 2020-08-22 00:41:00
 ---
 #前端页面整合

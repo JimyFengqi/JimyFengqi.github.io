@@ -5,7 +5,6 @@ categories:
 tags:
   - 数组
   - 前缀和
-abbrlink: 3190379321
 date: 2021-12-03 21:36:38
 ---
 

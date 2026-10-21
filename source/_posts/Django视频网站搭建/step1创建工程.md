@@ -3,7 +3,6 @@ title: Django视频网站搭建--step1创建工程
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 707041426
 date: 2020-08-05 10:38:23
 ---
 #基于django的视频点播网站开发

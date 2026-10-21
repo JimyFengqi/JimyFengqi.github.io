@@ -4,7 +4,6 @@ categories:
   - 中等
 tags:
   - 链表
-abbrlink: 3466504993
 date: 2021-12-03 21:32:19
 ---
 

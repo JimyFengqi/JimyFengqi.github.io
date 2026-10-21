@@ -3,7 +3,6 @@ title: Django视频网站搭建--step11后台评论功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 2136671276
 date: 2020-08-27 18:12:01
 ---
 #后台评论功能

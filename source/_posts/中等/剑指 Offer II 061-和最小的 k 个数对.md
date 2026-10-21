@@ -5,7 +5,6 @@ categories:
 tags:
   - 数组
   - 堆（优先队列）
-abbrlink: 800658053
 date: 2021-12-03 21:28:28
 ---
 

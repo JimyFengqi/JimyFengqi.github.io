@@ -3,7 +3,6 @@ title: Django视频网站搭建--step15数据总览功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 2725073212
 date: 2020-08-28 16:57:53
 ---
 #数据总览功能

@@ -4,7 +4,6 @@ categories:
   - 简单
 tags:
   - 链表
-abbrlink: 2371274782
 date: 2021-12-03 21:39:17
 ---
 

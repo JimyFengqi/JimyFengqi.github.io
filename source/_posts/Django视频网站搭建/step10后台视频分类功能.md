@@ -3,7 +3,6 @@ title: Django视频网站搭建--step10后台视频分类功能
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 3593128665
 date: 2020-08-27 16:33:40
 ---
 #视频分类

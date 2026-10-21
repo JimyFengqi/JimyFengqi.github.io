@@ -3,7 +3,6 @@ title: Django视频网站搭建--step08后台登录
 categories: Django视频网站搭建
 tags:
   - django
-abbrlink: 2648619932
 date: 2020-08-25 17:41:41
 ---
 #后台登录功能

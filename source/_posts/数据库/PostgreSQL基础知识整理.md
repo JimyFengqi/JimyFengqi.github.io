@@ -6,7 +6,6 @@ categories: 数据库
 tags:
   - PostgreSQL
   - 数据库
-abbrlink: 1484742890
 date: 2018-09-25 00:33:00
 ---
 
