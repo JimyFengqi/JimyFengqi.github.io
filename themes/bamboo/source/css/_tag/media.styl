@@ -48,3 +48,46 @@ div.videos
   &[col='4']
     .video,iframe
       width: "calc(25% - 2 * %s)" % $sp
+
+div.audio
+  line-height: 0
+  text-align: center
+  audio
+    width: 100%
+
+div.audios
+  max-width: "calc(100% + 2 * %s)" % $sp
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-items: center
+  margin: 1em 0 - $sp
+  .audio
+    width: 100%
+    margin: $sp
+    audio
+      width: 100%
+  &.left
+    justify-content: flex-start
+  &.center
+    justify-content: center
+  &.right
+    justify-content: flex-end
+  // 竖排模式: 每首一行
+  &.vertical
+    flex-direction: column
+    align-items: stretch
+    .audio
+      width: 100%
+  &[col='1']
+    .audio
+      width: 100%
+  &[col='2']
+    .audio
+      width: "calc(50% - 2 * %s)" % $sp
+  &[col='4']
+    .audio
+      width: "calc(25% - 2 * %s)" % $sp
+  &[col='8']
+    .audio
+      width: "calc(12.5% - 2 * %s)" % $sp

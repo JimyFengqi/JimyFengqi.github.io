@@ -1,7 +1,7 @@
 ---
 title: 常用Bash命令整理之文本处理
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/10/11/bash.jpg'
+
 categories: 软件工具
 tags:
   - Linux

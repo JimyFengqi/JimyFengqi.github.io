@@ -1,7 +1,7 @@
 ---
 title: GitLab CI/CD 介绍和使用
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/11/22/gitlab-ci-machine.png'
+
 categories: 软件工具
 tags:
   - GitLab CI
@@ -43,7 +43,7 @@ date: 2018-11-22 23:30:00
 
 ## 二、Gitlab 持续集成
 
-![GitLab CI/CD](https://statics.sh1a.qingstor.com/2018/11/22/pipelines.png)
+
 
 ### 1 概念介绍
 

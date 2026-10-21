@@ -1,7 +1,7 @@
 ---
 title: Vue 文档风格的 Typora 主题
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/11/19/vue.jpg'
+
 cover: true
 categories: 软件工具
 tags:
@@ -27,11 +27,11 @@ date: 2018-11-19 00:30:00
 
 ## 效果图
 
-![vue主题效果图1](https://statics.sh1a.qingstor.com/2018/11/19/typora-vue-theme-screen-1.png)
 
-![vue主题效果图2](https://statics.sh1a.qingstor.com/2018/11/19/typora-vue-theme-screen-2.png)
 
-![vue主题效果图3](https://statics.sh1a.qingstor.com/2018/11/19/typora-vue-theme-screen-3.png)
+
+
+
 
 ### Vue Dark
 

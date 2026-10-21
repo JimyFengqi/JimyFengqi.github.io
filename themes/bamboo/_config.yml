@@ -29,6 +29,9 @@ menu:
      - name: 视频演示
        url: /movies
        icon: fas fa-film
+     - name: 音乐演示
+       url: /musics
+       icon: fas fa-music
      - name: 归档
        url: /archives
        icon: fas fa-archive

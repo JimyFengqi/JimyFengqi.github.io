@@ -35,11 +35,11 @@ date: 2018-10-29 23:30:00
 
 ### UML类图
 
-![单例模式UML类图](https://statics.sh1a.qingstor.com/2018/10/29/Java-design-singleton-uml.jpg)
+
 
 ### 时序图
 
-![单例模式时序图](https://statics.sh1a.qingstor.com/2018/10/29/Java-design-singleton-seq.jpg)
+
 
 ## 代码实现方式
 

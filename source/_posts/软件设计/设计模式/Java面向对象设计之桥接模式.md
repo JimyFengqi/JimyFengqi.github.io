@@ -1,7 +1,7 @@
 ---
 title: Java面向对象设计之桥接模式
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/12/19/bridge.jpg'
+
 categories: 软件设计
 tags:
   - Java
@@ -34,7 +34,7 @@ date: 2018-12-19 00:20:00
 
 ### UML类图
 
-![桥接模式UML](https://statics.sh1a.qingstor.com/2018/12/19/java-design-bridge.jpg)
+
 
 ## 代码示例
 

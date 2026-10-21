@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL基础知识整理
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/09/25/sql.jpg'
+
 categories: 数据库
 tags:
   - PostgreSQL

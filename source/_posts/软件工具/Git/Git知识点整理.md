@@ -1,7 +1,7 @@
 ---
 title: Git知识点整理
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/09/24/git.jpg'
+
 categories: 软件工具
 tags: Git
 abbrlink: 2685754623
@@ -341,7 +341,7 @@ git push origin --tags
 
 ### (1). Git Flow流程图
 
-![Git Flow流程图][4]
+
 
 ### (2). Git Flow常用的分支
 
@@ -442,4 +442,3 @@ git push --tags
   [1]: http://blog.chinaunix.net/attachment/201402/19/10415985_139279770639pM.jpg
   [2]: http://images2015.cnblogs.com/blog/759200/201608/759200-20160806092734215-279978821.png
   [3]: http://nvie.com/posts/a-successful-git-branching-model/
-  [4]: https://statics.sh1a.qingstor.com/2018/09/24/imagegit-flow.png

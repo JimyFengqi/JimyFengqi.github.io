@@ -1,7 +1,7 @@
 ---
 title: 轻量级滚动动画JavaScript库aos.js
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/10/08/1.jpg'
+
 categories: 前端
 tags:
   - JavaScript
@@ -13,7 +13,7 @@ date: 2018-10-08 22:30:00
 
 [aos.js][1]是一款效果超赞的页面滚动的 JavaScript 动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种`easing`效果。在页面往回滚动时，元素会恢复到原来的状态。
 
-![AOS][2]
+
 
 > 注：从`2.0.0`版本之后,只支持使用`data-aos`属性，不再支持使用`aos`属性。
 
@@ -383,7 +383,6 @@ body {
 - ease-in-out-quart
 
   [1]: http://michalsnik.github.io/aos/
-  [2]: https://statics.sh1a.qingstor.com/2018/10/08/aos.png
   [3]: https://bower.io/
   [4]: https://www.npmjs.com/
   [5]: https://github.com/michalsnik/aos/archive/master.zip

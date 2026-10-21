@@ -1,7 +1,7 @@
 ---
 title: JavaScript基础教程
 author: blinkfox
-img: 'https://statics.sh1a.qingstor.com/2018/09/14/js.jpg'
+
 categories: 前端
 tags:
   - JavaScript
@@ -31,7 +31,7 @@ date: 2018-09-14 00:12:00
 
 ### JavaScript能做什么
 
-![JavaScript项目在Github所占比例][7]
+
 
 如上图，`JavaScript`作为[Github][8]上最流行、最火的编程语言，几乎无所不能。这里是[PuYart][9]的关于[`JavaScript`就要统治世界了][10]的文章，可以让我们了解`JavaScript`到底能做什么的一些介绍。
 
@@ -1463,7 +1463,6 @@ Math.cos(Math.PI)  // 预定义常量π，-1
   [4]: http://extjs.org.cn/
   [5]: http://underscorejs.org/
   [6]: http://backbonejs.org/
-  [7]: https://statics.sh1a.qingstor.com/2020/11/29/js.png
   [8]: https://github.com/
   [9]: https://segmentfault.com/u/puyart
   [10]: https://segmentfault.com/a/1190000003767058
