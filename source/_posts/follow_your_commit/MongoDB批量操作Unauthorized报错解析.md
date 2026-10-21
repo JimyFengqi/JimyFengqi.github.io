@@ -5,6 +5,8 @@ categories: follow_your_commit
 tags:
   - MongoDB
   - mongosh
+  - 权限
+  - 系统集合
 abbrlink: 4247751014
 date: 2026-10-21 10:55:00
 ---

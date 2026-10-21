@@ -3,7 +3,11 @@ title: DNS 故障引发 Passenger 进程拥塞事件分析
 author: Fengqi
 categories: resultweb
 tags:
-  - resultweb
+  - DNS
+  - Passenger
+  - 性能
+  - 故障排查
+  - Rails
 abbrlink: 3493564080
 date: 2026-10-21 09:02:00
 ---

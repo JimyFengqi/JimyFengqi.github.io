@@ -3,7 +3,10 @@ title: ResultWeb 测试超时（user_defined_timeout）机制分析报告
 author: Fengqi
 categories: resultweb
 tags:
-  - resultweb
+  - 超时
+  - Rails
+  - 任务调度
+  - 源码分析
 abbrlink: 1057111619
 date: 2026-10-21 09:09:00
 ---

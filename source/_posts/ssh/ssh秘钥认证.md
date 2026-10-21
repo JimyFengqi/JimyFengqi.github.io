@@ -3,7 +3,9 @@ title: SSH 公钥认证：为什么用了私钥仍需输入密码
 author: Fengqi
 categories: ssh
 tags:
-  - ssh
+  - SSH
+  - 公钥认证
+  - Linux
 abbrlink: 2362587499
 date: 2026-10-21 09:13:00
 ---

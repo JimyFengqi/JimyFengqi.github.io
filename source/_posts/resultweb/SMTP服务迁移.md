@@ -5,6 +5,7 @@ categories: resultweb
 tags:
   - Postfix
   - SMTP
+  - 邮件
   - Rails
 abbrlink: 3020966047
 date: 2026-10-21 09:03:00

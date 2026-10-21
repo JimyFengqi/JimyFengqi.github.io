@@ -3,7 +3,10 @@ title: ResultWeb Preparation Stage Failure — Root Cause Analysis
 author: Fengqi
 categories: resultweb
 tags:
-  - resultweb
+  - CI/CD
+  - 竞态条件
+  - Ruby
+  - 故障排查
 abbrlink: 780857378
 date: 2026-10-21 09:04:00
 ---

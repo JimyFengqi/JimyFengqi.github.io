@@ -5,6 +5,7 @@ categories: follow_your_commit
 tags:
   - MongoDB
   - mongosh
+  - 版本兼容
   - 环境配置
 abbrlink: 839517673
 date: 2026-10-21 10:50:00

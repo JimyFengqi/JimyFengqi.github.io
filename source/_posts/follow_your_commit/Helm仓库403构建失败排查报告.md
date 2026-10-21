@@ -3,7 +3,11 @@ title: Helm 仓库 403 构建失败排查报告
 author: Fengqi
 categories: follow_your_commit
 tags:
-  - follow_your_commit
+  - Helm
+  - Artifactory
+  - 权限
+  - Jenkins
+  - CI/CD
 abbrlink: 3499945832
 date: 2026-10-21 09:00:00
 ---

@@ -3,7 +3,10 @@ title: 事件报告：Rancher 认证凭证失效导致模拟器测试全面失�
 author: Fengqi
 categories: sheduler
 tags:
-  - sheduler
+  - Rancher
+  - Kubernetes
+  - 认证
+  - CI/CD
 abbrlink: 3863077733
 date: 2026-10-21 09:11:00
 ---
