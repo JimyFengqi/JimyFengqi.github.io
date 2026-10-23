@@ -57,3 +57,28 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'Auto deploy by GitHub Actions: ${{ github.sha }}'
+
+      # 6. 同步构建产物(public/)到 Gitee 的 master 分支(镜像, 供 Gitee Pages 使用)
+      #    凭据来自仓库 Secrets: GITEE_USER / GITEE_TOKEN(Gitee 私人令牌或密码)
+      #    若未配置 Secrets, 本步骤自动跳过, 不影响 GitHub 发布
+      - name: Sync to Gitee master
+        env:
+          GITEE_USER: ${{ secrets.GITEE_USER }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_REPO: ${{ vars.GITEE_REPO || 'gitee.com/JimyFengqi/JimyFengqi.gitee.io.git' }}
+        run: |
+          if [ -z "$GITEE_USER" ] || [ -z "$GITEE_TOKEN" ]; then
+            echo "未配置 GITEE_USER / GITEE_TOKEN Secrets, 跳过 Gitee 同步。"
+            exit 0
+          fi
+          cd public
+          rm -rf .git
+          git init -q
+          git checkout -q -B master
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Auto sync by GitHub Actions: ${{ github.sha }}"
+          # 覆盖式推送到 Gitee master(与 GitHub master 内容一致)
+          git push --force --quiet "https://${GITEE_USER}:${GITEE_TOKEN}@${GITEE_REPO}" master:master
+          echo "已同步到 Gitee master。"
