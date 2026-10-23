@@ -1,0 +1,3718 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>标签: django | 凤起丶宛南</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '3';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+
+  
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            <link src="/js/aos/aos@2.3.4.min.css"></link>
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+        
+            <script src="/js/aos/aos@2.3.4.min.js"></script>
+        
+    
+
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">凤起丶宛南</h3>
+      <h5 class="drawer-box-head_desc">从来没有真正的绝境，只有心灵的迷途</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(5)">
+                  <span>
+                    
+                      <i class="fas fa-cowbell-more"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(5)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(5)">
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <i class="fas fa-compass" style="margin-top: -20px;"></i>
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">凤起丶宛南</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友链">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-cowbell-more"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <i class="fas fa-compass" style="margin-top: -20px;"></i>
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+        
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+
+<div class="tag-header" style="background-image: url('https://pic1.zhimg.com/80/v2-604a15cef201cf177943af2d915eb2e7_1440w.jpg?source=1940ef5c');">
+  <div class="tag-header-title">
+    标签详情
+  </div>
+  <div class="tag-header-desc">
+  
+    <span class="title" id="tag-header-desc"></span>
+    <script>
+  function typedFn() {
+    const el = '#tag-header-desc';
+    const type = 'tagDetail';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
+    
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+
+
+<div class="tag">
+  <div class="tag-name">
+    <div class="name" style="background-color: #85C1E9;">django 分类</div>
+  </div>
+
+  
+
+<div id="tags" class="container reveal" >
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E6%8E%92%E5%BA%8F/" title="排序: 197">
+                    <span class="tag-content"
+                        title="排序" style="background-color: #F9EBEA;">排序
+                        <span class="tag-length">197</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法: 1">
+                    <span class="tag-content"
+                        title="算法" style="background-color: #F5EEF8;">算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/django/" title="django: 64">
+                    <span class="tag-content"
+                        title="django" style="background-color: #D5F5E3;">django
+                        <span class="tag-length">64</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/npm/" title="npm: 2">
+                    <span class="tag-content"
+                        title="npm" style="background-color: #E8F8F5;">npm
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Artifactory/" title="Artifactory: 2">
+                    <span class="tag-content"
+                        title="Artifactory" style="background-color: #FEF9E7;">Artifactory
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Docker/" title="Docker: 2">
+                    <span class="tag-content"
+                        title="Docker" style="background-color: #F8F9F9;">Docker
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CI-CD/" title="CI/CD: 4">
+                    <span class="tag-content"
+                        title="CI/CD" style="background-color: #82E0AA;">CI/CD
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%A4%E8%AF%81/" title="认证: 2">
+                    <span class="tag-content"
+                        title="认证" style="background-color: #D7BDE2;">认证
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MongoDB/" title="MongoDB: 2">
+                    <span class="tag-content"
+                        title="MongoDB" style="background-color: #A3E4D7;">MongoDB
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mongosh/" title="mongosh: 2">
+                    <span class="tag-content"
+                        title="mongosh" style="background-color: #85C1E9;">mongosh
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9D%83%E9%99%90/" title="权限: 2">
+                    <span class="tag-content"
+                        title="权限" style="background-color: #F8C471;">权限
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%B3%BB%E7%BB%9F%E9%9B%86%E5%90%88/" title="系统集合: 1">
+                    <span class="tag-content"
+                        title="系统集合" style="background-color: #F9E79F;">系统集合
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9/" title="版本兼容: 1">
+                    <span class="tag-content"
+                        title="版本兼容" style="background-color: #FEF9E7;">版本兼容
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="环境配置: 1">
+                    <span class="tag-content"
+                        title="环境配置" style="background-color: #D7BDE2;">环境配置
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%97%B6%E5%8C%BA/" title="时区: 1">
+                    <span class="tag-content"
+                        title="时区" style="background-color: #D5F5E3;">时区
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/date-fns/" title="date-fns: 1">
+                    <span class="tag-content"
+                        title="date-fns" style="background-color: #F9E79F;">date-fns
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" title="前端: 1">
+                    <span class="tag-content"
+                        title="前端" style="background-color: #FEF9E7;">前端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Vite/" title="Vite: 1">
+                    <span class="tag-content"
+                        title="Vite" style="background-color: #E8F8F5;">Vite
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 5">
+                    <span class="tag-content"
+                        title="JavaScript" style="background-color: #85C1E9;">JavaScript
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%BC%93%E5%AD%98/" title="缓存: 1">
+                    <span class="tag-content"
+                        title="缓存" style="background-color: #85C1E9;">缓存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" title="依赖管理: 1">
+                    <span class="tag-content"
+                        title="依赖管理" style="background-color: #F8F9F9;">依赖管理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Helm/" title="Helm: 1">
+                    <span class="tag-content"
+                        title="Helm" style="background-color: #82E0AA;">Helm
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Jenkins/" title="Jenkins: 2">
+                    <span class="tag-content"
+                        title="Jenkins" style="background-color: #D7BDE2;">Jenkins
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DNS/" title="DNS: 1">
+                    <span class="tag-content"
+                        title="DNS" style="background-color: #D5F5E3;">DNS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Passenger/" title="Passenger: 1">
+                    <span class="tag-content"
+                        title="Passenger" style="background-color: #D5F5E3;">Passenger
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%80%A7%E8%83%BD/" title="性能: 1">
+                    <span class="tag-content"
+                        title="性能" style="background-color: #F8F9F9;">性能
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/" title="故障排查: 3">
+                    <span class="tag-content"
+                        title="故障排查" style="background-color: #F8C471;">故障排查
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Rails/" title="Rails: 5">
+                    <span class="tag-content"
+                        title="Rails" style="background-color: #FEF9E7;">Rails
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Postfix/" title="Postfix: 2">
+                    <span class="tag-content"
+                        title="Postfix" style="background-color: #F8C471;">Postfix
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SMTP/" title="SMTP: 1">
+                    <span class="tag-content"
+                        title="SMTP" style="background-color: #A3E4D7;">SMTP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%82%AE%E4%BB%B6/" title="邮件: 3">
+                    <span class="tag-content"
+                        title="邮件" style="background-color: #FEF9E7;">邮件
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6/" title="竞态条件: 1">
+                    <span class="tag-content"
+                        title="竞态条件" style="background-color: #D7BDE2;">竞态条件
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Ruby/" title="Ruby: 1">
+                    <span class="tag-content"
+                        title="Ruby" style="background-color: #82E0AA;">Ruby
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ActionMailer/" title="ActionMailer: 2">
+                    <span class="tag-content"
+                        title="ActionMailer" style="background-color: #D5F5E3;">ActionMailer
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86/" title="数据治理: 1">
+                    <span class="tag-content"
+                        title="数据治理" style="background-color: #F9E79F;">数据治理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/OOM/" title="OOM: 1">
+                    <span class="tag-content"
+                        title="OOM" style="background-color: #E8F8F5;">OOM
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%86%85%E5%AD%98/" title="内存: 1">
+                    <span class="tag-content"
+                        title="内存" style="background-color: #FEF9E7;">内存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/" title="性能调优: 1">
+                    <span class="tag-content"
+                        title="性能调优" style="background-color: #FFF;">性能调优
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Linux/" title="Linux: 8">
+                    <span class="tag-content"
+                        title="Linux" style="background-color: #E8F8F5;">Linux
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/" title="配置管理: 1">
+                    <span class="tag-content"
+                        title="配置管理" style="background-color: #D7BDE2;">配置管理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86/" title="磁盘清理: 1">
+                    <span class="tag-content"
+                        title="磁盘清理" style="background-color: #D7BDE2;">磁盘清理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%97%A5%E5%BF%97/" title="日志: 1">
+                    <span class="tag-content"
+                        title="日志" style="background-color: #F9EBEA;">日志
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%90%E7%BB%B4/" title="运维: 2">
+                    <span class="tag-content"
+                        title="运维" style="background-color: #F9EBEA;">运维
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Shell/" title="Shell: 4">
+                    <span class="tag-content"
+                        title="Shell" style="background-color: #82E0AA;">Shell
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%B6%85%E6%97%B6/" title="超时: 1">
+                    <span class="tag-content"
+                        title="超时" style="background-color: #F5EEF8;">超时
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/" title="任务调度: 1">
+                    <span class="tag-content"
+                        title="任务调度" style="background-color: #FFF;">任务调度
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="源码分析: 1">
+                    <span class="tag-content"
+                        title="源码分析" style="background-color: #E8F8F5;">源码分析
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/logrotate/" title="logrotate: 1">
+                    <span class="tag-content"
+                        title="logrotate" style="background-color: #F9EBEA;">logrotate
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/cron/" title="cron: 1">
+                    <span class="tag-content"
+                        title="cron" style="background-color: #FEF9E7;">cron
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Rancher/" title="Rancher: 1">
+                    <span class="tag-content"
+                        title="Rancher" style="background-color: #82E0AA;">Rancher
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Kubernetes/" title="Kubernetes: 1">
+                    <span class="tag-content"
+                        title="Kubernetes" style="background-color: #D5F5E3;">Kubernetes
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SSH/" title="SSH: 2">
+                    <span class="tag-content"
+                        title="SSH" style="background-color: #F5EEF8;">SSH
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81/" title="公钥认证: 2">
+                    <span class="tag-content"
+                        title="公钥认证" style="background-color: #E8F8F5;">公钥认证
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Hexo/" title="Hexo: 6">
+                    <span class="tag-content"
+                        title="Hexo" style="background-color: #E8F8F5;">Hexo
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/markdown/" title="markdown: 4">
+                    <span class="tag-content"
+                        title="markdown" style="background-color: #D5F5E3;">markdown
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PostgreSQL/" title="PostgreSQL: 1">
+                    <span class="tag-content"
+                        title="PostgreSQL" style="background-color: #F9EBEA;">PostgreSQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 19">
+                    <span class="tag-content"
+                        title="数据库" style="background-color: #F9E79F;">数据库
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%83%AD%E6%90%9C%E6%A6%9C/" title="热搜榜: 1">
+                    <span class="tag-content"
+                        title="热搜榜" style="background-color: #F9E79F;">热搜榜
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/widget/" title="widget: 1">
+                    <span class="tag-content"
+                        title="widget" style="background-color: #82E0AA;">widget
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/media/" title="media: 1">
+                    <span class="tag-content"
+                        title="media" style="background-color: #85C1E9;">media
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%80%92%E5%BD%92/" title="递归: 46">
+                    <span class="tag-content"
+                        title="递归" style="background-color: #82E0AA;">递归
+                        <span class="tag-length">46</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串: 423">
+                    <span class="tag-content"
+                        title="字符串" style="background-color: #D7BDE2;">字符串
+                        <span class="tag-length">423</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划: 335">
+                    <span class="tag-content"
+                        title="动态规划" style="background-color: #F8C471;">动态规划
+                        <span class="tag-length">335</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E7%BB%84/" title="数组: 855">
+                    <span class="tag-content"
+                        title="数组" style="background-color: #F9EBEA;">数组
+                        <span class="tag-length">855</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" title="哈希表: 303">
+                    <span class="tag-content"
+                        title="哈希表" style="background-color: #A3E4D7;">哈希表
+                        <span class="tag-length">303</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学: 306">
+                    <span class="tag-content"
+                        title="数学" style="background-color: #D7BDE2;">数学
+                        <span class="tag-length">306</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%BE%E8%AE%A1/" title="设计: 93">
+                    <span class="tag-content"
+                        title="设计" style="background-color: #F9E79F;">设计
+                        <span class="tag-length">93</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" title="字典树: 33">
+                    <span class="tag-content"
+                        title="字典树" style="background-color: #D5F5E3;">字典树
+                        <span class="tag-length">33</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E6%B5%81/" title="数据流: 14">
+                    <span class="tag-content"
+                        title="数据流" style="background-color: #FFF;">数据流
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A0%91/" title="树: 167">
+                    <span class="tag-content"
+                        title="树" style="background-color: #FEF9E7;">树
+                        <span class="tag-length">167</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" title="深度优先搜索: 213">
+                    <span class="tag-content"
+                        title="深度优先搜索" style="background-color: #F9EBEA;">深度优先搜索
+                        <span class="tag-length">213</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" title="二叉树: 151">
+                    <span class="tag-content"
+                        title="二叉树" style="background-color: #D5F5E3;">二叉树
+                        <span class="tag-length">151</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" title="广度优先搜索: 177">
+                    <span class="tag-content"
+                        title="广度优先搜索" style="background-color: #F8C471;">广度优先搜索
+                        <span class="tag-length">177</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找: 146">
+                    <span class="tag-content"
+                        title="二分查找" style="background-color: #F5EEF8;">二分查找
+                        <span class="tag-length">146</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" title="后缀数组: 3">
+                    <span class="tag-content"
+                        title="后缀数组" style="background-color: #FFF;">后缀数组
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="滑动窗口: 56">
+                    <span class="tag-content"
+                        title="滑动窗口" style="background-color: #82E0AA;">滑动窗口
+                        <span class="tag-length">56</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/" title="哈希函数: 16">
+                    <span class="tag-content"
+                        title="哈希函数" style="background-color: #D7BDE2;">哈希函数
+                        <span class="tag-length">16</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%BB%9A%E5%8A%A8%E5%93%88%E5%B8%8C/" title="滚动哈希: 10">
+                    <span class="tag-content"
+                        title="滚动哈希" style="background-color: #F8F9F9;">滚动哈希
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%9F%A9%E9%98%B5/" title="矩阵: 141">
+                    <span class="tag-content"
+                        title="矩阵" style="background-color: #82E0AA;">矩阵
+                        <span class="tag-length">141</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" title="前缀和: 58">
+                    <span class="tag-content"
+                        title="前缀和" style="background-color: #F9E79F;">前缀和
+                        <span class="tag-length">58</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BA%A4%E4%BA%92/" title="交互: 5">
+                    <span class="tag-content"
+                        title="交互" style="background-color: #FEF9E7;">交互
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A0%88/" title="栈: 110">
+                    <span class="tag-content"
+                        title="栈" style="background-color: #A3E4D7;">栈
+                        <span class="tag-length">110</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9B%9E%E6%BA%AF/" title="回溯: 85">
+                    <span class="tag-content"
+                        title="回溯" style="background-color: #85C1E9;">回溯
+                        <span class="tag-length">85</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%B4%AA%E5%BF%83/" title="贪心: 163">
+                    <span class="tag-content"
+                        title="贪心" style="background-color: #F9EBEA;">贪心
+                        <span class="tag-length">163</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" title="双指针: 131">
+                    <span class="tag-content"
+                        title="双指针" style="background-color: #D5F5E3;">双指针
+                        <span class="tag-length">131</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" title="位运算: 122">
+                    <span class="tag-content"
+                        title="位运算" style="background-color: #D5F5E3;">位运算
+                        <span class="tag-length">122</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/" title="状态压缩: 26">
+                    <span class="tag-content"
+                        title="状态压缩" style="background-color: #85C1E9;">状态压缩
+                        <span class="tag-length">26</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" title="树状数组: 14">
+                    <span class="tag-content"
+                        title="树状数组" style="background-color: #D7BDE2;">树状数组
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="线段树: 19">
+                    <span class="tag-content"
+                        title="线段树" style="background-color: #F8F9F9;">线段树
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%A0%86%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/" title="堆（优先队列）: 82">
+                    <span class="tag-content"
+                        title="堆（优先队列）" style="background-color: #D7BDE2;">堆（优先队列）
+                        <span class="tag-length">82</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9B%BE/" title="图: 71">
+                    <span class="tag-content"
+                        title="图" style="background-color: #F5EEF8;">图
+                        <span class="tag-length">71</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" title="双连通分量: 1">
+                    <span class="tag-content"
+                        title="双连通分量" style="background-color: #FFF;">双连通分量
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%93%BE%E8%A1%A8/" title="链表: 77">
+                    <span class="tag-content"
+                        title="链表" style="background-color: #D5F5E3;">链表
+                        <span class="tag-length">77</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" title="拓扑排序: 19">
+                    <span class="tag-content"
+                        title="拓扑排序" style="background-color: #82E0AA;">拓扑排序
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E8%AE%BA/" title="数论: 7">
+                    <span class="tag-content"
+                        title="数论" style="background-color: #E8F8F5;">数论
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" title="最短路: 10">
+                    <span class="tag-content"
+                        title="最短路" style="background-color: #F8C471;">最短路
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" title="二叉搜索树: 43">
+                    <span class="tag-content"
+                        title="二叉搜索树" style="background-color: #F5EEF8;">二叉搜索树
+                        <span class="tag-length">43</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" title="字符串匹配: 13">
+                    <span class="tag-content"
+                        title="字符串匹配" style="background-color: #D7BDE2;">字符串匹配
+                        <span class="tag-length">13</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" title="记忆化搜索: 30">
+                    <span class="tag-content"
+                        title="记忆化搜索" style="background-color: #F9E79F;">记忆化搜索
+                        <span class="tag-length">30</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8D%9A%E5%BC%88/" title="博弈: 18">
+                    <span class="tag-content"
+                        title="博弈" style="background-color: #FEF9E7;">博弈
+                        <span class="tag-length">18</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%98%9F%E5%88%97/" title="队列: 22">
+                    <span class="tag-content"
+                        title="队列" style="background-color: #85C1E9;">队列
+                        <span class="tag-length">22</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" title="单调队列: 6">
+                    <span class="tag-content"
+                        title="单调队列" style="background-color: #D7BDE2;">单调队列
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%87%A0%E4%BD%95/" title="几何: 24">
+                    <span class="tag-content"
+                        title="几何" style="background-color: #F8C471;">几何
+                        <span class="tag-length">24</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" title="组合数学: 13">
+                    <span class="tag-content"
+                        title="组合数学" style="background-color: #E8F8F5;">组合数学
+                        <span class="tag-length">13</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1/" title="概率与统计: 8">
+                    <span class="tag-content"
+                        title="概率与统计" style="background-color: #F9EBEA;">概率与统计
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集: 48">
+                    <span class="tag-content"
+                        title="并查集" style="background-color: #D7BDE2;">并查集
+                        <span class="tag-length">48</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="最小生成树: 2">
+                    <span class="tag-content"
+                        title="最小生成树" style="background-color: #F8C471;">最小生成树
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" title="强连通分量: 2">
+                    <span class="tag-content"
+                        title="强连通分量" style="background-color: #D7BDE2;">强连通分量
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" title="随机化: 14">
+                    <span class="tag-content"
+                        title="随机化" style="background-color: #D5F5E3;">随机化
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" title="单调栈: 34">
+                    <span class="tag-content"
+                        title="单调栈" style="background-color: #F8F9F9;">单调栈
+                        <span class="tag-length">34</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%88%86%E6%B2%BB/" title="分治: 44">
+                    <span class="tag-content"
+                        title="分治" style="background-color: #FEF9E7;">分治
+                        <span class="tag-length">44</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9E%9A%E4%B8%BE/" title="枚举: 22">
+                    <span class="tag-content"
+                        title="枚举" style="background-color: #D7BDE2;">枚举
+                        <span class="tag-length">22</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88/" title="有序集合: 29">
+                    <span class="tag-content"
+                        title="有序集合" style="background-color: #F5EEF8;">有序集合
+                        <span class="tag-length">29</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/" title="扫描线: 4">
+                    <span class="tag-content"
+                        title="扫描线" style="background-color: #D5F5E3;">扫描线
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/" title="桶排序: 8">
+                    <span class="tag-content"
+                        title="桶排序" style="background-color: #F9E79F;">桶排序
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" title="基数排序: 2">
+                    <span class="tag-content"
+                        title="基数排序" style="background-color: #F5EEF8;">基数排序
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%A1%E6%95%B0/" title="计数: 55">
+                    <span class="tag-content"
+                        title="计数" style="background-color: #A3E4D7;">计数
+                        <span class="tag-length">55</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A8%A1%E6%8B%9F/" title="模拟: 63">
+                    <span class="tag-content"
+                        title="模拟" style="background-color: #A3E4D7;">模拟
+                        <span class="tag-length">63</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="归并排序: 8">
+                    <span class="tag-content"
+                        title="归并排序" style="background-color: #F8F9F9;">归并排序
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" title="欧拉回路: 2">
+                    <span class="tag-content"
+                        title="欧拉回路" style="background-color: #F8F9F9;">欧拉回路
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表: 9">
+                    <span class="tag-content"
+                        title="双向链表" style="background-color: #FFF;">双向链表
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/" title="脑筋急转弯: 9">
+                    <span class="tag-content"
+                        title="脑筋急转弯" style="background-color: #F8C471;">脑筋急转弯
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 17">
+                    <span class="tag-content"
+                        title="Java" style="background-color: #FFF;">Java
+                        <span class="tag-length">17</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Google/" title="Google: 1">
+                    <span class="tag-content"
+                        title="Google" style="background-color: #D7BDE2;">Google
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81/" title="整洁代码: 1">
+                    <span class="tag-content"
+                        title="整洁代码" style="background-color: #85C1E9;">整洁代码
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%87%8D%E6%9E%84/" title="重构: 1">
+                    <span class="tag-content"
+                        title="重构" style="background-color: #E8F8F5;">重构
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%B5%8B%E8%AF%95/" title="测试: 1">
+                    <span class="tag-content"
+                        title="测试" style="background-color: #F8C471;">测试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/python/" title="python: 1">
+                    <span class="tag-content"
+                        title="python" style="background-color: #F8C471;">python
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/scrapy/" title="scrapy: 1">
+                    <span class="tag-content"
+                        title="scrapy" style="background-color: #F8C471;">scrapy
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="面向对象编程: 2">
+                    <span class="tag-content"
+                        title="面向对象编程" style="background-color: #F9EBEA;">面向对象编程
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" title="设计原则: 1">
+                    <span class="tag-content"
+                        title="设计原则" style="background-color: #FEF9E7;">设计原则
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CPU%E7%BC%93%E5%AD%98/" title="CPU缓存: 1">
+                    <span class="tag-content"
+                        title="CPU缓存" style="background-color: #D7BDE2;">CPU缓存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程: 6">
+                    <span class="tag-content"
+                        title="多线程" style="background-color: #FEF9E7;">多线程
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" title="计数排序: 5">
+                    <span class="tag-content"
+                        title="计数排序" style="background-color: #FEF9E7;">计数排序
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" title="快速选择: 8">
+                    <span class="tag-content"
+                        title="快速选择" style="background-color: #F8F9F9;">快速选择
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="迭代器: 6">
+                    <span class="tag-content"
+                        title="迭代器" style="background-color: #A3E4D7;">迭代器
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7/" title="水塘抽样: 4">
+                    <span class="tag-content"
+                        title="水塘抽样" style="background-color: #A3E4D7;">水塘抽样
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7/" title="拒绝采样: 2">
+                    <span class="tag-content"
+                        title="拒绝采样" style="background-color: #82E0AA;">拒绝采样
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Git/" title="Git: 1">
+                    <span class="tag-content"
+                        title="Git" style="background-color: #F9E79F;">Git
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式: 14">
+                    <span class="tag-content"
+                        title="设计模式" style="background-color: #85C1E9;">设计模式
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GitLab-CI/" title="GitLab CI: 1">
+                    <span class="tag-content"
+                        title="GitLab CI" style="background-color: #85C1E9;">GitLab CI
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DevOps/" title="DevOps: 1">
+                    <span class="tag-content"
+                        title="DevOps" style="background-color: #F8F9F9;">DevOps
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Typora/" title="Typora: 1">
+                    <span class="tag-content"
+                        title="Typora" style="background-color: #F8F9F9;">Typora
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Markdown/" title="Markdown: 1">
+                    <span class="tag-content"
+                        title="Markdown" style="background-color: #F8F9F9;">Markdown
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Vue/" title="Vue: 1">
+                    <span class="tag-content"
+                        title="Vue" style="background-color: #D5F5E3;">Vue
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
+
+<section class="posts posts-grid">
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/08.bian-xie-wen-zhang-xiang-qing-ye-mian/"
+         style="background-image:url('/medias/defaultImage/7.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--08.编写文章详情页面</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          有了文章列表页面后，当然还需要详情页面，方便用户对某一篇感兴趣的文章深入阅读。 编写视图函数打开article/views.py，增加文章详情页面的视图函数article_detail()： article/views.py ... # 文章详情 def article_detail(request, id): # 取出相应的文章 article = ArticlePost.objects.get(id=id) # 需要传递给模板的对象 context = &amp;#123; &#39;article&#39;: a…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/09.shi-yong-markdown-shu-xie-wen-zhang/"
+         style="background-image:url('/medias/defaultImage/12.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--09.使用Markdown书写文章</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          上一章我们实现了文章详情页面。为了让文章正文能够进行标题、加粗、引用、代码块等不同的排版（像在Office中那样！），我们将使用Markdown语法。 安装MarkdownMarkdown是一种轻量级的标记语言，它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的或者HTML文档。建议读者一定要花五分钟时间熟悉一下Markdown的语法，熟练后码字效率一定会大幅提高。 关于Markdown语法看这里：Markdown 语法介绍 安装markdown也很简单：进入虚拟环境，输入指令pip…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/04.bian-xie-model/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--04.编写Model</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          Django 框架主要关注的是模型（Model）、模板（Template）和视图（Views），称为MTV模式。 它们各自的职责如下： 层次 职责 模型（Model），即数据存取层 处理与数据相关的所有事务： 如何存取、如何验证有效性、包含哪些行为以及数据之间的关系等。 模板（Template），即业务逻辑层 处理与表现相关的决定： 如何在页面或其他类型文档中进行显示。 视图（View），即表现层 存取模型及调取恰当模板的相关逻辑。模型与模板的桥梁。 简单来说就是Model存取数据，View决定…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/10.fa-bu-xin-de-wen-zhang/"
+         style="background-image:url('/medias/defaultImage/3.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--10.发布新的文章</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          前面我们已经学会如何用Markdown语法书写文章了。 但是还有问题呀。之前写文章都是在后台中进行的，万一有别的普通用户也要发表文章怎么办？万一我想拓展些后台中没有的提交验证功能又怎么办？ 本章即讲述如何在前台中提交新的文章，以便满足开发者各种各样的特殊需求。 Forms表单类在HTML中，表单是在 &lt;form&gt;...&lt;/form&gt; 中的一些元素，它允许访客做类似输入文本、选择选项、操作对象或空间等动作，然后发送这些信息到服务端。一些表单界面元素（文本框或复选框）非常简单并内置在HTML中，而其…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/12.geng-xin-wen-zhang/"
+         style="background-image:url('/medias/defaultImage/1.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--12.更新文章</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          目前为止我们已经完成了文章的新建、删除以及查看，还剩最后一项，即对已经完成的文章进行修改。 实际上修改文章与新建文章有点类似，不同的地方有两点： 修改是在原有文章的基础上，因此需要传递 id 指明具体需要修改的文章 加载页面时需要将旧的内容作为默认值填写到表单中，因此需要将文章对象传递到html中 按照这个思路，接下来先写视图函数。 视图函数在ariticle/views.py中增加修改文章的视图函数article_update()： article/views.py ... # 更新文章 de…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/14.yong-hu-de-zhu-ce/"
+         style="background-image:url('/medias/defaultImage/6.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--14.用户的注册</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          既然有登录登出，那么用户的注册肯定也是少不了的。 注册表单类用户注册时会用到表单来提交账号、密码等数据，所以需要写注册用的表单/userprofile/forms.py： /userprofile/forms.py ... # 注册用户表单 class UserRegisterForm(forms.ModelForm): # 复写 User 的密码 password = forms.CharField() password2 = forms.CharField() class Meta: mod…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/15.yong-hu-de-shan-chu/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--15.用户的删除</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          这一章将实现删除用户数据的功能。实际上删除用户和前面的删除文章是完全类似的，有了之前的铺垫，这一章会非常的轻松。 权限与视图用户数据是很多网站最重要的财产，确保用户数据的安全是非常重要的。 前面学习的用户登录、退出、创建都是相对安全的操作；而删除数据就很危险，弄不好会造成不可逆的损失。因此我们希望对操作者做一些限制，比如只能用户登录且必须是本用户才能进行删除的操作。这就是权限。 因此在视图中进行简单的用户权限的验证工作。编写/userprofile/views.py： /userprofile/…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/16.chong-zhi-yong-hu-mi-ma/"
+         style="background-image:url('/medias/defaultImage/4.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--16.重置用户密码</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          随着技术的发展，验证用户身份的手段越来越多，指纹、面容、声纹应有尽有，但密码依然是最重要的手段。 互联网处处都有密码的身影，甚至变成了现代人的一种负担。像笔者这样的，动辄几十个账号密码，忘记其中几个简直太正常了。 本章讲如何帮助健忘症患者，重置用户密码。 安装第三方库前面我们已经知道如何修改文章标题、正文等内容，但是密码作为验证身份的重要口令，必须以更加稳妥的方式修改。一种比较常用的方式是发送一封修改密码的邮件到用户事先绑定的邮箱里。 业务流程分析如下： 向用户邮箱发送包含重置密码地址的邮件。邮…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/19.wen-zhang-fen-ye/"
+         style="background-image:url('/medias/defaultImage/12.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--19.文章分页</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          随着时间的推移（加上勤奋的写作！），你的博客文章一定会越来越多。如果不进行处理，可能同一个页面会挤上成百上千的文章，不美观不说，还降低了页面的反应速度。 这个时候就需要对文章进行分页的处理。 利用轮子写一个完善的分页功能是有些难度的，好在Django已经帮你准备好一个现成的分页模块了（Django把大部分基础功能都替你准备好了！）。内置模块虽然简单，但是对博客来说完全足够了。 我们要用到的是Paginator类。在Shell中可以充分尝试它的用法： &gt;&gt;&gt; from django.core.pa…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/18.shang-chuan-tou-xiang/"
+         style="background-image:url('/medias/defaultImage/14.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--18.上传头像</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          到目前为止我们的博客处理的都是文字。现代互联网早就进入了“读图”时代，图片的维护、展示也就相当重要。 上一章中预留了avatar字段，用来保存用户上传的头像，现在我们来实现这个功能。 必要的设置图片属于一种媒体文件，它与静态文件类似，需要设置一个统一的目录，便于集中存储和访问。 这类需要框架统一设置的参数，当然应该在/my_blog/settings.py中。在底部加上： /my_blog/settings.py ... # 媒体文件地址 MEDIA_URL = &#39;/media/&#39; MEDIA_…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/20.liu-lan-liang/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--20.浏览量</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          文章浏览量是所有社交类网站所必备的数据，足以显示其重要性了。 博主可以通过浏览量来评估某篇文章的受欢迎程度，读者也能够通过浏览量来筛选质量更高的文章。 然而，准确统计浏览量并不简单： 某些类型的请求不应该统计为浏览量，比如作者自己的浏览或编辑文章之后的重定向请求； 由于用户众多，浏览量的数据时刻都在快速更新，会给数据库带来很大的压力。因此很多大型网站都会使用如Redis这样的读写速度非常快的内存数据库辅助存储。 因为我们的项目是博客网站，粗略统计就可以了，也没有那么大的用户压力，所以设计就简单得…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/21.zui-re-wen-zhang/"
+         style="background-image:url('/medias/defaultImage/10.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--21.最热文章</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          有了浏览量之后，文章受欢迎的程度就有了评价标准。随之而来的就有根据浏览量对文章进行排序的需求，即显示**“最热文章”**。 现在你已经很熟悉MTV模式，不需要我啰嗦也能完成任务： 文章的模型已经有了，不需要写Model了 写一个视图函数article_list_by_views()，取出按浏览排序后的文章对象 将文章对象传递到模板，并进行渲染 很简单，但也隐藏着问题：最热文章列表和之前的普通文章列表相比，大部分功能其实都是相同的，仅仅是排序不同而已。 万一哪天需要根据文章标题排序呢？万一还需要用…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/22.sou-suo-wen-zhang/"
+         style="background-image:url('/medias/defaultImage/11.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--22.搜索文章</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          不管是最新文章列表也好、最热文章列表也罢，都是把所有的文章数据全部展示给了用户。 但是如果用户只关心某些特定类型的文章，抽取全部数据就显得既不方便、又不效率了。 因此，给用户提供一个搜索功能，提供给用户感兴趣的几篇文章，就大有用处了。 准备工作逻辑尽管细节不同，但是搜索和列表有很多类似的地方：它们都是先检索出一些文章对象，并将其展示给用户。上一章已经说过，代码重复是万恶之源，好的实践必须把功能类似的模块尽量复用起来。基于这个原则，我们打算继续在原有的article_list()上添砖加瓦，让其功…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/25.ke-jian-xiu-xi/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--25.课间休息</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          教程看到这里，你已经学会如下内容： 搭建开发环境 博文管理 用户管理 发表评论 若干其他功能 搭建简单的小博客，以上的功能够用了。**但相信你的志向不止于此，**毕竟程序员面试个个造火箭啊。 接下来学什么教程接下来是进阶部分，包括： 类视图 多级评论 文章栏目和标签 图片处理 第三方登录 测试与维护 部署 其他内容 部署开发好项目的demo后，你应该尽快部署到云服务器上，让世界各地的用户随时浏览你的网页。不要误会，部署只是一个起点，作用是让你获得巨大的成就感；部署后你还是需要持续的优化、添加网站…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/23.wen-zhang-mu-lu/"
+         style="background-image:url('/medias/defaultImage/6.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--23.文章目录</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          对会读书的人来说，读一本书要做的第一件事，就是仔细阅读这本书的目录。阅读目录可以对整体内容有所了解，并清楚地知道感兴趣的部分在哪里，提高阅读质量。 博文也是同样的，好的目录对博主和读者都很有帮助。更进一步的是，还可以在目录中设置锚点，点击标题就立即前往该处，非常的方便。 文中的目录之前我们已经为博文支持了Markdown语法，现在继续增强其功能。 有折腾代码高亮的痛苦经历之后，设置Markdown的目录扩展就显得特别轻松了。 修改文章详情视图： article/views.py ... # 文章…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/24.ping-lun/"
+         style="background-image:url('/medias/defaultImage/5.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--24.评论</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          在没有互联网的年代，我们用日记来记录每天的心得体会。小的时候我有一个带锁的日记本，生怕被别人看见里面写了啥，钥匙藏得那叫一个绝。 现在时代变了，网络版的日记本：博客，却巴不得越多人看越好。 别人看完你写的深度好文，难免也想高谈阔论一番，这就是“评论”功能。 本章将要编写的评论模块，几乎没有新的知识点，而是将前面章节内容的综合应用。 强烈建议读者自行尝试编写这部分内容，测试自己的知识掌握程度。 准备工作评论是一个相对独立的功能，因此新建一个评论的app： (env) E:\django_proje…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/26.ji-yu-lei-de-shi-tu/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--26.基于类的视图</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          说是完结，马上又开始写进阶篇了。 本章不会为博客项目增加新功能，但是也同样重要，因为我们要学习高逼格的基于类的视图。 什么是类视图前面章节中写的所有视图都是基于函数的，即def；而类视图是基于类的，即class。 有编程基础的同学都知道，类是面向对象技术中非常重要的概念。具有复杂数据、功能的类，可以通过继承轻而易举的将自身特性传递给另一个类，从而实现代码的高效复用。 相比以前的函数视图，类视图有以下优势： HTTP方法（GET，POST等）相关的代码，可以通过方法而不是条件分支来组织 可以通过诸…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/29.wen-zhang-biao-ti-tu/"
+         style="background-image:url('/medias/defaultImage/11.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--29.文章标题图</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          现在虽然博客的功能大都实现了，但是界面还是比较朴素，特别是首页的文章列表几乎全是文字，看多了难免疲劳。因此，给每个文章标题配一张标题图，不仅美观，用户也能通过图片快速了解文章内容。实际上大部分社交网站也都是这么干的，毕竟人的天性就是懒，能看图就坚决不看字。 在上传用户头像章节中，我们已经接触过上传、展示图片了。标题图的实现也差不多，不同的是本章会更近一步，对图片进行缩放等处理，使页面整洁美观、并且高效。 准备工作与用户头像类似，标题图是属于每篇博文自己的“资产”，因此需要修改model，新建一个…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/28.wen-zhang-biao-qian/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--28.文章标签</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          “标签”是作者从文章中提取的核心词汇，其他用户可以通过标签快速了解文章的关注点。每一篇文章的标签可能都不一样，并且还可能拥有多个标签，这是与栏目功能不同的。 好在标签功能也有优秀的三方库：Django-taggit，省得自己动手设计了。快速开发就是这样，能“借用”就不要自己重复劳动。 安装及设置首先在虚拟环境中安装Django-taggit： pip install django-taggit 安装成功后，修改项目设置以添加库： my_blog/settings.py ... INSTALLED…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/30.fu-wen-ben-bian-ji-qi/"
+         style="background-image:url('/medias/defaultImage/12.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--30.富文本编辑器</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          前面我们已经实现了用Markdown语法写文章了。但是文章的评论用Markdown就不太合适了，你不能强求用户也花时间去熟悉语法啊。另外评论中通常还有表情、带颜色的字体等功能，这些也是Markdown不具备的。 因此富文本编辑器Django-ckeditor就派上用场了。 在后台使用Ckeditor在虚拟环境中安装django-ckeditor： (env) &gt; pip install django-ckeditor 安装成功后还是老规矩，在settings.py中注册app： my_blog/…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/27.wen-zhang-lan-mu/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--27.文章栏目</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          博客的文章类型通常不止一种：有时候你会写高深莫测的技术文章，有时候又纯粹只记录一下当天的心情。 因此对文章的分类就显得相当的重要了，既方便博主对文章进行分类归档，也方便用户有针对性的阅读。 而文章分类一个重要的途径就是设置栏目。 栏目的模型实现文章栏目功能的方法有多种。你可以只是简单的在文章的Model中增加CharField()字段，以字符串的形式将栏目名称保存起来（实际上这种实现更像是**“标签”**，以后会讲到）。这样做的优点是比较简单；缺点也很明显，就是时间长了你可能会记混栏目的名字，并…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/31.si-ge-chong-yao-de-xiao-gong-neng/"
+         style="background-image:url('/medias/defaultImage/3.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--31.四个重要的小功能</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          本章集中介绍四个重要的小功能：回到顶部浮动按钮、矢量图标、页脚沉底和粘性侧边栏。 这几个功能与Django基本没啥关系，更多的是前端知识，但是对博客网站都很重要，问的读者也比较多，因此也集中讲一下好了。 回到顶部浮动按钮当用户拜读完你的博文后，可能想回到文章开头重新阅读，或者审视其中的某些内容。如果文章内容较多，不停滑动滚轮回页面顶部未免有点太让人烦躁了。 一种解决办法是增加一个回到顶部的浮动按钮。当页面向下滚动到某个位置后，按钮就呈现在页面右下角；点击按钮，页面就回到顶部。这个功能 Boots…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/33.xiao-xi-tong-zhi/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--33.消息通知</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          凭借你勤奋的写作，拜读你文章的用户越来越多，他们的评论也分散在众多的文章之中。作为博主，读者的留言肯定是要都看的；而读者给你留言，自然也希望得到回复。 怎么将未读的留言呈现给正确的用户呢？总不能用户自己去茫茫文章中寻找吧，那也太蠢了。给评论增加通知功能就是很流行的解决方案：比如微信朋友圈留言的通知、新浪微博留言的通知、以及各种社交平台的“小红点”。 本篇将以django-notifications为基础，非常高效的搭建一个简易的通知系统。 发送通知前面的步骤我们已经很熟悉了。 首先安装djang…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/34.mao-dian-ding-wei/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--34.锚点定位</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          **老读者注意：**上一章消息通知有个bug，即发给管理员的notify必须移动到new_comment.save()的后面，否则会导致action_object存储为NULL，并且导致本章的html拼接锚点失效。 原文已更正，为博主的疏忽表示歉意。 上一章已经实现了消息通知功能，可以很人性化的把用户引导到被他人回复的页面中去。 但是仔细想想，似乎还有不方便的地方：如果页面中评论较多，想找到感兴趣的那一条评论还是要费点功夫的。所以这个消息通知，最好是能够不仅前往正确的页面，还要前往正确的位置（需…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/35.di-san-fang-deng-lu/"
+         style="background-image:url('/medias/defaultImage/2.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--35.第三方登录</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          现在我们已经拥有一个可以进行用户本地登录的博客系统了。如果有人欣赏你的文章，说不定就会注册成为本地用户，并和你好好交流一番。 但头疼的是，用户可能每天都在互联网上浏览很多非常棒的博客，如果每个博客都要去注册才能评论，对用户是个不小的负担。对个人博客这类草根网站，说不定用户就懒得去注册了，你也就损失了一个潜在的”粉丝“。 比较流行的解决方案是允许用户通过第三方登录，即可以通过GitHub、微博这类知名社区的授权，从而登录你的小站，免去了注册的麻烦。 本章会介绍一个强大的库：Django-allau…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/36.zi-dong-hua-ce-shi/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--36.自动化测试</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          测试是伴随着开发进行的，开发有多久，测试就要多久。本教程已经进行了30多章了，都是如何测试的？当然是runserver啦！每当开发新功能后，都需要运行服务器，假装自己就是用户，测试是否运行正常。 这样的人工测试优点是非常直观，你看到的和用户看到的是完全相同的。但是缺点也很明显： **效率低。**在开发时可能你需要反复的修改代码、测试功能，这样重复查看几十次甚至几百次网页时会相当的让人烦躁。 **容易遗漏bug。**随着你的项目越来越复杂，组件之间的交互也更加复杂。修改某一个组件可能会导致另一个组…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/37.ri-zhi-ji-lu/"
+         style="background-image:url('/medias/defaultImage/5.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--37.日志记录</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          上一章学习了自动化测试，很好，现在我们可以绞尽脑汁写出一份全面的测试，来保证代码永远健康了。 话虽如此，但是作为一个独立开发者很难写出真正全面的测试代码。这是因为用户在使用你的网站时可不会循规蹈矩，而是会以各种怪异的姿势浏览网页、上传数据。但这也不是坏事，用户就是天然的测试人员，他们会很可爱的帮你找出一大堆的bug，陪你度过难眠的夜晚（伴随着编程能力的提升）。 现在的问题是，开发者如何得知用户到底遇到了哪些问题？用户们大部分都与你素昧平生，分部在世界各地。更糟糕的是，部署在线上时由于配置了DEB…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/40.jiang-xiang-mu-bu-shu-dao-yun-fu-wu-qi/"
+         style="background-image:url('/medias/defaultImage/5.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--40.将项目部署到云服务器</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          我们的博客虽然还有很多不完善的地方，但是没关系，越早把它部署到互联网上，才能越早发现线上特有的问题。现在也提倡渐进式开发，让产品在迭代中快速成长。 部署考验的不是你的 Django 编程水平，而是你对 Linux 的操作能力，以及对网络通信的理解。多说无益，直接开干！ 配置服务器要架设网站，首先你要有一台连接到互联网的服务器。国内比较出名的云服务器属阿里云、腾讯云、百度云，三家各有优劣，大家自行了解比较，并选择自己适合的购买。 利益相关：博主自己用的是阿里云，所以教程会以阿里云ECS作为例子讲解…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/39.dian-zan-gong-neng/"
+         style="background-image:url('/medias/defaultImage/14.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--39.点赞功能</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          假设你的博客已经顺利部署到了线上。你写了很多好文章，和粉丝们互动并感受成就感。 现在你想更进一步，努力提高文章质量，使其更受读者欢迎，打造圈内一流博客。问题是该如何判断一篇文章是“受欢迎的”？靠浏览量是个方法，但是并不能区分出内容花拳绣腿的标题党。靠评论数也是个好方法，但个人博客通常读者不多，好文章零评论是很正常的。 这时候**“点赞”**功能就显得重要了。如果大部分读者都给了一个赞，那就表明文章确实还不错。 动手之前的思考点赞功能可不简单，实现途径非常的多。别急着动手，耐心思考：我们的博客到底…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/django-bo-ke-wang-zhan-da-jian/41.qi-mo-zong-jie/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">Django博客网站搭建--41.期末总结</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          本教程共写作了一年多（龟速更新..），也算告一段落了。如果还有读者特别想看、但是教程又没涉及的内容，博主会继续更新，不过时间就不能保证了。业余精力有限，如果不能保证文章的质量，那我情愿不写。 如果你是本教程的忠实读者，看到这里就已经学会了以下内容： 博文管理 用户管理 多级评论 文章栏目和标签 图片处理 第三方登录 点赞 测试与维护 部署 其他零星功能 不错，基本功能都有了。 接下来学什么响应式布局响应式布局，简单来说就是页面布局随着终端设备的变化而自动适应。 教程为了起步平缓，没有展开这方面的…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2020-06-18
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">Django博客网站搭建</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/" rel="tag">django</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+</section>
+</div>
+
+<div class="w-70">
+  
+  <!-- <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/tags/django/">上一页</a><a class="page-number" href="/tags/django/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/django/page/3/">3</a><a class="extend next" rel="next" href="/tags/django/page/3/">下一页</a>
+  </nav> -->
+  <div class="page-nav">
+    
+      <a href="/tags/django/"
+         class="page-nav-pre">
+         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
+      </a>
+    
+    <div class="page-info">
+        <div class="page-info-text">2 / 3</div>
+    </div>
+    
+      <a href="/tags/django/page/3/"
+         class="page-nav-next">
+          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
+      </a>
+      
+  </div>
+
+</div>
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/atom.xml"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=215618733"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="#"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:jmps515@163.com"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a target="_blank" rel="noopener" href="https://github.com/fengqi"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+            <!-- 不蒜子统计 -->
+            <div class="footer-busuanzi" >
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+</div>
+
+        
+      
+        
+            <!-- [CNZZ友盟+]统计 -->
+            
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1280461850'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=1280461850&online=1&show=line' ></script>
+    </div>
+
+
+
+
+
+        
+      
+        
+           <!-- copyright info -->
+<div class="footer-copyright">
+    
+        
+         Copyright © 2020 - 2021
+         <a href="https://jimyfengqi.github.io">枫奇丶宛南</a>
+         | Powered by
+         <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a>
+        
+    
+</div>
+
+        
+      
+        
+             <!-- 备案信息+ -->
+             <!-- 备案信息+ -->
+<div class="footer-icp">
+    
+        
+    
+</div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+
+<meting-js
+  class=""
+  server="netease"
+  type="playlist"
+  id="4888271555"
+  fixed='true'
+  autoplay='true'
+  theme='#42b983'
+  loop='all'
+  order='list'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h1, h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+
+    <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '120px',
+      duration: '400',
+      interval: '30',
+      scale: '1',   //初始缩放大小，可以大于1,变为逐渐缩小
+      origin: 'bottom', // 动画开始的方向
+      easing: 'ease'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>
+   
+
+<!-- 评论所需js -->
+
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>

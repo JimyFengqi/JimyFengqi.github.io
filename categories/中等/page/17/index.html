@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>分类: 中等 | 凤起丶宛南</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '3';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+
+  
+    <script>
+    // 浏览器搞笑标题
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '╭(°A°`)╮ 快回来页面崩溃啦 ~' || '╭(°A°`)╮ 页面崩溃啦 ~';
+            clearTimeout(titleTime);
+        }
+        else {
+            $('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = ( '亲，欢迎您回来看我~' || '(ฅ>ω<*ฅ) 噫又好啦 ~') + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 3000);
+        }
+    });
+    </script>
+  
+
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            <link src="/js/aos/aos@2.3.4.min.css"></link>
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+        
+            <script src="/js/aos/aos@2.3.4.min.js"></script>
+        
+    
+
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="凤起丶宛南" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/js/jquery3.5.1.js"></script>
+  <script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">凤起丶宛南</h3>
+      <h5 class="drawer-box-head_desc">从来没有真正的绝境，只有心灵的迷途</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(5)">
+                  <span>
+                    
+                      <i class="fas fa-cowbell-more"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(5)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(5)">
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <i class="fas fa-compass" style="margin-top: -20px;"></i>
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">凤起丶宛南</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友链">
+                  
+                    <i class="fas fa-address-book" aria-hidden="true"></i>
+                  
+                  <span class="name">友链</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-cowbell-more"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/gallery">
+                      
+                      <i class="fas fa-image" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/website">
+                      
+                      <i class="fas fa-compass" style="margin-top: -20px;"></i>
+                      
+                      <span>网站收藏</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/movies">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>视频演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/musics">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>音乐演示</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/jimyfengqi" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+        
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+
+<div class="category-header"  style="background-image:url('https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c')">
+  <div class="category-header-title">
+    分类详情
+  </div>
+  <div class="category-header-desc">
+    
+      <span class="title" id="category-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#category-header-desc';
+    const type = 'categoryDetail';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
+      
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #F5EEF8;">中等 分类</div>
+  </div>
+
+  
+<div id="categories" class="container">
+    <div class="card">
+        <div class="card-content">
+            <div class="category-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="category-chips">
+                
+                
+                <a href="/categories/Algorithm/" title="Algorithm: 1">
+                    <span class="category-content"
+                        title="Algorithm" style="background-color: #D7BDE2;">Algorithm
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Django%E5%85%A8%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="Django全网站搭建: 5">
+                    <span class="category-content"
+                        title="Django全网站搭建" style="background-color: #A3E4D7;">Django全网站搭建
+                        <span class="category-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Django%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="Django视频网站搭建: 16">
+                    <span class="category-content"
+                        title="Django视频网站搭建" style="background-color: #F8F9F9;">Django视频网站搭建
+                        <span class="category-length">16</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Django%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="Django博客网站搭建: 43">
+                    <span class="category-content"
+                        title="Django博客网站搭建" style="background-color: #82E0AA;">Django博客网站搭建
+                        <span class="category-length">43</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/follow-your-commit/" title="follow_your_commit: 6">
+                    <span class="category-content"
+                        title="follow_your_commit" style="background-color: #FEF9E7;">follow_your_commit
+                        <span class="category-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/resultweb/" title="resultweb: 9">
+                    <span class="category-content"
+                        title="resultweb" style="background-color: #85C1E9;">resultweb
+                        <span class="category-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/sheduler/" title="sheduler: 1">
+                    <span class="category-content"
+                        title="sheduler" style="background-color: #F9E79F;">sheduler
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/ssh/" title="ssh: 2">
+                    <span class="category-content"
+                        title="ssh" style="background-color: #F8F9F9;">ssh
+                        <span class="category-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 4">
+                    <span class="category-content"
+                        title="前端" style="background-color: #FEF9E7;">前端
+                        <span class="category-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%9C%AC%E7%AB%99%E4%BB%8B%E7%BB%8D/" title="本站介绍: 7">
+                    <span class="category-content"
+                        title="本站介绍" style="background-color: #82E0AA;">本站介绍
+                        <span class="category-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 1">
+                    <span class="category-content"
+                        title="数据库" style="background-color: #F9E79F;">数据库
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%9B%B0%E9%9A%BE/" title="困难: 361">
+                    <span class="category-content"
+                        title="困难" style="background-color: #82E0AA;">困难
+                        <span class="category-length">361</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/" title="编程之道: 3">
+                    <span class="category-content"
+                        title="编程之道" style="background-color: #D7BDE2;">编程之道
+                        <span class="category-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E7%88%AC%E8%99%AB/" title="爬虫: 1">
+                    <span class="category-content"
+                        title="爬虫" style="background-color: #D7BDE2;">爬虫
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E7%AE%80%E5%8D%95/" title="简单: 459">
+                    <span class="category-content"
+                        title="简单" style="background-color: #F9EBEA;">简单
+                        <span class="category-length">459</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" title="软件设计: 15">
+                    <span class="category-content"
+                        title="软件设计" style="background-color: #E8F8F5;">软件设计
+                        <span class="category-length">15</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" title="软件工具: 8">
+                    <span class="category-content"
+                        title="软件工具" style="background-color: #A3E4D7;">软件工具
+                        <span class="category-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E4%B8%AD%E7%AD%89/" title="中等: 895">
+                    <span class="category-content"
+                        title="中等" style="background-color: #F5EEF8;">中等
+                        <span class="category-length">895</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
+
+<section class="posts posts-grid">
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1177-gou-jian-hui-wen-chuan-jian-ce/"
+         style="background-image:url('/medias/defaultImage/11.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1177-构建回文串检测(Can Make Palindrome from Substring)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/can-make-palindrome-from-substring 英文原文You are given a string s and array queries where queries[i] = [lefti, righti, ki]. We may rearrange the substring s[lefti...righti] for each query and then choose up to ki …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1390-si-yin-shu/"
+         style="background-image:url('/medias/defaultImage/6.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1390-四因数(Four Divisors)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/four-divisors 英文原文Given an integer array nums, return the sum of divisors of the integers in that array that have exactly four divisors. If there is no such integer in the array, return 0. Example 1: Input: nums…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1382-jiang-er-cha-sou-suo-shu-bian-ping-heng/"
+         style="background-image:url('/medias/defaultImage/14.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1382-将二叉搜索树变平衡(Balance a Binary Search Tree)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/balance-a-binary-search-tree 英文原文Given the root of a binary search tree, return a balanced binary search tree with the same node values. If there is more than one answer, return any of them. A binary search tree…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="tag">二叉搜索树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">深度优先搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1186-shan-chu-yi-ci-de-dao-zi-shu-zu-zui-da-he/"
+         style="background-image:url('/medias/defaultImage/7.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1186-删除一次得到子数组最大和(Maximum Subarray Sum with One Deletion)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion 英文原文Given an array of integers, return the maximum sum for a non-empty subarray (contiguous elements) with at most one element deletion. In other words, you want to choose …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1954-shou-ji-zu-gou-ping-guo-de-zui-xiao-hua-yuan-zhou-chang/"
+         style="background-image:url('/medias/defaultImage/2.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1954-收集足够苹果的最小花园周长(Minimum Garden Perimeter to Collect Enough Apples)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/minimum-garden-perimeter-to-collect-enough-apples 英文原文In a garden represented as an infinite 2D grid, there is an apple tree planted at every integer coordinate. The apple tree planted at an integer coordinate (…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1190-fan-zhuan-mei-dui-gua-hao-jian-de-zi-chuan/"
+         style="background-image:url('/medias/defaultImage/1.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1190-反转每对括号间的子串(Reverse Substrings Between Each Pair of Parentheses)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses 英文原文You are given a string s that consists of lower case English letters and brackets. Reverse the strings in each pair of matching parentheses, starting from …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1191-k-ci-chuan-lian-hou-zui-da-zi-shu-zu-zhi-he/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1191-K 次串联后最大子数组之和(K-Concatenation Maximum Sum)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/k-concatenation-maximum-sum 英文原文Given an integer array arr and an integer k, modify the array by repeating it k times. For example, if arr = [1, 2] and k = 3 then the modified array will be [1, 2, 1, 2, 1, 2]. R…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1405-zui-chang-kuai-le-zi-fu-chuan/"
+         style="background-image:url('/medias/defaultImage/14.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1405-最长快乐字符串(Longest Happy String)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/longest-happy-string 英文原文A string is called happy if it does not have any of the strings &#39;aaa&#39;, &#39;bbb&#39; or &#39;ccc&#39; as a substring. Given three integers a, b and c, return any string s, which satisfies following cond…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/" rel="tag">堆（优先队列）</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1201-chou-shu-iii/"
+         style="background-image:url('/medias/defaultImage/10.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1201-丑数 III(Ugly Number III)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/ugly-number-iii 英文原文An ugly number is a positive integer that is divisible by a, b, or c. Given four integers n, a, b, and c, return the nth ugly number. Example 1: Input: n = 3, a = 2, b = 3, c = 5 Output: 4 Ex…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1202-jiao-huan-zi-fu-chuan-zhong-de-yuan-su/"
+         style="background-image:url('/medias/defaultImage/8.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1202-交换字符串中的元素(Smallest String With Swaps)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/smallest-string-with-swaps 英文原文You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] = [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">广度优先搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">深度优先搜索</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1895-zui-da-de-huan-fang/"
+         style="background-image:url('/medias/defaultImage/5.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1895-最大的幻方(Largest Magic Square)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/largest-magic-square 英文原文A k x k magic square is a k x k grid filled with integers such that every row sum, every column sum, and both diagonal sums are all equal. The integers in the magic square do not have to…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/2079-gei-zhi-wu-jiao-shui/"
+         style="background-image:url('/medias/defaultImage/3.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">2079-给植物浇水(Watering Plants)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/watering-plants 英文原文You want to water n plants in your garden with a watering can. The plants are arranged in a row and are labeled from 0 to n - 1 from left to right where the ith plant is located at x = i. The…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1195-jiao-ti-da-yin-zi-fu-chuan/"
+         style="background-image:url('/medias/defaultImage/7.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1195-交替打印字符串(Fizz Buzz Multithreaded)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/fizz-buzz-multithreaded 英文原文You have the four functions: printFizz that prints the word &#34;Fizz&#34; to the console, printBuzz that prints the word &#34;Buzz&#34; to the console, printFizzBuzz that prints the word &#34;FizzBuzz&#34; …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1208-jin-ke-neng-shi-zi-fu-chuan-xiang-deng/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1208-尽可能使字符串相等(Get Equal Substrings Within Budget)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/get-equal-substrings-within-budget 英文原文You are given two strings s and t of the same length. You want to change s to t. Changing the i-th character of s to i-th character of t costs |s[i] - t[i]| that is, the ab…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1706-qiu-hui-luo-he-chu/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1706-球会落何处(Where Will the Ball Fall)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/where-will-the-ball-fall 英文原文You have a 2-D grid of size m x n representing a box, and you have n balls. The box is open on the top and bottom sides. Each cell in the box has a diagonal board spanning two corner…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">深度优先搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1514-gai-lu-zui-da-de-lu-jing/"
+         style="background-image:url('/medias/defaultImage/3.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1514-概率最大的路径(Path with Maximum Probability)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/path-with-maximum-probability 英文原文You are given an undirected weighted graph of n nodes (0-indexed), represented by an edge list where edges[i] = [a, b] is an undirected edge connecting the nodes a and b with a …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BE/" rel="tag">图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/" rel="tag">堆（优先队列）</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1218-zui-chang-ding-chai-zi-xu-lie/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1218-最长定差子序列(Longest Arithmetic Subsequence of Given Difference)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference 英文原文Given an integer array arr and an integer difference, return the length of the longest subsequence in arr which is an arithmetic sequence such that the diff…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1219-huang-jin-kuang-gong/"
+         style="background-image:url('/medias/defaultImage/10.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1219-黄金矿工(Path with Maximum Gold)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/path-with-maximum-gold 英文原文In a gold mine grid of size m x n, each cell in this mine has an integer representing the amount of gold in that cell, 0 if it is empty. Return the maximum amount of gold you can colle…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1226-zhe-xue-jia-jin-can/"
+         style="background-image:url('/medias/defaultImage/4.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1226-哲学家进餐(The Dining Philosophers)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/the-dining-philosophers 英文原文Five silent philosophers sit at a round table with bowls of spaghetti. Forks are placed between each pair of adjacent philosophers. Each philosopher must alternately think and eat. Ho…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1222-ke-yi-gong-ji-guo-wang-de-huang-hou/"
+         style="background-image:url('/medias/defaultImage/12.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1222-可以攻击国王的皇后(Queens That Can Attack the King)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/queens-that-can-attack-the-king 英文原文On an 8x8 chessboard, there can be multiple Black Queens and one White King. Given an array of integer coordinates queens that represents the positions of the Black Queens, an…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1234-ti-huan-zi-chuan-de-dao-ping-heng-zi-fu-chuan/"
+         style="background-image:url('/medias/defaultImage/1.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1234-替换子串得到平衡字符串(Replace the Substring for Balanced String)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/replace-the-substring-for-balanced-string 英文原文You are given a string containing only 4 kinds of characters &#39;Q&#39;, &#39;W&#39;, &#39;E&#39; and &#39;R&#39;. A string is said to be balanced if each of its characters appears n/4 times where…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1233-shan-chu-zi-wen-jian-jia/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1233-删除子文件夹(Remove Sub-Folders from the Filesystem)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/remove-sub-folders-from-the-filesystem 英文原文Given a list of folders folder, return the folders after removing all sub-folders in those folders. You may return the answer in any order. If a folder[i] is located wi…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="tag">字典树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1237-zhao-chu-gei-ding-fang-cheng-de-zheng-zheng-shu-jie/"
+         style="background-image:url('/medias/defaultImage/1.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1237-找出给定方程的正整数解(Find Positive Integer Solution for a Given Equation)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/find-positive-integer-solution-for-a-given-equation 英文原文Given a callable function f(x, y) with a hidden formula and a value z, reverse engineer the formula and return all positive integer pairs x and y where f(x…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%A4%E4%BA%92/" rel="tag">交互</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1238-xun-huan-ma-pai-lie/"
+         style="background-image:url('/medias/defaultImage/13.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1238-循环码排列(Circular Permutation in Binary Representation)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/circular-permutation-in-binary-representation 英文原文Given 2 integers n and start. Your task is return any permutation p of (0,1,2.....,2^n -1) such that : p[0] = start p[i] and p[i+1] differ by only one bit in the…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du/"
+         style="background-image:url('/medias/defaultImage/5.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1239-串联字符串的最大长度(Maximum Length of a Concatenated String with Unique Characters)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters 英文原文You are given an array of strings arr. A string s is formed by the concatenation of a subsequence of arr that has unique characters. Return the …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1227-fei-ji-zuo-wei-fen-pei-gai-lu/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1227-飞机座位分配概率(Airplane Seat Assignment Probability)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/airplane-seat-assignment-probability 英文原文n passengers board an airplane with exactly n seats. The first passenger has lost the ticket and picks a seat randomly. But after that, the rest of passengers will: Take …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1/" rel="tag">概率与统计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/" rel="tag">脑筋急转弯</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1726-tong-ji-yuan-zu/"
+         style="background-image:url('/medias/defaultImage/8.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1726-同积元组(Tuple with Same Product)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/tuple-with-same-product 英文原文Given an array nums of distinct positive integers, return the number of tuples (a, b, c, d) such that a * b = c * d where a, b, c, and d are elements of nums, and a != b != c != d. Ex…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1247-jiao-huan-zi-fu-shi-de-zi-fu-chuan-xiang-tong/"
+         style="background-image:url('/medias/defaultImage/15.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1247-交换字符使得字符串相同(Minimum Swaps to Make Strings Equal)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/minimum-swaps-to-make-strings-equal 英文原文You are given two strings s1 and s2 of equal length consisting of letters &#34;x&#34; and &#34;y&#34; only. Your task is to make these two strings equal to each other. You can swap any tw…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1248-tong-ji-you-mei-zi-shu-zu/"
+         style="background-image:url('/medias/defaultImage/9.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1248-统计「优美子数组」(Count Number of Nice Subarrays)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/count-number-of-nice-subarrays 英文原文Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it. Return the number of nice sub-arrays. Example 1: Input:…
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+    
+    <article class="post post-card reveal">
+      <!-- 上半: 封面图 + 居中标题 -->
+      <a class="post-card-cover" href="/post/zhong-deng/1249-yi-chu-wu-xiao-de-gua-hao/"
+         style="background-image:url('/medias/defaultImage/1.jpg');">
+        <span class="post-card-cover-mask"></span>
+        <span class="post-card-title">1249-移除无效的括号(Minimum Remove to Make Valid Parentheses)</span>
+      </a>
+      <!-- 下半: 概要 / 时间+分类 / 标签 -->
+      <div class="post-card-body">
+        <div class="post-card-excerpt">
+          原文链接: https://leetcode-cn.com/problems/minimum-remove-to-make-valid-parentheses 英文原文Given a string s of &#39;(&#39; , &#39;)&#39; and lowercase English characters. Your task is to remove the minimum number of parentheses ( &#39;(&#39; or &#39;)&#39;, in any positions ) so that the …
+        </div>
+        <div class="post-card-meta">
+          <span class="post-card-time">
+            <i class="fad fa-calendar-alt" aria-hidden="true"></i>
+            2021-12-03
+          </span>
+          <span class="post-card-cat">
+            <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E4%B8%AD%E7%AD%89/">中等</a>
+</div>
+
+
+          </span>
+        </div>
+        <div class="post-card-tags">
+          <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a></li></ul>
+
+        </div>
+      </div>
+    </article>
+  
+</section>
+</div>
+<div class="w-70">
+  
+  <!-- <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/categories/%E4%B8%AD%E7%AD%89/page/16/">上一页</a><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/page/15/">15</a><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/page/18/">18</a><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/categories/%E4%B8%AD%E7%AD%89/page/30/">30</a><a class="extend next" rel="next" href="/categories/%E4%B8%AD%E7%AD%89/page/18/">下一页</a>
+  </nav> -->
+  <div class="page-nav">
+    
+      <a href="/categories/%E4%B8%AD%E7%AD%89/page/16/"
+         class="page-nav-pre">
+         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
+      </a>
+    
+    <div class="page-info">
+        <div class="page-info-text">17 / 30</div>
+    </div>
+    
+      <a href="/categories/%E4%B8%AD%E7%AD%89/page/18/"
+         class="page-nav-next">
+          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
+      </a>
+      
+  </div>
+
+</div>
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/atom.xml"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=215618733"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="#"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:jmps515@163.com"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a target="_blank" rel="noopener" href="https://github.com/fengqi"
+                    class="social"
+                    
+                >
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+            <!-- 不蒜子统计 -->
+            <div class="footer-busuanzi" >
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+</div>
+
+        
+      
+        
+            <!-- [CNZZ友盟+]统计 -->
+            
+    <div class=footer-cnzz id="cnzzProtocol" >
+        <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1280461850'></span>
+        <script  type='text/javascript' src='https://s4.cnzz.com/z_stat.php?id=1280461850&online=1&show=line' ></script>
+    </div>
+
+
+
+
+
+        
+      
+        
+           <!-- copyright info -->
+<div class="footer-copyright">
+    
+        
+         Copyright © 2020 - 2021
+         <a href="https://jimyfengqi.github.io">枫奇丶宛南</a>
+         | Powered by
+         <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>
+         | Theme
+         <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a>
+        
+    
+</div>
+
+        
+      
+        
+             <!-- 备案信息+ -->
+             <!-- 备案信息+ -->
+<div class="footer-icp">
+    
+        
+    
+</div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+
+<meting-js
+  class=""
+  server="netease"
+  type="playlist"
+  id="4888271555"
+  fixed='true'
+  autoplay='true'
+  theme='#42b983'
+  loop='all'
+  order='list'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h1, h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+
+    <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '120px',
+      duration: '400',
+      interval: '30',
+      scale: '1',   //初始缩放大小，可以大于1,变为逐渐缩小
+      origin: 'bottom', // 动画开始的方向
+      easing: 'ease'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>
+   
+
+<!-- 评论所需js -->
+
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>

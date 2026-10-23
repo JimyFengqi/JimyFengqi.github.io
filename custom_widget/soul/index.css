@@ -1,0 +1,123 @@
+/* 欢迎挂件：左右两栏布局 —— 左侧访客 IP 卡片，右侧毒鸡汤 */
+.ip_welcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 16px;
+  padding: 6px 4px;
+}
+
+.ip_welcome .ip-card,
+.ip_welcome .soul-card {
+  flex: 1 1 260px;
+  min-width: 240px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 16px 18px;
+  background: rgba(76, 175, 80, 0.06);
+}
+
+/* 左侧 IP 卡片 */
+.ip_welcome .ip-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a9d8f;
+  margin-bottom: 12px;
+}
+.ip_welcome .ip-card__title i {
+  margin-right: 6px;
+}
+.ip_welcome .ip-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ip_welcome .ip-card__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+.ip_welcome .ip-card__list li:last-child {
+  border-bottom: none;
+}
+.ip_welcome .ip-card__list .k {
+  color: #888;
+  flex: 0 0 auto;
+  margin-right: 12px;
+}
+.ip_welcome .ip-card__list .v {
+  color: #333;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* 右侧毒鸡汤卡片 */
+.ip_welcome .soul-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.ip_welcome .soul-card h2 {
+  font-size: 16px;
+  margin: 0 0 10px;
+  color: #4caf50;
+}
+.ip_welcome .soul-card .soul-text {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.ip_welcome .soul-card button {
+  position: relative;
+  background-color: #4caf50;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ip_welcome .soul-card button:hover {
+  background-color: #43a047;
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.4);
+}
+.ip_welcome .soul-card button:after {
+  content: "";
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.ip_welcome .soul-card button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* 窄屏单列堆叠 */
+@media (max-width: 520px) {
+  .ip_welcome {
+    flex-direction: column;
+  }
+}

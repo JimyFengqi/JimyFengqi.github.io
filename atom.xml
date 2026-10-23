@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>Fengqi</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://jimyfengqi.github.io/</id>
+  <link href="https://jimyfengqi.github.io/" rel="alternate"/>
+  <link href="https://jimyfengqi.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Fengqi</rights>
+  <subtitle>王者归来</subtitle>
+  <title>凤起丶宛南</title>
+  <updated>2026-10-23T02:20:33.040Z</updated>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="MongoDB" scheme="https://jimyfengqi.github.io/tags/MongoDB/"/>
+    <category term="mongosh" scheme="https://jimyfengqi.github.io/tags/mongosh/"/>
+    <category term="权限" scheme="https://jimyfengqi.github.io/tags/%E6%9D%83%E9%99%90/"/>
+    <category term="系统集合" scheme="https://jimyfengqi.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%9B%86%E5%90%88/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/mongodb-pi-liang-cao-zuo-unauthorized-bao-cuo-jie-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/mongodb-pi-liang-cao-zuo-unauthorized-bao-cuo-jie-xi/"/>
+    <published>2026-10-21T02:55:00.000Z</published>
+    <summary>
+      <![CDATA[<p>本文整理两个在用 <code>mongosh</code> 做批量操作时常见、但原因完全不同的 <code>Unauthorized</code> 报错。</p>
+<hr>
+<h2 id="问题一：批量删除集合时，卡在-system-profile-上"><a]]>
+    </summary>
+    <title>MongoDB 批量操作报 Unauthorized 的两种常见原因</title>
+    <updated>2026-10-23T02:20:33.040Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="MongoDB" scheme="https://jimyfengqi.github.io/tags/MongoDB/"/>
+    <category term="mongosh" scheme="https://jimyfengqi.github.io/tags/mongosh/"/>
+    <category term="版本兼容" scheme="https://jimyfengqi.github.io/tags/%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9/"/>
+    <category term="环境配置" scheme="https://jimyfengqi.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/mongodb-ke-hu-duan-sheng-ji-dao-mongosh/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/mongodb-ke-hu-duan-sheng-ji-dao-mongosh/"/>
+    <published>2026-10-21T02:50:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="一、现象"><a href="#一、现象" class="headerlink" title="一、现象"></a>一、现象</h2><p>本地用脚本别名连接数据库时，提示客户端与服务端版本不匹配：</p>
+<pre class="line-numbers]]>
+    </summary>
+    <title>MongoDB 客户端与服务端版本不匹配——从 mongo 升级到 mongosh</title>
+    <updated>2026-10-23T02:20:33.040Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="npm" scheme="https://jimyfengqi.github.io/tags/npm/"/>
+    <category term="Docker" scheme="https://jimyfengqi.github.io/tags/Docker/"/>
+    <category term="缓存" scheme="https://jimyfengqi.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    <category term="依赖管理" scheme="https://jimyfengqi.github.io/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/huan-cun-yan-gai-an-zhuang-que-xian-de-xian-jing/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/huan-cun-yan-gai-an-zhuang-que-xian-de-xian-jing/"/>
+    <published>2026-10-21T02:45:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="一、现象"><a href="#一、现象" class="headerlink" title="一、现象"></a>一、现象</h2><p>一个前端项目的 <code>.npmrc</code>]]>
+    </summary>
+    <title>为什么“有问题的配置”却能安装成功——缓存掩盖缺陷的陷阱</title>
+    <updated>2026-10-23T02:20:33.040Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="npm" scheme="https://jimyfengqi.github.io/tags/npm/"/>
+    <category term="Artifactory" scheme="https://jimyfengqi.github.io/tags/Artifactory/"/>
+    <category term="Docker" scheme="https://jimyfengqi.github.io/tags/Docker/"/>
+    <category term="CI/CD" scheme="https://jimyfengqi.github.io/tags/CI-CD/"/>
+    <category term="认证" scheme="https://jimyfengqi.github.io/tags/%E8%AE%A4%E8%AF%81/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/qian-duan-si-you-yi-lai-bao-ren-zheng-shi-bai-wen-ti-pai-cha/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/qian-duan-si-you-yi-lai-bao-ren-zheng-shi-bai-wen-ti-pai-cha/"/>
+    <published>2026-10-21T02:40:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="一、问题现象"><a href="#一、问题现象" class="headerlink" title="一、问题现象"></a>一、问题现象</h2><p>前端项目在 Docker 构建阶段执行 <code>npm ci</code> 安装私有依赖包（私有]]>
+    </summary>
+    <title>前端私有依赖包认证失败（E401/E404）问题排查</title>
+    <updated>2026-10-23T02:20:33.040Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="ssh" scheme="https://jimyfengqi.github.io/categories/ssh/"/>
+    <category term="Linux" scheme="https://jimyfengqi.github.io/tags/Linux/"/>
+    <category term="SSH" scheme="https://jimyfengqi.github.io/tags/SSH/"/>
+    <category term="公钥认证" scheme="https://jimyfengqi.github.io/tags/%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81/"/>
+    <id>https://jimyfengqi.github.io/post/ssh/ssh-mi-yao-ren-zheng/</id>
+    <link href="https://jimyfengqi.github.io/post/ssh/ssh-mi-yao-ren-zheng/"/>
+    <published>2026-10-21T01:13:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="SSH-公钥认证：为什么用了私钥仍需输入密码"><a href="#SSH-公钥认证：为什么用了私钥仍需输入密码" class="headerlink" title="SSH 公钥认证：为什么用了私钥仍需输入密码"></a>SSH]]>
+    </summary>
+    <title>SSH 公钥认证：为什么用了私钥仍需输入密码</title>
+    <updated>2026-10-23T02:20:34.799Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="ssh" scheme="https://jimyfengqi.github.io/categories/ssh/"/>
+    <category term="Linux" scheme="https://jimyfengqi.github.io/tags/Linux/"/>
+    <category term="SSH" scheme="https://jimyfengqi.github.io/tags/SSH/"/>
+    <category term="公钥认证" scheme="https://jimyfengqi.github.io/tags/%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81/"/>
+    <id>https://jimyfengqi.github.io/post/ssh/ssh-gong-yao-ren-zheng-pai-cha-bao-gao/</id>
+    <link href="https://jimyfengqi.github.io/post/ssh/ssh-gong-yao-ren-zheng-pai-cha-bao-gao/"/>
+    <published>2026-10-21T01:12:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="SSH-公钥认证排查报告"><a href="#SSH-公钥认证排查报告" class="headerlink" title="SSH 公钥认证排查报告"></a>SSH 公钥认证排查报告</h1><h2 id="一、问题背景"><a]]>
+    </summary>
+    <title>SSH 公钥认证排查报告</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="sheduler" scheme="https://jimyfengqi.github.io/categories/sheduler/"/>
+    <category term="CI/CD" scheme="https://jimyfengqi.github.io/tags/CI-CD/"/>
+    <category term="认证" scheme="https://jimyfengqi.github.io/tags/%E8%AE%A4%E8%AF%81/"/>
+    <category term="Rancher" scheme="https://jimyfengqi.github.io/tags/Rancher/"/>
+    <category term="Kubernetes" scheme="https://jimyfengqi.github.io/tags/Kubernetes/"/>
+    <id>https://jimyfengqi.github.io/post/sheduler/rancher-ren-zheng-ping-zheng-shi-xiao/</id>
+    <link href="https://jimyfengqi.github.io/post/sheduler/rancher-ren-zheng-ping-zheng-shi-xiao/"/>
+    <published>2026-10-21T01:11:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="事件报告：Rancher-认证凭证失效导致模拟器测试全面失败"><a href="#事件报告：Rancher-认证凭证失效导致模拟器测试全面失败" class="headerlink" title="事件报告：Rancher]]>
+    </summary>
+    <title>事件报告：Rancher 认证凭证失效导致模拟器测试全面失败</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="Postfix" scheme="https://jimyfengqi.github.io/tags/Postfix/"/>
+    <category term="Linux" scheme="https://jimyfengqi.github.io/tags/Linux/"/>
+    <category term="运维" scheme="https://jimyfengqi.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    <category term="logrotate" scheme="https://jimyfengqi.github.io/tags/logrotate/"/>
+    <category term="cron" scheme="https://jimyfengqi.github.io/tags/cron/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/you-jian-qian-yi-hou-bao-lu-de-xi-tong-yun-wei-wen-ti/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/you-jian-qian-yi-hou-bao-lu-de-xi-tong-yun-wei-wen-ti/"/>
+    <published>2026-10-21T01:10:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>把系统邮件通道修通（新 SMTPS 服务严格投递 +]]>
+    </summary>
+    <title>邮件迁移后暴露的系统运维历史问题</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="Rails" scheme="https://jimyfengqi.github.io/tags/Rails/"/>
+    <category term="超时" scheme="https://jimyfengqi.github.io/tags/%E8%B6%85%E6%97%B6/"/>
+    <category term="任务调度" scheme="https://jimyfengqi.github.io/tags/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/"/>
+    <category term="源码分析" scheme="https://jimyfengqi.github.io/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/ce-shi-chao-shi-user-defined-timeout-ji-zhi-fen-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/ce-shi-chao-shi-user-defined-timeout-ji-zhi-fen-xi/"/>
+    <published>2026-10-21T01:09:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="ResultWeb-测试超时（user-defined-timeout）机制分析报告"><a href="#ResultWeb-测试超时（user-defined-timeout）机制分析报告" class="headerlink"]]>
+    </summary>
+    <title>ResultWeb 测试超时（user_defined_timeout）机制分析报告</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="磁盘清理" scheme="https://jimyfengqi.github.io/tags/%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86/"/>
+    <category term="日志" scheme="https://jimyfengqi.github.io/tags/%E6%97%A5%E5%BF%97/"/>
+    <category term="运维" scheme="https://jimyfengqi.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    <category term="Shell" scheme="https://jimyfengqi.github.io/tags/Shell/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/ce-shi-jie-guo-qing-li-yu-ri-zhi-wen-ti-fen-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/ce-shi-jie-guo-qing-li-yu-ri-zhi-wen-ti-fen-xi/"/>
+    <published>2026-10-21T01:08:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="测试-Worker-节点日志与结果清理问题分析报告"><a href="#测试-Worker-节点日志与结果清理问题分析报告" class="headerlink" title="测试 Worker 节点日志与结果清理问题分析报告"></a>测试 Worker]]>
+    </summary>
+    <title>测试 Worker 节点日志与结果清理问题分析报告</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="故障排查" scheme="https://jimyfengqi.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    <category term="OOM" scheme="https://jimyfengqi.github.io/tags/OOM/"/>
+    <category term="内存" scheme="https://jimyfengqi.github.io/tags/%E5%86%85%E5%AD%98/"/>
+    <category term="性能调优" scheme="https://jimyfengqi.github.io/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
+    <category term="Linux" scheme="https://jimyfengqi.github.io/tags/Linux/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/fu-wu-qi-nei-cun-hao-jin-dang-ji-yu-zi-yuan-diao-you-fen-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/fu-wu-qi-nei-cun-hao-jin-dang-ji-yu-zi-yuan-diao-you-fen-xi/"/>
+    <published>2026-10-21T01:07:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="服务器内存耗尽宕机与资源调优分析"><a href="#服务器内存耗尽宕机与资源调优分析" class="headerlink" title="服务器内存耗尽宕机与资源调优分析"></a>服务器内存耗尽宕机与资源调优分析</h1><h2]]>
+    </summary>
+    <title>服务器内存耗尽宕机与资源调优分析</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="Rails" scheme="https://jimyfengqi.github.io/tags/Rails/"/>
+    <category term="邮件" scheme="https://jimyfengqi.github.io/tags/%E9%82%AE%E4%BB%B6/"/>
+    <category term="ActionMailer" scheme="https://jimyfengqi.github.io/tags/ActionMailer/"/>
+    <category term="配置管理" scheme="https://jimyfengqi.github.io/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/fa-jian-ren-yu-shou-jian-ren-pei-zhi-chai-fen/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/fa-jian-ren-yu-shou-jian-ren-pei-zhi-chai-fen/"/>
+    <published>2026-10-21T01:06:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>原先有一个配置项同时承担了两个角色：</p>
+<ul>
+<li>作为<strong>发件人</strong>（所有 mailer 的]]>
+    </summary>
+    <title>ResultWeb 邮件发件人与收件人配置拆分</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="Rails" scheme="https://jimyfengqi.github.io/tags/Rails/"/>
+    <category term="邮件" scheme="https://jimyfengqi.github.io/tags/%E9%82%AE%E4%BB%B6/"/>
+    <category term="ActionMailer" scheme="https://jimyfengqi.github.io/tags/ActionMailer/"/>
+    <category term="数据治理" scheme="https://jimyfengqi.github.io/tags/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/zhan-wei-you-xiang-guo-lu/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/zhan-wei-you-xiang-guo-lu/"/>
+    <published>2026-10-21T01:05:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>迁移到新 SMTPS 服务后，发现生产环境持续产生退信：</p>
+<pre class="line-numbers]]>
+    </summary>
+    <title>ResultWeb 过滤占位邮箱避免退信</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="CI/CD" scheme="https://jimyfengqi.github.io/tags/CI-CD/"/>
+    <category term="故障排查" scheme="https://jimyfengqi.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    <category term="竞态条件" scheme="https://jimyfengqi.github.io/tags/%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6/"/>
+    <category term="Ruby" scheme="https://jimyfengqi.github.io/tags/Ruby/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/prepare-jie-duan-jing-zheng-shi-bai-fen-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/prepare-jie-duan-jing-zheng-shi-bai-fen-xi/"/>
+    <published>2026-10-21T01:04:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="ResultWeb-Preparation-Stage-Failure-—-Root-Cause-Analysis"><a href="#ResultWeb-Preparation-Stage-Failure-—-Root-Cause-Analysis"]]>
+    </summary>
+    <title>ResultWeb Preparation Stage Failure — Root Cause Analysis</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="Rails" scheme="https://jimyfengqi.github.io/tags/Rails/"/>
+    <category term="Postfix" scheme="https://jimyfengqi.github.io/tags/Postfix/"/>
+    <category term="SMTP" scheme="https://jimyfengqi.github.io/tags/SMTP/"/>
+    <category term="邮件" scheme="https://jimyfengqi.github.io/tags/%E9%82%AE%E4%BB%B6/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/smtp-fu-wu-qian-yi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/smtp-fu-wu-qian-yi/"/>
+    <published>2026-10-21T01:03:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ResultWeb 应用原本通过本机 Postfix 中继到旧邮件服务器（无认证、无]]>
+    </summary>
+    <title>ResultWeb 邮件服务迁移到 SMTPS</title>
+    <updated>2026-10-23T02:20:34.798Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="resultweb" scheme="https://jimyfengqi.github.io/categories/resultweb/"/>
+    <category term="DNS" scheme="https://jimyfengqi.github.io/tags/DNS/"/>
+    <category term="Passenger" scheme="https://jimyfengqi.github.io/tags/Passenger/"/>
+    <category term="性能" scheme="https://jimyfengqi.github.io/tags/%E6%80%A7%E8%83%BD/"/>
+    <category term="故障排查" scheme="https://jimyfengqi.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    <category term="Rails" scheme="https://jimyfengqi.github.io/tags/Rails/"/>
+    <id>https://jimyfengqi.github.io/post/resultweb/dns-gu-zhang-yin-fa-qian-duan-jin-cheng-yong-sai-shi-jian-fen-xi/</id>
+    <link href="https://jimyfengqi.github.io/post/resultweb/dns-gu-zhang-yin-fa-qian-duan-jin-cheng-yong-sai-shi-jian-fen-xi/"/>
+    <published>2026-10-21T01:02:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="DNS-故障引发-Passenger-进程拥塞事件分析"><a href="#DNS-故障引发-Passenger-进程拥塞事件分析" class="headerlink" title="DNS 故障引发 Passenger 进程拥塞事件分析"></a>DNS]]>
+    </summary>
+    <title>DNS 故障引发 Passenger 进程拥塞事件分析</title>
+    <updated>2026-10-23T02:20:34.797Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="时区" scheme="https://jimyfengqi.github.io/tags/%E6%97%B6%E5%8C%BA/"/>
+    <category term="date-fns" scheme="https://jimyfengqi.github.io/tags/date-fns/"/>
+    <category term="前端" scheme="https://jimyfengqi.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="Vite" scheme="https://jimyfengqi.github.io/tags/Vite/"/>
+    <category term="JavaScript" scheme="https://jimyfengqi.github.io/tags/JavaScript/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/liu-lan-qi-shi-jian-xian-shi-chao-qian-wen-ti-pai-cha-bao-gao/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/liu-lan-qi-shi-jian-xian-shi-chao-qian-wen-ti-pai-cha-bao-gao/"/>
+    <published>2026-10-21T01:01:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="浏览器时间显示超前问题排查报告"><a href="#浏览器时间显示超前问题排查报告" class="headerlink" title="浏览器时间显示超前问题排查报告"></a>浏览器时间显示超前问题排查报告</h1><h2 id="一、问题概述"><a]]>
+    </summary>
+    <title>浏览器时间显示超前问题排查报告</title>
+    <updated>2026-10-23T02:20:33.040Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="follow_your_commit" scheme="https://jimyfengqi.github.io/categories/follow-your-commit/"/>
+    <category term="Artifactory" scheme="https://jimyfengqi.github.io/tags/Artifactory/"/>
+    <category term="CI/CD" scheme="https://jimyfengqi.github.io/tags/CI-CD/"/>
+    <category term="权限" scheme="https://jimyfengqi.github.io/tags/%E6%9D%83%E9%99%90/"/>
+    <category term="Helm" scheme="https://jimyfengqi.github.io/tags/Helm/"/>
+    <category term="Jenkins" scheme="https://jimyfengqi.github.io/tags/Jenkins/"/>
+    <id>https://jimyfengqi.github.io/post/follow-your-commit/helm-cang-ku-403-gou-jian-shi-bai-pai-cha-bao-gao/</id>
+    <link href="https://jimyfengqi.github.io/post/follow-your-commit/helm-cang-ku-403-gou-jian-shi-bai-pai-cha-bao-gao/"/>
+    <published>2026-10-21T01:00:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="Helm-仓库-403-构建失败排查报告"><a href="#Helm-仓库-403-构建失败排查报告" class="headerlink" title="Helm 仓库 403 构建失败排查报告"></a>Helm 仓库 403]]>
+    </summary>
+    <title>Helm 仓库 403 构建失败排查报告</title>
+    <updated>2026-10-23T02:20:33.039Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="简单" scheme="https://jimyfengqi.github.io/categories/%E7%AE%80%E5%8D%95/"/>
+    <category term="数组" scheme="https://jimyfengqi.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="哈希表" scheme="https://jimyfengqi.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    <id>https://jimyfengqi.github.io/post/jian-dan/1-liang-shu-zhi-he/</id>
+    <link href="https://jimyfengqi.github.io/post/jian-dan/1-liang-shu-zhi-he/"/>
+    <published>2021-12-03T15:02:41.000Z</published>
+    <summary>
+      <![CDATA[<blockquote>
+<p>原文链接: <a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a></p>
+</blockquote>
+<h2]]>
+    </summary>
+    <title>1-两数之和(Two Sum)</title>
+    <updated>2026-10-23T02:20:34.900Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Fengqi</name>
+    </author>
+    <category term="中等" scheme="https://jimyfengqi.github.io/categories/%E4%B8%AD%E7%AD%89/"/>
+    <category term="递归" scheme="https://jimyfengqi.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    <category term="数学" scheme="https://jimyfengqi.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    <category term="链表" scheme="https://jimyfengqi.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    <id>https://jimyfengqi.github.io/post/zhong-deng/2-liang-shu-xiang-jia/</id>
+    <link href="https://jimyfengqi.github.io/post/zhong-deng/2-liang-shu-xiang-jia/"/>
+    <published>2021-12-03T15:02:38.000Z</published>
+    <summary>
+      <![CDATA[<blockquote>
+<p>原文链接: <a]]>
+    </summary>
+    <title>2-两数相加(Add Two Numbers)</title>
+    <updated>2026-10-23T02:20:34.823Z</updated>
+  </entry>
+</feed>
