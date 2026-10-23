@@ -26,6 +26,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: hexo
+          # 拉取完整历史, 便于把 hexo 源码分支完整推送到 Gitee 镜像
+          fetch-depth: 0
 
       # 2. 安装 Node (与本地一致, Hexo 8 需 >= 20.19)
       - name: Setup Node.js
@@ -82,3 +84,18 @@ jobs:
           # 覆盖式推送到 Gitee master(与 GitHub master 内容一致)
           git push --force --quiet "https://${GITEE_USER}:${GITEE_TOKEN}@${GITEE_REPO}" master:master
           echo "已同步到 Gitee master。"
+
+      # 7. 同步源码分支(hexo)到 Gitee, 使 Gitee 成为完整镜像(源码 + 产物)
+      - name: Sync hexo source to Gitee
+        env:
+          GITEE_USER: ${{ secrets.GITEE_USER }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_REPO: ${{ vars.GITEE_REPO || 'gitee.com/JimyFengqi/JimyFengqi.gitee.io.git' }}
+        run: |
+          if [ -z "$GITEE_USER" ] || [ -z "$GITEE_TOKEN" ]; then
+            echo "未配置 GITEE_USER / GITEE_TOKEN Secrets, 跳过 hexo 源码同步。"
+            exit 0
+          fi
+          # 当前工作区即 hexo 分支(step 1 checkout ref: hexo), 直接推到 Gitee 的 hexo 分支
+          git push --force --quiet "https://${GITEE_USER}:${GITEE_TOKEN}@${GITEE_REPO}" HEAD:hexo
+          echo "已同步 hexo 源码分支到 Gitee。"

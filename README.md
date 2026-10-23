@@ -143,12 +143,39 @@ concurrency:
 #### 可拓展方向（按需）
 
 - **部署到 GitHub Pages 官方环境**：也可改用官方 `actions/deploy-pages`（配合 `actions/upload-pages-artifact`），把 Pages 源切换为"GitHub Actions"模式，省去 `master` 分支；本项目沿用"发布到 master 分支"的传统模式，改动最小。
-- **同步 Gitee 镜像**：两种做法——
-  1. **Gitee 后台"镜像同步"**：在 Gitee 仓库管理里设置从 GitHub 自动拉取，零 CI 配置，最省事；
-  2. **在工作流里加一步推 Gitee**：把 Gitee 账号/密码(或令牌)存到 **仓库 Settings → Secrets and variables → Actions**，再在工作流里 `git push` 到 Gitee（引用 `${{ secrets.GITEE_xxx }}`）。
 - **构建缓存加速**：工作流已用 `actions/setup-node` 的 `cache: npm` 缓存依赖；文章多时还可缓存 Hexo 的 `db.json`。
 - **PR 预览 / 校验**：可加一个只在 Pull Request 上跑 `hexo generate` 的 job（不发布），用于提交前校验构建是否通过。
 - **定时构建**：`on: schedule: - cron: '...'` 可定时重建（例如依赖每日热榜之类的动态内容时）。
+
+#### 5.1.1 自动同步到 Gitee 镜像（已内置）
+
+工作流已内置两个步骤，在发布完 GitHub 后自动把内容同步到 Gitee，使 Gitee 成为**完整镜像**：
+
+| 步骤 | 推送内容 | 到 Gitee 分支 |
+| :--- | :--- | :--- |
+| Sync to Gitee master | 构建产物 `public/`（静态站点，供 Gitee Pages） | `master` |
+| Sync hexo source to Gitee | **`hexo` 源码分支**（完整历史） | `hexo` |
+
+> 即 **master（产物）和 hexo（源码）两个分支都会同步**，不只是 master。
+
+**启用方法（一次性，在 GitHub 网页上配置）：**
+
+1. 在 Gitee 生成**私人令牌**：Gitee → 设置 → 私人令牌，勾选 `projects`（仓库读写）权限，复制令牌。
+2. 在 GitHub 仓库 **Settings → Secrets and variables → Actions → New repository secret** 添加两个 Secret：
+
+   | Name | Value |
+   | :--- | :--- |
+   | `GITEE_USER` | Gitee 用户名（如 `JimyFengqi`） |
+   | `GITEE_TOKEN` | 上一步的 Gitee 私人令牌（当密码用） |
+
+3.（可选）若 Gitee 仓库路径不同，在同页 **Variables** 添加仓库变量 `GITEE_REPO`，值如 `gitee.com/<owner>/<repo>.git`（默认 `gitee.com/JimyFengqi/JimyFengqi.gitee.io.git`）。
+
+**行为说明：**
+- 未配置上述 Secrets 时，两个 Gitee 步骤**自动跳过**，不影响 GitHub 发布。
+- 推送 URL 形如 `https://<GITEE_USER>:<GITEE_TOKEN>@gitee.com/...`，均为 `--force` 覆盖式同步。
+- **Gitee Pages 注意**：代码同步到 Gitee `master` 后，Gitee 免费版 Pages **通常不会自动重新部署**，往往需要在 Gitee 仓库的 Pages 设置里**手动点"更新"**（或企业版才支持自动）。同步成功 ≠ Gitee Pages 自动刷新。
+
+> 另一种零 CI 配置的方案：直接用 **Gitee 后台的"仓库镜像管理"**从 GitHub 自动拉取镜像。二选一即可。
 
 ### 5.2 本地脚本发布（兜底 / 调试）
 
